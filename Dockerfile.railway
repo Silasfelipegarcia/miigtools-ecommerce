@@ -31,7 +31,8 @@ COPY storage/vendor/ ${DIR_STORAGE}vendor/
 COPY upload/php.ini ${PHP_INI_DIR}/conf.d/opencart.ini
 COPY scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
 COPY scripts/write-config.php /usr/local/bin/write-config.php
-RUN chmod +x /usr/local/bin/entrypoint.sh /usr/local/bin/write-config.php
+COPY scripts/update-store-url.sh /usr/local/bin/update-store-url.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh /usr/local/bin/write-config.php /usr/local/bin/update-store-url.sh
 
 RUN chown -R www-data:www-data ${DIR_OPENCART} ${DIR_STORAGE} \
   && chmod -R 755 ${DIR_OPENCART} \
