@@ -79,3 +79,50 @@ write_php_config($dir_opencart . 'admin/config.php', array_merge([
 ], $db));
 
 echo "config.php gerado\n";
+
+// ── Update store URL in the database ─────────────────────────────────────────
+// OpenCart caches the store URL in ws_setting. If it still points to localhost
+// the browser will refuse to load CSS/JS/images. We update it here, right after
+// writing the PHP config files, so every deploy stays in sync automatically.
+
+$db_host = $db['DB_HOSTNAME'];
+$db_user = $db['DB_USERNAME'];
+$db_pass = $db['DB_PASSWORD'];
+$db_name = $db['DB_DATABASE'];
+$db_port = (int) $db['DB_PORT'];
+$db_prefix = $db['DB_PREFIX'];
+
+if ($db_host === '') {
+	echo "update-store-url: DB_HOSTNAME não definido, pulando atualização do banco.\n";
+} else {
+	$mysqli = @new mysqli($db_host, $db_user, $db_pass, $db_name, $db_port);
+
+	if ($mysqli->connect_errno) {
+		echo "update-store-url: não foi possível conectar ao banco (" . $mysqli->connect_error . "), pulando.\n";
+	} else {
+		$table = $db_prefix . 'setting';
+
+		$updates = [
+			'config_url'    => $http_server,
+			'config_secure' => $http_server,
+		];
+
+		foreach ($updates as $key => $value) {
+			$stmt = $mysqli->prepare(
+				"UPDATE `{$table}` SET `value` = ? WHERE `key` = ? AND `store_id` = 0"
+			);
+
+			if ($stmt) {
+				$stmt->bind_param('ss', $value, $key);
+				$stmt->execute();
+				$affected = $stmt->affected_rows;
+				$stmt->close();
+				echo "update-store-url: {$key} → {$value} ({$affected} linha(s) afetada(s))\n";
+			} else {
+				echo "update-store-url: falha ao preparar statement para {$key}: " . $mysqli->error . "\n";
+			}
+		}
+
+		$mysqli->close();
+	}
+}

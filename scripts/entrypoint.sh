@@ -51,6 +51,15 @@ if [ -n "${RAILWAY_ENVIRONMENT:-}" ] || [ -n "${MYSQLHOST:-}" ] || [ ! -f "${DIR
 	php /usr/local/bin/write-config.php
 fi
 
+# Update config_url / config_secure in the database so resources load from the
+# correct public domain. write-config.php already attempts this via PHP/mysqli;
+# the shell script below is a belt-and-suspenders fallback that also waits for
+# MySQL to be ready before proceeding.
+if [ -n "${RAILWAY_ENVIRONMENT:-}" ] || [ -n "${MYSQLHOST:-}" ] || [ -n "${DB_HOSTNAME:-}" ]; then
+	echo "[entrypoint] Atualizando URL da loja no banco de dados..."
+	bash /usr/local/bin/update-store-url.sh || echo "[entrypoint] update-store-url.sh falhou (não fatal)."
+fi
+
 echo "[entrypoint] Validando Apache..."
 apache2ctl configtest
 
