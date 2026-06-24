@@ -8,9 +8,26 @@ PORT="${PORT:-8080}"
 echo "[entrypoint] MIIGTOOLS OpenCart — porta ${PORT}"
 
 configure_apache() {
-	echo "ServerName localhost" >> /etc/apache2/apache2.conf
-	sed -i "s/Listen 80/Listen ${PORT}/" /etc/apache2/ports.conf
-	sed -i "s/<VirtualHost \*:80>/<VirtualHost *:${PORT}>/" /etc/apache2/sites-available/000-default.conf
+	# Sobrescreve sempre (idempotente). Nunca use sed em Listen 80 — em 8080 vira 808080.
+	cat > /etc/apache2/ports.conf <<EOF
+Listen ${PORT}
+EOF
+
+	cat > /etc/apache2/sites-available/000-default.conf <<EOF
+<VirtualHost *:${PORT}>
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/html
+
+	<Directory /var/www/html>
+		Options Indexes FollowSymLinks
+		AllowOverride All
+		Require all granted
+	</Directory>
+
+	ErrorLog \${APACHE_LOG_DIR}/error.log
+	CustomLog \${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+EOF
 }
 
 mkdir -p "${DIR_STORAGE}"{cache,session,logs,download,upload,backup,marketplace}
