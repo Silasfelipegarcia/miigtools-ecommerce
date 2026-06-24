@@ -4,7 +4,7 @@ set -euo pipefail
 DIR_OPENCART="${DIR_OPENCART:-/var/www/html/}"
 DIR_STORAGE="${DIR_STORAGE:-/storage/}"
 
-DB_HOSTNAME="${DB_HOSTNAME:-${MYSQLHOST:-mysql}}"
+DB_HOSTNAME="${DB_HOSTNAME:-${MYSQLHOST:-}}"
 DB_USERNAME="${DB_USERNAME:-${MYSQLUSER:-root}}"
 DB_PASSWORD="${DB_PASSWORD:-${MYSQLPASSWORD:-}}"
 DB_DATABASE="${DB_DATABASE:-${MYSQLDATABASE:-railway}}"
@@ -19,28 +19,9 @@ HTTP_ADMIN="${HTTP_SCHEME}://${HTTP_HOST}/admin/"
 PORT="${PORT:-80}"
 
 configure_apache_port() {
+  echo "Apache na porta ${PORT}"
   sed -i "s/Listen 80/Listen ${PORT}/" /etc/apache2/ports.conf
-  sed -i "s/:80>/:${PORT}>/" /etc/apache2/sites-available/000-default.conf
-}
-
-wait_for_database() {
-  if [ -z "${DB_HOSTNAME}" ] || [ "${DB_HOSTNAME}" = "mysql" ]; then
-    return 0
-  fi
-
-  echo "Aguardando MySQL em ${DB_HOSTNAME}:${DB_PORT}..."
-  for i in $(seq 1 60); do
-    if php -r "
-      \$c = @new mysqli('${DB_HOSTNAME}', '${DB_USERNAME}', '${DB_PASSWORD}', '${DB_DATABASE}', (int) '${DB_PORT}');
-      exit(\$c->connect_error ? 1 : 0);
-    "; then
-      echo "MySQL disponível."
-      return 0
-    fi
-    sleep 2
-  done
-
-  echo "Aviso: MySQL não respondeu a tempo; o Apache vai subir mesmo assim."
+  sed -i "s/<VirtualHost \*:80>/<VirtualHost *:${PORT}>/" /etc/apache2/sites-available/000-default.conf
 }
 
 write_catalog_config() {
@@ -122,9 +103,7 @@ chown -R www-data:www-data "${DIR_STORAGE}"
 chmod -R 775 "${DIR_STORAGE}"
 
 configure_apache_port
-wait_for_database
 
-# Em produção (Railway) sempre regenera config com as variáveis do ambiente.
 if [ -n "${RAILWAY_ENVIRONMENT:-}" ] || [ -n "${MYSQLHOST:-}" ] || [ ! -f "${DIR_OPENCART}config.php" ]; then
   write_catalog_config
   write_admin_config
