@@ -1,4 +1,4 @@
-FROM php:8.2-apache
+FROM php:8.2-apache-bookworm
 
 RUN apt-get update \
   && apt-get install -y \
@@ -11,8 +11,14 @@ RUN apt-get update \
     libwebp-dev \
   && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
   && docker-php-ext-install -j$(nproc) gd zip mysqli curl \
-  && docker-php-ext-enable gd zip mysqli curl \
   && rm -rf /var/lib/apt/lists/*
+
+# Garante um único MPM (prefork) — evita "More than one MPM loaded"
+RUN rm -f /etc/apache2/mods-enabled/mpm_*.load /etc/apache2/mods-enabled/mpm_*.conf \
+  && a2enmod rewrite mpm_prefork \
+  && echo 'ServerName localhost' > /etc/apache2/conf-available/servername.conf \
+  && a2enconf servername \
+  && apache2ctl configtest
 
 ENV DIR_OPENCART=/var/www/html/
 ENV DIR_STORAGE=/storage/
@@ -27,17 +33,10 @@ COPY scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
 COPY scripts/write-config.php /usr/local/bin/write-config.php
 RUN chmod +x /usr/local/bin/entrypoint.sh /usr/local/bin/write-config.php
 
-RUN a2enmod rewrite \
-  && echo 'ServerName localhost' > /etc/apache2/conf-available/servername.conf \
-  && a2enconf servername
-
-RUN a2dismod mpm_event mpm_worker mpm_prefork || true
-RUN a2enmod mpm_prefork
-
 RUN chown -R www-data:www-data ${DIR_OPENCART} ${DIR_STORAGE} \
   && chmod -R 755 ${DIR_OPENCART} \
   && chmod -R 775 ${DIR_STORAGE}
 
 EXPOSE 8080
 
-CMD ["/usr/local/bin/entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
