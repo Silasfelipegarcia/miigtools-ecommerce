@@ -1,0 +1,8 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile.railway"
+
+[deploy]
+startCommand = "/usr/local/bin/entrypoint.sh"
+healthcheckPath = "/"
+restartPolicyType = "ON_FAILURE"

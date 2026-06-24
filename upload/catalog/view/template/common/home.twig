@@ -1,0 +1,73 @@
+{{ header }}
+
+<section class="miig-hero" aria-labelledby="miig-hero-title">
+  <div class="miig-hero-bg" aria-hidden="true"></div>
+  <div class="container miig-hero-inner text-center">
+    <p class="miig-hero-kicker">{{ hero_kicker }}</p>
+    <h1 id="miig-hero-title" class="miig-hero-title">{{ hero_title }}</h1>
+    <p class="miig-hero-lead">{{ hero_lead }}</p>
+    <div class="miig-hero-actions">
+      <a href="{{ hero_href_catalog }}" class="btn btn-primary miig-hero-btn">{{ hero_cta_catalog }}</a>
+      <a href="{{ hero_href_contact }}" class="btn miig-hero-btn miig-hero-btn--ghost">{{ hero_cta_contact }}</a>
+    </div>
+  </div>
+</section>
+
+<div id="common-home" class="miig-home-modules">
+  <div class="container">
+    {{ content_top }}
+  </div>
+</div>
+
+<section class="miig-value-strip" aria-labelledby="miig-strip-title">
+  <div class="container py-4 py-lg-5">
+    <header class="text-center mb-4 mb-lg-5">
+      <h2 id="miig-strip-title" class="miig-strip-title">{{ strip_title }}</h2>
+      <p class="miig-strip-sub mb-0">{{ strip_sub }}</p>
+    </header>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 g-md-4">
+      {% for vp in value_props %}
+        <div class="col">
+          <article class="miig-vp-card h-100">
+            <div class="miig-vp-icon" aria-hidden="true"><i class="{{ vp.icon }}"></i></div>
+            <h3 class="miig-vp-card-title">{{ vp.title }}</h3>
+            <p class="miig-vp-card-text">{{ vp.text }}</p>
+          </article>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<div class="miig-home-modules miig-home-modules--bottom">
+  <div class="container">
+    {{ content_bottom }}
+  </div>
+</div>
+
+<section class="miig-about" aria-labelledby="miig-about-title">
+  <div class="container">
+    <div class="miig-about-card">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <h2 id="miig-about-title" class="miig-about-title">{{ about_title }}</h2>
+          <p class="miig-about-lead">{{ about_lead }}</p>
+          <p class="miig-about-body">{{ about_body }}</p>
+        </div>
+        <div class="col-lg-5">
+          <ul class="miig-about-list list-unstyled mb-4">
+            {% for bullet in about_bullets %}
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> {{ bullet }}</li>
+            {% endfor %}
+          </ul>
+          <a href="{{ about_href_contact }}" class="btn btn-primary">{{ about_cta }}</a>
+          {% if about_href_info %}
+            <a href="{{ about_href_info }}" class="btn btn-outline-primary ms-2">{{ about_cta_info }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ footer }}

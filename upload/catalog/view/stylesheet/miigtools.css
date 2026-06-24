@@ -1,0 +1,1592 @@
+/**
+ * MIIGTOOLS — identidade premium
+ * Dark “soft”: fundos em cinza-ardósia (evita #000 puro — menos fadiga, mais contraste UI)
+ */
+
+:root {
+  --miig-bg: #18181f;
+  --miig-surface: #1e1e28;
+  --miig-elevated: #26262f;
+  --miig-elevated-2: #2e2e38;
+  --miig-border: rgba(212, 175, 55, 0.26);
+  --miig-edge: rgba(255, 255, 255, 0.1);
+  --miig-gold: #d4af37;
+  --miig-gold-mid: #c9a227;
+  --miig-gold-dark: #7a5c10;
+  --miig-gold-bright: #f3e7c8;
+  --miig-steel: #8b95a8;
+  --miig-steel-deep: #6b7484;
+  --miig-text: #ebe6dc;
+  --miig-muted: #aeb6c4;
+  --miig-font-head: 'Montserrat', system-ui, sans-serif;
+  --miig-font-body: 'Inter', system-ui, sans-serif;
+  --miig-radius-sm: 0.5rem;
+  --miig-radius-md: 0.75rem;
+  --miig-radius-lg: 1.125rem;
+  --miig-radius-xl: 1.5rem;
+  --miig-radius-2xl: 1.875rem;
+  --miig-radius-pill: 9999px;
+  --miig-shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --miig-shadow-lift: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+/* Alinha Bootstrap ao tema (evita azul #229ac8 em .btn-primary, links, etc.) */
+.theme-miigtools {
+  --bs-primary: #c9a227;
+  --bs-primary-rgb: 201, 162, 39;
+  --bs-link-color: #e8d5a3;
+  --bs-link-hover-color: #ffffff;
+  --bs-link-hover-decoration: none;
+  --bs-focus-ring-color: rgba(212, 175, 55, 0.45);
+  --bs-border-radius: 0.75rem;
+  --bs-border-radius-sm: 0.5rem;
+  --bs-border-radius-lg: 1rem;
+  --bs-border-radius-xl: 1.25rem;
+  --bs-border-color: var(--miig-edge);
+  --bs-body-bg: var(--miig-bg);
+  --bs-body-color: var(--miig-text);
+  --bs-secondary-color: var(--miig-muted);
+  --bs-emphasis-color: var(--miig-text);
+  --bs-tertiary-bg: var(--miig-elevated);
+  --bs-secondary-bg: var(--miig-elevated-2);
+  --bs-tertiary-color: var(--miig-text);
+  --bs-border-color: var(--miig-edge);
+  --bs-pagination-bg: var(--miig-elevated-2);
+  --bs-pagination-color: var(--miig-text);
+  --bs-pagination-border-color: var(--miig-edge);
+  --bs-pagination-hover-bg: rgba(212, 175, 55, 0.12);
+  --bs-pagination-hover-color: var(--miig-gold-bright);
+  --bs-pagination-active-bg: var(--miig-gold);
+  --bs-pagination-active-color: #0a0a0a;
+  --bs-pagination-active-border-color: var(--miig-gold-dark);
+  --bs-list-group-bg: var(--miig-elevated);
+  --bs-list-group-color: var(--miig-text);
+  --bs-list-group-border-color: var(--miig-edge);
+  --bs-list-group-action-hover-bg: rgba(212, 175, 55, 0.1);
+  --bs-list-group-action-hover-color: var(--miig-gold-bright);
+  --bs-list-group-active-color: #0a0a0a;
+  --bs-list-group-active-bg: linear-gradient(135deg, #e0bc4a 0%, var(--miig-gold) 50%, var(--miig-gold-dark) 100%);
+  --bs-list-group-active-border-color: var(--miig-gold-dark);
+  /* Tooltips: Bootstrap 5 usa --bs-tooltip-color = body-bg (escuro) → texto invisível no balão */
+  --bs-tooltip-color: var(--miig-text);
+  --bs-tooltip-bg: var(--miig-elevated-2);
+  --bs-tooltip-opacity: 1;
+}
+
+.theme-miigtools,
+.theme-miigtools body {
+  font-family: var(--miig-font-body);
+  color: var(--miig-text);
+  background: var(--miig-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.theme-miigtools #container {
+  position: relative;
+  min-height: 100vh;
+  margin-bottom: 0;
+  background:
+    radial-gradient(ellipse 100% 55% at 50% -8%, rgba(201, 162, 39, 0.09) 0%, transparent 52%),
+    linear-gradient(180deg, var(--miig-bg) 0%, var(--miig-surface) 48%, var(--miig-bg) 100%);
+}
+
+.theme-miigtools #content,
+.theme-miigtools #column-left,
+.theme-miigtools #column-right {
+  padding-bottom: 2rem !important;
+}
+
+/* Barra superior — utilitários (layout compacto, ícones) */
+/* z-index acima do header sticky: senão o menu "Minha conta" abre atrás do header */
+.theme-miigtools #top.miig-topbar,
+.theme-miigtools #top {
+  position: relative;
+  z-index: 1040;
+  overflow: visible;
+  background: rgba(28, 28, 36, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--miig-edge);
+  margin-bottom: 0;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-size: 0.8125rem;
+}
+
+.theme-miigtools .miig-topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  min-height: 2.25rem;
+}
+
+.theme-miigtools .miig-topbar-start {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.25rem;
+  min-width: 0;
+}
+
+.theme-miigtools .miig-topbar-tagline {
+  color: var(--miig-muted);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.theme-miigtools .miig-topbar-tagline i {
+  margin-right: 0.4rem;
+  color: var(--miig-gold-mid);
+}
+
+.theme-miigtools .miig-topbar-locale {
+  color: var(--miig-muted);
+}
+
+.theme-miigtools .miig-topbar-locale .dropdown > a.dropdown-toggle {
+  color: var(--miig-muted) !important;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.2rem 0.35rem;
+  border-radius: 0.35rem;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.theme-miigtools .miig-topbar-locale .dropdown > a.dropdown-toggle:hover,
+.theme-miigtools .miig-topbar-locale .dropdown > a.dropdown-toggle:focus-visible {
+  color: var(--miig-gold-bright) !important;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.theme-miigtools .miig-topbar-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+  margin-left: auto;
+}
+
+.theme-miigtools .miig-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0 0.55rem;
+  border: none;
+  border-radius: var(--miig-radius-pill, 999px);
+  background: transparent;
+  color: var(--miig-muted);
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-miigtools a.miig-icon-btn {
+  cursor: pointer;
+}
+
+.theme-miigtools .miig-icon-btn--ghost:hover,
+.theme-miigtools .miig-icon-btn--ghost:focus-visible {
+  color: var(--miig-gold-bright);
+  background: rgba(212, 175, 55, 0.1);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25);
+}
+
+.theme-miigtools .miig-icon-btn i {
+  font-size: 1.05rem;
+  color: var(--miig-gold-mid);
+  transition: color 0.2s ease;
+}
+
+.theme-miigtools .miig-icon-btn:hover i,
+.theme-miigtools .miig-icon-btn:focus-visible i {
+  color: var(--miig-gold-bright);
+}
+
+.theme-miigtools .miig-icon-btn-label {
+  color: inherit;
+  max-width: 10rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.theme-miigtools .miig-icon-badge {
+  position: absolute;
+  top: 0.15rem;
+  right: 0.1rem;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  padding: 0 0.3rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  line-height: 1.1rem;
+  text-align: center;
+  color: #0a0a0a;
+  background: linear-gradient(145deg, var(--miig-gold) 0%, var(--miig-gold-dark) 100%);
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+.theme-miigtools .miig-account-dd .miig-icon-btn.dropdown-toggle::after {
+  margin-left: 0.25rem;
+  vertical-align: 0.15em;
+}
+
+.theme-miigtools #top .container {
+  overflow: visible;
+}
+
+.theme-miigtools #top .dropdown-menu {
+  z-index: 1050;
+  margin-top: 0.35rem;
+  background: rgba(22, 22, 30, 0.96) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--miig-edge) !important;
+  border-radius: var(--miig-radius-lg) !important;
+  box-shadow: var(--miig-shadow-lift), 0 0 0 1px rgba(212, 175, 55, 0.08) !important;
+  padding: 0.4rem 0 !important;
+  min-width: 12rem;
+}
+
+.theme-miigtools #top .dropdown-menu .dropdown-item {
+  color: #f8f6f2 !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--miig-radius-sm);
+}
+
+.theme-miigtools #top .dropdown-menu .dropdown-item:hover,
+.theme-miigtools #top .dropdown-menu .dropdown-item:focus {
+  background: rgba(212, 175, 55, 0.2) !important;
+  color: var(--miig-gold-bright) !important;
+}
+
+.theme-miigtools #top .dropdown-menu .dropdown-divider {
+  border-color: var(--miig-border);
+  opacity: 1;
+}
+
+.theme-miigtools #top .list-inline-item > a,
+.theme-miigtools #top .list-inline-item .dropdown > a {
+  color: var(--miig-muted) !important;
+  transition: color 0.2s ease;
+}
+
+.theme-miigtools #top .list-inline-item > a:hover,
+.theme-miigtools #top .list-inline-item .dropdown > a:hover {
+  color: var(--miig-gold-bright) !important;
+}
+
+.theme-miigtools #top .fa-solid {
+  color: var(--miig-gold-mid);
+}
+
+/* Cabeçalho — logo + busca (abaixo da barra #top no empilhamento) */
+.theme-miigtools header {
+  background: rgba(16, 16, 20, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--miig-edge);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  padding: 1.1rem 0 1.35rem;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  isolation: isolate;
+}
+
+.theme-miigtools #logo {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.theme-miigtools #logo a {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.theme-miigtools #logo img,
+.theme-miigtools .miig-logo-img {
+  max-width: min(200px, 100%);
+  max-height: 64px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: transparent !important;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  filter: drop-shadow(0 2px 16px rgba(212, 175, 55, 0.22));
+  mix-blend-mode: normal;
+}
+
+.theme-miigtools #logo h1 a {
+  font-family: var(--miig-font-head);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--miig-gold-bright);
+  text-decoration: none;
+}
+
+/* Busca */
+.theme-miigtools #search .form-control {
+  background: var(--miig-elevated);
+  border: 1px solid var(--miig-edge);
+  color: var(--miig-text);
+  border-radius: var(--miig-radius-lg) 0 0 var(--miig-radius-lg);
+  padding: 0.65rem 1rem;
+}
+
+.theme-miigtools #search .form-control:focus {
+  border-color: var(--miig-gold-mid);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+  color: var(--miig-text);
+}
+
+.theme-miigtools #search .form-control::placeholder {
+  color: var(--miig-muted);
+}
+
+.theme-miigtools #search .btn-primary {
+  background: linear-gradient(135deg, #e0bc4a 0%, var(--miig-gold) 42%, var(--miig-gold-dark) 100%);
+  border: none;
+  color: #0a0a0a;
+  font-weight: 700;
+  border-radius: 0 var(--miig-radius-lg) var(--miig-radius-lg) 0;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  box-shadow: 0 4px 16px rgba(201, 162, 39, 0.25);
+}
+
+.theme-miigtools #search .btn-primary:hover {
+  filter: brightness(1.08);
+  color: #0a0a0a;
+}
+
+/* Carrinho topo */
+.theme-miigtools #cart .btn-lg {
+  background: linear-gradient(165deg, var(--miig-elevated-2) 0%, var(--miig-elevated) 100%);
+  border: 1px solid var(--miig-edge);
+  color: var(--miig-text);
+  border-radius: var(--miig-radius-lg);
+  font-weight: 600;
+  box-shadow: var(--miig-shadow-soft);
+}
+
+.theme-miigtools #cart .btn-lg:hover {
+  border-color: var(--miig-gold-mid);
+  color: var(--miig-gold-bright);
+}
+
+.theme-miigtools #cart .dropdown-menu {
+  background: var(--miig-elevated) !important;
+  border: 1px solid var(--miig-border) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55) !important;
+  color: var(--miig-text);
+  z-index: 1050;
+}
+
+.theme-miigtools #cart .dropdown-menu table,
+.theme-miigtools #cart .dropdown-menu td,
+.theme-miigtools #cart .dropdown-menu a {
+  color: #f0ede8 !important;
+}
+
+.theme-miigtools #cart .dropdown-menu .btn-primary {
+  color: #0a0a0a !important;
+}
+
+/* Menu principal */
+.theme-miigtools #menu {
+  background: linear-gradient(165deg, rgba(30, 30, 38, 0.95) 0%, rgba(14, 14, 18, 0.98) 100%);
+  border: 1px solid var(--miig-edge);
+  border-radius: var(--miig-radius-xl);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), var(--miig-shadow-soft);
+  margin-bottom: 1.75rem;
+  margin-top: 0.5rem;
+  padding: 0.35rem 0.65rem;
+}
+
+.theme-miigtools #menu .navbar-nav > li > a {
+  color: var(--miig-text) !important;
+  font-family: var(--miig-font-head);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-shadow: none;
+  border-radius: var(--miig-radius-md);
+  padding: 0.85rem 1rem;
+}
+
+.theme-miigtools #menu .navbar-nav > li > a:hover {
+  background: rgba(212, 175, 55, 0.12) !important;
+  color: var(--miig-gold-bright) !important;
+}
+
+.theme-miigtools #category {
+  color: var(--miig-gold-bright) !important;
+  font-family: var(--miig-font-head);
+  text-shadow: none;
+}
+
+.theme-miigtools #menu .navbar-toggler i {
+  color: var(--miig-gold-mid);
+}
+
+.theme-miigtools #menu .dropdown-menu {
+  background: var(--miig-elevated);
+  border: 1px solid var(--miig-border);
+}
+
+.theme-miigtools #menu .dropdown-menu a {
+  color: var(--miig-text);
+}
+
+.theme-miigtools #menu .dropdown-menu a:hover {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--miig-gold-bright);
+}
+
+/* Conteúdo principal */
+.theme-miigtools main {
+  padding-bottom: 2rem;
+}
+
+.theme-miigtools #content h1,
+.theme-miigtools #content h2,
+.theme-miigtools #content h3,
+.theme-miigtools #content h4 {
+  font-family: var(--miig-font-head);
+  color: var(--miig-text);
+}
+
+.theme-miigtools #content a:not(.btn) {
+  color: var(--miig-gold-bright);
+}
+
+.theme-miigtools #content a:not(.btn):hover {
+  color: #fff;
+}
+
+/* Breadcrumb */
+.theme-miigtools .breadcrumb {
+  background: rgba(24, 24, 32, 0.65);
+  border: 1px solid var(--miig-edge);
+  border-radius: var(--miig-radius-lg);
+  padding: 0.65rem 1rem;
+  color: var(--miig-muted);
+}
+
+.theme-miigtools .breadcrumb-item a {
+  color: #e2e8f0;
+}
+
+.theme-miigtools .breadcrumb-item.active {
+  color: var(--miig-gold-mid);
+}
+
+/* Cards de produto — menos “caixa”, mais vidro + profundidade */
+.theme-miigtools .product-thumb {
+  background: linear-gradient(165deg, var(--miig-elevated-2) 0%, var(--miig-elevated) 55%, var(--miig-surface) 100%);
+  border: 1px solid var(--miig-edge);
+  border-radius: var(--miig-radius-xl);
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.25s ease;
+  box-shadow: var(--miig-shadow-soft);
+}
+
+.theme-miigtools .product-thumb:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: var(--miig-shadow-lift), 0 0 0 1px rgba(212, 175, 55, 0.1);
+}
+
+.theme-miigtools .product-thumb .description {
+  color: #d7dde8;
+}
+
+.theme-miigtools .product-thumb .description h4 a {
+  color: var(--miig-text);
+  font-family: var(--miig-font-head);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.theme-miigtools .product-thumb .description h4 a:hover {
+  color: var(--miig-gold-bright);
+}
+
+.theme-miigtools .product-thumb .price {
+  color: #d1d9e5;
+}
+
+.theme-miigtools .price-tax {
+  color: #aeb8c7 !important;
+  font-size: 0.85rem;
+}
+
+.theme-miigtools .product-thumb .price-new {
+  color: var(--miig-gold-bright);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.theme-miigtools .product-thumb .description {
+  padding-bottom: 3.25rem;
+}
+
+.theme-miigtools .product-thumb .button {
+  background: var(--miig-surface);
+  border-top: 1px solid var(--miig-border);
+}
+
+.theme-miigtools .product-thumb .button button {
+  background: transparent !important;
+  color: #c9d2df !important;
+  border-top: none !important;
+}
+
+.theme-miigtools .product-thumb .button button:hover {
+  background: rgba(212, 175, 55, 0.12) !important;
+  color: var(--miig-gold-bright) !important;
+}
+
+/* Botões globais — zero azul Bootstrap */
+.theme-miigtools .btn-primary {
+  background: linear-gradient(135deg, #e0bc4a 0%, var(--miig-gold) 40%, var(--miig-gold-dark) 100%);
+  border: none;
+  color: #0a0a0a !important;
+  font-weight: 700;
+  font-family: var(--miig-font-head);
+  letter-spacing: 0.03em;
+  border-radius: var(--miig-radius-lg);
+  padding: 0.55rem 1.35rem;
+  box-shadow: 0 4px 18px rgba(201, 162, 39, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.theme-miigtools .btn-primary:hover,
+.theme-miigtools .btn-primary:focus-visible {
+  filter: brightness(1.06);
+  color: #0a0a0a !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(201, 162, 39, 0.35);
+}
+
+.theme-miigtools .btn-outline-primary {
+  color: var(--miig-gold-bright) !important;
+  border-color: rgba(212, 175, 55, 0.45) !important;
+  background: transparent !important;
+  border-radius: var(--miig-radius-lg);
+  font-weight: 600;
+}
+
+.theme-miigtools .btn-outline-primary:hover,
+.theme-miigtools .btn-outline-primary:focus-visible {
+  background: rgba(212, 175, 55, 0.12) !important;
+  border-color: var(--miig-gold-mid) !important;
+  color: #fff !important;
+}
+
+.theme-miigtools .btn-info {
+  background: linear-gradient(165deg, #3d4555 0%, #2a303c 100%) !important;
+  border: 1px solid var(--miig-edge) !important;
+  color: #e8ecf3 !important;
+  border-radius: var(--miig-radius-lg);
+}
+
+.theme-miigtools .btn-info:hover {
+  background: linear-gradient(165deg, #4a5568 0%, #353d4d 100%) !important;
+  color: #fff !important;
+}
+
+.theme-miigtools .btn-link {
+  color: var(--miig-gold-bright) !important;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.theme-miigtools .btn-link:hover {
+  color: #fff !important;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.theme-miigtools .btn-secondary,
+.theme-miigtools .btn-light {
+  background: var(--miig-elevated);
+  border: 1px solid var(--miig-edge);
+  color: var(--miig-text) !important;
+  border-radius: var(--miig-radius-lg);
+}
+
+.theme-miigtools .btn-secondary:hover,
+.theme-miigtools .btn-light:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  color: var(--miig-gold-bright) !important;
+  background: var(--miig-elevated-2);
+}
+
+.theme-miigtools .btn-danger {
+  border-radius: var(--miig-radius-lg);
+}
+
+.theme-miigtools .btn-success {
+  border-radius: var(--miig-radius-lg);
+}
+
+/* Formulários — bordas visíveis + fundo levemente separado do page bg */
+.theme-miigtools .form-control,
+.theme-miigtools .form-select {
+  background: var(--miig-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--miig-text);
+}
+
+.theme-miigtools .form-control:focus,
+.theme-miigtools .form-select:focus {
+  border-color: var(--miig-gold-mid);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.22);
+  color: var(--miig-text);
+  background: var(--miig-elevated-2);
+}
+
+/* Labels de input-group (Ordenar por / Exibir) — evita branco com texto claro */
+.theme-miigtools .input-group-text {
+  background: var(--miig-elevated) !important;
+  border: 1px solid var(--miig-edge) !important;
+  color: var(--miig-gold-bright) !important;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.theme-miigtools .input-group .form-select,
+.theme-miigtools .input-group .form-control {
+  border-color: var(--miig-edge) !important;
+  color: var(--miig-text) !important;
+  background: var(--miig-elevated-2) !important;
+}
+
+.theme-miigtools .form-select option {
+  background: #1e1e28;
+  color: #f5f2ed;
+}
+
+.theme-miigtools .btn-group .btn-light.active,
+.theme-miigtools .btn-group .btn-light:active {
+  background: rgba(212, 175, 55, 0.22) !important;
+  border-color: var(--miig-gold-mid) !important;
+  color: var(--miig-gold-bright) !important;
+}
+
+/* Rádios / checkboxes — contraste forte (antes: cinza em preto = invisível) */
+.theme-miigtools .form-check-input {
+  width: 1.125em;
+  height: 1.125em;
+  margin-top: 0.12em;
+  border: 2px solid rgba(255, 255, 255, 0.42);
+  background-color: rgba(255, 255, 255, 0.1);
+  --bs-form-check-bg: rgba(255, 255, 255, 0.1);
+}
+
+.theme-miigtools .form-check-input[type='radio'] {
+  border-radius: 50%;
+}
+
+.theme-miigtools .form-check-input:checked {
+  background-color: var(--miig-gold-mid);
+  border-color: #e8c85c;
+  box-shadow: inset 0 0 0 2px rgba(10, 10, 12, 0.35);
+}
+
+.theme-miigtools .form-check-input:focus {
+  border-color: rgba(212, 175, 55, 0.85);
+  box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.38);
+}
+
+.theme-miigtools .form-check-input:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.55);
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+.theme-miigtools .form-check-label,
+.theme-miigtools label.form-label {
+  color: var(--miig-text);
+}
+
+.theme-miigtools .form-label .text-danger {
+  color: #f87171 !important;
+}
+
+.theme-miigtools .card {
+  background: var(--miig-elevated);
+  border: 1px solid var(--miig-border);
+  color: var(--miig-text);
+}
+
+/* Lista de produtos */
+.theme-miigtools .price-old {
+  color: #9ca3af;
+}
+
+/* Trust bar (footer) */
+.footer-miig-trust {
+  background: var(--miig-surface);
+  border-top: 1px solid var(--miig-border);
+  border-bottom: 1px solid var(--miig-border);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--miig-muted);
+}
+
+.footer-miig-trust .col {
+  padding: 1rem 0.5rem;
+}
+
+.footer-miig-trust i {
+  color: var(--miig-gold-mid);
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Rodapé */
+.theme-miigtools footer {
+  position: relative;
+  bottom: auto;
+  width: 100%;
+  margin-top: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  background: linear-gradient(180deg, var(--miig-surface) 0%, var(--miig-bg) 100%);
+  border-top: 1px solid var(--miig-border);
+  border: none;
+  color: var(--miig-muted);
+}
+
+.theme-miigtools footer .row {
+  justify-content: center;
+  row-gap: 1rem;
+}
+
+.theme-miigtools footer .row > [class*='col-'] {
+  text-align: center;
+}
+
+.theme-miigtools footer h5 {
+  font-family: var(--miig-font-head);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--miig-gold-bright);
+  border-bottom: 1px solid var(--miig-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.theme-miigtools footer .list-unstyled {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.theme-miigtools footer .list-unstyled li {
+  margin-bottom: 0.35rem;
+}
+
+.theme-miigtools footer a {
+  color: var(--miig-muted);
+}
+
+.theme-miigtools footer a:hover {
+  color: var(--miig-gold-bright);
+}
+
+.theme-miigtools footer hr {
+  border-color: var(--miig-border);
+}
+
+.theme-miigtools footer p {
+  color: var(--miig-muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Cookie bar */
+.theme-miigtools #cookie {
+  background: var(--miig-elevated);
+  border-top: 1px solid var(--miig-border);
+  color: var(--miig-text);
+}
+
+/* Paginação */
+.theme-miigtools .pagination .page-link {
+  background: var(--miig-elevated);
+  border-color: var(--miig-border);
+  color: var(--miig-text);
+}
+
+.theme-miigtools .pagination .page-item.active .page-link {
+  background: linear-gradient(145deg, var(--miig-gold), var(--miig-gold-dark));
+  border-color: var(--miig-gold-dark);
+  color: #0a0a0a;
+}
+
+/* Tabelas carrinho / checkout */
+.theme-miigtools .table {
+  color: var(--miig-text);
+}
+
+.theme-miigtools .table > :not(caption) > * > * {
+  background-color: transparent;
+  border-color: var(--miig-border);
+}
+
+.theme-miigtools .modal-content {
+  background: var(--miig-elevated);
+  border: 1px solid var(--miig-border);
+  color: var(--miig-text);
+}
+
+/* Menus suspensos — fundo escuro em todo o tema (evita texto claro em caixa branca do Bootstrap) */
+.theme-miigtools .dropdown-menu {
+  background: var(--miig-elevated) !important;
+  border: 1px solid var(--miig-border) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+.theme-miigtools .dropdown-item {
+  color: #f5f2ed !important;
+}
+
+.theme-miigtools .dropdown-item:hover,
+.theme-miigtools .dropdown-item:focus {
+  background: rgba(212, 175, 55, 0.18) !important;
+  color: var(--miig-gold-bright) !important;
+}
+
+.theme-miigtools .nav-tabs .nav-link {
+  color: var(--miig-muted);
+}
+
+.theme-miigtools .nav-tabs .nav-link.active {
+  color: var(--miig-gold-bright);
+  background: var(--miig-elevated);
+  border-color: var(--miig-border);
+}
+
+.theme-miigtools .alert-info {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--miig-border);
+  color: var(--miig-text);
+}
+
+/* Home — hero + “o que vendemos” */
+.theme-miigtools .miig-hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--miig-border);
+}
+
+.theme-miigtools .miig-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-attachment: fixed;
+  background-size: cover;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% -20%, rgba(212, 175, 55, 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 50% at 100% 50%, rgba(212, 175, 55, 0.06) 0%, transparent 45%),
+    radial-gradient(ellipse 60% 40% at 0% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+    linear-gradient(165deg, var(--miig-bg) 0%, var(--miig-surface) 45%, var(--miig-bg) 100%);
+  pointer-events: none;
+}
+
+.theme-miigtools .miig-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.018;
+  background-image: repeating-linear-gradient(
+    -12deg,
+    transparent,
+    transparent 3px,
+    rgba(212, 175, 55, 0.4) 3px,
+    rgba(212, 175, 55, 0.4) 4px
+  );
+}
+
+.theme-miigtools .miig-hero-inner {
+  position: relative;
+  z-index: 1;
+  padding-top: 3rem;
+  padding-bottom: 3.25rem;
+}
+
+@media (min-width: 992px) {
+  .theme-miigtools .miig-hero-inner {
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+.theme-miigtools .miig-hero-kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--miig-gold-mid);
+  margin-bottom: 1rem;
+}
+
+.theme-miigtools .miig-hero-title {
+  font-family: var(--miig-font-head);
+  font-weight: 800;
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--miig-text);
+  margin-bottom: 1.25rem;
+}
+
+.theme-miigtools .miig-hero-lead {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--miig-muted);
+  max-width: 38rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+.theme-miigtools .miig-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  justify-content: center;
+}
+
+.theme-miigtools .miig-hero-btn {
+  min-width: 12rem;
+  border-radius: var(--miig-radius-pill);
+  font-family: var(--miig-font-head);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
+.theme-miigtools .miig-hero-btn--ghost {
+  background: transparent !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  color: var(--miig-gold-bright) !important;
+}
+
+.theme-miigtools .miig-hero-btn--ghost:hover,
+.theme-miigtools .miig-hero-btn--ghost:focus-visible {
+  border-color: var(--miig-gold-mid) !important;
+  background: rgba(212, 175, 55, 0.12) !important;
+  color: #fff !important;
+}
+
+.theme-miigtools .miig-value-strip {
+  background: linear-gradient(180deg, rgba(16, 16, 22, 0.6) 0%, rgba(8, 8, 12, 0.95) 100%);
+  border-bottom: 1px solid var(--miig-edge);
+}
+
+.theme-miigtools .miig-strip-title {
+  font-family: var(--miig-font-head);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  color: var(--miig-text);
+  margin-bottom: 0.5rem;
+}
+
+.theme-miigtools .miig-strip-sub {
+  font-size: 0.95rem;
+  color: var(--miig-muted);
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.theme-miigtools .miig-vp-card {
+  background: rgba(24, 24, 32, 0.55);
+  border: 1px solid var(--miig-edge);
+  border-radius: var(--miig-radius-xl);
+  padding: 1.5rem 1.35rem;
+  height: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  backdrop-filter: blur(8px);
+}
+
+.theme-miigtools .miig-vp-card:hover {
+  border-color: rgba(212, 175, 55, 0.32);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.38);
+  transform: translateY(-4px);
+}
+
+.theme-miigtools .miig-vp-icon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--miig-radius-lg);
+  margin-bottom: 1rem;
+  background: linear-gradient(145deg, rgba(212, 175, 55, 0.14) 0%, rgba(212, 175, 55, 0.04) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.theme-miigtools .miig-vp-icon i {
+  font-size: 1.35rem;
+  color: var(--miig-gold-mid);
+}
+
+.theme-miigtools .miig-vp-card-title {
+  font-family: var(--miig-font-head);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--miig-text);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.theme-miigtools .miig-vp-card-text {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--miig-muted);
+  margin-bottom: 0;
+}
+
+/* Blocos de conteúdo (ex.: produtos em destaque) */
+.theme-miigtools .miig-section {
+  margin-bottom: 2.5rem;
+  padding: 0.25rem 0 0;
+}
+
+.theme-miigtools .miig-section-head {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--miig-edge);
+}
+
+.theme-miigtools .miig-section-title {
+  font-family: var(--miig-font-head);
+  font-weight: 800;
+  font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+  letter-spacing: -0.02em;
+  color: var(--miig-text);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.theme-miigtools .miig-section-lead {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--miig-steel);
+  max-width: 36rem;
+}
+
+.theme-miigtools .miig-section--featured .miig-section-head {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.theme-miigtools .miig-section--featured {
+  padding: 1.5rem 0 0.5rem;
+  border-radius: var(--miig-radius-2xl);
+  background: linear-gradient(165deg, rgba(24, 24, 32, 0.35) 0%, transparent 60%);
+}
+
+/* Imagens / thumbs — sem moldura branca “quadrada” */
+.theme-miigtools .img-thumbnail {
+  background: var(--miig-elevated);
+  border: 1px solid var(--miig-edge);
+  border-radius: var(--miig-radius-lg);
+  padding: 0.2rem;
+}
+
+.theme-miigtools .product-thumb .image {
+  border-radius: var(--miig-radius-lg) var(--miig-radius-lg) 0 0;
+  overflow: hidden;
+}
+
+.theme-miigtools .product-thumb .image img {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.theme-miigtools .product-thumb:hover .image img {
+  transform: scale(1.04);
+}
+
+/* Utilitários Bootstrap que ainda puxam azul */
+.theme-miigtools .text-primary {
+  color: var(--miig-gold-bright) !important;
+}
+
+.theme-miigtools .alert-primary {
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: var(--miig-text);
+  border-radius: var(--miig-radius-lg);
+}
+
+.theme-miigtools footer .footer-miig-copy {
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--miig-steel-deep);
+}
+
+/* Carrinho — acordeão (cupom / frete): sem faixa azul Bootstrap */
+.theme-miigtools #accordion.checkout .accordion-item,
+.theme-miigtools #accordion .accordion-item {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--miig-edge);
+}
+
+.theme-miigtools #accordion .accordion-button {
+  background: linear-gradient(165deg, rgba(28, 28, 36, 0.95) 0%, rgba(16, 16, 22, 0.98) 100%);
+  color: var(--miig-text);
+  font-family: var(--miig-font-head);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: var(--miig-radius-lg) var(--miig-radius-lg) 0 0 !important;
+  border: 1px solid var(--miig-edge);
+  box-shadow: none;
+}
+
+.theme-miigtools #accordion .accordion-button:not(.collapsed) {
+  color: var(--miig-gold-bright);
+  background: linear-gradient(165deg, rgba(36, 32, 28, 0.98) 0%, rgba(20, 18, 14, 1) 100%);
+  border-color: rgba(212, 175, 55, 0.25);
+}
+
+.theme-miigtools #accordion .accordion-button::after {
+  filter: brightness(1.4) sepia(0.3);
+}
+
+.theme-miigtools #accordion .accordion-button:focus {
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.theme-miigtools #accordion .accordion-body {
+  background: rgba(38, 38, 47, 0.55);
+  border: 1px solid var(--miig-edge);
+  border-top: none;
+  border-radius: 0 0 var(--miig-radius-lg) var(--miig-radius-lg);
+  color: var(--miig-muted);
+}
+
+/* Dropdowns globais — cantos mais suaves */
+.theme-miigtools .dropdown-menu {
+  border-radius: var(--miig-radius-lg) !important;
+}
+
+/* Tooltips (lista de desejos, carrinho, comparar): texto legível */
+.theme-miigtools .tooltip .tooltip-inner {
+  color: var(--miig-text) !important;
+  background-color: var(--miig-elevated-2) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+  font-weight: 600;
+  font-size: 0.8rem;
+  max-width: 14rem;
+}
+
+.theme-miigtools .bs-tooltip-top .tooltip-arrow::before,
+.theme-miigtools .bs-tooltip-auto[data-popper-placement^='top'] .tooltip-arrow::before {
+  border-top-color: var(--miig-elevated-2) !important;
+}
+
+.theme-miigtools .bs-tooltip-bottom .tooltip-arrow::before,
+.theme-miigtools .bs-tooltip-auto[data-popper-placement^='bottom'] .tooltip-arrow::before {
+  border-bottom-color: var(--miig-elevated-2) !important;
+}
+
+.theme-miigtools .bs-tooltip-start .tooltip-arrow::before,
+.theme-miigtools .bs-tooltip-auto[data-popper-placement^='left'] .tooltip-arrow::before {
+  border-left-color: var(--miig-elevated-2) !important;
+}
+
+.theme-miigtools .bs-tooltip-end .tooltip-arrow::before,
+.theme-miigtools .bs-tooltip-auto[data-popper-placement^='right'] .tooltip-arrow::before {
+  border-right-color: var(--miig-elevated-2) !important;
+}
+
+/* Home — módulos (banner, featured) */
+.theme-miigtools .miig-home-modules {
+  background: transparent;
+  padding: 1.5rem 0 0.5rem;
+}
+
+.theme-miigtools .miig-home-modules--bottom {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.theme-miigtools #common-home .container,
+.theme-miigtools .miig-home-modules .container {
+  background: transparent;
+}
+
+/* Banner / carousel */
+.theme-miigtools .miig-section--banner {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.theme-miigtools .miig-banner-carousel {
+  border-radius: var(--miig-radius-2xl);
+  overflow: hidden;
+  border: 1px solid var(--miig-edge);
+  box-shadow: var(--miig-shadow-soft);
+  background: var(--miig-elevated);
+}
+
+.theme-miigtools .miig-banner-carousel .carousel-inner {
+  background: var(--miig-elevated);
+}
+
+.theme-miigtools .miig-banner-img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.theme-miigtools .miig-banner-link {
+  display: block;
+  line-height: 0;
+}
+
+.theme-miigtools .miig-banner-carousel .carousel-indicators [data-bs-target] {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.35);
+  border: none;
+  opacity: 1;
+}
+
+.theme-miigtools .miig-banner-carousel .carousel-indicators .active {
+  background-color: var(--miig-gold);
+}
+
+.theme-miigtools .miig-banner-carousel .carousel-control-prev,
+.theme-miigtools .miig-banner-carousel .carousel-control-next {
+  width: 3rem;
+  opacity: 0.85;
+}
+
+.theme-miigtools .miig-banner-carousel .carousel-control-prev span,
+.theme-miigtools .miig-banner-carousel .carousel-control-next span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--miig-radius-pill);
+  background: rgba(8, 8, 12, 0.65);
+  border: 1px solid var(--miig-edge);
+  color: var(--miig-gold-bright);
+  font-size: 0.9rem;
+}
+
+/* Sobre a empresa */
+.theme-miigtools .miig-about {
+  padding: 2.5rem 0 3.5rem;
+}
+
+.theme-miigtools .miig-about-card {
+  background: linear-gradient(165deg, rgba(28, 28, 36, 0.95) 0%, rgba(16, 16, 22, 0.98) 100%);
+  border: 1px solid var(--miig-edge);
+  border-radius: var(--miig-radius-2xl);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--miig-shadow-soft);
+}
+
+@media (min-width: 992px) {
+  .theme-miigtools .miig-about-card {
+    padding: 2.5rem 2.75rem;
+  }
+}
+
+.theme-miigtools .miig-about-title {
+  font-family: var(--miig-font-head);
+  font-weight: 800;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  color: var(--miig-text);
+  margin-bottom: 1rem;
+}
+
+.theme-miigtools .miig-about-lead {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--miig-gold-mid);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.theme-miigtools .miig-about-body {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--miig-muted);
+  margin-bottom: 0;
+}
+
+.theme-miigtools .miig-about-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  color: var(--miig-text);
+  margin-bottom: 0.75rem;
+  line-height: 1.45;
+}
+
+.theme-miigtools .miig-about-list li i {
+  color: var(--miig-gold);
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+/* Cards de produto — listagem mais limpa */
+.theme-miigtools .product-thumb .description p {
+  display: none;
+}
+
+.theme-miigtools .product-thumb .description {
+  padding-bottom: 2.75rem;
+  min-height: 5.5rem;
+}
+
+.theme-miigtools .product-thumb .button {
+  border-radius: 0 0 var(--miig-radius-xl) var(--miig-radius-xl);
+  overflow: hidden;
+}
+
+.theme-miigtools .product-thumb .button button {
+  padding: 0.5rem 0;
+  line-height: 1.25;
+  font-size: 0.95rem;
+}
+
+.theme-miigtools .miig-section--products .col {
+  display: flex;
+}
+
+.theme-miigtools .miig-section--products .product-thumb {
+  width: 100%;
+}
+
+/* Parallax suave + entrada das seções */
+@media (prefers-reduced-motion: no-preference) {
+  .theme-miigtools .miig-value-strip,
+  .theme-miigtools .miig-about,
+  .theme-miigtools .miig-section--featured,
+  .theme-miigtools .miig-section--banner {
+    animation: miig-fade-up 0.7s ease both;
+  }
+
+  .theme-miigtools .miig-value-strip { animation-delay: 0.05s; }
+  .theme-miigtools .miig-section--featured { animation-delay: 0.12s; }
+  .theme-miigtools .miig-about { animation-delay: 0.18s; }
+}
+
+@keyframes miig-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Formulários da loja — reforço final (evita override do Bootstrap claro) */
+.theme-miigtools .form-control,
+.theme-miigtools .form-select,
+.theme-miigtools textarea.form-control {
+  background-color: var(--miig-elevated-2) !important;
+  border-color: var(--miig-edge) !important;
+  color: var(--miig-text) !important;
+}
+
+.theme-miigtools .form-control::placeholder {
+  color: rgba(235, 230, 220, 0.5) !important;
+}
+
+.theme-miigtools .form-label,
+.theme-miigtools label {
+  color: var(--miig-text) !important;
+}
+
+.theme-miigtools #content,
+.theme-miigtools #column-left,
+.theme-miigtools #column-right {
+  color: var(--miig-text);
+}
+
+.theme-miigtools #content h1,
+.theme-miigtools #content h2,
+.theme-miigtools #content h3,
+.theme-miigtools #content h4,
+.theme-miigtools #content h5 {
+  color: var(--miig-text);
+}
+
+.theme-miigtools #content p,
+.theme-miigtools #content li,
+.theme-miigtools #content .text-muted,
+.theme-miigtools #content small {
+  color: var(--miig-muted);
+}
+
+.theme-miigtools #content a:not(.btn):not(.page-link) {
+  color: var(--miig-gold-bright);
+}
+
+.theme-miigtools #content a:not(.btn):not(.page-link):hover {
+  color: #ffffff;
+}
+
+.theme-miigtools #content ul li a {
+  color: #e8dcc0;
+  text-decoration: none;
+}
+
+.theme-miigtools #content ul li a:hover {
+  color: #ffffff;
+}
+
+.theme-miigtools #content hr {
+  border-color: var(--miig-edge);
+  opacity: 1;
+}
+
+/* Sidebar categorias */
+.theme-miigtools .list-group-item {
+  background: var(--miig-elevated) !important;
+  border-color: var(--miig-edge) !important;
+  color: var(--miig-text) !important;
+}
+
+.theme-miigtools .list-group-item:hover,
+.theme-miigtools .list-group-item:focus {
+  background: rgba(212, 175, 55, 0.1) !important;
+  color: var(--miig-gold-bright) !important;
+}
+
+.theme-miigtools .list-group-item.active {
+  background: linear-gradient(135deg, #e0bc4a 0%, var(--miig-gold) 50%, var(--miig-gold-dark) 100%) !important;
+  border-color: var(--miig-gold-dark) !important;
+  color: #0a0a0a !important;
+  font-weight: 700;
+}
+
+/* Botão comparar + primários — texto escuro no dourado */
+.theme-miigtools .btn-primary,
+.theme-miigtools .btn-primary:hover,
+.theme-miigtools .btn-primary:focus,
+.theme-miigtools .btn-primary:active,
+.theme-miigtools #compare-total {
+  color: #0a0a0a !important;
+}
+
+.theme-miigtools .btn-primary i,
+.theme-miigtools #compare-total i {
+  color: #0a0a0a !important;
+}
+
+/* Módulos na coluna lateral */
+.theme-miigtools #column-left .card,
+.theme-miigtools #column-right .card {
+  background: var(--miig-elevated);
+  border-color: var(--miig-edge);
+}
+
+.theme-miigtools #column-left .card-header,
+.theme-miigtools #column-right .card-header {
+  color: var(--miig-gold-bright);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Paginação — reforço */
+.theme-miigtools .pagination .page-link:hover {
+  background: rgba(212, 175, 55, 0.14);
+  border-color: rgba(212, 175, 55, 0.35);
+  color: var(--miig-gold-bright);
+}
+
+.theme-miigtools .pagination .page-item.disabled .page-link {
+  background: var(--miig-elevated);
+  color: var(--miig-steel-deep);
+  border-color: var(--miig-edge);
+}
+
+/* Alertas, badges, accordion */
+.theme-miigtools .alert {
+  border-radius: var(--miig-radius-lg);
+  color: var(--miig-text);
+}
+
+.theme-miigtools .badge {
+  color: #0a0a0a;
+}
+
+.theme-miigtools .accordion-button {
+  background: var(--miig-elevated);
+  color: var(--miig-text);
+}
+
+.theme-miigtools .accordion-button:not(.collapsed) {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--miig-gold-bright);
+}
+
+.theme-miigtools .accordion-body {
+  background: var(--miig-elevated-2);
+  color: var(--miig-muted);
+}
+
+/* Checkout / conta — fieldset e legendas */
+.theme-miigtools legend,
+.theme-miigtools .col-form-label,
+.theme-miigtools .form-text {
+  color: var(--miig-muted) !important;
+}
+
+.theme-miigtools .invalid-feedback,
+.theme-miigtools .valid-feedback {
+  color: #fca5a5;
+}
+
+.theme-miigtools .form-control.is-invalid,
+.theme-miigtools .form-select.is-invalid {
+  border-color: #f87171 !important;
+  color: var(--miig-text) !important;
+}
