@@ -29,6 +29,9 @@ RUN chmod +x /usr/local/bin/entrypoint.sh /usr/local/bin/write-config.php
 
 RUN a2enmod rewrite
 
+RUN a2dismod mpm_event mpm_worker mpm_prefork || true
+RUN a2enmod mpm_prefork
+
 RUN chown -R www-data:www-data ${DIR_OPENCART} ${DIR_STORAGE} \
   && chmod -R 755 ${DIR_OPENCART} \
   && chmod -R 775 ${DIR_STORAGE}
