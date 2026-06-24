@@ -5,8 +5,6 @@ database/*.sql
 
 # Config and Htaccess Files
 /upload/.htaccess
-/upload/config.php
-/upload/admin/config.php
 
 # Runtime storage (outside upload/)
 /storage/cache/*
