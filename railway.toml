@@ -3,6 +3,6 @@ builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile.railway"
 
 [deploy]
-startCommand = "/usr/local/bin/entrypoint.sh"
 healthcheckPath = "/health.php"
+healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"

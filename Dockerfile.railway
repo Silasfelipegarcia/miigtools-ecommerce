@@ -16,6 +16,7 @@ RUN apt-get update \
 
 ENV DIR_OPENCART=/var/www/html/
 ENV DIR_STORAGE=/storage/
+ENV PORT=8080
 
 RUN mkdir -p ${DIR_STORAGE}{cache,session,logs,download,upload,backup,marketplace}
 
@@ -23,7 +24,8 @@ COPY upload/ ${DIR_OPENCART}
 COPY storage/vendor/ ${DIR_STORAGE}vendor/
 COPY upload/php.ini ${PHP_INI_DIR}/conf.d/opencart.ini
 COPY scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
+COPY scripts/write-config.php /usr/local/bin/write-config.php
+RUN chmod +x /usr/local/bin/entrypoint.sh /usr/local/bin/write-config.php
 
 RUN a2enmod rewrite
 
@@ -31,6 +33,6 @@ RUN chown -R www-data:www-data ${DIR_OPENCART} ${DIR_STORAGE} \
   && chmod -R 755 ${DIR_OPENCART} \
   && chmod -R 775 ${DIR_STORAGE}
 
-EXPOSE 80
+EXPOSE 8080
 
 CMD ["/usr/local/bin/entrypoint.sh"]
