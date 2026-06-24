@@ -21,6 +21,7 @@ RUN mkdir -p ${DIR_STORAGE}{cache,session,logs,download,upload,backup,marketplac
 
 COPY upload/ ${DIR_OPENCART}
 COPY storage/vendor/ ${DIR_STORAGE}vendor/
+COPY upload/php.ini ${PHP_INI_DIR}/conf.d/opencart.ini
 COPY scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 

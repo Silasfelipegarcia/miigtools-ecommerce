@@ -1,6 +1,7 @@
 # Local environment
 .env
 .venv/
+database/*.sql
 
 # Config and Htaccess Files
 /upload/.htaccess

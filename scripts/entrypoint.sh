@@ -7,14 +7,41 @@ DIR_STORAGE="${DIR_STORAGE:-/storage/}"
 DB_HOSTNAME="${DB_HOSTNAME:-${MYSQLHOST:-mysql}}"
 DB_USERNAME="${DB_USERNAME:-${MYSQLUSER:-root}}"
 DB_PASSWORD="${DB_PASSWORD:-${MYSQLPASSWORD:-}}"
-DB_DATABASE="${DB_DATABASE:-${MYSQLDATABASE:-opencart}}"
+DB_DATABASE="${DB_DATABASE:-${MYSQLDATABASE:-railway}}"
 DB_PORT="${DB_PORT:-${MYSQLPORT:-3306}}"
-DB_PREFIX="${DB_PREFIX:-oc_}"
+DB_PREFIX="${DB_PREFIX:-ws_}"
 
 HTTP_HOST="${RAILWAY_PUBLIC_DOMAIN:-${OPENCART_HTTP_HOST:-localhost}}"
 HTTP_SCHEME="${OPENCART_HTTP_SCHEME:-https}"
 HTTP_SERVER="${HTTP_SCHEME}://${HTTP_HOST}/"
 HTTP_ADMIN="${HTTP_SCHEME}://${HTTP_HOST}/admin/"
+
+PORT="${PORT:-80}"
+
+configure_apache_port() {
+  sed -i "s/Listen 80/Listen ${PORT}/" /etc/apache2/ports.conf
+  sed -i "s/:80>/:${PORT}>/" /etc/apache2/sites-available/000-default.conf
+}
+
+wait_for_database() {
+  if [ -z "${DB_HOSTNAME}" ] || [ "${DB_HOSTNAME}" = "mysql" ]; then
+    return 0
+  fi
+
+  echo "Aguardando MySQL em ${DB_HOSTNAME}:${DB_PORT}..."
+  for i in $(seq 1 60); do
+    if php -r "
+      \$c = @new mysqli('${DB_HOSTNAME}', '${DB_USERNAME}', '${DB_PASSWORD}', '${DB_DATABASE}', (int) '${DB_PORT}');
+      exit(\$c->connect_error ? 1 : 0);
+    "; then
+      echo "MySQL disponível."
+      return 0
+    fi
+    sleep 2
+  done
+
+  echo "Aviso: MySQL não respondeu a tempo; o Apache vai subir mesmo assim."
+}
 
 write_catalog_config() {
   cat > "${DIR_OPENCART}config.php" <<PHP
@@ -45,6 +72,9 @@ define('DB_PASSWORD', '${DB_PASSWORD}');
 define('DB_DATABASE', '${DB_DATABASE}');
 define('DB_PORT', '${DB_PORT}');
 define('DB_PREFIX', '${DB_PREFIX}');
+define('DB_SSL_KEY', '');
+define('DB_SSL_CERT', '');
+define('DB_SSL_CA', '');
 PHP
 }
 
@@ -79,14 +109,24 @@ define('DB_PASSWORD', '${DB_PASSWORD}');
 define('DB_DATABASE', '${DB_DATABASE}');
 define('DB_PORT', '${DB_PORT}');
 define('DB_PREFIX', '${DB_PREFIX}');
+define('DB_SSL_KEY', '');
+define('DB_SSL_CERT', '');
+define('DB_SSL_CA', '');
+
+define('OPENCART_SERVER', 'https://www.opencart.com/');
 PHP
 }
 
-if [ ! -f "${DIR_OPENCART}config.php" ]; then
-  write_catalog_config
-fi
+mkdir -p "${DIR_STORAGE}"{cache,session,logs,download,upload,backup,marketplace}
+chown -R www-data:www-data "${DIR_STORAGE}"
+chmod -R 775 "${DIR_STORAGE}"
 
-if [ ! -f "${DIR_OPENCART}admin/config.php" ]; then
+configure_apache_port
+wait_for_database
+
+# Em produção (Railway) sempre regenera config com as variáveis do ambiente.
+if [ -n "${RAILWAY_ENVIRONMENT:-}" ] || [ -n "${MYSQLHOST:-}" ] || [ ! -f "${DIR_OPENCART}config.php" ]; then
+  write_catalog_config
   write_admin_config
 fi
 

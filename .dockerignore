@@ -1,0 +1,12 @@
+.git
+.env
+.venv
+storage/cache/**
+storage/session/**
+storage/logs/**
+upload/image/cache/**
+**/.DS_Store
+**/.idea
+tools/
+docker-compose.yml
+Dockerfile

@@ -19,12 +19,20 @@ A loja fica em `http://localhost/` e o Adminer em `http://localhost:8080/`.
 
 ## Deploy no Railway
 
-1. Crie um projeto no [Railway](https://railway.app/) e conecte este repositório GitHub.
-2. Adicione um serviço **MySQL** ao projeto.
-3. No serviço web, configure as variáveis de ambiente (ou use as variáveis `MYSQL*` geradas pelo plugin MySQL).
-4. O deploy usa `Dockerfile.railway` e gera `config.php` automaticamente na primeira execução.
+Guia completo: **[docs/RAILWAY.md](docs/RAILWAY.md)**
 
-Variáveis suportadas: veja `.env.example`.
+Resumo:
+
+1. Crie projeto no [Railway](https://railway.app/) e conecte este repositório.
+2. Adicione serviço **MySQL** (Database → MySQL).
+3. No serviço web, referencie as variáveis `MYSQL*` do banco.
+4. Defina `DB_PREFIX=ws_` e `OPENCART_HTTP_SCHEME=https`.
+5. Exporte o banco local: `./scripts/export-database.sh` e importe no MySQL do Railway.
+6. Gere domínio público no serviço web.
+
+O deploy usa `Dockerfile.railway` + `scripts/entrypoint.sh` (Apache na porta do Railway, `config.php` gerado automaticamente).
+
+Variáveis: veja `.env.example`.
 
 ## Estrutura
 
