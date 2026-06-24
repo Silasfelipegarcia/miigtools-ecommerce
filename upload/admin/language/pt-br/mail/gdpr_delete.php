@@ -9,4 +9,4 @@ $_['text_contact']   = 'For more information you can contact the store owner her
 $_['text_thanks']    = 'Thanks,';
 
 // Button
-$_['button_contact'] = 'Contact Us';
+$_['button_contact'] = 'Fale conosco';

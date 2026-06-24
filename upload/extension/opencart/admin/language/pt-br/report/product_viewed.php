@@ -1,22 +1,22 @@
 <?php
 // Heading
-$_['heading_title']    = 'Products Viewed Report';
+$_['heading_title']    = 'Relatório de produtos visualizados';
 
 // Text
-$_['text_extension']   = 'Extensions';
-$_['text_edit']        = 'Edit Products Viewed Report';
-$_['text_success']     = 'Success: You have reset the products viewed report!';
-$_['text_progress']    = 'Progressed %s of %s!';
+$_['text_extension']   = 'Extensões';
+$_['text_edit']        = 'Editar relatório de produtos visualizados';
+$_['text_success']     = 'Sucesso: Você redefiniu o relatório de produtos visualizados!';
+$_['text_progress']    = 'Progresso %s de %s!';
 
 // Column
-$_['column_name']      = 'Product Name';
-$_['column_model']     = 'Model';
-$_['column_viewed']    = 'Viewed';
-$_['column_percent']   = 'Percent';
+$_['column_name']      = 'Nome do produto';
+$_['column_model']     = 'Modelo';
+$_['column_viewed']    = 'Visualizações';
+$_['column_percent']   = 'Percentual';
 
 // Entry
-$_['entry_status']     = 'Status';
-$_['entry_sort_order'] = 'Sort Order';
+$_['entry_status']     = 'Situação';
+$_['entry_sort_order'] = 'Ordem';
 
 // Error
-$_['error_permission'] = 'Warning: You do not have permission to modify products viewed report!';
+$_['error_permission'] = 'Atenção: Você não tem permissão para modificar o relatório de produtos visualizados!';

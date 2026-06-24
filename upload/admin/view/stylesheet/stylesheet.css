@@ -1020,6 +1020,69 @@ a:hover {
     color: var(--miig-text);
 }
 
+/* Dropdowns do header e do painel — texto legível no fundo escuro */
+#header .dropdown-menu,
+.dropdown-menu {
+    background: rgba(30, 30, 40, 0.98) !important;
+    border: 1px solid var(--miig-edge) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    padding: 0.4rem 0 !important;
+}
+
+#header .dropdown-menu .dropdown-item,
+.dropdown-menu .dropdown-item {
+    color: var(--miig-text) !important;
+    font-weight: 600;
+}
+
+#header .dropdown-menu .dropdown-item:hover,
+#header .dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+    background: rgba(212, 175, 55, 0.18) !important;
+    color: var(--miig-gold-bright) !important;
+}
+
+#header .dropdown-menu .dropdown-item.active,
+#header .dropdown-menu .dropdown-item:active,
+.dropdown-menu .dropdown-item.active,
+.dropdown-menu .dropdown-item:active {
+    background: rgba(212, 175, 55, 0.24) !important;
+    color: var(--miig-gold-bright) !important;
+}
+
+#header .dropdown-menu .dropdown-header,
+.dropdown-menu .dropdown-header {
+    color: var(--miig-gold-bright) !important;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+}
+
+#header .dropdown-menu .dropdown-divider,
+.dropdown-menu .dropdown-divider {
+    border-color: var(--miig-edge) !important;
+    opacity: 1;
+}
+
+#header .dropdown-menu .dropdown-item i,
+.dropdown-menu .dropdown-item i {
+    color: var(--miig-gold-mid);
+}
+
+#header .dropdown-menu .dropdown-item:hover i,
+#header .dropdown-menu .dropdown-item:focus i,
+.dropdown-menu .dropdown-item:hover i,
+.dropdown-menu .dropdown-item:focus i {
+    color: var(--miig-gold-bright);
+}
+
+#header .dropdown-menu .dropdown-item.text-primary,
+.dropdown-menu .dropdown-item.text-primary {
+    color: var(--miig-gold-bright) !important;
+}
+
 .card-header {
     background: rgba(255, 255, 255, 0.03);
     border-bottom: 1px solid var(--miig-edge);

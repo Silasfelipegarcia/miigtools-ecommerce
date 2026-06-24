@@ -1,48 +1,48 @@
 <?php
 // Heading
-$_['heading_title']           = 'Articles';
+$_['heading_title']           = 'Artigos';
 
 // Text
-$_['text_success']            = 'Success: You have modified articles!';
-$_['text_next']               = 'Success: You have modified %s to %s of %s article ratings!';
-$_['text_list']               = 'Article List';
-$_['text_add']                = 'Add Article';
-$_['text_edit']               = 'Edit Article';
-$_['text_default']            = 'Default';
-$_['text_keyword']            = 'Do not use spaces, instead replace spaces with - and make sure the SEO URL is globally unique.';
+$_['text_success']            = 'Sucesso: Você modificou os artigos!';
+$_['text_next']               = 'Sucesso: Você modificou %s a %s de %s avaliações de artigos!';
+$_['text_list']               = 'Listagem de artigos';
+$_['text_add']                = 'Adicionar artigo';
+$_['text_edit']               = 'Editar artigo';
+$_['text_default']            = 'Padrão';
+$_['text_keyword']            = 'Não use espaços; substitua-os por - e certifique-se de que a URL amigável seja única globalmente.';
 
 // Column
-$_['column_name']             = 'Article Name';
-$_['column_author']           = 'Author';
-$_['column_rating']           = 'Rating';
-$_['column_date_added']       = 'Date Added';
-$_['column_action']           = 'Action';
+$_['column_name']             = 'Nome do artigo';
+$_['column_author']           = 'Autor';
+$_['column_rating']           = 'Avaliação';
+$_['column_date_added']       = 'Data de cadastro';
+$_['column_action']           = 'Ação';
 
 // Entry
-$_['entry_image']             = 'Image';
-$_['entry_name']              = 'Article Name';
-$_['entry_description']       = 'Description';
+$_['entry_image']             = 'Imagem';
+$_['entry_name']              = 'Nome do artigo';
+$_['entry_description']       = 'Descrição';
 $_['entry_tag']               = 'Tags';
-$_['entry_meta_title']        = 'Meta Tag Title';
-$_['entry_meta_keyword']      = 'Meta Tag Keywords';
-$_['entry_meta_description']  = 'Meta Tag Description';
-$_['entry_topic']             = 'Topic';
-$_['entry_author']            = 'Author';
-$_['entry_store']             = 'Stores';
-$_['entry_sort_order']        = 'Sort Order';
-$_['entry_status']            = 'Status';
-$_['entry_keyword']           = 'Keyword';
-$_['entry_layout']            = 'Layout Override';
+$_['entry_meta_title']        = 'Título da meta tag';
+$_['entry_meta_keyword']      = 'Palavras-chave da meta tag';
+$_['entry_meta_description']  = 'Descrição da meta tag';
+$_['entry_topic']             = 'Tópico';
+$_['entry_author']            = 'Autor';
+$_['entry_store']             = 'Lojas';
+$_['entry_sort_order']        = 'Ordem';
+$_['entry_status']            = 'Situação';
+$_['entry_keyword']           = 'Palavra-chave';
+$_['entry_layout']            = 'Substituição de layout';
 
 // Button
-$_['button_rating']           = 'Calculate Ratings';
+$_['button_rating']           = 'Calcular avaliações';
 
 // Error
-$_['error_warning']           = 'Warning: Please check the form carefully for errors!';
-$_['error_permission']        = 'Warning: You do not have permission to modify articles!';
-$_['error_name']              = 'Article Name must be between 1 and 255 characters!';
-$_['error_meta_title']        = 'Meta Title must be greater than 1 and less than 255 characters!';
-$_['error_author']            = 'Author must be between 3 and 64 characters!';
-$_['error_keyword']           = 'SEO URL must be between 1 and 64 characters!';
-$_['error_keyword_exists']    = 'SEO URL must be unique!';
-$_['error_keyword_character'] = 'Keyword can only use characters a-z, 0-9, - and _!';
+$_['error_warning']           = 'Atenção: Verifique o formulário com atenção em busca de erros!';
+$_['error_permission']        = 'Atenção: Você não tem permissão para modificar artigos!';
+$_['error_name']              = 'O nome do artigo deve ter entre 1 e 255 caracteres!';
+$_['error_meta_title']        = 'O título da meta tag deve ter entre 1 e 255 caracteres!';
+$_['error_author']            = 'O autor deve ter entre 3 e 64 caracteres!';
+$_['error_keyword']           = 'A URL amigável deve ter entre 1 e 64 caracteres!';
+$_['error_keyword_exists']    = 'A URL amigável deve ser única!';
+$_['error_keyword_character'] = 'A palavra-chave só pode usar os caracteres a-z, 0-9, - e _!';

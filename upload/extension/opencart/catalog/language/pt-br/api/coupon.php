@@ -1,10 +1,10 @@
 <?php
 // Text
-$_['text_success']   = 'Success: Your coupon discount has been applied!';
+$_['text_success']   = 'Sucesso: O desconto do cupom foi aplicado!';
 
 // Error
-$_['error_customer'] = 'Warning: Customer details required!';
-$_['error_product']  = 'Warning: Products required!';
-$_['error_coupon']   = 'Warning: Coupon is either invalid, expired or reached its usage limit!';
-$_['error_status']   = 'Warning: Coupons are not enabled on this store!';
-$_['error_confirm']  = 'Warning: Please check the coupon form carefully for errors!';
+$_['error_customer'] = 'Atenção: Dados do cliente obrigatórios!';
+$_['error_product']  = 'Atenção: Produtos obrigatórios!';
+$_['error_coupon']   = 'Atenção: O cupom é inválido, expirou ou atingiu o limite de uso!';
+$_['error_status']   = 'Atenção: Cupons não estão habilitados nesta loja!';
+$_['error_confirm']  = 'Atenção: Verifique o formulário do cupom com atenção em busca de erros!';

@@ -1,15 +1,15 @@
 <?php
 // Heading
-$_['heading_title']    = 'Reward Points';
+$_['heading_title']    = 'Pontos de fidelidade';
 
 // Text
-$_['text_extension']   = 'Extensions';
-$_['text_success']     = 'Success: You have modified reward points total!';
-$_['text_edit']        = 'Edit Reward Points Total';
+$_['text_extension']   = 'Extensões';
+$_['text_success']     = 'Sucesso: Você modificou o total de pontos de fidelidade!';
+$_['text_edit']        = 'Editar total de pontos de fidelidade';
 
 // Entry
-$_['entry_status']     = 'Status';
-$_['entry_sort_order'] = 'Sort Order';
+$_['entry_status']     = 'Situação';
+$_['entry_sort_order'] = 'Ordem';
 
 // Error
-$_['error_permission'] = 'Warning: You do not have permission to modify reward points total!';
+$_['error_permission'] = 'Atenção: Você não tem permissão para modificar o total de pontos de fidelidade!';

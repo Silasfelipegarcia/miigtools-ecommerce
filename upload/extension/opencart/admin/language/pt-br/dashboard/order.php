@@ -4,7 +4,7 @@ $_['heading_title']    = 'Total de pedidos';
 
 // Text
 $_['text_extension']   = 'Extensões';
-$_['text_success']     = 'Painel de pedidos modificado com sucesso!';
+$_['text_success']     = 'Sucesso: Você modificou o painel de pedidos!';
 $_['text_edit']        = 'Editar painel de pedidos';
 $_['text_view']        = 'Ver mais...';
 

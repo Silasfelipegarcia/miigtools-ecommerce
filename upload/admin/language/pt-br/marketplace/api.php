@@ -3,7 +3,7 @@
 $_['heading_title']    = 'Credencial de acesso para marketplace do OpenCart';
 
 // Text
-$_['text_success']     = 'Credencial atualizada com sucesso!';
+$_['text_success'] = 'Credencial de acesso para marketplace do opencart modificado com sucesso!';
 $_['text_signup']      = 'Preencha as informações abaixo com a sua credencial de acesso para marketplace do OpenCart. Você pode obter sua credencial <a href="https://www.opencart.com/index.php?route=account/store" target="_blank" class="alert-link">cliando aqui</a>. Você só poderá realizar downloads, após atualizar sua credencial.';
 
 // Entry

@@ -4,7 +4,7 @@ $_['heading_title']    = 'Análise de vendas';
 
 // Text
 $_['text_extension']   = 'Extensões';
-$_['text_success']     = 'Painel de gráficos modificado com sucesso!';
+$_['text_success']     = 'Sucesso: Você modificou o painel de gráficos!';
 $_['text_edit']        = 'Editar painel de gráficos';
 $_['text_order']       = 'Pedidos';
 $_['text_customer']    = 'Clientes';

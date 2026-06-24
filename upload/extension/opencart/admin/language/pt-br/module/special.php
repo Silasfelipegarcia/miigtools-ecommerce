@@ -1,24 +1,24 @@
 <?php
 // Heading
-$_['heading_title']    = 'Specials';
+$_['heading_title']    = 'Promoções';
 
 // Text
-$_['text_extension']   = 'Extensions';
-$_['text_success']     = 'Success: You have modified module specials!';
-$_['text_edit']        = 'Edit Specials Module';
+$_['text_extension']   = 'Extensões';
+$_['text_success']     = 'Sucesso: Você modificou o módulo de promoções!';
+$_['text_edit']        = 'Editar módulo de promoções';
 $_['text_horizontal']  = 'Horizontal';
 $_['text_vertical']    = 'Vertical';
 
 // Entry
-$_['entry_name']       = 'Module Name';
-$_['entry_axis']       = 'Axis';
-$_['entry_limit']      = 'Limit';
-$_['entry_width']      = 'Image Width';
-$_['entry_height']     = 'Image Height';
-$_['entry_status']     = 'Status';
+$_['entry_name']       = 'Nome do módulo';
+$_['entry_axis']       = 'Eixo';
+$_['entry_limit']      = 'Limite';
+$_['entry_width']      = 'Largura da imagem';
+$_['entry_height']     = 'Altura da imagem';
+$_['entry_status']     = 'Situação';
 
 // Error
-$_['error_permission'] = 'Warning: You do not have permission to modify specials module!';
-$_['error_name']       = 'Module Name must be between 3 and 64 characters!';
-$_['error_width']      = 'Width required!';
-$_['error_height']     = 'Height required!';
+$_['error_permission'] = 'Atenção: Você não tem permissão para modificar o módulo de promoções!';
+$_['error_name']       = 'O nome do módulo deve ter entre 3 e 64 caracteres!';
+$_['error_width']      = 'A largura é obrigatória!';
+$_['error_height']     = 'A altura é obrigatória!';

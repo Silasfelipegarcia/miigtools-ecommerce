@@ -3,7 +3,7 @@
 $_['heading_title']    = 'Log de erros';
 
 // Text
-$_['text_success']     = 'Seu log de erros foi completamente apagado!';
+$_['text_success'] = 'Log de erros modificado com sucesso!';
 $_['text_list']        = 'Listando erros';
 
 // Error

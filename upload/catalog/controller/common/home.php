@@ -64,6 +64,7 @@ class Home extends \Opencart\System\Engine\Controller {
 		$data['about_title'] = $this->language->get('text_about_title');
 		$data['about_lead'] = $this->language->get('text_about_lead');
 		$data['about_body'] = $this->language->get('text_about_body');
+		$data['about_highlight'] = $this->language->get('text_about_highlight');
 		$data['about_cta'] = $this->language->get('text_about_cta');
 		$data['about_cta_info'] = $this->language->get('text_about_cta_info');
 		$data['about_href_contact'] = $this->url->link('information/contact', 'language=' . $lang);
@@ -71,6 +72,32 @@ class Home extends \Opencart\System\Engine\Controller {
 			$this->language->get('text_about_bullet_1'),
 			$this->language->get('text_about_bullet_2'),
 			$this->language->get('text_about_bullet_3'),
+			$this->language->get('text_about_bullet_4'),
+			$this->language->get('text_about_bullet_5'),
+			$this->language->get('text_about_bullet_6'),
+		];
+		$data['about_stats'] = [
+			[
+				'value' => $this->language->get('text_about_stat_1_value'),
+				'label' => $this->language->get('text_about_stat_1_label'),
+				'icon'  => 'fa-solid fa-fire-flame-curved',
+			],
+			[
+				'value' => $this->language->get('text_about_stat_2_value'),
+				'label' => $this->language->get('text_about_stat_2_label'),
+				'icon'  => 'fa-solid fa-helmet-safety',
+			],
+			[
+				'value' => $this->language->get('text_about_stat_3_value'),
+				'label' => $this->language->get('text_about_stat_3_label'),
+				'icon'  => 'fa-solid fa-store',
+			],
+			[
+				'value' => $this->language->get('text_about_stat_4_value'),
+				'label' => $this->language->get('text_about_stat_4_label'),
+				'icon'  => 'fa-solid fa-truck-fast',
+				'flag'  => true,
+			],
 		];
 
 		$this->load->model('catalog/information');

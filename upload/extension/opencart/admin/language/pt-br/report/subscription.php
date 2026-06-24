@@ -1,33 +1,33 @@
 <?php
 // Heading
-$_['heading_title']             = 'Subscriptions Report';
+$_['heading_title']             = 'Relatório de assinaturas';
 
 // Text
-$_['text_extension']            = 'Extensions';
-$_['text_edit']                 = 'Edit Subscriptions Report';
-$_['text_success']              = 'Success: You have modified subscriptions report!';
-$_['text_filter']               = 'Filter';
-$_['text_year']                 = 'Years';
-$_['text_month']                = 'Months';
-$_['text_week']                 = 'Weeks';
-$_['text_day']                  = 'Days';
-$_['text_all_status']           = 'All Statuses';
+$_['text_extension']            = 'Extensões';
+$_['text_edit']                 = 'Editar relatório de assinaturas';
+$_['text_success']              = 'Sucesso: Você modificou o relatório de assinaturas!';
+$_['text_filter']               = 'Filtro';
+$_['text_year']                 = 'Anos';
+$_['text_month']                = 'Meses';
+$_['text_week']                 = 'Semanas';
+$_['text_day']                  = 'Dias';
+$_['text_all_status']           = 'Todas as situações';
 
 // Column
-$_['column_date_start']         = 'Date Start';
-$_['column_date_end']           = 'Date End';
-$_['column_subscriptions']      = 'No. Subscriptions';
-$_['column_products']           = 'No. Products';
-$_['column_tax']                = 'Tax';
+$_['column_date_start']         = 'Data inicial';
+$_['column_date_end']           = 'Data final';
+$_['column_subscriptions']      = 'Nº de assinaturas';
+$_['column_products']           = 'Nº de produtos';
+$_['column_tax']                = 'Imposto';
 $_['column_total']              = 'Total';
 
 // Entry
-$_['entry_date_start']          = 'Date Start';
-$_['entry_date_end']            = 'Date End';
-$_['entry_group']               = 'Group By';
-$_['entry_subscription_status'] = 'Subscription Status';
-$_['entry_status']              = 'Status';
-$_['entry_sort_order']          = 'Sort Order';
+$_['entry_date_start']          = 'Data inicial';
+$_['entry_date_end']            = 'Data final';
+$_['entry_group']               = 'Agrupar por';
+$_['entry_subscription_status'] = 'Situação da assinatura';
+$_['entry_status']              = 'Situação';
+$_['entry_sort_order']          = 'Ordem';
 
 // Error
-$_['error_permission']          = 'Warning: You do not have permission to modify subscriptions report!';
+$_['error_permission']          = 'Atenção: Você não tem permissão para modificar o relatório de assinaturas!';

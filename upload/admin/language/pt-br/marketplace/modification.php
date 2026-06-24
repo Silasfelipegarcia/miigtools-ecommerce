@@ -3,7 +3,7 @@
 $_['heading_title']     = 'Modificações';
 
 // Text
-$_['text_success']      = 'Modificações atualizadas com sucesso!';
+$_['text_success'] = 'Modificações modificado com sucesso!';
 $_['text_refresh']      = 'Sempre que você ativar, desativar ou apagar uma modificação, é necessário clicar no botão Atualizar para reconstruir o cache de modificações!';
 $_['text_list']         = 'Listando modificações';
 

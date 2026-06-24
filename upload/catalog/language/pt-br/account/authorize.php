@@ -1,24 +1,24 @@
 <?php
 // Heading
-$_['heading_title'] = 'Protect your account';
+$_['heading_title'] = 'Proteja sua conta';
 
 // Text
-$_['text_security'] = 'You must answer security question whenever you login from an unknown device or computer.';
-$_['text_code']     = 'Click the send button to send a security code to your email account. Enter the code below to continue.';
-$_['text_sent']     = 'Success: An email has been sent to your email account with a security code!';
-$_['text_locked']   = 'Your account has been locked!';
-$_['text_reset']    = 'Your account has been locked because of to many incorrect attempts at entering the security code. Click the reset button to receive a reset link via your email account.';
-$_['text_link']     = 'Success: An email with a reset link has been sent your email address!';
-$_['text_unlocked'] = 'Your account has been unlocked!';
-$_['text_unlock']   = 'Your account has been unlocked. You will have to re-login and repeat the 2FA process again to continue.';
-$_['text_failed']   = 'Could not reset your security code!';
+$_['text_security'] = 'Você deve responder à pergunta de segurança sempre que fizer login de um dispositivo ou computador desconhecido.';
+$_['text_code']     = 'Clique no botão enviar para receber um código de segurança em seu e-mail. Digite o código abaixo para continuar.';
+$_['text_sent']     = 'Sucesso: Um e-mail com o código de segurança foi enviado para sua conta!';
+$_['text_locked']   = 'Sua conta foi bloqueada!';
+$_['text_reset']    = 'Sua conta foi bloqueada devido a muitas tentativas incorretas de inserir o código de segurança. Clique no botão redefinir para receber um link de redefinição por e-mail.';
+$_['text_link']     = 'Sucesso: Um e-mail com o link de redefinição foi enviado para seu endereço de e-mail!';
+$_['text_unlocked'] = 'Sua conta foi desbloqueada!';
+$_['text_unlock']   = 'Sua conta foi desbloqueada. Você precisará fazer login novamente e repetir o processo de autenticação em duas etapas para continuar.';
+$_['text_failed']   = 'Não foi possível redefinir seu código de segurança!';
 
 // Entry
-$_['entry_code']    = 'Security Code';
+$_['entry_code']    = 'Código de segurança';
 
 // Button
-$_['button_send']   = 'Send';
-$_['button_reset']  = 'Reset';
+$_['button_send']   = 'Enviar';
+$_['button_reset']  = 'Redefinir';
 
 // Error
-$_['error_code']    = 'Security code does not match!';
+$_['error_code']    = 'O código de segurança não confere!';

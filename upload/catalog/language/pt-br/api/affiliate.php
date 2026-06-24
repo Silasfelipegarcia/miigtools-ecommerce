@@ -1,8 +1,8 @@
 <?php
 // Text
-$_['text_success']    = 'Success: Affiliate commission will be applied to this order!';
-$_['text_remove']     = 'Success: Your affiliate commission has been removed!';
+$_['text_success']    = 'Sucesso: A comissão de afiliado será aplicada a este pedido!';
+$_['text_remove']     = 'Sucesso: Sua comissão de afiliado foi removida!';
 
 // Error
-$_['error_affiliate'] = 'Warning: Affiliate could not be found!';
-$_['error_order']     = 'Warning: Sub-Total needs to be above 0 for commission to be applied!';
+$_['error_affiliate'] = 'Atenção: Afiliado não encontrado!';
+$_['error_order']     = 'Atenção: O subtotal precisa ser maior que 0 para a comissão ser aplicada!';

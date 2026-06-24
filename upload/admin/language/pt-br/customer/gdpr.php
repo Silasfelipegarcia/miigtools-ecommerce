@@ -1,36 +1,36 @@
 <?php
 // Heading
-$_['heading_title']     = 'GDPR Approvals';
+$_['heading_title']     = 'Aprovações LGPD';
 
 // Text
-$_['text_success']      = 'Success: You have modified GDPR approvals!';
-$_['text_list']         = 'GDPR Approval List';
-$_['text_info']         = '<strong>GDPR</strong> account deletion requests will process after <strong>%s days</strong> so any fraud detection, chargebacks or refunds can be processed.';
-$_['text_approve']      = 'Approve';
-$_['text_deny']         = 'Deny';
-$_['text_delete']       = 'Delete';
-$_['text_unverified']   = 'Unverified';
-$_['text_pending']      = 'Pending';
-$_['text_processing']   = 'Processing';
-$_['text_complete']     = 'Complete';
-$_['text_denied']       = 'Denied';
-$_['text_export']       = 'Export';
-$_['text_remove']       = 'Remove';
-$_['text_filter']       = 'Filter';
+$_['text_success']      = 'Sucesso: Você modificou as aprovações LGPD!';
+$_['text_list']         = 'Listagem de aprovações LGPD';
+$_['text_info']         = 'As solicitações de exclusão de conta <strong>LGPD</strong> serão processadas após <strong>%s dias</strong> para que fraudes, estornos ou reembolsos possam ser tratados.';
+$_['text_approve']      = 'Aprovar';
+$_['text_deny']         = 'Negar';
+$_['text_delete']       = 'Excluir';
+$_['text_unverified']   = 'Não verificado';
+$_['text_pending']      = 'Pendente';
+$_['text_processing']   = 'Processando';
+$_['text_complete']     = 'Concluído';
+$_['text_denied']       = 'Negado';
+$_['text_export']       = 'Exportar';
+$_['text_remove']       = 'Remover';
+$_['text_filter']       = 'Filtro';
 
 // Column
-$_['column_email']      = 'E-Mail';
-$_['column_request']    = 'Request';
-$_['column_status']     = 'Status';
-$_['column_date_added'] = 'Date Added';
-$_['column_action']     = 'Action';
+$_['column_email']      = 'E-mail';
+$_['column_request']    = 'Solicitação';
+$_['column_status']     = 'Situação';
+$_['column_date_added'] = 'Data de cadastro';
+$_['column_action']     = 'Ação';
 
 // Entry
-$_['entry_email']       = 'E-Mail';
-$_['entry_action']      = 'Action';
-$_['entry_status']      = 'Status';
-$_['entry_date_from']   = 'Date From';
-$_['entry_date_to']     = 'Date To';
+$_['entry_email']       = 'E-mail';
+$_['entry_action']      = 'Ação';
+$_['entry_status']      = 'Situação';
+$_['entry_date_from']   = 'Data inicial';
+$_['entry_date_to']     = 'Data final';
 
 // Error
-$_['error_permission']  = 'Warning: You do not have permission to modify GDPR approvals!';
+$_['error_permission']  = 'Atenção: Você não tem permissão para modificar aprovações LGPD!';

@@ -1,31 +1,31 @@
 <?php
 // Heading
-$_['heading_title']    = 'Article Comments';
+$_['heading_title']    = 'Comentários de artigos';
 
 // Text
-$_['text_success']     = 'Success: You have modified article comments!';
-$_['text_next']        = 'Success: You have modified %s to %s of %s comment ratings!';
-$_['text_list']        = 'Article Comments List';
-$_['text_filter']      = 'Filter';
-$_['text_by']          = 'by';
-$_['text_info']        = 'Comment Information';
-$_['text_rating']      = 'Rating:';
+$_['text_success']     = 'Sucesso: Você modificou os comentários de artigos!';
+$_['text_next']        = 'Sucesso: Você modificou %s a %s de %s avaliações de comentários!';
+$_['text_list']        = 'Listagem de comentários de artigos';
+$_['text_filter']      = 'Filtro';
+$_['text_by']          = 'por';
+$_['text_info']        = 'Informações do comentário';
+$_['text_rating']      = 'Avaliação:';
 
 // Column
-$_['column_comment']   = 'Comment';
-$_['column_action']    = 'Action';
+$_['column_comment']   = 'Comentário';
+$_['column_action']    = 'Ação';
 
 // Entry
-$_['entry_keyword']    = 'Keyword';
-$_['entry_article']    = 'Article';
-$_['entry_customer']   = 'Customer';
-$_['entry_status']     = 'Status';
-$_['entry_date_from']  = 'Date From';
-$_['entry_date_to']    = 'Date To';
+$_['entry_keyword']    = 'Palavra-chave';
+$_['entry_article']    = 'Artigo';
+$_['entry_customer']   = 'Cliente';
+$_['entry_status']     = 'Situação';
+$_['entry_date_from']  = 'Data inicial';
+$_['entry_date_to']    = 'Data final';
 
 // Button
 $_['button_spam']      = 'Spam';
-$_['button_rating']    = 'Calculate Ratings';
+$_['button_rating']    = 'Calcular avaliações';
 
 // Error
-$_['error_permission'] = 'Warning: You do not have permission to modify article comments!';
+$_['error_permission'] = 'Atenção: Você não tem permissão para modificar comentários de artigos!';

@@ -4,7 +4,7 @@ $_['heading_title']     = 'Pedidos recentes';
 
 // Text
 $_['text_extension']    = 'Extensões';
-$_['text_success']      = 'Painel de pedidos recentes modificado com sucesso!';
+$_['text_success']      = 'Sucesso: Você modificou o painel de pedidos recentes!';
 $_['text_edit']         = 'Editar painel de pedidos recentes';
 
 // Column
@@ -12,7 +12,7 @@ $_['column_order_id']   = 'Pedido nº';
 $_['column_customer']   = 'Cliente';
 $_['column_status']     = 'Situação';
 $_['column_total']      = 'Total';
-$_['column_date_added'] = 'Data';
+$_['column_date_added'] = 'Data de cadastro';
 $_['column_action']     = 'Ação';
 
 // Entry

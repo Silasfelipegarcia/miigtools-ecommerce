@@ -3,7 +3,7 @@
 $_['heading_title']        = 'Upgrade';
 
 // Text
-$_['text_success']         = 'Success: You are using the latest version %s!';
+$_['text_success'] = 'Upgrade modificado com sucesso!';
 $_['text_upgrade']         = 'Check Latest Version';
 $_['text_information']     = 'Version Information';
 $_['text_current_version'] = 'Current Version';
@@ -20,7 +20,7 @@ $_['text_patch']           = 'Applying patches...';
 $_['button_upgrade']       = 'Upgrade';
 
 // Error
-$_['error_permission']     = 'Warning: You do not have permission to modify upgrades!';
+$_['error_permission']     = 'Atenção: Você não tem permissão para modificar upgrades!';
 $_['error_connection']     = 'Could not connect to the upgrade server!';
 $_['error_version']        = 'Version is lower than the current version!';
 $_['error_download']       = 'Upgrade could not be downloaded!';

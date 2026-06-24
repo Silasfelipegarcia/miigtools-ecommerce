@@ -1,17 +1,17 @@
 <?php
 // Heading
-$_['heading_title']    = 'Languages';
+$_['heading_title']    = 'Idiomas';
 
 // Text
-$_['text_success']     = 'Success: You have modified languages!';
-$_['text_list']        = 'Language List';
+$_['text_success']     = 'Sucesso: Você modificou os idiomas!';
+$_['text_list']        = 'Listagem de idiomas';
 
 // Column
-$_['column_name']      = 'Language Name';
-$_['column_status']    = 'Status';
-$_['column_action']    = 'Action';
+$_['column_name']      = 'Nome do idioma';
+$_['column_status']    = 'Situação';
+$_['column_action']    = 'Ação';
 
 // Error
-$_['error_permission'] = 'Warning: You do not have permission to modify languages!';
-$_['error_extension']  = 'Warning: Extension does not exist!';
-$_['error_default']    = 'Warning: This extension cannot be uninstalled as it is currently assigned as the administration language!';
+$_['error_permission'] = 'Atenção: Você não tem permissão para modificar idiomas!';
+$_['error_extension']  = 'Atenção: A extensão não existe!';
+$_['error_default']    = 'Atenção: Esta extensão não pode ser desinstalada, pois está definida como idioma da administração!';

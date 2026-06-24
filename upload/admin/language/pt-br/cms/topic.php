@@ -1,38 +1,38 @@
 <?php
 // Heading
-$_['heading_title']           = 'Topics';
+$_['heading_title']           = 'Tópicos';
 
 // Text
-$_['text_success']            = 'Success: You have modified topics!';
-$_['text_list']               = 'Topic List';
-$_['text_add']                = 'Add Topic';
-$_['text_edit']               = 'Edit Topic';
-$_['text_default']            = 'Default';
-$_['text_keyword']            = 'Do not use spaces, instead replace spaces with - and make sure the SEO URL is globally unique.';
+$_['text_success']            = 'Sucesso: Você modificou os tópicos!';
+$_['text_list']               = 'Listagem de tópicos';
+$_['text_add']                = 'Adicionar tópico';
+$_['text_edit']               = 'Editar tópico';
+$_['text_default']            = 'Padrão';
+$_['text_keyword']            = 'Não use espaços; substitua-os por - e certifique-se de que a URL amigável seja única globalmente.';
 
 // Column
-$_['column_name']             = 'Topic Name';
-$_['column_sort_order']       = 'Sort Order';
-$_['column_action']           = 'Action';
+$_['column_name']             = 'Nome do tópico';
+$_['column_sort_order']       = 'Ordem';
+$_['column_action']           = 'Ação';
 
 // Entry
-$_['entry_image']             = 'Image';
-$_['entry_name']              = 'Topic Name';
-$_['entry_description']       = 'Description';
-$_['entry_meta_title']        = 'Meta Tag Title';
-$_['entry_meta_keyword']      = 'Meta Tag Keywords';
-$_['entry_meta_description']  = 'Meta Tag Description';
-$_['entry_store']             = 'Stores';
-$_['entry_sort_order']        = 'Sort Order';
-$_['entry_status']            = 'Status';
-$_['entry_keyword']           = 'Keyword';
-$_['entry_layout']            = 'Layout Override';
+$_['entry_image']             = 'Imagem';
+$_['entry_name']              = 'Nome do tópico';
+$_['entry_description']       = 'Descrição';
+$_['entry_meta_title']        = 'Título da meta tag';
+$_['entry_meta_keyword']      = 'Palavras-chave da meta tag';
+$_['entry_meta_description']  = 'Descrição da meta tag';
+$_['entry_store']             = 'Lojas';
+$_['entry_sort_order']        = 'Ordem';
+$_['entry_status']            = 'Situação';
+$_['entry_keyword']           = 'Palavra-chave';
+$_['entry_layout']            = 'Substituição de layout';
 
 // Error
-$_['error_warning']           = 'Warning: Please check the form carefully for errors!';
-$_['error_permission']        = 'Warning: You do not have permission to modify topics!';
-$_['error_name']              = 'Topic Name must be between 1 and 255 characters!';
-$_['error_meta_title']        = 'Meta Title must be greater than 1 and less than 255 characters!';
-$_['error_keyword']           = 'SEO URL must be between 1 and 64 characters!';
-$_['error_keyword_exists']    = 'SEO URL must be unique!';
-$_['error_keyword_character'] = 'Keyword can only use characters a-z, 0-9, - and _!';
+$_['error_warning']           = 'Atenção: Verifique o formulário com atenção em busca de erros!';
+$_['error_permission']        = 'Atenção: Você não tem permissão para modificar tópicos!';
+$_['error_name']              = 'O nome do tópico deve ter entre 1 e 255 caracteres!';
+$_['error_meta_title']        = 'O título da meta tag deve ter entre 1 e 255 caracteres!';
+$_['error_keyword']           = 'A URL amigável deve ter entre 1 e 64 caracteres!';
+$_['error_keyword_exists']    = 'A URL amigável deve ser única!';
+$_['error_keyword_character'] = 'A palavra-chave só pode usar os caracteres a-z, 0-9, - e _!';

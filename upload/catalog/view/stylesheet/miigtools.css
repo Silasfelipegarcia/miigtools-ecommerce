@@ -1345,16 +1345,36 @@
 .theme-miigtools .miig-about-lead {
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--miig-gold-mid);
+  color: var(--miig-gold-bright);
   line-height: 1.55;
   margin-bottom: 1rem;
 }
 
 .theme-miigtools .miig-about-body {
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: var(--miig-muted);
-  margin-bottom: 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--miig-text);
+  margin-bottom: 1rem;
+}
+
+.theme-miigtools .miig-about-highlight {
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.55;
+  color: var(--miig-gold-mid);
+  margin-bottom: 1.25rem;
+}
+
+.theme-miigtools .miig-about-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.15rem 1.5rem;
+}
+
+@media (min-width: 576px) {
+  .theme-miigtools .miig-about-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .theme-miigtools .miig-about-list li {
@@ -1371,6 +1391,57 @@
   color: var(--miig-gold);
   margin-top: 0.2rem;
   flex-shrink: 0;
+}
+
+.theme-miigtools .miig-about-stat {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--miig-edge);
+  border-radius: var(--miig-radius-xl);
+  padding: 1.35rem 0.9rem 1.15rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.theme-miigtools .miig-about-stat-icon {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--miig-gold-mid);
+  font-size: 1.1rem;
+}
+
+.theme-miigtools .miig-about-stat-flag {
+  display: block;
+  font-size: 1.75rem;
+  line-height: 1;
+  margin-bottom: 0.45rem;
+}
+
+.theme-miigtools .miig-about-stat-value {
+  display: block;
+  font-family: var(--miig-font-head);
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  font-weight: 800;
+  color: var(--miig-gold-bright);
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.theme-miigtools .miig-about-stat-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--miig-muted);
+  line-height: 1.35;
+}
+
+.theme-miigtools .miig-about-actions .btn-outline-primary {
+  color: var(--miig-gold-bright);
+  border-color: rgba(212, 175, 55, 0.45);
+}
+
+.theme-miigtools .miig-about-actions .btn-outline-primary:hover {
+  background: rgba(212, 175, 55, 0.12);
+  color: #fff;
+  border-color: var(--miig-gold-mid);
 }
 
 /* Cards de produto — listagem mais limpa */

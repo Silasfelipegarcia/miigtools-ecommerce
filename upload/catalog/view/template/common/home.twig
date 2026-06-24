@@ -48,22 +48,40 @@
 <section class="miig-about" aria-labelledby="miig-about-title">
   <div class="container">
     <div class="miig-about-card">
-      <div class="row align-items-center g-4">
+      <div class="row align-items-center g-4 g-lg-5">
         <div class="col-lg-7">
           <h2 id="miig-about-title" class="miig-about-title">{{ about_title }}</h2>
           <p class="miig-about-lead">{{ about_lead }}</p>
           <p class="miig-about-body">{{ about_body }}</p>
-        </div>
-        <div class="col-lg-5">
-          <ul class="miig-about-list list-unstyled mb-4">
+          <p class="miig-about-highlight">{{ about_highlight }}</p>
+          <ul class="miig-about-list list-unstyled mb-0">
             {% for bullet in about_bullets %}
               <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> {{ bullet }}</li>
             {% endfor %}
           </ul>
-          <a href="{{ about_href_contact }}" class="btn btn-primary">{{ about_cta }}</a>
-          {% if about_href_info %}
-            <a href="{{ about_href_info }}" class="btn btn-outline-primary ms-2">{{ about_cta_info }}</a>
-          {% endif %}
+        </div>
+        <div class="col-lg-5">
+          <div class="row row-cols-2 g-3 mb-4">
+            {% for stat in about_stats %}
+              <div class="col">
+                <article class="miig-about-stat h-100 text-center">
+                  {% if stat.flag %}
+                    <span class="miig-about-stat-flag" aria-hidden="true">🇧🇷</span>
+                  {% else %}
+                    <span class="miig-about-stat-icon" aria-hidden="true"><i class="{{ stat.icon }}"></i></span>
+                  {% endif %}
+                  <strong class="miig-about-stat-value">{{ stat.value }}</strong>
+                  <span class="miig-about-stat-label">{{ stat.label }}</span>
+                </article>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="miig-about-actions">
+            <a href="{{ about_href_contact }}" class="btn btn-primary">{{ about_cta }}</a>
+            {% if about_href_info %}
+              <a href="{{ about_href_info }}" class="btn btn-outline-primary ms-2">{{ about_cta_info }}</a>
+            {% endif %}
+          </div>
         </div>
       </div>
     </div>

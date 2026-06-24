@@ -4,7 +4,7 @@ $_['heading_title']    = 'Pessoas online';
 
 // Text
 $_['text_extension']   = 'Extensões';
-$_['text_success']     = 'Painel de visitantes online modificado com sucesso!';
+$_['text_success']     = 'Sucesso: Você modificou o painel de visitantes online!';
 $_['text_edit']        = 'Editar painel de visitantes online';
 $_['text_view']        = 'Ver mais...';
 

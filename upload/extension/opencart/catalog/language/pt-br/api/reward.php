@@ -1,11 +1,11 @@
 <?php
 // Text
-$_['text_success']   = 'Success: Your reward points discount has been applied!';
+$_['text_success']   = 'Sucesso: O desconto de pontos de recompensa foi aplicado!';
 
 // Error
-$_['error_customer'] = 'Warning: Customer details required!';
-$_['error_product']  = 'Warning: Products required!';
-$_['error_points']   = 'Warning: You don\'t have %s reward points!';
-$_['error_maximum']  = 'Warning: The maximum number of points that can be applied is %s!';
-$_['error_status']   = 'Warning: Reward points are not enabled on this store!';
-$_['error_confirm']  = 'Warning: Please check the reward form carefully for errors!';
+$_['error_customer'] = 'Atenção: Dados do cliente obrigatórios!';
+$_['error_product']  = 'Atenção: Produtos obrigatórios!';
+$_['error_points']   = 'Atenção: Você não tem %s pontos de recompensa!';
+$_['error_maximum']  = 'Atenção: O número máximo de pontos que pode ser aplicado é %s!';
+$_['error_status']   = 'Atenção: Pontos de recompensa não estão habilitados nesta loja!';
+$_['error_confirm']  = 'Atenção: Verifique o formulário de recompensa com atenção em busca de erros!';

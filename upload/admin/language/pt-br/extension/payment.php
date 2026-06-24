@@ -1,18 +1,18 @@
 <?php
 // Heading
-$_['heading_title']     = 'Payments';
+$_['heading_title']     = 'Pagamentos';
 
 // Text
-$_['text_success']      = 'Success: You have modified payments!';
-$_['text_list']         = 'Payment List';
+$_['text_success']      = 'Sucesso: Você modificou os pagamentos!';
+$_['text_list']         = 'Listagem de pagamentos';
 
 // Column
-$_['column_name']       = 'Payment Method';
-$_['column_vendor']     = 'Vendor';
-$_['column_status']     = 'Status';
-$_['column_sort_order'] = 'Sort Order';
-$_['column_action']     = 'Action';
+$_['column_name']       = 'Forma de pagamento';
+$_['column_vendor']     = 'Fornecedor';
+$_['column_status']     = 'Situação';
+$_['column_sort_order'] = 'Ordem';
+$_['column_action']     = 'Ação';
 
 // Error
-$_['error_permission']  = 'Warning: You do not have permission to modify payments!';
-$_['error_extension']   = 'Warning: Extension does not exist!';
+$_['error_permission']  = 'Atenção: Você não tem permissão para modificar pagamentos!';
+$_['error_extension']   = 'Atenção: A extensão não existe!';

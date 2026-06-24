@@ -1,16 +1,16 @@
 <?php
 // Heading
-$_['heading_title']    = 'Currency Rates';
+$_['heading_title']    = 'Taxas de câmbio';
 
 // Text
-$_['text_success']     = 'Success: You have modified currencies rates!';
-$_['text_list']        = 'Currency Rate List';
+$_['text_success']     = 'Sucesso: Você modificou as taxas de câmbio!';
+$_['text_list']        = 'Listagem de taxas de câmbio';
 
 // Column
-$_['column_name']      = 'Currency Rate Name';
-$_['column_status']    = 'Status';
-$_['column_action']    = 'Action';
+$_['column_name']      = 'Nome da taxa de câmbio';
+$_['column_status']    = 'Situação';
+$_['column_action']    = 'Ação';
 
 // Error
-$_['error_permission'] = 'Warning: You do not have permission to modify currencies rates!';
-$_['error_extension']  = 'Warning: Extension does not exist!';
+$_['error_permission'] = 'Atenção: Você não tem permissão para modificar taxas de câmbio!';
+$_['error_extension']  = 'Atenção: A extensão não existe!';

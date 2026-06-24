@@ -3,7 +3,7 @@
 $_['heading_title']        = 'Informativo';
 
 // Text
-$_['text_success']         = 'Sua mensagem foi enviada com sucesso!';
+$_['text_success'] = 'Informativo modificado com sucesso!';
 $_['text_sent']            = 'Sua mensagem foi enviada com sucesso para %s de %s destinatários!';
 $_['text_list']            = 'Listando layouts';
 $_['text_default']         = 'Padrão';

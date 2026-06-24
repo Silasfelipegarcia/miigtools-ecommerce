@@ -4,7 +4,7 @@ $_['heading_title']    = 'Mapa mundial';
 
 // Text
 $_['text_extension']   = 'Extensões';
-$_['text_success']     = 'Painel de mapa modificado com sucesso!';
+$_['text_success']     = 'Sucesso: Você modificou o painel de mapa!';
 $_['text_edit']        = 'Editar painel de mapa';
 $_['text_order']       = 'Pedidos';
 $_['text_sale']        = 'Vendas';

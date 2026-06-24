@@ -1,17 +1,17 @@
 <?php
 // Heading
-$_['heading_title']     = 'Shipping';
+$_['heading_title']     = 'Envio';
 
 // Text
-$_['text_success']      = 'Success: You have modified shipping!';
-$_['text_list']         = 'Shipping List';
+$_['text_success']      = 'Sucesso: Você modificou o envio!';
+$_['text_list']         = 'Listagem de envio';
 
 // Column
-$_['column_name']       = 'Shipping Method';
-$_['column_status']     = 'Status';
-$_['column_sort_order'] = 'Sort Order';
-$_['column_action']     = 'Action';
+$_['column_name']       = 'Forma de envio';
+$_['column_status']     = 'Situação';
+$_['column_sort_order'] = 'Ordem';
+$_['column_action']     = 'Ação';
 
 // Error
-$_['error_permission']  = 'Warning: You do not have permission to modify shipping!';
-$_['error_extension']   = 'Warning: Extension does not exist!';
+$_['error_permission']  = 'Atenção: Você não tem permissão para modificar o envio!';
+$_['error_extension']   = 'Atenção: A extensão não existe!';

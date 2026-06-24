@@ -3,7 +3,7 @@
 $_['heading_title']    = 'Configurações para desenvolvedor';
 
 // Text
-$_['text_success']     = 'As configurações para desenvolvedor foram atualizadas!';
+$_['text_success'] = 'Configurações para desenvolvedor modificado com sucesso!';
 $_['text_theme']       = 'Tema';
 $_['text_sass']        = 'SASS';
 $_['text_cache']       = 'O cache do %s foi atualizado!';

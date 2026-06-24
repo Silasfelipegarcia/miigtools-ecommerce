@@ -1,27 +1,27 @@
 <?php
 // Heading
-$_['heading_title']           = 'Address Format';
+$_['heading_title']           = 'Formato de endereço';
 
 // Text
-$_['text_success']            = 'Success: You have modified address formats!';
-$_['text_list']               = 'Address Format List';
-$_['text_add']                = 'Add Address Format';
-$_['text_edit']               = 'Edit Address Format';
+$_['text_success']            = 'Sucesso: Você modificou os formatos de endereço!';
+$_['text_list']               = 'Listagem de formatos de endereço';
+$_['text_add']                = 'Adicionar formato de endereço';
+$_['text_edit']               = 'Editar formato de endereço';
 
 // Column
-$_['column_name']             = 'Address Format Name';
-$_['column_address_format']   = 'Address Format';
-$_['column_action']           = 'Action';
+$_['column_name']             = 'Nome do formato de endereço';
+$_['column_address_format']   = 'Formato de endereço';
+$_['column_action']           = 'Ação';
 
 // Entry
-$_['entry_name']              = 'Address Format Name';
-$_['entry_address_format']    = 'Address Format';
+$_['entry_name']              = 'Nome do formato de endereço';
+$_['entry_address_format']    = 'Formato de endereço';
 
 // Help
-$_['help_address_format']     = 'First Name = {firstname}<br/>Last Name = {lastname}<br/>Company = {company}<br/>Address 1 = {address_1}<br/>Address 2 = {address_2}<br/>City = {city}<br/>Postcode = {postcode}<br/>Zone = {zone}<br/>Zone Code = {zone_code}<br/>Country = {country}';
+$_['help_address_format']     = 'Nome = {firstname}<br/>Sobrenome = {lastname}<br/>Empresa = {company}<br/>Endereço 1 = {address_1}<br/>Endereço 2 = {address_2}<br/>Cidade = {city}<br/>CEP = {postcode}<br/>Estado = {zone}<br/>Código do estado = {zone_code}<br/>País = {country}';
 
 // Error
-$_['error_permission']        = 'Warning: You do not have permission to modify address formats!';
-$_['error_name']              = 'Address Format Name must be between 1 and 128 characters!';
-$_['error_default']           = 'Warning: This address format cannot be deleted as it is currently assigned as the default address format!';
-$_['error_country']           = 'Warning: This address format cannot be deleted as it is currently assigned to %s countries!';
+$_['error_permission']        = 'Atenção: Você não tem permissão para modificar formatos de endereço!';
+$_['error_name']              = 'O nome do formato de endereço deve ter entre 1 e 128 caracteres!';
+$_['error_default']           = 'Atenção: Este formato de endereço não pode ser excluído, pois está definido como padrão!';
+$_['error_country']           = 'Atenção: Este formato de endereço não pode ser excluído, pois está atribuído a %s países!';

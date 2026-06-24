@@ -3,31 +3,31 @@
 $_['heading_title']    = 'Blog';
 
 // Text
-$_['text_extension']   = 'Extensions';
-$_['text_success']     = 'Success: You have modified blog module!';
-$_['text_next']        = 'Success: You have modified %s blog out of %s!';
-$_['text_edit']        = 'Edit Blog Module';
+$_['text_extension']   = 'Extensões';
+$_['text_success']     = 'Sucesso: Você modificou o módulo de blog!';
+$_['text_next']        = 'Sucesso: Você modificou %s blog de %s!';
+$_['text_edit']        = 'Editar módulo de blog';
 
 // Form
-$_['text_desc']        = 'Descending Order';
-$_['text_asc']         = 'Ascending Order';
-$_['text_sort_name']   = 'Name';
-$_['text_sort_date']   = 'Date Added';
+$_['text_desc']        = 'Ordem decrescente';
+$_['text_asc']         = 'Ordem crescente';
+$_['text_sort_name']   = 'Nome';
+$_['text_sort_date']   = 'Data de cadastro';
 
 // Column
 $_['column_total']     = 'Total';
 
 // Entry
-$_['entry_name']       = 'Module Name';
-$_['entry_limit']      = 'Limit';
-$_['entry_width']      = 'Image Width';
-$_['entry_height']     = 'Image Height';
-$_['entry_order']      = 'Order';
-$_['entry_sort']   	   = 'Sort';
-$_['entry_status']     = 'Status';
+$_['entry_name']       = 'Nome do módulo';
+$_['entry_limit']      = 'Limite';
+$_['entry_width']      = 'Largura da imagem';
+$_['entry_height']     = 'Altura da imagem';
+$_['entry_order']      = 'Ordem';
+$_['entry_sort']   	   = 'Classificação';
+$_['entry_status']     = 'Situação';
 
 // Error
-$_['error_permission'] = 'Warning: You do not have permission to modify blog module!';
-$_['error_name']       = 'Module Name must be between 3 and 64 characters!';
-$_['error_width']      = 'Width required!';
-$_['error_height']     = 'Height required!';
+$_['error_permission'] = 'Atenção: Você não tem permissão para modificar o módulo de blog!';
+$_['error_name']       = 'O nome do módulo deve ter entre 3 e 64 caracteres!';
+$_['error_width']      = 'A largura é obrigatória!';
+$_['error_height']     = 'A altura é obrigatória!';

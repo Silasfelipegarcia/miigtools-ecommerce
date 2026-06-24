@@ -9,4 +9,4 @@ $_['text_contact']   = 'Unfortunately your request has been denied. For more inf
 $_['text_thanks']    = 'Thanks,';
 
 // Button
-$_['button_contact'] = 'Contact Us';
+$_['button_contact'] = 'Fale conosco';

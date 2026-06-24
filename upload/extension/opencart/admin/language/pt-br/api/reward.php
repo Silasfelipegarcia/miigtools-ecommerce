@@ -1,6 +1,6 @@
 <?php
 // Text
-$_['text_reward']  = 'Use Reward Points';
+$_['text_reward']  = 'Usar pontos de fidelidade';
 
 // Entry
-$_['entry_reward'] = 'Use Reward Points';
+$_['entry_reward'] = 'Usar pontos de fidelidade';

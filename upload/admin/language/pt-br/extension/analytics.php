@@ -3,14 +3,14 @@
 $_['heading_title']    = 'Analytics';
 
 // Text
-$_['text_success']     = 'Success: You have modified analytics!';
-$_['text_list']        = 'Analytics List';
+$_['text_success']     = 'Sucesso: Você modificou o analytics!';
+$_['text_list']        = 'Listagem de analytics';
 
 // Column
-$_['column_name']      = 'Analytics Name';
-$_['column_status']    = 'Status';
-$_['column_action']    = 'Action';
+$_['column_name']      = 'Nome do analytics';
+$_['column_status']    = 'Situação';
+$_['column_action']    = 'Ação';
 
 // Error
-$_['error_permission'] = 'Warning: You do not have permission to modify analytics!';
-$_['error_extension']  = 'Warning: Extension does not exist!';
+$_['error_permission'] = 'Atenção: Você não tem permissão para modificar o analytics!';
+$_['error_extension']  = 'Atenção: A extensão não existe!';

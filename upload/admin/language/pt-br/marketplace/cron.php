@@ -1,28 +1,28 @@
 <?php
 // Heading
-$_['heading_title']        = 'CRON Jobs';
+$_['heading_title']        = 'Tarefas CRON';
 
 // Text
-$_['text_success']         = 'Success: You have modified CRON jobs!';
-$_['text_instruction']     = 'CRON Instructions';
-$_['text_list']            = 'CRON List';
-$_['text_cron_1']          = 'CRON Job\'s are scheduled tasks that are run periodically. To setup your servers to use cron job you can read the <a href="http://docs.opencart.com/extension/cron/" target="_blank" class="alert-link">opencart documentation</a> page.';
-$_['text_cron_2']          = 'You need to set your CRON task to run every hour.';
-$_['text_info']            = 'CRON Information';
-$_['text_hour']            = 'Hour';
-$_['text_day']             = 'Day';
-$_['text_month']           = 'Month';
+$_['text_success']         = 'Sucesso: Você modificou as tarefas CRON!';
+$_['text_instruction']     = 'Instruções CRON';
+$_['text_list']            = 'Listagem CRON';
+$_['text_cron_1']          = 'Tarefas CRON são tarefas agendadas executadas periodicamente. Para configurar seu servidor para usar tarefas cron, consulte a <a href="http://docs.opencart.com/extension/cron/" target="_blank" class="alert-link">documentação do OpenCart</a>.';
+$_['text_cron_2']          = 'Você precisa configurar sua tarefa CRON para ser executada a cada hora.';
+$_['text_info']            = 'Informações CRON';
+$_['text_hour']            = 'Hora';
+$_['text_day']             = 'Dia';
+$_['text_month']           = 'Mês';
 
 // Column
-$_['column_code']          = 'CRON Code';
-$_['column_cycle']         = 'Cycle';
-$_['column_date_added']    = 'Date Added';
-$_['column_date_modified'] = 'Date Modified';
-$_['column_action']        = 'Action';
+$_['column_code']          = 'Código CRON';
+$_['column_cycle']         = 'Ciclo';
+$_['column_date_added']    = 'Data de cadastro';
+$_['column_date_modified'] = 'Data de modificação';
+$_['column_action']        = 'Ação';
 
 // Entry
-$_['entry_cron']           = 'CRON URL';
-$_['entry_description']    = 'Description';
+$_['entry_cron']           = 'URL CRON';
+$_['entry_description']    = 'Descrição';
 
 // Error
-$_['error_permission']     = 'Warning: You do not have permission to modify CRON jobs!';
+$_['error_permission']     = 'Atenção: Você não tem permissão para modificar tarefas CRON!';

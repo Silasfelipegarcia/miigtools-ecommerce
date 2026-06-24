@@ -4,7 +4,7 @@ $_['heading_title']     = 'Usuários online';
 
 // Text
 $_['text_extension']    = 'Extensões';
-$_['text_success']      = 'Usuários online atualizado com sucesso!';
+$_['text_success'] = 'Usuários online modificado com sucesso!';
 $_['text_list']         = 'Online';
 $_['text_filter']       = 'Filtros';
 $_['text_guest']        = 'Visitante';
