@@ -247,7 +247,7 @@ if ($db_host === '') {
 
 		$address_format = "{firstname} {lastname}\n{address_1}\n{address_2}\n{company}\n{city} - {zone_code}\nCEP {postcode}\n{country}";
 		$format_stmt = $mysqli->prepare(
-			"UPDATE `{$db_prefix}address_format` SET `format` = ? WHERE `address_format_id` = 1"
+			"UPDATE `{$db_prefix}address_format` SET `address_format` = ? WHERE `address_format_id` = 1"
 		);
 
 		if ($format_stmt) {
