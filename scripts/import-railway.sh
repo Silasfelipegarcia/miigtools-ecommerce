@@ -28,6 +28,8 @@ echo "Atualizando URL da loja para $RAILWAY_URL ..."
 $RAILWAY run --service MySQL mysql -h "\$MYSQLHOST" -u "\$MYSQLUSER" -p"\$MYSQLPASSWORD" -P "\$MYSQLPORT" "\$MYSQLDATABASE" -e "
 UPDATE ws_setting SET value = '${RAILWAY_URL}/' WHERE \`key\` = 'config_url' AND store_id = 0;
 UPDATE ws_setting SET value = '${RAILWAY_URL}/' WHERE \`key\` = 'config_ssl' AND store_id = 0;
+UPDATE ws_setting SET value = '1', serialized = 0 WHERE \`key\` = 'config_customer_group_id' AND store_id = 0;
+UPDATE ws_setting SET value = '[\"1\"]', serialized = 1 WHERE \`key\` = 'config_customer_group_display' AND store_id = 0;
 UPDATE ws_store SET url = '${RAILWAY_URL}/' WHERE store_id = 0;
 "
 

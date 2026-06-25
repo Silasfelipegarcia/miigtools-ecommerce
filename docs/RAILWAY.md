@@ -68,12 +68,8 @@ Significa que o MySQL do Railway está **vazio** — o deploy subiu, mas o dump 
 ### 5. Domínio e URLs da loja
 
 1. No serviço web, gere um domínio em **Settings** → **Networking** → **Generate Domain**.
-2. Após o primeiro deploy, entre no **admin** e atualize:
-   - **Sistema** → **Configurações** → URL da loja
-   - Ou rode SQL no banco:
-     ```sql
-     UPDATE ws_setting SET value = 'https://SEU-DOMINIO.up.railway.app/' WHERE `key` = 'config_url';
-     ```
+2. A cada deploy, o `write-config.php` atualiza automaticamente `config_url`, grupo de clientes (cadastro) e textos institucionais no banco.
+3. **Admin:** use `https://SEU-DOMINIO.up.railway.app/admin/` (com barra final). O Apache atrás do proxy do Railway foi ajustado para não redirecionar para a porta interna `:8080`.
 
 ### 6. Mercado Pago em produção
 
