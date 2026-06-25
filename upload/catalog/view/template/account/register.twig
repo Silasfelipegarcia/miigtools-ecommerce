@@ -59,6 +59,25 @@
             </div>
           {% endif %}
 
+          <div class="row mb-3 required">
+            <label for="input-document-type" class="col-sm-2 col-form-label">{{ entry_document_type }}</label>
+            <div class="col-sm-10">
+              <select name="document_type" id="input-document-type" class="form-select" data-oc-brazil-document-type>
+                <option value="">{{ text_select }}</option>
+                <option value="CPF">{{ text_document_cpf }}</option>
+                <option value="CNPJ">{{ text_document_cnpj }}</option>
+              </select>
+              <div id="error-document-type" class="invalid-feedback"></div>
+            </div>
+          </div>
+          <div class="row mb-3 required">
+            <label for="input-document-number" class="col-sm-2 col-form-label">{{ entry_document_number }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="document_number" value="" placeholder="{{ entry_document_number }}" id="input-document-number" class="form-control" data-oc-brazil-document-number/>
+              <div id="error-document-number" class="invalid-feedback"></div>
+            </div>
+          </div>
+
           {% for custom_field in custom_fields %}
 
             {% if custom_field.type == 'select' %}

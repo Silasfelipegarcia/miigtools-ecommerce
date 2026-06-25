@@ -18,6 +18,9 @@ $_['text_history']          = 'Histórico do pedido';
 $_['text_success']          = 'Você adicionou <a href="%s">%s</a> no seu <a href="%s">carrinho de compras</a>.';
 $_['text_empty']            = 'Você ainda não possui pedidos cadastrados.';
 $_['text_error']            = 'O pedido que você está procurando não foi encontrado.';
+$_['text_subscription']     = 'Assinatura';
+$_['text_subscription_duration'] = '%s a cada %d %s(s) por %d pagamento(s)';
+$_['text_subscription_cancel']   = '%s a cada %d %s(s) até ser cancelado';
 
 // Column
 $_['column_order_id']       = 'Pedido nº';

@@ -134,6 +134,8 @@ class Register extends \Opencart\System\Engine\Controller {
 			'lastname'          => '',
 			'email'             => '',
 			'telephone'         => '',
+			'document_type'     => '',
+			'document_number'   => '',
 			'custom_field'      => [],
 			'password'          => '',
 			'agree'             => 0
@@ -213,6 +215,16 @@ class Register extends \Opencart\System\Engine\Controller {
 				$json['error']['telephone'] = $this->language->get('error_telephone');
 			}
 
+			require_once(DIR_SYSTEM . 'helper/brazil.php');
+
+			$document_type = strtoupper(trim($post_info['document_type'] ?? ''));
+
+			if (!in_array($document_type, ['CPF', 'CNPJ'], true)) {
+				$json['error']['document_type'] = $this->language->get('error_document_type');
+			} elseif (!oc_validate_brazil_document($document_type, $post_info['document_number'] ?? '')) {
+				$json['error']['document_number'] = $this->language->get('error_document_number');
+			}
+
 			// Custom field validation
 			$this->load->model('account/custom_field');
 
@@ -267,6 +279,15 @@ class Register extends \Opencart\System\Engine\Controller {
 		}
 
 		if (!$json) {
+			require_once(DIR_SYSTEM . 'helper/brazil.php');
+
+			$document_type = strtoupper(trim($post_info['document_type'] ?? ''));
+			$post_info['custom_field'] = oc_brazil_merge_document_custom_field(
+				$post_info['custom_field'] ?? [],
+				$document_type,
+				$post_info['document_number'] ?? ''
+			);
+
 			$customer_id = $this->model_account_customer->addCustomer($post_info);
 
 			// Login if requires approval
@@ -274,7 +295,7 @@ class Register extends \Opencart\System\Engine\Controller {
 				$this->customer->login($post_info['email'], html_entity_decode($post_info['password'], ENT_QUOTES, 'UTF-8'));
 
 				// Add customer details into session
-				$this->session->data['customer'] = [
+				$this->session->data['customer'] = oc_brazil_hydrate_customer_session([
 					'customer_id'       => $customer_id,
 					'customer_group_id' => $customer_group_id,
 					'firstname'         => $post_info['firstname'],
@@ -282,7 +303,7 @@ class Register extends \Opencart\System\Engine\Controller {
 					'email'             => $post_info['email'],
 					'telephone'         => $post_info['telephone'],
 					'custom_field'      => $post_info['custom_field']
-				];
+				]);
 
 				// Log the IP info
 				$this->model_account_customer->addLogin($this->customer->getId(), oc_get_ip());

@@ -153,8 +153,10 @@ class Login extends \Opencart\System\Engine\Controller {
 			// Remove form token from session
 			unset($this->session->data['login_token']);
 
+			require_once(DIR_SYSTEM . 'helper/brazil.php');
+
 			// Add customer details into session
-			$this->session->data['customer'] = [
+			$this->session->data['customer'] = oc_brazil_hydrate_customer_session([
 				'customer_id'       => $customer_info['customer_id'],
 				'customer_group_id' => $customer_info['customer_group_id'],
 				'firstname'         => $customer_info['firstname'],
@@ -162,7 +164,7 @@ class Login extends \Opencart\System\Engine\Controller {
 				'email'             => $customer_info['email'],
 				'telephone'         => $customer_info['telephone'],
 				'custom_field'      => $customer_info['custom_field']
-			];
+			]);
 
 			// Unset any previous data stored in the session.
 			unset($this->session->data['order_id']);

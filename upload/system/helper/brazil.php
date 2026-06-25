@@ -112,3 +112,65 @@ function oc_split_street_address(string $address): array {
 		'street_number' => 'S/N'
 	];
 }
+
+function oc_brazil_parse_address_number(string $address_1): array {
+	$split = oc_split_street_address($address_1);
+
+	return [
+		'street' => $split['street_name'],
+		'number' => $split['street_number'] === 'S/N' ? '' : $split['street_number']
+	];
+}
+
+function oc_brazil_merge_address_number(string $address_1, string $number): string {
+	$address_1 = trim($address_1);
+	$number = trim($number);
+
+	if ($address_1 === '') {
+		return $number;
+	}
+
+	if ($number === '' || str_contains($address_1, ',')) {
+		return $address_1;
+	}
+
+	return $address_1 . ', ' . $number;
+}
+
+function oc_brazil_merge_document_custom_field(array $custom_field, string $type, string $number): array {
+	$custom_field['document_type'] = strtoupper(trim($type));
+	$custom_field['document_number'] = oc_brazil_digits($number);
+
+	return $custom_field;
+}
+
+function oc_brazil_document_from_custom_field(array $custom_field): array {
+	return [
+		'document_type'   => strtoupper((string)($custom_field['document_type'] ?? '')),
+		'document_number' => oc_brazil_digits((string)($custom_field['document_number'] ?? ''))
+	];
+}
+
+function oc_brazil_format_document(string $type, string $number): string {
+	$digits = oc_brazil_digits($number);
+	$type = strtoupper($type);
+
+	if ($type === 'CPF' && strlen($digits) === 11) {
+		return substr($digits, 0, 3) . '.' . substr($digits, 3, 3) . '.' . substr($digits, 6, 3) . '-' . substr($digits, 9, 2);
+	}
+
+	if ($type === 'CNPJ' && strlen($digits) === 14) {
+		return substr($digits, 0, 2) . '.' . substr($digits, 2, 3) . '.' . substr($digits, 5, 3) . '/' . substr($digits, 8, 4) . '-' . substr($digits, 12, 2);
+	}
+
+	return $digits;
+}
+
+function oc_brazil_hydrate_customer_session(array $customer): array {
+	$document = oc_brazil_document_from_custom_field($customer['custom_field'] ?? []);
+
+	$customer['document_type'] = $document['document_type'];
+	$customer['document_number'] = $document['document_number'];
+
+	return $customer;
+}

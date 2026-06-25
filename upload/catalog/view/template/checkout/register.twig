@@ -51,7 +51,7 @@
       {% endif %}
       <div class="col mb-3 required">
         <label for="input-document-type" class="form-label">{{ entry_document_type }}</label>
-        <select name="document_type" id="input-document-type" class="form-select">
+        <select name="document_type" id="input-document-type" class="form-select" data-oc-brazil-document-type>
           <option value="">{{ text_select }}</option>
           <option value="CPF"{% if document_type == 'CPF' %} selected{% endif %}>{{ text_document_cpf }}</option>
           <option value="CNPJ"{% if document_type == 'CNPJ' %} selected{% endif %}>{{ text_document_cnpj }}</option>
@@ -60,7 +60,7 @@
       </div>
       <div class="col mb-3 required">
         <label for="input-document-number" class="form-label">{{ entry_document_number }}</label>
-        <input type="text" name="document_number" value="{{ document_number }}" placeholder="{{ entry_document_number }}" id="input-document-number" class="form-control"/>
+        <input type="text" name="document_number" value="{{ document_number }}" placeholder="{{ entry_document_number }}" id="input-document-number" class="form-control" data-oc-brazil-document-number/>
         <div id="error-document-number" class="invalid-feedback"></div>
       </div>
       {% for custom_field in custom_fields %}
@@ -164,48 +164,43 @@
     </div>
   </fieldset>
   {% if config_checkout_payment_address %}
-    <fieldset>
+    <fieldset data-oc-brazil-address data-prefix="payment" data-country-id="{{ payment_country_id }}" data-language="{{ language }}">
       <legend>{{ text_payment_address }}</legend>
       <div class="row row-cols-1 row-cols-md-2">
-        <div class="col mb-3">
-          <label for="input-payment-company" class="form-label">{{ entry_company }}</label>
-          <input type="text" name="payment_company" value="{{ payment_company }}" placeholder="{{ entry_company }}" id="input-payment-company" class="form-control"/>
+        <div class="col mb-3 required">
+          <label for="input-payment-postcode" class="form-label">{{ entry_postcode }}</label>
+          <input type="text" name="payment_postcode" value="{{ payment_postcode }}" placeholder="00000-000" id="input-payment-postcode" class="form-control" data-oc-brazil-postcode/>
+          <div id="error-payment-postcode" class="invalid-feedback"></div>
         </div>
         <div class="col mb-3 required">
           <label for="input-payment-address-1" class="form-label">{{ entry_address_1 }}</label>
           <input type="text" name="payment_address_1" value="{{ payment_address_1 }}" placeholder="{{ entry_address_1 }}" id="input-payment-address-1" class="form-control"/>
           <div id="error-payment-address-1" class="invalid-feedback"></div>
         </div>
+        <div class="col mb-3 required">
+          <label for="input-payment-address-number" class="form-label">{{ entry_number }}</label>
+          <input type="text" name="payment_address_number" value="" placeholder="{{ entry_number }}" id="input-payment-address-number" class="form-control"/>
+        </div>
         <div class="col mb-3">
           <label for="input-payment-address-2" class="form-label">{{ entry_address_2 }}</label>
           <input type="text" name="payment_address_2" value="{{ payment_address_2 }}" placeholder="{{ entry_address_2 }}" id="input-payment-address-2" class="form-control"/>
+        </div>
+        <div class="col mb-3">
+          <label for="input-payment-company" class="form-label">{{ entry_company }}</label>
+          <input type="text" name="payment_company" value="{{ payment_company }}" placeholder="{{ entry_company }}" id="input-payment-company" class="form-control"/>
         </div>
         <div class="col mb-3 required">
           <label for="input-payment-city" class="form-label">{{ entry_city }}</label>
           <input type="text" name="payment_city" value="{{ payment_city }}" placeholder="{{ entry_city }}" id="input-payment-city" class="form-control"/>
           <div id="error-payment-city" class="invalid-feedback"></div>
         </div>
-        <div class="col mb-3 required">
-          <label for="input-payment-postcode" class="form-label">{{ entry_postcode }}</label>
-          <input type="text" name="payment_postcode" value="{{ payment_postcode }}" placeholder="{{ entry_postcode }}" id="input-payment-postcode" class="form-control"/>
-          <div id="error-payment-postcode" class="invalid-feedback"></div>
-        </div>
-        <div class="col mb-3 required">
-          <label for="input-payment-country" class="form-label">{{ entry_country }}</label>
-          <select name="payment_country_id" id="input-payment-country" class="form-select">
-            <option value="">{{ text_select }}</option>
-            {% for country in countries %}
-              <option value="{{ country.country_id }}"{% if country.country_id == payment_country_id %} selected{% endif %}>{{ country.name }}</option>
-            {% endfor %}
-          </select>
-          <div id="error-payment-country" class="invalid-feedback"></div>
-        </div>
+        <input type="hidden" name="payment_country_id" value="{{ payment_country_id }}" id="input-payment-country"/>
         <div class="col mb-3 required">
           <label for="input-payment-zone" class="form-label">{{ entry_zone }}</label>
           <select name="payment_zone_id" id="input-payment-zone" class="form-select" data-oc-value="{{ payment_zone_id }}">
             <option value="">{{ text_select }}</option>
             {% for zone in payment_zones %}
-              <option value="{{ zone.zone_id }}"{% if zone.zone_id == payment_zone_id %} selected{% endif %}>{{ zone.name }}</option>
+              <option value="{{ zone.zone_id }}" data-code="{{ zone.code }}"{% if zone.zone_id == payment_zone_id %} selected{% endif %}>{{ zone.name }}</option>
             {% endfor %}
           </select>
           <div id="error-payment-zone" class="invalid-feedback"></div>
@@ -311,7 +306,7 @@
       </div>
     </fieldset>
   {% endif %}
-  <fieldset id="shipping-address" style="display: {% if not config_checkout_payment_address %}block{% else %}none{% endif %};">
+  <fieldset id="shipping-address" style="display: {% if not config_checkout_payment_address %}block{% else %}none{% endif %};" data-oc-brazil-address data-prefix="shipping" data-country-id="{{ shipping_country_id }}" data-language="{{ language }}">
     <legend>{{ text_shipping_address }}</legend>
     <div class="row row-cols-1 row-cols-md-2">
       {% if config_checkout_payment_address %}
@@ -326,45 +321,40 @@
           <div id="error-shipping-lastname" class="invalid-feedback"></div>
         </div>
       {% endif %}
-      <div class="col mb-3">
-        <label for="input-shipping-company" class="form-label">{{ entry_company }}</label>
-        <input type="text" name="shipping_company" value="{{ shipping_company }}" placeholder="{{ entry_company }}" id="input-shipping-company" class="form-control"/>
+      <div class="col mb-3 required">
+        <label for="input-shipping-postcode" class="form-label">{{ entry_postcode }}</label>
+        <input type="text" name="shipping_postcode" value="{{ shipping_postcode }}" placeholder="00000-000" id="input-shipping-postcode" class="form-control" data-oc-brazil-postcode/>
+        <div id="error-shipping-postcode" class="invalid-feedback"></div>
       </div>
       <div class="col mb-3 required">
         <label for="input-shipping-address-1" class="form-label">{{ entry_address_1 }}</label>
         <input type="text" name="shipping_address_1" value="{{ shipping_address_1 }}" placeholder="{{ entry_address_1 }}" id="input-shipping-address-1" class="form-control"/>
         <div id="error-shipping-address-1" class="invalid-feedback"></div>
       </div>
+      <div class="col mb-3 required">
+        <label for="input-shipping-address-number" class="form-label">{{ entry_number }}</label>
+        <input type="text" name="shipping_address_number" value="" placeholder="{{ entry_number }}" id="input-shipping-address-number" class="form-control"/>
+      </div>
       <div class="col mb-3">
         <label for="input-shipping-address-2" class="form-label">{{ entry_address_2 }}</label>
         <input type="text" name="shipping_address_2" value="{{ shipping_address_2 }}" placeholder="{{ entry_address_2 }}" id="input-shipping-address-2" class="form-control"/>
+      </div>
+      <div class="col mb-3">
+        <label for="input-shipping-company" class="form-label">{{ entry_company }}</label>
+        <input type="text" name="shipping_company" value="{{ shipping_company }}" placeholder="{{ entry_company }}" id="input-shipping-company" class="form-control"/>
       </div>
       <div class="col mb-3 required">
         <label for="input-shipping-city" class="form-label">{{ entry_city }}</label>
         <input type="text" name="shipping_city" value="{{ shipping_city }}" placeholder="{{ entry_city }}" id="input-shipping-city" class="form-control"/>
         <div id="error-shipping-city" class="invalid-feedback"></div>
       </div>
-      <div class="col mb-3 required">
-        <label for="input-shipping-postcode" class="form-label">{{ entry_postcode }}</label>
-        <input type="text" name="shipping_postcode" value="{{ shipping_postcode }}" placeholder="{{ entry_postcode }}" id="input-shipping-postcode" class="form-control"/>
-        <div id="error-shipping-postcode" class="invalid-feedback"></div>
-      </div>
-      <div class="col mb-3 required">
-        <label for="input-shipping-country" class="form-label">{{ entry_country }}</label>
-        <select name="shipping_country_id" id="input-shipping-country" class="form-select">
-          <option value="">{{ text_select }}</option>
-          {% for country in countries %}
-            <option value="{{ country.country_id }}"{% if country.country_id == shipping_country_id %} selected{% endif %}>{{ country.name }}</option>
-          {% endfor %}
-        </select>
-        <div id="error-shipping-country" class="invalid-feedback"></div>
-      </div>
+      <input type="hidden" name="shipping_country_id" value="{{ shipping_country_id }}" id="input-shipping-country"/>
       <div class="col mb-3 required">
         <label for="input-shipping-zone" class="form-label">{{ entry_zone }}</label>
         <select name="shipping_zone_id" id="input-shipping-zone" class="form-select" data-oc-value="{{ shipping_zone_id }}">
           <option value="">{{ text_select }}</option>
           {% for zone in shipping_zones %}
-            <option value="{{ zone.zone_id }}"{% if zone.zone_id == shipping_zone_id %} selected{% endif %}>{{ zone.name }}</option>
+            <option value="{{ zone.zone_id }}" data-code="{{ zone.code }}"{% if zone.zone_id == shipping_zone_id %} selected{% endif %}>{{ zone.name }}</option>
           {% endfor %}
         </select>
         <div id="error-shipping-zone" class="invalid-feedback"></div>

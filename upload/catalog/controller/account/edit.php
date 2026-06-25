@@ -61,6 +61,12 @@ class Edit extends \Opencart\System\Engine\Controller {
 		$data['email'] = $customer_info['email'];
 		$data['telephone'] = $customer_info['telephone'];
 
+		require_once(DIR_SYSTEM . 'helper/brazil.php');
+
+		$document = oc_brazil_document_from_custom_field($customer_info['custom_field'] ?? []);
+		$data['document_type'] = $document['document_type'];
+		$data['document_number'] = $document['document_number'] ? oc_brazil_format_document($document['document_type'], $document['document_number']) : '';
+
 		// Custom Fields
 		$data['custom_fields'] = [];
 
@@ -101,10 +107,13 @@ class Edit extends \Opencart\System\Engine\Controller {
 		$json = [];
 
 		$required = [
-			'firstname' => '',
-			'lastname'  => '',
-			'email'     => '',
-			'telephone' => ''
+			'firstname'       => '',
+			'lastname'        => '',
+			'email'           => '',
+			'telephone'       => '',
+			'document_type'   => '',
+			'document_number' => '',
+			'custom_field'    => []
 		];
 
 		$post_info = $this->request->post + $required;
@@ -139,6 +148,20 @@ class Edit extends \Opencart\System\Engine\Controller {
 				$json['error']['telephone'] = $this->language->get('error_telephone');
 			}
 
+			require_once(DIR_SYSTEM . 'helper/brazil.php');
+
+			$document_type = strtoupper(trim($post_info['document_type'] ?? ''));
+
+			if (!in_array($document_type, ['CPF', 'CNPJ'], true)) {
+				$json['error']['document_type'] = $this->language->get('error_document_type');
+			} elseif (!oc_validate_brazil_document($document_type, $post_info['document_number'] ?? '')) {
+				$json['error']['document_number'] = $this->language->get('error_document_number');
+			}
+
+			if (!isset($post_info['custom_field'])) {
+				$post_info['custom_field'] = [];
+			}
+
 			// Custom field validation
 			$this->load->model('account/custom_field');
 
@@ -156,21 +179,30 @@ class Edit extends \Opencart\System\Engine\Controller {
 		}
 
 		if (!$json) {
+			require_once(DIR_SYSTEM . 'helper/brazil.php');
+
+			$document_type = strtoupper(trim($post_info['document_type'] ?? ''));
+			$post_info['custom_field'] = oc_brazil_merge_document_custom_field(
+				$post_info['custom_field'] ?? [],
+				$document_type,
+				$post_info['document_number'] ?? ''
+			);
+
 			// Update customer in db
 			$this->model_account_customer->editCustomer($this->customer->getId(), $post_info);
 
 			$json['success'] = $this->language->get('text_success');
 
 			// Update customer session details
-			$this->session->data['customer'] = [
+			$this->session->data['customer'] = oc_brazil_hydrate_customer_session([
 				'customer_id'       => $this->customer->getId(),
 				'customer_group_id' => $this->customer->getGroupId(),
 				'firstname'         => $post_info['firstname'],
 				'lastname'          => $post_info['lastname'],
 				'email'             => $post_info['email'],
 				'telephone'         => $post_info['telephone'],
-				'custom_field'      => $post_info['custom_field'] ?? []
-			];
+				'custom_field'      => $post_info['custom_field']
+			]);
 
 			unset($this->session->data['shipping_method']);
 			unset($this->session->data['shipping_methods']);

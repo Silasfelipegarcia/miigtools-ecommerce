@@ -106,9 +106,18 @@ class Confirm extends \Opencart\System\Engine\Controller {
 			$order_data['telephone'] = $this->session->data['customer']['telephone'];
 			$order_data['custom_field'] = $this->session->data['customer']['custom_field'];
 
+			require_once(DIR_SYSTEM . 'helper/brazil.php');
+
 			if (!empty($this->session->data['customer']['document_type'])) {
 				$order_data['custom_field']['document_type'] = $this->session->data['customer']['document_type'];
 				$order_data['custom_field']['document_number'] = $this->session->data['customer']['document_number'];
+			} else {
+				$document = oc_brazil_document_from_custom_field($order_data['custom_field'] ?? []);
+
+				if ($document['document_type']) {
+					$order_data['custom_field']['document_type'] = $document['document_type'];
+					$order_data['custom_field']['document_number'] = $document['document_number'];
+				}
 			}
 
 			// Payment Details

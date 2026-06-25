@@ -201,14 +201,22 @@ class Address extends \Opencart\System\Engine\Controller {
 		if (!empty($address_info)) {
 			$data['firstname'] = $address_info['firstname'];
 		} else {
-			$data['firstname'] = '';
+			$data['firstname'] = $this->customer->getFirstName();
 		}
 
 		if (!empty($address_info)) {
 			$data['lastname'] = $address_info['lastname'];
 		} else {
-			$data['lastname'] = '';
+			$data['lastname'] = $this->customer->getLastName();
 		}
+
+		$data['customer_firstname'] = $this->customer->getFirstName();
+		$data['customer_lastname'] = $this->customer->getLastName();
+		$data['recipient_other'] = !empty($address_info) && (
+			$address_info['firstname'] !== $this->customer->getFirstName()
+			|| $address_info['lastname'] !== $this->customer->getLastName()
+		);
+		$data['brazil_country_id'] = (int)$this->config->get('config_country_id');
 
 		if (!empty($address_info)) {
 			$data['company'] = $address_info['company'];
@@ -220,6 +228,16 @@ class Address extends \Opencart\System\Engine\Controller {
 			$data['address_1'] = $address_info['address_1'];
 		} else {
 			$data['address_1'] = '';
+		}
+
+		require_once(DIR_SYSTEM . 'helper/brazil.php');
+
+		$parsed = oc_brazil_parse_address_number($data['address_1']);
+		$data['address_street'] = $parsed['street'];
+		$data['address_number'] = $parsed['number'];
+
+		if (!empty($address_info) && $data['address_street'] !== $data['address_1']) {
+			$data['address_1'] = $data['address_street'];
 		}
 
 		if (!empty($address_info)) {
@@ -312,17 +330,35 @@ class Address extends \Opencart\System\Engine\Controller {
 		$json = [];
 
 		$required = [
-			'firstname'  => '',
-			'lastname'   => '',
-			'address_1'  => '',
-			'address_2'  => '',
-			'city'       => '',
-			'postcode'   => '',
-			'country_id' => 0,
-			'zone_id'    => 0
+			'firstname'      => '',
+			'lastname'       => '',
+			'address_1'      => '',
+			'address_2'      => '',
+			'address_number' => '',
+			'city'           => '',
+			'postcode'       => '',
+			'country_id'     => 0,
+			'zone_id'        => 0
 		];
 
 		$post_info = $this->request->post + $required;
+
+		require_once(DIR_SYSTEM . 'helper/brazil.php');
+
+		if (empty($post_info['recipient_other'])) {
+			if (!oc_validate_length((string)$post_info['firstname'], 1, 32)) {
+				$post_info['firstname'] = $this->customer->getFirstName();
+			}
+
+			if (!oc_validate_length((string)$post_info['lastname'], 1, 32)) {
+				$post_info['lastname'] = $this->customer->getLastName();
+			}
+		}
+
+		$post_info['address_1'] = oc_brazil_merge_address_number(
+			(string)$post_info['address_1'],
+			(string)$post_info['address_number']
+		);
 
 		if (!$this->load->controller('account/login.validate')) {
 			$this->session->data['redirect'] = $this->url->link('account/address', 'language=' . $this->config->get('config_language'));

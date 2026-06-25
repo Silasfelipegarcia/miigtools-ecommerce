@@ -240,6 +240,45 @@ if ($db_host === '') {
 			echo "bootstrap-db: grupos de clientes pt-br garantidos\n";
 		}
 
+		$mysqli->query(
+			"UPDATE `{$db_prefix}country_description` SET `name` = 'Brasil' WHERE `country_id` = 30 AND `language_id` = 2"
+		);
+		echo "bootstrap-db: país Brasil (pt-br)\n";
+
+		$address_format = "{firstname} {lastname}\n{address_1}\n{address_2}\n{company}\n{city} - {zone_code}\nCEP {postcode}\n{country}";
+		$format_stmt = $mysqli->prepare(
+			"UPDATE `{$db_prefix}address_format` SET `format` = ? WHERE `address_format_id` = 1"
+		);
+
+		if ($format_stmt) {
+			$format_stmt->bind_param('s', $address_format);
+			$format_stmt->execute();
+			$format_stmt->close();
+			echo "bootstrap-db: formato de endereço BR\n";
+		}
+
+		$info_pages = [
+			[2, 'Termos e Condições', '<p>Termos e condições de uso da loja MIIGTOOLS. Ao comprar, você concorda com as regras de pagamento, entrega e trocas descritas nesta página.</p>', 'Termos e Condições | MIIGTOOLS'],
+			[3, 'Política de Privacidade', '<p>A MIIGTOOLS respeita sua privacidade. Utilizamos seus dados (nome, e-mail, CPF/CNPJ, telefone e endereço) apenas para processar pedidos, emitir notas e melhorar nosso atendimento, conforme a LGPD.</p>', 'Política de Privacidade | MIIGTOOLS'],
+			[4, 'Informações de Entrega', '<p>Enviamos para todo o Brasil. O prazo e o valor do frete são calculados no checkout conforme o CEP e o peso dos produtos.</p>', 'Entrega | MIIGTOOLS'],
+		];
+
+		$info_insert = $mysqli->prepare(
+			"INSERT INTO `{$info_table}` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`)
+			VALUES (?, 2, ?, ?, ?, '', '')
+			ON DUPLICATE KEY UPDATE `title` = VALUES(`title`), `description` = VALUES(`description`), `meta_title` = VALUES(`meta_title`)"
+		);
+
+		if ($info_insert) {
+			foreach ($info_pages as [$information_id, $title, $description, $meta_title]) {
+				$info_insert->bind_param('issss', $information_id, $title, $description, $meta_title);
+				$info_insert->execute();
+			}
+
+			$info_insert->close();
+			echo "bootstrap-db: páginas institucionais pt-br (2-4)\n";
+		}
+
 		$mysqli->close();
 	}
 }

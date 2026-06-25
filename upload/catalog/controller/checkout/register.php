@@ -212,6 +212,7 @@ class Register extends \Opencart\System\Engine\Controller {
 			'document_number'       => '',
 			'payment_company'       => '',
 			'payment_address_1'     => '',
+			'payment_address_number'=> '',
 			'payment_address_2'     => '',
 			'payment_city'          => '',
 			'payment_postcode'      => '',
@@ -223,6 +224,7 @@ class Register extends \Opencart\System\Engine\Controller {
 			'shipping_lastname'     => '',
 			'shipping_company'      => '',
 			'shipping_address_1'    => '',
+			'shipping_address_number'=> '',
 			'shipping_address_2'    => '',
 			'shipping_city'         => '',
 			'shipping_postcode'     => '',
@@ -234,6 +236,18 @@ class Register extends \Opencart\System\Engine\Controller {
 		];
 
 		$post_info = $this->request->post + $required;
+
+		require_once(DIR_SYSTEM . 'helper/brazil.php');
+
+		$post_info['payment_address_1'] = oc_brazil_merge_address_number(
+			(string)$post_info['payment_address_1'],
+			(string)($post_info['payment_address_number'] ?? '')
+		);
+
+		$post_info['shipping_address_1'] = oc_brazil_merge_address_number(
+			(string)$post_info['shipping_address_1'],
+			(string)($post_info['shipping_address_number'] ?? '')
+		);
 
 		// Force account requires subscript or is a downloadable product.
 		if ($this->cart->hasDownload() || $this->cart->hasSubscription() || !$this->config->get('config_checkout_guest')) {
@@ -503,8 +517,14 @@ class Register extends \Opencart\System\Engine\Controller {
 				'telephone'         => $post_info['telephone'],
 				'document_type'     => $document_type,
 				'document_number'   => oc_brazil_digits($post_info['document_number'] ?? ''),
-				'custom_field'      => $post_info['custom_field'] ?? []
+				'custom_field'      => oc_brazil_merge_document_custom_field(
+					$post_info['custom_field'] ?? [],
+					$document_type,
+					$post_info['document_number'] ?? ''
+				)
 			];
+
+			$post_info['custom_field'] = $customer_data['custom_field'];
 
 			// Register
 			if ($post_info['account']) {
@@ -518,7 +538,7 @@ class Register extends \Opencart\System\Engine\Controller {
 
 			// Check if current customer group requires approval
 			if (!$customer_group_info['approval']) {
-				$this->session->data['customer'] = $customer_data;
+				$this->session->data['customer'] = oc_brazil_hydrate_customer_session($customer_data);
 			}
 
 			// Payment Address

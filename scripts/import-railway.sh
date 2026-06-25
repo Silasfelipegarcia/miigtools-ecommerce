@@ -34,6 +34,13 @@ INSERT IGNORE INTO ws_customer_group_description (customer_group_id, language_id
   (1, 2, 'Padrão', 'Grupo de clientes padrão'),
   (2, 2, 'Varejo', 'Clientes de varejo'),
   (3, 2, 'Atacado', 'Clientes atacado');
+UPDATE ws_country_description SET name = 'Brasil' WHERE country_id = 30 AND language_id = 2;
+UPDATE ws_address_format SET format = '{firstname} {lastname}\\n{address_1}\\n{address_2}\\n{company}\\n{city} - {zone_code}\\nCEP {postcode}\\n{country}' WHERE address_format_id = 1;
+INSERT INTO ws_information_description (information_id, language_id, title, description, meta_title, meta_description, meta_keyword) VALUES
+  (2, 2, 'Termos e Condições', '<p>Termos e condições de uso da loja MIIGTOOLS.</p>', 'Termos e Condições | MIIGTOOLS', '', ''),
+  (3, 2, 'Política de Privacidade', '<p>A MIIGTOOLS respeita sua privacidade e trata seus dados conforme a LGPD.</p>', 'Política de Privacidade | MIIGTOOLS', '', ''),
+  (4, 2, 'Informações de Entrega', '<p>Enviamos para todo o Brasil. Prazo e frete calculados no checkout.</p>', 'Entrega | MIIGTOOLS', '', '')
+ON DUPLICATE KEY UPDATE title = VALUES(title), description = VALUES(description), meta_title = VALUES(meta_title);
 UPDATE ws_store SET url = '${RAILWAY_URL}/' WHERE store_id = 0;
 "
 

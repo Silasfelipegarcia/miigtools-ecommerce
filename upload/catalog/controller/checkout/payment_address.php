@@ -77,6 +77,7 @@ class PaymentAddress extends \Opencart\System\Engine\Controller {
 			'lastname'     => '',
 			'company'      => '',
 			'address_1'    => '',
+			'address_number' => '',
 			'address_2'    => '',
 			'city'         => '',
 			'postcode'     => '',
@@ -86,6 +87,21 @@ class PaymentAddress extends \Opencart\System\Engine\Controller {
 		];
 
 		$post_info = $this->request->post + $required;
+
+		require_once(DIR_SYSTEM . 'helper/brazil.php');
+
+		if (!oc_validate_length($post_info['firstname'], 1, 32)) {
+			$post_info['firstname'] = $this->customer->getFirstName();
+		}
+
+		if (!oc_validate_length($post_info['lastname'], 1, 32)) {
+			$post_info['lastname'] = $this->customer->getLastName();
+		}
+
+		$post_info['address_1'] = oc_brazil_merge_address_number(
+			(string)$post_info['address_1'],
+			(string)($post_info['address_number'] ?? '')
+		);
 
 		// Validate cart has products and has stock.
 		if (!$this->cart->hasProducts() || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout')) || !$this->cart->hasMinimum()) {

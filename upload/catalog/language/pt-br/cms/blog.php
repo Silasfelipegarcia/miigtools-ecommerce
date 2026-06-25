@@ -3,21 +3,21 @@
 $_['heading_title'] = 'Blog';
 
 // Text
-$_['text_refine'] = 'Refine Search';
-$_['text_all'] = 'All';
+$_['text_refine'] = 'Refinar busca';
+$_['text_all'] = 'Todos';
 $_['text_blog'] = 'Blog';
-$_['text_by'] = 'By';
-$_['text_tags'] = 'Tags:';
-$_['text_comment'] = 'comments';
-$_['text_no_results'] = 'There are no articles.';
-$_['text_sort'] = 'Sort By';
-$_['text_rating_asc'] = 'Rating (Lowest)';
-$_['text_rating_desc'] = 'Rating (Highest)';
-$_['text_date_added_asc'] = 'Date Added (Oldest)';
-$_['text_date_added_desc'] = 'Date Added (Latest)';
+$_['text_by'] = 'Por';
+$_['text_tags'] = 'Etiquetas:';
+$_['text_comment'] = 'comentários';
+$_['text_no_results'] = 'Não há artigos publicados.';
+$_['text_sort'] = 'Ordenar por';
+$_['text_rating_asc'] = 'Avaliação (menor)';
+$_['text_rating_desc'] = 'Avaliação (maior)';
+$_['text_date_added_asc'] = 'Data (mais antigo)';
+$_['text_date_added_desc'] = 'Data (mais recente)';
 
 // Entry
-$_['entry_search'] = 'Search';
+$_['entry_search'] = 'Pesquisar';
 
 // Button
-$_['button_continue'] = 'Continue Reading';
+$_['button_continue'] = 'Continuar lendo';

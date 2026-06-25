@@ -13,9 +13,15 @@ $_['entry_firstname']    = 'Nome';
 $_['entry_lastname']     = 'Sobrenome';
 $_['entry_email']        = 'E-mail';
 $_['entry_telephone']    = 'Telefone';
+$_['entry_document_type'] = 'Tipo de documento';
+$_['entry_document_number'] = 'CPF/CNPJ';
+$_['text_document_cpf']  = 'CPF (Pessoa Física)';
+$_['text_document_cnpj'] = 'CNPJ (Pessoa Jurídica)';
 
 // Error
 $_['error_exists']       = 'Atenção: Este e-mail já está cadastrado.';
+$_['error_document_type'] = 'Selecione o tipo de documento!';
+$_['error_document_number'] = 'Informe um CPF ou CNPJ válido!';
 $_['error_firstname']    = 'O nome deve ter entre 1 e 32 caracteres.';
 $_['error_lastname']     = 'O sobrenome deve entre 1 e 32 caracteres.';
 $_['error_email']        = 'O e-mail não é válido.';
