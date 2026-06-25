@@ -218,6 +218,28 @@ if ($db_host === '') {
 			echo "bootstrap-db: página Sobre (id 5) atualizada\n";
 		}
 
+		// Descrições dos grupos de clientes em pt-br (language_id 2) — dump só tinha inglês.
+		$cgd_table = $db_prefix . 'customer_group_description';
+		$group_descriptions = [
+			[1, 2, 'Padrão', 'Grupo de clientes padrão'],
+			[2, 2, 'Varejo', 'Clientes de varejo'],
+			[3, 2, 'Atacado', 'Clientes atacado'],
+		];
+
+		$cgd_stmt = $mysqli->prepare(
+			"INSERT IGNORE INTO `{$cgd_table}` (`customer_group_id`, `language_id`, `name`, `description`) VALUES (?, ?, ?, ?)"
+		);
+
+		if ($cgd_stmt) {
+			foreach ($group_descriptions as [$group_id, $language_id, $name, $description]) {
+				$cgd_stmt->bind_param('iiss', $group_id, $language_id, $name, $description);
+				$cgd_stmt->execute();
+			}
+
+			$cgd_stmt->close();
+			echo "bootstrap-db: grupos de clientes pt-br garantidos\n";
+		}
+
 		$mysqli->close();
 	}
 }

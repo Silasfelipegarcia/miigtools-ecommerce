@@ -30,6 +30,10 @@ UPDATE ws_setting SET value = '${RAILWAY_URL}/' WHERE \`key\` = 'config_url' AND
 UPDATE ws_setting SET value = '${RAILWAY_URL}/' WHERE \`key\` = 'config_ssl' AND store_id = 0;
 UPDATE ws_setting SET value = '1', serialized = 0 WHERE \`key\` = 'config_customer_group_id' AND store_id = 0;
 UPDATE ws_setting SET value = '[\"1\"]', serialized = 1 WHERE \`key\` = 'config_customer_group_display' AND store_id = 0;
+INSERT IGNORE INTO ws_customer_group_description (customer_group_id, language_id, name, description) VALUES
+  (1, 2, 'Padrão', 'Grupo de clientes padrão'),
+  (2, 2, 'Varejo', 'Clientes de varejo'),
+  (3, 2, 'Atacado', 'Clientes atacado');
 UPDATE ws_store SET url = '${RAILWAY_URL}/' WHERE store_id = 0;
 "
 
