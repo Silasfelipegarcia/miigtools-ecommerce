@@ -16,6 +16,8 @@ ensure_single_mpm() {
 }
 
 configure_apache() {
+	a2enmod setenvif 2>/dev/null || true
+
 	cat > /etc/apache2/ports.conf <<EOF
 Listen ${PORT}
 EOF
@@ -24,6 +26,10 @@ EOF
 <VirtualHost *:${PORT}>
 	ServerAdmin webmaster@localhost
 	DocumentRoot /var/www/html
+	UseCanonicalPhysicalPort Off
+
+	# Railway termina TLS no proxy; evita redirect para http://host:8080/...
+	SetEnvIf X-Forwarded-Proto "https" HTTPS=on
 
 	<Directory /var/www/html>
 		Options Indexes FollowSymLinks

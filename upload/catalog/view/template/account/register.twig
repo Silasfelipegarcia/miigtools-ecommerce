@@ -24,6 +24,8 @@
                 </select>
               </div>
             </div>
+          {% else %}
+            <input type="hidden" name="customer_group_id" value="{{ customer_group_id }}" id="input-customer-group"/>
           {% endif %}
           <div class="row mb-3 required">
             <label for="input-firstname" class="col-sm-2 col-form-label">{{ entry_firstname }}</label>

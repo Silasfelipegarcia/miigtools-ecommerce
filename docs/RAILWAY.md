@@ -44,20 +44,26 @@ chmod +x scripts/export-database.sh
 ./scripts/export-database.sh winner_steel database/winner_steel.sql
 ```
 
-Instale o [Railway CLI](https://docs.railway.app/develop/cli) e faça login:
+Faça login e importe com o script (usa `npx`, não precisa instalar globalmente):
 
 ```bash
-railway login
-railway link
+npx @railway/cli login
+npx @railway/cli link
+./scripts/import-railway.sh
 ```
 
-Importe o dump (substitua pelo nome do serviço MySQL se necessário):
+Ou importe manualmente (substitua `--service MySQL` se o serviço tiver outro nome):
 
 ```bash
-railway run --service MySQL mysql -h "$MYSQLHOST" -u "$MYSQLUSER" -p"$MYSQLPASSWORD" -P "$MYSQLPORT" "$MYSQLDATABASE" < database/winner_steel.sql
+npx @railway/cli run --service MySQL mysql -h "$MYSQLHOST" -u "$MYSQLUSER" -p"$MYSQLPASSWORD" -P "$MYSQLPORT" "$MYSQLDATABASE" < database/winner_steel.sql
+npx @railway/cli run --service MySQL mysql ... < database/update-railway-url.sql
 ```
 
-Ou use um cliente MySQL (TablePlus, DBeaver) com a **URL pública** do MySQL no painel do Railway.
+**Alternativa sem CLI:** no painel Railway → serviço MySQL → **Connect** → use TablePlus/DBeaver com a URL pública e importe `database/winner_steel.sql`, depois rode `database/update-railway-url.sql`.
+
+### Erro: `Table 'railway.ws_store' doesn't exist`
+
+Significa que o MySQL do Railway está **vazio** — o deploy subiu, mas o dump local ainda não foi importado. Siga o passo 4 acima.
 
 ### 5. Domínio e URLs da loja
 

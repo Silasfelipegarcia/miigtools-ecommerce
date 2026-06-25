@@ -23,7 +23,7 @@ $_['entry_password']           = 'Senha';
 // Error
 $_['error_token']              = 'Atenção: token de cadastro inválido!';
 $_['error_exists']             = 'Atenção: este e-mail já está cadastrado!';
-$_['error_customer_group']     = 'Atenção: o tipo de conta não é válido!';
+$_['error_customer_group']     = 'Atenção: tipo de conta não permitido. Tente novamente ou entre em contato.';
 $_['error_firstname']          = 'O nome deve ter entre 1 e 32 caracteres!';
 $_['error_lastname']           = 'O sobrenome deve ter entre 1 e 32 caracteres!';
 $_['error_email']              = 'O e-mail não parece válido!';

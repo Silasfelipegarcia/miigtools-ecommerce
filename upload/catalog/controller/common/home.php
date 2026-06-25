@@ -40,22 +40,22 @@ class Home extends \Opencart\System\Engine\Controller {
 
 		$data['value_props'] = [
 			[
-				'icon'  => 'fa-solid fa-fire-flame-curved',
+				'icon'  => 'fa-solid fa-screwdriver-wrench',
 				'title' => $this->language->get('text_vp_1_title'),
 				'text'  => $this->language->get('text_vp_1_text'),
 			],
 			[
-				'icon'  => 'fa-solid fa-boxes-stacked',
+				'icon'  => 'fa-solid fa-gears',
 				'title' => $this->language->get('text_vp_2_title'),
 				'text'  => $this->language->get('text_vp_2_text'),
 			],
 			[
-				'icon'  => 'fa-solid fa-helmet-safety',
+				'icon'  => 'fa-solid fa-industry',
 				'title' => $this->language->get('text_vp_3_title'),
 				'text'  => $this->language->get('text_vp_3_text'),
 			],
 			[
-				'icon'  => 'fa-solid fa-gauge-high',
+				'icon'  => 'fa-solid fa-toolbox',
 				'title' => $this->language->get('text_vp_4_title'),
 				'text'  => $this->language->get('text_vp_4_text'),
 			],
@@ -80,12 +80,12 @@ class Home extends \Opencart\System\Engine\Controller {
 			[
 				'value' => $this->language->get('text_about_stat_1_value'),
 				'label' => $this->language->get('text_about_stat_1_label'),
-				'icon'  => 'fa-solid fa-fire-flame-curved',
+				'icon'  => 'fa-solid fa-certificate',
 			],
 			[
 				'value' => $this->language->get('text_about_stat_2_value'),
 				'label' => $this->language->get('text_about_stat_2_label'),
-				'icon'  => 'fa-solid fa-helmet-safety',
+				'icon'  => 'fa-solid fa-gem',
 			],
 			[
 				'value' => $this->language->get('text_about_stat_3_value'),

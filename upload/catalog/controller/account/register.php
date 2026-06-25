@@ -160,17 +160,33 @@ class Register extends \Opencart\System\Engine\Controller {
 
 		if (!$json) {
 			// Customer Group
+			$default_customer_group_id = (int)$this->config->get('config_customer_group_id');
+
 			if ($post_info['customer_group_id']) {
 				$customer_group_id = (int)$post_info['customer_group_id'];
 			} else {
-				$customer_group_id = (int)$this->config->get('config_customer_group_id');
+				$customer_group_id = $default_customer_group_id;
 			}
+
+			$display_groups = $this->config->get('config_customer_group_display');
+
+			if (!is_array($display_groups)) {
+				$decoded = json_decode((string)$display_groups, true);
+
+				$display_groups = is_array($decoded) ? $decoded : [];
+			}
+
+			if (!$display_groups) {
+				$display_groups = [$default_customer_group_id];
+			}
+
+			$display_groups = array_map('intval', $display_groups);
 
 			$this->load->model('account/customer_group');
 
 			$customer_group_info = $this->model_account_customer_group->getCustomerGroup($customer_group_id);
 
-			if (!$customer_group_info || !in_array($customer_group_id, (array)$this->config->get('config_customer_group_display'))) {
+			if (!$customer_group_info || !in_array($customer_group_id, $display_groups, true)) {
 				$json['error']['warning'] = $this->language->get('error_customer_group');
 			}
 
