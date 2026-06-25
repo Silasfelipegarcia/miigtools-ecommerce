@@ -6,6 +6,19 @@ function env(string $key, string $default = ''): string {
 	return $value !== false ? $value : $default;
 }
 
+function bootstrap_setting(\mysqli $mysqli, string $table, string $code, string $key, string $value, int $serialized = 0): void {
+	$stmt = $mysqli->prepare(
+		"INSERT INTO `{$table}` (`store_id`, `code`, `key`, `value`, `serialized`) VALUES (0, ?, ?, ?, ?)
+		ON DUPLICATE KEY UPDATE `value` = VALUES(`value`), `serialized` = VALUES(`serialized`)"
+	);
+
+	if ($stmt) {
+		$stmt->bind_param('sssi', $code, $key, $value, $serialized);
+		$stmt->execute();
+		$stmt->close();
+	}
+}
+
 function write_php_config(string $path, array $defines): void {
 	$lines = ['<?php'];
 
@@ -108,19 +121,8 @@ if ($db_host === '') {
 		];
 
 		foreach ($updates as $key => $value) {
-			$stmt = $mysqli->prepare(
-				"UPDATE `{$table}` SET `value` = ? WHERE `key` = ? AND `store_id` = 0"
-			);
-
-			if ($stmt) {
-				$stmt->bind_param('ss', $value, $key);
-				$stmt->execute();
-				$affected = $stmt->affected_rows;
-				$stmt->close();
-				echo "update-store-url: {$key} → {$value} ({$affected} linha(s) afetada(s))\n";
-			} else {
-				echo "update-store-url: falha ao preparar statement para {$key}: " . $mysqli->error . "\n";
-			}
+			bootstrap_setting($mysqli, $table, 'config', $key, $value, 0);
+			echo "update-store-url: {$key} → {$value}\n";
 		}
 
 		// Garante grupo de clientes para cadastro (evita "tipo de conta não permitido").
@@ -277,6 +279,56 @@ if ($db_host === '') {
 
 			$info_insert->close();
 			echo "bootstrap-db: páginas institucionais pt-br (2-4)\n";
+		}
+
+		$mysqli->query(
+			"INSERT IGNORE INTO `{$db_prefix}extension` (`extension`, `type`, `code`) VALUES ('opencart', 'payment', 'bank_transfer')"
+		);
+
+		$bank_pt = "Titular: MIIGTOOLS\nBanco: [atualize no admin]\nAgência: [atualize no admin]\nConta: [atualize no admin]\nPIX: [atualize no admin]";
+		$bank_en = "Account holder: MIIGTOOLS\nBank: [update in admin]\nBranch: [update]\nAccount: [update]\nPIX: [update]";
+
+		$payment_bootstrap = [
+			['payment_cod', 'payment_cod_status', '1'],
+			['payment_cod', 'payment_cod_sort_order', '1'],
+			['payment_cod', 'payment_cod_order_status_id', '1'],
+			['payment_cod', 'payment_cod_geo_zone_id', '0'],
+			['payment_bank_transfer', 'payment_bank_transfer_status', '1'],
+			['payment_bank_transfer', 'payment_bank_transfer_sort_order', '2'],
+			['payment_bank_transfer', 'payment_bank_transfer_order_status_id', '1'],
+			['payment_bank_transfer', 'payment_bank_transfer_geo_zone_id', '0'],
+			['payment_bank_transfer', 'payment_bank_transfer_bank_2', $bank_pt],
+			['payment_bank_transfer', 'payment_bank_transfer_bank_1', $bank_en],
+		];
+
+		foreach ($payment_bootstrap as [$code, $key, $value]) {
+			bootstrap_setting($mysqli, $table, $code, $key, $value, 0);
+		}
+
+		echo "bootstrap-db: pagamentos checkout (COD + transferência bancária)\n";
+
+		$mp_token = '';
+		$mp_test = '';
+
+		$mp_res = $mysqli->query(
+			"SELECT `value` FROM `{$table}` WHERE `key` = 'payment_mercadopago_access_token' AND `store_id` = 0 LIMIT 1"
+		);
+
+		if ($mp_res && ($row = $mp_res->fetch_assoc())) {
+			$mp_token = trim((string) $row['value']);
+		}
+
+		$mp_test_res = $mysqli->query(
+			"SELECT `value` FROM `{$table}` WHERE `key` = 'payment_mercadopago_access_token_test' AND `store_id` = 0 LIMIT 1"
+		);
+
+		if ($mp_test_res && ($row = $mp_test_res->fetch_assoc())) {
+			$mp_test = trim((string) $row['value']);
+		}
+
+		if ($mp_token === '' && $mp_test === '') {
+			bootstrap_setting($mysqli, $table, 'payment_mercadopago', 'payment_mercadopago_status', '0', 0);
+			echo "bootstrap-db: Mercado Pago desativado (sem credenciais)\n";
 		}
 
 		$mysqli->close();

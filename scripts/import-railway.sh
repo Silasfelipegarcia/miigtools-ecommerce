@@ -36,6 +36,16 @@ INSERT IGNORE INTO ws_customer_group_description (customer_group_id, language_id
   (3, 2, 'Atacado', 'Clientes atacado');
 UPDATE ws_country_description SET name = 'Brasil' WHERE country_id = 30 AND language_id = 2;
 UPDATE ws_address_format SET address_format = '{firstname} {lastname}\\n{address_1}\\n{address_2}\\n{company}\\n{city} - {zone_code}\\nCEP {postcode}\\n{country}' WHERE address_format_id = 1;
+INSERT IGNORE INTO ws_extension (extension, type, code) VALUES ('opencart', 'payment', 'bank_transfer');
+INSERT INTO ws_setting (store_id, code, \`key\`, value, serialized) VALUES
+  (0, 'payment_cod', 'payment_cod_status', '1', 0),
+  (0, 'payment_bank_transfer', 'payment_bank_transfer_status', '1', 0),
+  (0, 'payment_bank_transfer', 'payment_bank_transfer_sort_order', '2', 0),
+  (0, 'payment_bank_transfer', 'payment_bank_transfer_order_status_id', '1', 0),
+  (0, 'payment_bank_transfer', 'payment_bank_transfer_geo_zone_id', '0', 0),
+  (0, 'payment_bank_transfer', 'payment_bank_transfer_bank_2', 'Titular: MIIGTOOLS\\nBanco: [atualize no admin]\\nPIX: [atualize no admin]', 0)
+ON DUPLICATE KEY UPDATE value = VALUES(value);
+UPDATE ws_setting SET value = '0' WHERE \`key\` = 'payment_mercadopago_status' AND store_id = 0;
 INSERT INTO ws_information_description (information_id, language_id, title, description, meta_title, meta_description, meta_keyword) VALUES
   (2, 2, 'Termos e Condições', '<p>Termos e condições de uso da loja MIIGTOOLS.</p>', 'Termos e Condições | MIIGTOOLS', '', ''),
   (3, 2, 'Política de Privacidade', '<p>A MIIGTOOLS respeita sua privacidade e trata seus dados conforme a LGPD.</p>', 'Política de Privacidade | MIIGTOOLS', '', ''),

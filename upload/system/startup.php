@@ -45,6 +45,14 @@ if ((isset($_SERVER['HTTPS']) && (($_SERVER['HTTPS'] == 'on') || ($_SERVER['HTTP
 	$_SERVER['HTTPS'] = false;
 }
 
+// Proxy reverso (Railway, etc.): evita redirects com :8080 e HTTP indevido
+if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+	$_SERVER['HTTPS'] = true;
+	$_SERVER['SERVER_PORT'] = 443;
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_PORT'])) {
+	$_SERVER['SERVER_PORT'] = (int)$_SERVER['HTTP_X_FORWARDED_PORT'];
+}
+
 // Check IP
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 	$_SERVER['REMOTE_ADDR'] = $_SERVER['HTTP_CLIENT_IP'];

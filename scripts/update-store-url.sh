@@ -66,10 +66,10 @@ mysql \
   --password="$DB_PASS" \
   --database="$DB_NAME" \
   <<SQL
-UPDATE \`${TABLE}\`
-SET    \`value\` = '${STORE_URL}'
-WHERE  \`key\`   IN ('config_url', 'config_secure')
-  AND  \`store_id\` = 0;
+INSERT INTO \`${TABLE}\` (\`store_id\`, \`code\`, \`key\`, \`value\`, \`serialized\`) VALUES
+  (0, 'config', 'config_url', '${STORE_URL}', 0),
+  (0, 'config', 'config_secure', '${STORE_URL}', 0)
+ON DUPLICATE KEY UPDATE \`value\` = VALUES(\`value\`);
 SQL
 
 echo "[update-store-url] Concluído."

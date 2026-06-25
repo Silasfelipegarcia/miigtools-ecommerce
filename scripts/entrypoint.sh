@@ -16,7 +16,7 @@ ensure_single_mpm() {
 }
 
 configure_apache() {
-	a2enmod setenvif 2>/dev/null || true
+	a2enmod setenvif rewrite 2>/dev/null || true
 
 	cat > /etc/apache2/ports.conf <<EOF
 Listen ${PORT}
@@ -30,6 +30,9 @@ EOF
 
 	# Railway termina TLS no proxy; evita redirect para http://host:8080/...
 	SetEnvIf X-Forwarded-Proto "https" HTTPS=on
+
+	# /admin sem barra → Apache gerava http://host:8080/admin/ (timeout no Railway)
+	RedirectMatch 301 ^/admin$ /admin/
 
 	<Directory /var/www/html>
 		Options Indexes FollowSymLinks
