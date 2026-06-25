@@ -28,6 +28,22 @@
   --miig-radius-pill: 9999px;
   --miig-shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.35);
   --miig-shadow-lift: 0 20px 50px rgba(0, 0, 0, 0.45);
+  /* Feedback — mapa de contraste no tema escuro */
+  --miig-success-text: #d1fae5;
+  --miig-success-icon: #4ade80;
+  --miig-success-bg: rgba(22, 101, 52, 0.55);
+  --miig-success-border: rgba(74, 222, 128, 0.45);
+  --miig-danger-text: #fecaca;
+  --miig-danger-icon: #f87171;
+  --miig-danger-bg: rgba(127, 29, 29, 0.5);
+  --miig-danger-border: rgba(248, 113, 113, 0.45);
+  --miig-warning-text: var(--miig-gold-bright);
+  --miig-warning-icon: var(--miig-gold);
+  --miig-warning-bg: rgba(120, 90, 20, 0.45);
+  --miig-warning-border: rgba(212, 175, 55, 0.45);
+  --miig-info-text: var(--miig-text);
+  --miig-info-bg: rgba(212, 175, 55, 0.12);
+  --miig-info-border: var(--miig-border);
 }
 
 /* Alinha Bootstrap ao tema (evita azul #229ac8 em .btn-primary, links, etc.) */
@@ -71,6 +87,19 @@
   --bs-tooltip-color: var(--miig-text);
   --bs-tooltip-bg: var(--miig-elevated-2);
   --bs-tooltip-opacity: 1;
+  /* Alertas Bootstrap — texto claro + fundo escuro (evita verde claro + texto escuro) */
+  --bs-success-text-emphasis: var(--miig-success-text);
+  --bs-success-bg-subtle: var(--miig-success-bg);
+  --bs-success-border-subtle: var(--miig-success-border);
+  --bs-danger-text-emphasis: var(--miig-danger-text);
+  --bs-danger-bg-subtle: var(--miig-danger-bg);
+  --bs-danger-border-subtle: var(--miig-danger-border);
+  --bs-warning-text-emphasis: var(--miig-warning-text);
+  --bs-warning-bg-subtle: var(--miig-warning-bg);
+  --bs-warning-border-subtle: var(--miig-warning-border);
+  --bs-info-text-emphasis: var(--miig-info-text);
+  --bs-info-bg-subtle: var(--miig-info-bg);
+  --bs-info-border-subtle: var(--miig-info-border);
 }
 
 .theme-miigtools,
@@ -895,9 +924,9 @@
 }
 
 .theme-miigtools .alert-info {
-  background: rgba(212, 175, 55, 0.1);
-  border-color: var(--miig-border);
-  color: var(--miig-text);
+  background: var(--miig-info-bg);
+  border: 1px solid var(--miig-info-border);
+  color: var(--miig-info-text);
 }
 
 /* Home — hero + “o que vendemos” */
@@ -1620,9 +1649,57 @@
 }
 
 /* Alertas, badges, accordion */
+.theme-miigtools #alert .alert {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
 .theme-miigtools .alert {
   border-radius: var(--miig-radius-lg);
   color: var(--miig-text);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.theme-miigtools .alert-success {
+  background: var(--miig-success-bg) !important;
+  border-color: var(--miig-success-border) !important;
+  color: var(--miig-success-text) !important;
+}
+
+.theme-miigtools .alert-success i {
+  color: var(--miig-success-icon);
+}
+
+.theme-miigtools .alert-danger {
+  background: var(--miig-danger-bg) !important;
+  border-color: var(--miig-danger-border) !important;
+  color: var(--miig-danger-text) !important;
+}
+
+.theme-miigtools .alert-danger i {
+  color: var(--miig-danger-icon);
+}
+
+.theme-miigtools .alert-warning {
+  background: var(--miig-warning-bg) !important;
+  border-color: var(--miig-warning-border) !important;
+  color: var(--miig-warning-text) !important;
+}
+
+.theme-miigtools .alert-warning i {
+  color: var(--miig-warning-icon);
+}
+
+.theme-miigtools .alert .btn-close {
+  --bs-btn-close-color: #fff;
+  --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+  opacity: 0.75;
+}
+
+.theme-miigtools .alert .btn-close:hover {
+  opacity: 1;
 }
 
 .theme-miigtools .badge {
@@ -1651,9 +1728,12 @@
   color: var(--miig-muted) !important;
 }
 
-.theme-miigtools .invalid-feedback,
+.theme-miigtools .invalid-feedback {
+  color: var(--miig-danger-text);
+}
+
 .theme-miigtools .valid-feedback {
-  color: #fca5a5;
+  color: var(--miig-success-text);
 }
 
 .theme-miigtools .form-control.is-invalid,
