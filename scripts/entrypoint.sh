@@ -31,12 +31,14 @@ EOF
 	# Railway termina TLS no proxy; evita redirect para http://host:8080/...
 	SetEnvIf X-Forwarded-Proto "https" HTTPS=on
 
-	# /admin sem barra: mod_dir gerava http://host:8080/admin/ (timeout no Railway)
-	RewriteEngine On
-	RewriteCond %{HTTP:X-Forwarded-Proto} =https [OR]
-	RewriteCond %{ENV:HTTPS} =on
-	RewriteRule ^/admin$ https://%{HTTP_HOST}/admin/ [R=301,L]
-	RewriteRule ^/admin$ http://%{HTTP_HOST}/admin/ [R=301,L]
+	# /admin sem barra: mod_dir redirecionava para http://host:8080/admin/
+	<Directory /var/www/html/admin>
+		DirectorySlash Off
+		Options FollowSymLinks
+		AllowOverride All
+		Require all granted
+		DirectoryIndex index.php
+	</Directory>
 
 	<Directory /var/www/html>
 		Options Indexes FollowSymLinks
@@ -50,20 +52,6 @@ EOF
 EOF
 
 	a2ensite 000-default.conf 2>/dev/null || true
-
-	# .htaccess não versionado: garante redirect /admin sem :8080 atrás do proxy
-	cat > /var/www/html/.htaccess <<'HTACCESS'
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-
-RewriteCond %{HTTP:X-Forwarded-Proto} =https [OR]
-RewriteCond %{ENV:HTTPS} =on
-RewriteRule ^admin$ https://%{HTTP_HOST}/admin/ [R=301,L]
-
-RewriteRule ^admin$ /admin/ [R=301,L]
-</IfModule>
-HTACCESS
 }
 
 mkdir -p "${DIR_STORAGE}"{cache,session,logs,download,upload,backup,marketplace}
