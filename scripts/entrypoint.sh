@@ -35,8 +35,8 @@ EOF
 	RewriteEngine On
 	RewriteCond %{HTTP:X-Forwarded-Proto} =https [OR]
 	RewriteCond %{ENV:HTTPS} =on
-	RewriteRule ^admin$ https://%{HTTP_HOST}/admin/ [R=301,L]
-	RewriteRule ^admin$ http://%{HTTP_HOST}/admin/ [R=301,L]
+	RewriteRule ^/admin$ https://%{HTTP_HOST}/admin/ [R=301,L]
+	RewriteRule ^/admin$ http://%{HTTP_HOST}/admin/ [R=301,L]
 
 	<Directory /var/www/html>
 		Options Indexes FollowSymLinks
@@ -50,6 +50,20 @@ EOF
 EOF
 
 	a2ensite 000-default.conf 2>/dev/null || true
+
+	# .htaccess não versionado: garante redirect /admin sem :8080 atrás do proxy
+	cat > /var/www/html/.htaccess <<'HTACCESS'
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =https [OR]
+RewriteCond %{ENV:HTTPS} =on
+RewriteRule ^admin$ https://%{HTTP_HOST}/admin/ [R=301,L]
+
+RewriteRule ^admin$ /admin/ [R=301,L]
+</IfModule>
+HTACCESS
 }
 
 mkdir -p "${DIR_STORAGE}"{cache,session,logs,download,upload,backup,marketplace}
