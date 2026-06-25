@@ -31,8 +31,12 @@ EOF
 	# Railway termina TLS no proxy; evita redirect para http://host:8080/...
 	SetEnvIf X-Forwarded-Proto "https" HTTPS=on
 
-	# /admin sem barra → Apache gerava http://host:8080/admin/ (timeout no Railway)
-	RedirectMatch 301 ^/admin$ /admin/
+	# /admin sem barra: mod_dir gerava http://host:8080/admin/ (timeout no Railway)
+	RewriteEngine On
+	RewriteCond %{HTTP:X-Forwarded-Proto} =https [OR]
+	RewriteCond %{ENV:HTTPS} =on
+	RewriteRule ^admin$ https://%{HTTP_HOST}/admin/ [R=301,L]
+	RewriteRule ^admin$ http://%{HTTP_HOST}/admin/ [R=301,L]
 
 	<Directory /var/www/html>
 		Options Indexes FollowSymLinks
