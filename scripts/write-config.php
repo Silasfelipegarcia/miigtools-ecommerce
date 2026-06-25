@@ -271,7 +271,7 @@ if ($db_host === '') {
 
 		if ($info_insert) {
 			foreach ($info_pages as [$information_id, $title, $description, $meta_title]) {
-				$info_insert->bind_param('issss', $information_id, $title, $description, $meta_title);
+				$info_insert->bind_param('isss', $information_id, $title, $description, $meta_title);
 				$info_insert->execute();
 			}
 
