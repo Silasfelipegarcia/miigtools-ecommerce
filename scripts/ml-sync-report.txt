@@ -15,205 +15,210 @@ MATCHING RULES
 - PRICE is the spreadsheet PRICE exactly; tiered-pricing columns are ignored. QUANTITY is copied exactly, not multiplied.
 - Source STATUS maps to OpenCart status only for high-confidence exact matches. Only language_id=2 descriptions are changed.
 
+STOCK & SHIPPING FIELD MAPPING
+- OpenCart quantity = spreadsheet QUANTITY exactly for the matching sale unit; title pack counts never multiply inventory.
+- OpenCart length = SHIPPING_DEPTH (cm), width = SHIPPING_WIDTH (cm), height = SHIPPING_HEIGHT (cm), weight = SHIPPING_WEIGHT (kg).
+- A shipping field is overwritten only when its spreadsheet value is finite and non-negative; zero is retained as a supplied numeric value.
+
 APPLIED HIGH-CONFIDENCE MATCHES
 product_id=1 | Bits Quadrado Winner Steel 50% - 1/4" x 4" | OC SKU=bits-quadrado-50-1-4x4
   source row=80 SKU=WS008 | Bits 1/4 X 4 Winner Steel 50%
   rationale: same family, every inch dimension, material grade, and required brand; confidence=high
-  old={'price': 19.9, 'quantity': 245, 'status': 1, 'length': 3.0, 'width': 16.0, 'height': 19.0, 'weight': 0.28}
+  old={'price': 19.9, 'quantity': 0, 'status': 0, 'length': 3.0, 'width': 16.0, 'height': 19.0, 'weight': 0.28}
   new={'price': 19.9, 'quantity': 0, 'status': Inativo, 'length': 3.0, 'width': 16.0, 'height': 19.0, 'weight': 0.28}
-  changed fields={'quantity': {'old': 245, 'new': 0}, 'status': {'old': 1, 'new': 0}, 'pt_br_description': {'old_length': 851, 'new_length': 845}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=3 | Bits Quadrado Winner Steel 50% - 5/16" x 4" | OC SKU=bits-quadrado-50-5-16x4
   source row=35 SKU=WS014 | Bits 5/16 X 4 Winner Steel 50%
   rationale: same family, every inch dimension, material grade, and required brand; confidence=high
   old={'price': 26.9, 'quantity': 41, 'status': 1, 'length': 3.0, 'width': 17.0, 'height': 22.0, 'weight': 0.17}
   new={'price': 26.9, 'quantity': 41, 'status': Ativo, 'length': 3.0, 'width': 17.0, 'height': 22.0, 'weight': 0.17}
-  changed fields={'pt_br_description': {'old_length': 853, 'new_length': 847}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=5 | Bits Quadrado Winner Steel 50% - 3/8" x 4" | OC SKU=bits-quadrado-50-3-8x4
   source row=34 SKU=WS020 | Bits 3/8 X 4 Winner Steel 50%
   rationale: same family, every inch dimension, material grade, and required brand; confidence=high
   old={'price': 29.9, 'quantity': 41, 'status': 1, 'length': 3.0, 'width': 17.0, 'height': 22.0, 'weight': 0.14}
   new={'price': 29.9, 'quantity': 41, 'status': Ativo, 'length': 3.0, 'width': 17.0, 'height': 22.0, 'weight': 0.14}
-  changed fields={'pt_br_description': {'old_length': 851, 'new_length': 845}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=7 | Bits Quadrado Winner Steel 50% - 1/2" x 4" | OC SKU=bits-quadrado-50-1-2x4
   source row=43 SKU=WS028 | Bits 1/2 X 4 Winner Steel 50%
   rationale: same family, every inch dimension, material grade, and required brand; confidence=high
   old={'price': 47.04, 'quantity': 47, 'status': 1, 'length': 5.0, 'width': 17.0, 'height': 23.0, 'weight': 0.22}
   new={'price': 47.04, 'quantity': 47, 'status': Ativo, 'length': 5.0, 'width': 17.0, 'height': 23.0, 'weight': 0.22}
-  changed fields={'pt_br_description': {'old_length': 851, 'new_length': 845}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=11 | Bits Quadrado Winner Steel 10% Co - 1/4" x 4" | OC SKU=bits-quadrado-10co-1-4x4
   source row=13 SKU=WS407 | Bits 1/4 X 4 Winner Steel 10% Cobalto
   rationale: same family, every inch dimension, material grade, and required brand; confidence=high
   old={'price': 35.9, 'quantity': 10, 'status': 1, 'length': 3.0, 'width': 14.0, 'height': 18.0, 'weight': 0.12}
   new={'price': 35.9, 'quantity': 10, 'status': Ativo, 'length': 3.0, 'width': 14.0, 'height': 18.0, 'weight': 0.12}
-  changed fields={'pt_br_description': {'old_length': 863, 'new_length': 857}}; alternative rows=[139]
+  changed fields=none; alternative rows=[139]
 product_id=13 | Bits Quadrado Winner Steel 10% Co - 5/16" x 4" | OC SKU=bits-quadrado-10co-5-16x4
   source row=21 SKU=WS413 | Bits 5/16 X 4 Winner Steel 10% Cobalto
   rationale: same family, every inch dimension, material grade, and required brand; confidence=high
   old={'price': 46.9, 'quantity': 10, 'status': 1, 'length': 5.0, 'width': 20.0, 'height': 26.0, 'weight': 0.19}
   new={'price': 46.9, 'quantity': 10, 'status': Ativo, 'length': 5.0, 'width': 20.0, 'height': 26.0, 'weight': 0.19}
-  changed fields={'pt_br_description': {'old_length': 863, 'new_length': 857}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=15 | Bits Quadrado Winner Steel 10% Co - 3/8" x 4" | OC SKU=bits-quadrado-10co-3-8x4
   source row=15 SKU=WS419 | Bits 3/8 X 4 Winner Steel 10% Cobalto
   rationale: same family, every inch dimension, material grade, and required brand; confidence=high
   old={'price': 69.9, 'quantity': 19, 'status': 1, 'length': 4.0, 'width': 6.0, 'height': 12.0, 'weight': 0.18}
   new={'price': 69.9, 'quantity': 19, 'status': Ativo, 'length': None, 'width': None, 'height': None, 'weight': None}
-  changed fields={'pt_br_description': {'old_length': 863, 'new_length': 857}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=17 | Bits Quadrado Winner Steel 10% Co - 1/2" x 4" | OC SKU=bits-quadrado-10co-1-2x4
   source row=65 SKU=WS427 | Bits 1/2 X 4 Winner Steel 10% Cobalto
   rationale: same family, every inch dimension, material grade, and required brand; confidence=high
   old={'price': 129.9, 'quantity': 50, 'status': 1, 'length': 7.0, 'width': 13.0, 'height': 27.0, 'weight': 0.47}
   new={'price': 129.9, 'quantity': 50, 'status': Ativo, 'length': 7.0, 'width': 13.0, 'height': 27.0, 'weight': 0.47}
-  changed fields={'pt_br_description': {'old_length': 861, 'new_length': 855}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=21 | Bedame Winner Steel 50% - 1/2" x 1/8" x 6" | OC SKU=bedame-hss-1-2x1-8x6
   source row=41 SKU=WS104 | Bedame 1/2 X 1/8 X 6 Winner Steel 50%
   rationale: same family, every inch dimension, material grade, and required brand; confidence=high
   old={'price': 33.63, 'quantity': 46, 'status': 1, 'length': 4.0, 'width': 17.0, 'height': 26.0, 'weight': 0.38}
   new={'price': 33.63, 'quantity': 46, 'status': Ativo, 'length': 4.0, 'width': 17.0, 'height': 26.0, 'weight': 0.38}
-  changed fields={'pt_br_description': {'old_length': 892, 'new_length': 886}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=22 | Bedame Winner Steel 50% - 5/8" x 1/8" x 6" | OC SKU=bedame-hss-5-8x1-8x6
   source row=102 SKU=WS108 | Bedame 5/8 X 1/8 X 6 Winner Steel 50%
   rationale: same family, every inch dimension, material grade, and required brand; confidence=high
   old={'price': 53.99, 'quantity': 0, 'status': 0, 'length': 3.0, 'width': 17.0, 'height': 23.0, 'weight': 0.28}
   new={'price': 53.99, 'quantity': 0, 'status': Inativo, 'length': 3.0, 'width': 17.0, 'height': 23.0, 'weight': 0.28}
-  changed fields={'pt_br_description': {'old_length': 892, 'new_length': 886}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=23 | Bedame Winner Steel 50% - 3/4" x 1/8" x 6" | OC SKU=bedame-hss-3-4x1-8x6
   source row=126 SKU=WS116 | Bedame 3/4 X 1/8 X 6 Winner Steel 50%
   rationale: same family, every inch dimension, material grade, and required brand; confidence=high
-  old={'price': 59.4, 'quantity': 50, 'status': 1, 'length': 5.0, 'width': 14.0, 'height': 27.0, 'weight': 0.48}
+  old={'price': 59.4, 'quantity': 50, 'status': 0, 'length': 5.0, 'width': 14.0, 'height': 27.0, 'weight': 0.48}
   new={'price': 59.4, 'quantity': 50, 'status': Inativo, 'length': None, 'width': None, 'height': None, 'weight': None}
-  changed fields={'status': {'old': 1, 'new': 0}, 'pt_br_description': {'old_length': 892, 'new_length': 886}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=24 | Bedame Winner Steel 10% Co - 1/2" x 1/8" x 6" | OC SKU=bedame-10co-1-2x1-8x6
   source row=53 SKU=WS504 | Bedame 1/2 X 1/8 X 6 Winner Steel 10% Cobalto
   rationale: same family, every inch dimension, material grade, and required brand; confidence=high
   old={'price': 77.65, 'quantity': 49, 'status': 1, 'length': 7.0, 'width': 12.0, 'height': 17.0, 'weight': 0.36}
   new={'price': 77.65, 'quantity': 49, 'status': Ativo, 'length': 7.0, 'width': 12.0, 'height': 17.0, 'weight': 0.36}
-  changed fields={'pt_br_description': {'old_length': 904, 'new_length': 898}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=25 | Bedame Winner Steel 10% Co - 5/8" x 1/8" x 6" | OC SKU=bedame-10co-5-8x1-8x6
   source row=61 SKU=WS508 | Bedame 5/8 X 1/8 X 6 Winner Steel 10% Cobalto
   rationale: same family, every inch dimension, material grade, and required brand; confidence=high
   old={'price': 94.9, 'quantity': 50, 'status': 1, 'length': 5.0, 'width': 14.0, 'height': 25.0, 'weight': 0.38}
   new={'price': 94.9, 'quantity': 50, 'status': Ativo, 'length': 5.0, 'width': 14.0, 'height': 25.0, 'weight': 0.38}
-  changed fields={'pt_br_description': {'old_length': 904, 'new_length': 898}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=26 | Bedame Winner Steel 10% Co - 3/4" x 1/8" x 6" | OC SKU=bedame-10co-3-4x1-8x6
   source row=30 SKU=WS516 | Bedame 3/4 X 1/8 X 6 Winner Steel 10% Cobalto
   rationale: same family, every inch dimension, material grade, and required brand; confidence=high
   old={'price': 89.06, 'quantity': 40, 'status': 1, 'length': 3.0, 'width': 11.0, 'height': 19.0, 'weight': 0.53}
   new={'price': 89.06, 'quantity': 40, 'status': Ativo, 'length': 3.0, 'width': 11.0, 'height': 19.0, 'weight': 0.53}
-  changed fields={'pt_br_description': {'old_length': 904, 'new_length': 898}}; alternative rows=[138]
+  changed fields=none; alternative rows=[138]
 product_id=32 | Porta Bits Hispânia - 1/2" | OC SKU=porta-bits-1-2
   source row=88 SKU=PB-805 | Porta Bits Reto 1/2 Hispânia
   rationale: same porta-bits family and exact inch size; confidence=high
-  old={'price': 159.6, 'quantity': 12, 'status': 1, 'length': 5.0, 'width': 10.0, 'height': 18.0, 'weight': 0.36}
+  old={'price': 159.6, 'quantity': 0, 'status': 0, 'length': 5.0, 'width': 10.0, 'height': 18.0, 'weight': 0.36}
   new={'price': 159.6, 'quantity': 0, 'status': Inativo, 'length': 5.0, 'width': 10.0, 'height': 18.0, 'weight': 0.36}
-  changed fields={'quantity': {'old': 12, 'new': 0}, 'status': {'old': 1, 'new': 0}, 'pt_br_description': {'old_length': 839, 'new_length': 833}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=181 | Maleta com Jogo de Pinça ER-40 + Mandril + Chave de Garra - CM4 | OC SKU=maleta-er40-cm4
   source row=82 SKU=ML004 | Kit Jogo De Pinças Er40 18 Peças + Chave + Mandril Cone Cm4
   rationale: same ER40 kit and exact mandrel interface; confidence=high
   old={'price': 959.9, 'quantity': 0, 'status': 0, 'length': 11.0, 'width': 21.0, 'height': 37.0, 'weight': 1.96}
   new={'price': 959.9, 'quantity': 0, 'status': Inativo, 'length': 11.0, 'width': 21.0, 'height': 37.0, 'weight': 1.96}
-  changed fields={'pt_br_description': {'old_length': 1933, 'new_length': 1915}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=182 | Maleta com Jogo de Pinça ER-40 + Mandril + Chave de Garra - CM5 | OC SKU=maleta-er40-cm5
   source row=58 SKU=ML005 | Kit Jogo De Pinças Er40 18 Peças + Chave + Mandril Cone Cm5
   rationale: same ER40 kit and exact mandrel interface; confidence=high
   old={'price': 930.05, 'quantity': 1, 'status': 1, 'length': 13.0, 'width': 29.0, 'height': 40.0, 'weight': 1.96}
   new={'price': 930.05, 'quantity': 1, 'status': Ativo, 'length': 13.0, 'width': 29.0, 'height': 40.0, 'weight': 1.96}
-  changed fields={'pt_br_description': {'old_length': 2070, 'new_length': 2051}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=183 | Maleta com Jogo de Pinça ER-40 + Mandril + Chave de Garra - ISO30 | OC SKU=maleta-er40-iso30
   source row=78 SKU=ML030 | Kit Jogo De Pinças Er40 18 Peças + Chave + Mandril Iso 30
   rationale: same ER40 kit and exact mandrel interface; confidence=high
   old={'price': 1035.9, 'quantity': 0, 'status': 0, 'length': 14.0, 'width': 30.0, 'height': 39.0, 'weight': 4.93}
   new={'price': 1035.9, 'quantity': 0, 'status': Inativo, 'length': 14.0, 'width': 30.0, 'height': 39.0, 'weight': 4.93}
-  changed fields={'pt_br_description': {'old_length': 2258, 'new_length': 2239}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=184 | Maleta com Jogo de Pinça ER-40 + Mandril + Chave de Garra - ISO40 | OC SKU=maleta-er40-iso40
   source row=66 SKU=ML040 | Kit Jogo De Pinças Er40 18 Peças + Chave + Mandril Iso 40
   rationale: same ER40 kit and exact mandrel interface; confidence=high
   old={'price': 1021.82, 'quantity': 2, 'status': 1, 'length': 10.0, 'width': 26.0, 'height': 39.0, 'weight': 3.48}
   new={'price': 1021.82, 'quantity': 2, 'status': Ativo, 'length': 10.0, 'width': 26.0, 'height': 39.0, 'weight': 3.48}
-  changed fields={'pt_br_description': {'old_length': 2268, 'new_length': 2249}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=185 | Maleta com Jogo de Pinça ER-40 + Mandril + Chave de Garra - ISO50 | OC SKU=maleta-er40-iso50
   source row=83 SKU=ML050 | Kit Jogo De Pinças Er40 18 Peças + Chave + Mandril Iso 50
   rationale: same ER40 kit and exact mandrel interface; confidence=high
   old={'price': 1017.45, 'quantity': 0, 'status': 0, 'length': 21.0, 'width': 32.0, 'height': 41.0, 'weight': 8.05}
   new={'price': 1017.45, 'quantity': 0, 'status': Inativo, 'length': 21.0, 'width': 32.0, 'height': 41.0, 'weight': 8.05}
-  changed fields={'pt_br_description': {'old_length': 2301, 'new_length': 2282}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=186 | Maleta com Jogo de Pinça ER-40 + Mandril + Chave de Garra - BT40 | OC SKU=maleta-er40-bt40
   source row=51 SKU=ML080 | Kit Jogo De Pinças Er40 18 Peças + Chave + Mandril Bt 40
   rationale: same ER40 kit and exact mandrel interface; confidence=high
   old={'price': 990.0, 'quantity': 1, 'status': 1, 'length': 0.0, 'width': 0.0, 'height': 0.0, 'weight': 0.0}
   new={'price': 990.0, 'quantity': 1, 'status': Ativo, 'length': None, 'width': None, 'height': None, 'weight': None}
-  changed fields={'pt_br_description': {'old_length': 2357, 'new_length': 2338}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=195 | Ponta Rotativa Standard - CM2 | OC SKU=ponta-standard-cm2
   source row=134 SKU=- | Ponta Rotativa Cm2 Standard - Contra Ponto Para Torno - Ws
   rationale: same point type, Morse cone, and tubular dimensions when applicable; confidence=high
-  old={'price': 166.9, 'quantity': 1, 'status': 1, 'length': 0.0, 'width': 0.0, 'height': 0.0, 'weight': 0.0}
+  old={'price': 166.9, 'quantity': 1, 'status': 0, 'length': 0.0, 'width': 0.0, 'height': 0.0, 'weight': 0.0}
   new={'price': 166.9, 'quantity': 1, 'status': Inativo, 'length': None, 'width': None, 'height': None, 'weight': None}
-  changed fields={'status': {'old': 1, 'new': 0}, 'pt_br_description': {'old_length': 1504, 'new_length': 1487}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=196 | Ponta Rotativa Standard - CM3 | OC SKU=ponta-standard-cm3
   source row=25 SKU=WS030 | Ponta Rotativa Cm3 Standard - Contra Ponto Para Torno - Ws
   rationale: same point type, Morse cone, and tubular dimensions when applicable; confidence=high
   old={'price': 291.06, 'quantity': 7, 'status': 1, 'length': 7.0, 'width': 14.0, 'height': 22.0, 'weight': 0.98}
   new={'price': 291.06, 'quantity': 7, 'status': Ativo, 'length': 7.0, 'width': 14.0, 'height': 22.0, 'weight': 0.98}
-  changed fields={'pt_br_description': {'old_length': 1509, 'new_length': 1492}}; alternative rows=[75]
+  changed fields=none; alternative rows=[75]
 product_id=197 | Ponta Rotativa Standard - CM4 | OC SKU=ponta-standard-cm4
   source row=69 SKU=- | Ponta Rotativa Cm4 Standard - Contra Ponto Para Torno - Ws
   rationale: same point type, Morse cone, and tubular dimensions when applicable; confidence=high
   old={'price': 189.0, 'quantity': 0, 'status': 0, 'length': 11.0, 'width': 17.0, 'height': 25.0, 'weight': 1.53}
   new={'price': 189.0, 'quantity': 0, 'status': Inativo, 'length': 11.0, 'width': 17.0, 'height': 25.0, 'weight': 1.53}
-  changed fields={'pt_br_description': {'old_length': 1511, 'new_length': 1494}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=198 | Ponta Rotativa Super - CM3 | OC SKU=ponta-super-cm3
   source row=28 SKU=CS253 | Ponta Rotativa Cm3 Super - Contra Ponto Para Torno - Ws
   rationale: same point type, Morse cone, and tubular dimensions when applicable; confidence=high
   old={'price': 289.9, 'quantity': 4, 'status': 1, 'length': 9.0, 'width': 14.0, 'height': 19.0, 'weight': 1.08}
   new={'price': 289.9, 'quantity': 4, 'status': Ativo, 'length': 9.0, 'width': 14.0, 'height': 19.0, 'weight': 1.08}
-  changed fields={'pt_br_description': {'old_length': 1400, 'new_length': 1385}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=199 | Ponta Rotativa Super - CM4 | OC SKU=ponta-super-cm4
   source row=14 SKU=SUP001 | Ponta Rotativa Cm4 Super - Contra Ponto Para Torno
   rationale: same point type, Morse cone, and tubular dimensions when applicable; confidence=high
   old={'price': 285.9, 'quantity': 4, 'status': 1, 'length': 11.0, 'width': 17.0, 'height': 24.0, 'weight': 1.71}
   new={'price': 285.9, 'quantity': 4, 'status': Ativo, 'length': 11.0, 'width': 17.0, 'height': 24.0, 'weight': 1.71}
-  changed fields={'pt_br_description': {'old_length': 1376, 'new_length': 1362}}; alternative rows=[114]
+  changed fields=none; alternative rows=[114]
 product_id=200 | Ponta Rotativa Super - CM5 | OC SKU=ponta-super-cm5
   source row=40 SKU=- | Ponta Rotativa Cm5 Super - Contra Ponto Para Torno - Ws
   rationale: same point type, Morse cone, and tubular dimensions when applicable; confidence=high
   old={'price': 735.5, 'quantity': 1, 'status': 1, 'length': 14.0, 'width': 16.0, 'height': 31.0, 'weight': 3.08}
   new={'price': 735.5, 'quantity': 1, 'status': Ativo, 'length': 14.0, 'width': 16.0, 'height': 31.0, 'weight': 3.08}
-  changed fields={'pt_br_description': {'old_length': 1400, 'new_length': 1385}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=201 | Ponta Rotativa Copiadora - CM3 | OC SKU=ponta-copiadora-cm3
   source row=20 SKU=PC313 | Ponta Rotativa Cm3 Copiadora - Contra Ponto Para Torno - Ws
   rationale: same point type, Morse cone, and tubular dimensions when applicable; confidence=high
   old={'price': 311.85, 'quantity': 1, 'status': 1, 'length': 0.0, 'width': 0.0, 'height': 0.0, 'weight': 0.0}
   new={'price': 311.85, 'quantity': 1, 'status': Ativo, 'length': None, 'width': None, 'height': None, 'weight': None}
-  changed fields={'pt_br_description': {'old_length': 1322, 'new_length': 1307}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=202 | Ponta Rotativa Copiadora - CM4 | OC SKU=ponta-copiadora-cm4
   source row=8 SKU=PC314 | Ponta Rotativa Cm4 Copiadora - Contra Ponto Para Torno - Ws
   rationale: same point type, Morse cone, and tubular dimensions when applicable; confidence=high
   old={'price': 335.0, 'quantity': 4, 'status': 1, 'length': 8.0, 'width': 15.0, 'height': 22.0, 'weight': 1.45}
   new={'price': 335.0, 'quantity': 4, 'status': Ativo, 'length': 8.0, 'width': 15.0, 'height': 22.0, 'weight': 1.45}
-  changed fields={'pt_br_description': {'old_length': 1315, 'new_length': 1300}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=211 | Bucha de Redução 2x1 - 90x18.6x12.06 | OC SKU=bucha-2x1-90x18.6x12.06
   source row=19 SKU=BRWS431 | Bucha De Redução Cone Morse 2 X 1 P/ Torno
   rationale: same bucha family and exact Morse taper pair; confidence=high
   old={'price': 36.9, 'quantity': 9, 'status': 1, 'length': 4.0, 'width': 11.0, 'height': 17.0, 'weight': 0.12}
   new={'price': 36.9, 'quantity': 9, 'status': Ativo, 'length': 4.0, 'width': 11.0, 'height': 17.0, 'weight': 0.12}
-  changed fields={'pt_br_description': {'old_length': 869, 'new_length': 863}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=212 | Bucha de Redução 3x2 - 108x24.7x17.78 | OC SKU=bucha-3x2-108x24.7x17.78
   source row=12 SKU=BRWS432 | Bucha De Redução Cone Morse 3 X 2 P/ Torno
   rationale: same bucha family and exact Morse taper pair; confidence=high
   old={'price': 54.99, 'quantity': 1, 'status': 1, 'length': 7.0, 'width': 12.0, 'height': 17.0, 'weight': 0.21}
   new={'price': 54.99, 'quantity': 1, 'status': Ativo, 'length': 7.0, 'width': 12.0, 'height': 17.0, 'weight': 0.21}
-  changed fields={'pt_br_description': {'old_length': 869, 'new_length': 863}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=213 | Bucha de Redução 4x3 - 132x32.4x23.82 | OC SKU=bucha-4x3-132x32.4x23.82
   source row=9 SKU=BRWS434 | Bucha De Redução Cone Morse 4 X 3 P/ Torno
   rationale: same bucha family and exact Morse taper pair; confidence=high
   old={'price': 72.99, 'quantity': 2, 'status': 1, 'length': 4.0, 'width': 10.0, 'height': 18.0, 'weight': 0.46}
   new={'price': 72.99, 'quantity': 2, 'status': Ativo, 'length': 4.0, 'width': 10.0, 'height': 18.0, 'weight': 0.46}
-  changed fields={'pt_br_description': {'old_length': 869, 'new_length': 863}}; alternative rows=none
+  changed fields=none; alternative rows=none
 product_id=214 | Bucha de Redução 5x4 - 164x45.5x31.27 | OC SKU=bucha-5x4-164x45.5x31.27
   source row=7 SKU=BRWS437 | Bucha De Redução Cone Morse 5 X 4 P/ Torno
   rationale: same bucha family and exact Morse taper pair; confidence=high
   old={'price': 119.99, 'quantity': 8, 'status': 1, 'length': 8.0, 'width': 15.0, 'height': 22.0, 'weight': 1.01}
   new={'price': 119.99, 'quantity': 8, 'status': Ativo, 'length': 8.0, 'width': 15.0, 'height': 22.0, 'weight': 1.01}
-  changed fields={'pt_br_description': {'old_length': 869, 'new_length': 863}}; alternative rows=none
+  changed fields=none; alternative rows=none
 
 SKIPPED / AMBIGUOUS LISTINGS
 row=139 SKU=WS407 | Bits 1/4 X 4 Winner Steel 10% Cobalto | duplicate exact match for product 11; selected row 13 because active/in-stock precedence
@@ -319,3 +324,10 @@ row=71 SKU=- | Bits Quadrado 1/2 X 4 Hardms 50% (2 Unidades) | multi-unit/compos
 row=89 SKU=- | Bits Quadrado 3/8 X 4 Hardsteel 50% (3 Unidades) | multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted
 row=90 SKU=- | 5 Porta Recartilha Simples Especial - Recartilhas Paralelas | multi-unit/composite listing (explicit leading unit count); no unit-price derivation permitted
 row=113 SKU=- | 4 Bits Quadrado 3/8 X 4 Hardsteel + 1 Bedame 3/4 X 3/16 X 5 | multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted
+
+RUNTIME VERIFICATION
+- Verified against the exact spreadsheet source fields after the original correction.
+- Mapping: quantity=QUANTITY exactly; length=SHIPPING_DEPTH; width=SHIPPING_WIDTH; height=SHIPPING_HEIGHT; weight=SHIPPING_WEIGHT.
+- Local: 33 matched product quantities and 112 supplied dimension/weight fields verified; 0 mismatches.
+- Production: 33 matched product quantities and 112 supplied dimension/weight fields verified; 0 mismatches.
+- Confirmed corrections applied by this verification: 0. Multi-unit listings skipped: 83.

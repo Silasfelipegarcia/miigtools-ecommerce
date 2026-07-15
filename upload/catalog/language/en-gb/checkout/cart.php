@@ -31,6 +31,7 @@ $_['column_total']               = 'Total';
 
 // Error
 $_['error_stock']                = 'Products marked with *** are not available in the desired quantity or not in stock!';
+$_['error_stock_quantity']       = 'Requested quantity is unavailable. Current stock: %s.';
 $_['error_minimum']              = 'Minimum order amount is %s!';
 $_['error_required']             = '%s required!';
 $_['error_regex']                = '%s is not a valid input!';

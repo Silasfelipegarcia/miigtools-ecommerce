@@ -222,13 +222,18 @@
               <div class="mb-3">
                 <div class="input-group">
                   <div class="input-group-text">{{ entry_qty }}</div>
-                  <input type="text" name="quantity" value="{{ minimum }}" size="2" id="input-quantity" class="form-control"/>
-                  <button type="submit" id="button-cart" class="btn btn-primary btn-lg btn-block">{{ button_cart }}</button>
+                  <input type="number" name="quantity" value="{{ minimum }}" min="{{ minimum }}"{% if enforce_stock %} max="{{ maximum }}"{% endif %} size="2" id="input-quantity" class="form-control"{% if enforce_stock and maximum == 0 %} disabled{% endif %}/>
+                  <button type="submit" id="button-cart" class="btn btn-primary btn-lg btn-block"{% if enforce_stock and maximum == 0 %} disabled{% endif %}>{{ button_cart }}</button>
                 </div>
                 <input type="hidden" name="product_id" value="{{ product_id }}" id="input-product-id"/>
-                <div id="error-quantity" class="form-text"></div>
+                <div id="error-quantity" class="form-text invalid-feedback"></div>
+                {% if enforce_stock and maximum %}
+                  <div class="form-text">{{ text_stock }} {{ stock_quantity }}</div>
+                {% endif %}
               </div>
-              {% if minimum > 1 %}
+              {% if enforce_stock and maximum == 0 %}
+                <div class="alert alert-warning"><i class="fa-solid fa-circle-info"></i> {{ text_stock }} {{ text_out_of_stock }}</div>
+              {% elseif minimum > 1 %}
                 <div class="alert alert-warning"><i class="fa-solid fa-circle-info"></i> {{ text_minimum }}</div>
               {% endif %}
             </form>

@@ -154,6 +154,8 @@ class Cart extends \Opencart\System\Engine\Controller {
 				'thumb'        => $this->model_tool_image->resize($product['image'], $this->config->get('config_image_cart_width'), $this->config->get('config_image_cart_height')),
 				'subscription' => $subscription,
 				'stock'        => $product['stock_status'] ? true : !(!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning')),
+				'stock_quantity' => (int)$product['stock'],
+				'maximum'      => max(0, (int)$product['stock']),
 				'minimum'      => !$product['minimum_status'] ? sprintf($this->language->get('error_minimum'), $product['minimum']) : 0,
 				'price'        => $price_status ? $product['price_text'] : '',
 				'total'        => $price_status ? $product['total_text'] : '',
@@ -278,6 +280,22 @@ class Cart extends \Opencart\System\Engine\Controller {
 			if ($subscriptions && (!$subscription_plan_id || !in_array($subscription_plan_id, array_column($subscriptions, 'subscription_plan_id')))) {
 				$json['error']['subscription'] = $this->language->get('error_subscription');
 			}
+
+			// Cap quantity by available stock when subtract is enabled
+			if (!$json && !empty($product_info['subtract'])) {
+				$stock = (int)$product_info['quantity'];
+				$product_total = $quantity;
+
+				foreach ($this->cart->getProducts() as $cart_product) {
+					if ((int)$cart_product['product_id'] === (int)$product_id) {
+						$product_total += (int)$cart_product['quantity'];
+					}
+				}
+
+				if ($stock <= 0 || $product_total > $stock) {
+					$json['error']['quantity'] = sprintf($this->language->get('error_stock_quantity'), max(0, $stock));
+				}
+			}
 		} else {
 			$json['error']['warning'] = $this->language->get('error_product');
 		}
@@ -322,13 +340,41 @@ class Cart extends \Opencart\System\Engine\Controller {
 			$quantity = 1;
 		}
 
-		// Handles single item update
-		$this->cart->update($key, $quantity);
+		if ($quantity < 1) {
+			$quantity = 1;
+		}
 
-		if ($this->cart->hasProducts()) {
-			$json['success'] = $this->language->get('text_edit');
-		} else {
-			$json['redirect'] = $this->url->link('checkout/cart', 'language=' . $this->config->get('config_language'), true);
+		// Cap cart update by available stock
+		foreach ($this->cart->getProducts() as $cart_product) {
+			if ((int)$cart_product['cart_id'] !== $key) {
+				continue;
+			}
+
+			$stock = (int)$cart_product['stock'];
+			$product_total = $quantity;
+
+			foreach ($this->cart->getProducts() as $other) {
+				if ((int)$other['product_id'] === (int)$cart_product['product_id'] && (int)$other['cart_id'] !== $key) {
+					$product_total += (int)$other['quantity'];
+				}
+			}
+
+			if ($stock <= 0 || $product_total > $stock) {
+				$json['error'] = sprintf($this->language->get('error_stock_quantity'), max(0, $stock));
+			}
+
+			break;
+		}
+
+		if (!$json) {
+			// Handles single item update
+			$this->cart->update($key, $quantity);
+
+			if ($this->cart->hasProducts()) {
+				$json['success'] = $this->language->get('text_edit');
+			} else {
+				$json['redirect'] = $this->url->link('checkout/cart', 'language=' . $this->config->get('config_language'), true);
+			}
 		}
 
 		unset($this->session->data['shipping_method']);

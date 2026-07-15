@@ -125,6 +125,18 @@ if ($db_host === '') {
 			echo "update-store-url: {$key} → {$value}\n";
 		}
 
+		// Enforce stock visibility and block checkout over stock
+		$stock_settings = [
+			'config_stock_display'  => '1',
+			'config_stock_warning'  => '1',
+			'config_stock_checkout' => '0',
+		];
+
+		foreach ($stock_settings as $key => $value) {
+			bootstrap_setting($mysqli, $table, 'config', $key, $value, 0);
+			echo "bootstrap-db: {$key} → {$value}\n";
+		}
+
 		// Garante grupo de clientes para cadastro (evita "tipo de conta não permitido").
 		$customer_group_updates = [
 			'config_customer_group_id'      => ['1', 0],

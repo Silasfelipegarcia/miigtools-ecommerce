@@ -436,6 +436,11 @@ class Product extends \Opencart\System\Engine\Controller {
 				$data['minimum'] = 1;
 			}
 
+			// Limit quantity selector by available stock when stock is subtracted
+			$data['enforce_stock'] = !empty($product_info['subtract']);
+			$data['maximum'] = $data['enforce_stock'] ? max(0, (int)$product_info['quantity']) : 0;
+			$data['stock_quantity'] = (int)$product_info['quantity'];
+
 			$data['share'] = $this->url->link('product/product', 'language=' . $this->config->get('config_language') . '&product_id=' . (int)$this->request->get['product_id']);
 
 			$data['attribute_groups'] = $this->model_catalog_product->getAttributes($product_id);

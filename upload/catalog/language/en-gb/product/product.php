@@ -7,6 +7,7 @@ $_['text_model']                 = 'Product Code:';
 $_['text_reward']                = 'Reward Points:';
 $_['text_points']                = 'Price in reward points:';
 $_['text_stock']                 = 'Availability:';
+$_['text_out_of_stock']          = 'Out of Stock';
 $_['text_tax']                   = 'Ex Tax:';
 $_['text_discount']              = ' or more ';
 $_['text_option']                = 'Available Options';

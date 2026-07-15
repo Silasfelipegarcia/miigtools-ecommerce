@@ -37,24 +37,11 @@
       "confidence": "high",
       "rationale": "same family, every inch dimension, material grade, and required brand",
       "alternative_source_rows": [],
-      "changes": {
-        "quantity": {
-          "old": 245,
-          "new": 0
-        },
-        "status": {
-          "old": 1,
-          "new": 0
-        },
-        "pt_br_description": {
-          "old_length": 851,
-          "new_length": 845
-        }
-      },
+      "changes": {},
       "old": {
         "price": 19.9,
-        "quantity": 245,
-        "status": 1,
+        "quantity": 0,
+        "status": 0,
         "length": 3.0,
         "width": 16.0,
         "height": 19.0,
@@ -98,12 +85,7 @@
       "confidence": "high",
       "rationale": "same family, every inch dimension, material grade, and required brand",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 853,
-          "new_length": 847
-        }
-      },
+      "changes": {},
       "old": {
         "price": 26.9,
         "quantity": 41,
@@ -151,12 +133,7 @@
       "confidence": "high",
       "rationale": "same family, every inch dimension, material grade, and required brand",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 851,
-          "new_length": 845
-        }
-      },
+      "changes": {},
       "old": {
         "price": 29.9,
         "quantity": 41,
@@ -204,12 +181,7 @@
       "confidence": "high",
       "rationale": "same family, every inch dimension, material grade, and required brand",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 851,
-          "new_length": 845
-        }
-      },
+      "changes": {},
       "old": {
         "price": 47.04,
         "quantity": 47,
@@ -259,12 +231,7 @@
       "alternative_source_rows": [
         139
       ],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 863,
-          "new_length": 857
-        }
-      },
+      "changes": {},
       "old": {
         "price": 35.9,
         "quantity": 10,
@@ -312,12 +279,7 @@
       "confidence": "high",
       "rationale": "same family, every inch dimension, material grade, and required brand",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 863,
-          "new_length": 857
-        }
-      },
+      "changes": {},
       "old": {
         "price": 46.9,
         "quantity": 10,
@@ -365,12 +327,7 @@
       "confidence": "high",
       "rationale": "same family, every inch dimension, material grade, and required brand",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 863,
-          "new_length": 857
-        }
-      },
+      "changes": {},
       "old": {
         "price": 69.9,
         "quantity": 19,
@@ -418,12 +375,7 @@
       "confidence": "high",
       "rationale": "same family, every inch dimension, material grade, and required brand",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 861,
-          "new_length": 855
-        }
-      },
+      "changes": {},
       "old": {
         "price": 129.9,
         "quantity": 50,
@@ -472,12 +424,7 @@
       "confidence": "high",
       "rationale": "same family, every inch dimension, material grade, and required brand",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 892,
-          "new_length": 886
-        }
-      },
+      "changes": {},
       "old": {
         "price": 33.63,
         "quantity": 46,
@@ -526,12 +473,7 @@
       "confidence": "high",
       "rationale": "same family, every inch dimension, material grade, and required brand",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 892,
-          "new_length": 886
-        }
-      },
+      "changes": {},
       "old": {
         "price": 53.99,
         "quantity": 0,
@@ -580,20 +522,11 @@
       "confidence": "high",
       "rationale": "same family, every inch dimension, material grade, and required brand",
       "alternative_source_rows": [],
-      "changes": {
-        "status": {
-          "old": 1,
-          "new": 0
-        },
-        "pt_br_description": {
-          "old_length": 892,
-          "new_length": 886
-        }
-      },
+      "changes": {},
       "old": {
         "price": 59.4,
         "quantity": 50,
-        "status": 1,
+        "status": 0,
         "length": 5.0,
         "width": 14.0,
         "height": 27.0,
@@ -638,12 +571,7 @@
       "confidence": "high",
       "rationale": "same family, every inch dimension, material grade, and required brand",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 904,
-          "new_length": 898
-        }
-      },
+      "changes": {},
       "old": {
         "price": 77.65,
         "quantity": 49,
@@ -692,12 +620,7 @@
       "confidence": "high",
       "rationale": "same family, every inch dimension, material grade, and required brand",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 904,
-          "new_length": 898
-        }
-      },
+      "changes": {},
       "old": {
         "price": 94.9,
         "quantity": 50,
@@ -748,12 +671,7 @@
       "alternative_source_rows": [
         138
       ],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 904,
-          "new_length": 898
-        }
-      },
+      "changes": {},
       "old": {
         "price": 89.06,
         "quantity": 40,
@@ -800,24 +718,11 @@
       "confidence": "high",
       "rationale": "same porta-bits family and exact inch size",
       "alternative_source_rows": [],
-      "changes": {
-        "quantity": {
-          "old": 12,
-          "new": 0
-        },
-        "status": {
-          "old": 1,
-          "new": 0
-        },
-        "pt_br_description": {
-          "old_length": 839,
-          "new_length": 833
-        }
-      },
+      "changes": {},
       "old": {
         "price": 159.6,
-        "quantity": 12,
-        "status": 1,
+        "quantity": 0,
+        "status": 0,
         "length": 5.0,
         "width": 10.0,
         "height": 18.0,
@@ -858,12 +763,7 @@
       "confidence": "high",
       "rationale": "same ER40 kit and exact mandrel interface",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 1933,
-          "new_length": 1915
-        }
-      },
+      "changes": {},
       "old": {
         "price": 959.9,
         "quantity": 0,
@@ -908,12 +808,7 @@
       "confidence": "high",
       "rationale": "same ER40 kit and exact mandrel interface",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 2070,
-          "new_length": 2051
-        }
-      },
+      "changes": {},
       "old": {
         "price": 930.05,
         "quantity": 1,
@@ -958,12 +853,7 @@
       "confidence": "high",
       "rationale": "same ER40 kit and exact mandrel interface",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 2258,
-          "new_length": 2239
-        }
-      },
+      "changes": {},
       "old": {
         "price": 1035.9,
         "quantity": 0,
@@ -1008,12 +898,7 @@
       "confidence": "high",
       "rationale": "same ER40 kit and exact mandrel interface",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 2268,
-          "new_length": 2249
-        }
-      },
+      "changes": {},
       "old": {
         "price": 1021.82,
         "quantity": 2,
@@ -1058,12 +943,7 @@
       "confidence": "high",
       "rationale": "same ER40 kit and exact mandrel interface",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 2301,
-          "new_length": 2282
-        }
-      },
+      "changes": {},
       "old": {
         "price": 1017.45,
         "quantity": 0,
@@ -1108,12 +988,7 @@
       "confidence": "high",
       "rationale": "same ER40 kit and exact mandrel interface",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 2357,
-          "new_length": 2338
-        }
-      },
+      "changes": {},
       "old": {
         "price": 990.0,
         "quantity": 1,
@@ -1158,20 +1033,11 @@
       "confidence": "high",
       "rationale": "same point type, Morse cone, and tubular dimensions when applicable",
       "alternative_source_rows": [],
-      "changes": {
-        "status": {
-          "old": 1,
-          "new": 0
-        },
-        "pt_br_description": {
-          "old_length": 1504,
-          "new_length": 1487
-        }
-      },
+      "changes": {},
       "old": {
         "price": 166.9,
         "quantity": 1,
-        "status": 1,
+        "status": 0,
         "length": 0.0,
         "width": 0.0,
         "height": 0.0,
@@ -1214,12 +1080,7 @@
       "alternative_source_rows": [
         75
       ],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 1509,
-          "new_length": 1492
-        }
-      },
+      "changes": {},
       "old": {
         "price": 291.06,
         "quantity": 7,
@@ -1264,12 +1125,7 @@
       "confidence": "high",
       "rationale": "same point type, Morse cone, and tubular dimensions when applicable",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 1511,
-          "new_length": 1494
-        }
-      },
+      "changes": {},
       "old": {
         "price": 189.0,
         "quantity": 0,
@@ -1314,12 +1170,7 @@
       "confidence": "high",
       "rationale": "same point type, Morse cone, and tubular dimensions when applicable",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 1400,
-          "new_length": 1385
-        }
-      },
+      "changes": {},
       "old": {
         "price": 289.9,
         "quantity": 4,
@@ -1366,12 +1217,7 @@
       "alternative_source_rows": [
         114
       ],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 1376,
-          "new_length": 1362
-        }
-      },
+      "changes": {},
       "old": {
         "price": 285.9,
         "quantity": 4,
@@ -1416,12 +1262,7 @@
       "confidence": "high",
       "rationale": "same point type, Morse cone, and tubular dimensions when applicable",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 1400,
-          "new_length": 1385
-        }
-      },
+      "changes": {},
       "old": {
         "price": 735.5,
         "quantity": 1,
@@ -1466,12 +1307,7 @@
       "confidence": "high",
       "rationale": "same point type, Morse cone, and tubular dimensions when applicable",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 1322,
-          "new_length": 1307
-        }
-      },
+      "changes": {},
       "old": {
         "price": 311.85,
         "quantity": 1,
@@ -1516,12 +1352,7 @@
       "confidence": "high",
       "rationale": "same point type, Morse cone, and tubular dimensions when applicable",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 1315,
-          "new_length": 1300
-        }
-      },
+      "changes": {},
       "old": {
         "price": 335.0,
         "quantity": 4,
@@ -1569,12 +1400,7 @@
       "confidence": "high",
       "rationale": "same bucha family and exact Morse taper pair",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 869,
-          "new_length": 863
-        }
-      },
+      "changes": {},
       "old": {
         "price": 36.9,
         "quantity": 9,
@@ -1622,12 +1448,7 @@
       "confidence": "high",
       "rationale": "same bucha family and exact Morse taper pair",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 869,
-          "new_length": 863
-        }
-      },
+      "changes": {},
       "old": {
         "price": 54.99,
         "quantity": 1,
@@ -1675,12 +1496,7 @@
       "confidence": "high",
       "rationale": "same bucha family and exact Morse taper pair",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 869,
-          "new_length": 863
-        }
-      },
+      "changes": {},
       "old": {
         "price": 72.99,
         "quantity": 2,
@@ -1728,12 +1544,7 @@
       "confidence": "high",
       "rationale": "same bucha family and exact Morse taper pair",
       "alternative_source_rows": [],
-      "changes": {
-        "pt_br_description": {
-          "old_length": 869,
-          "new_length": 863
-        }
-      },
+      "changes": {},
       "old": {
         "price": 119.99,
         "quantity": 8,
@@ -2365,6 +2176,9 @@
     "high_confidence_updates": 33,
     "skipped_or_ambiguous": 88,
     "unmatched": 13,
+    "multi_unit_listings_skipped": 83,
+    "matched_quantity_fields": 33,
+    "matched_shipping_fields_provided": 112,
     "families_updated": {
       "bits-quadrado": 8,
       "bedame": 6,
@@ -2373,5 +2187,30 @@
       "ponta": 8,
       "bucha": 4
     }
+  },
+  "verification": {
+    "field_mapping": {
+      "quantity": "QUANTITY exactly (sale-pack title counts do not multiply stock)",
+      "length": "SHIPPING_DEPTH (cm)",
+      "width": "SHIPPING_WIDTH (cm)",
+      "height": "SHIPPING_HEIGHT (cm)",
+      "weight": "SHIPPING_WEIGHT (kg)"
+    },
+    "local": {
+      "environment": "local",
+      "matched_product_quantities_verified": 33,
+      "dimensions_weights_populated_verified": 112,
+      "mismatches": [],
+      "all_fields_match": true
+    },
+    "production": {
+      "environment": "production",
+      "matched_product_quantities_verified": 33,
+      "dimensions_weights_populated_verified": 112,
+      "mismatches": [],
+      "all_fields_match": true
+    },
+    "confirmed_corrections_applied": 0,
+    "multi_unit_listings_skipped": 83
   }
 }

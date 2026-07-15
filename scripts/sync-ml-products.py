@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import html
 import json
+import math
 import re
 import subprocess
 import unicodedata
@@ -34,9 +35,10 @@ def number(value: object) -> float | None:
     if value is None or value == "":
         return None
     try:
-        return float(str(value).strip().replace(",", "."))
+        parsed = float(str(value).strip().replace(",", "."))
     except ValueError:
         return None
+    return parsed if math.isfinite(parsed) and parsed >= 0 else None
 
 
 def integer(value: object) -> int:
@@ -442,6 +444,11 @@ def write_report(audit: dict[str, object], product_count: int, listing_count: in
         "- PRICE is the spreadsheet PRICE exactly; tiered-pricing columns are ignored. QUANTITY is copied exactly, not multiplied.",
         "- Source STATUS maps to OpenCart status only for high-confidence exact matches. Only language_id=2 descriptions are changed.",
         "",
+        "STOCK & SHIPPING FIELD MAPPING",
+        "- OpenCart quantity = spreadsheet QUANTITY exactly for the matching sale unit; title pack counts never multiply inventory.",
+        "- OpenCart length = SHIPPING_DEPTH (cm), width = SHIPPING_WIDTH (cm), height = SHIPPING_HEIGHT (cm), weight = SHIPPING_WEIGHT (kg).",
+        "- A shipping field is overwritten only when its spreadsheet value is finite and non-negative; zero is retained as a supplied numeric value.",
+        "",
         "APPLIED HIGH-CONFIDENCE MATCHES",
     ]
     for match in sorted(applied, key=lambda item: int(item["product_id"])):
@@ -472,6 +479,14 @@ def main() -> None:
         "high_confidence_updates": len(audit["applied"]),
         "skipped_or_ambiguous": len(audit["skipped_or_ambiguous"]),
         "unmatched": len(audit["unmatched"]),
+        "multi_unit_listings_skipped": sum(listing["units"] != 1 for listing in listings),
+        "matched_quantity_fields": len(audit["applied"]),
+        "matched_shipping_fields_provided": sum(
+            1
+            for match in audit["applied"]
+            for field in ("length", "width", "height", "weight")
+            if match["source"][field] is not None
+        ),
         "families_updated": Counter(item["source"]["signature"]["family"] for item in audit["applied"]),
     }
     OUT_JSON.write_text(json.dumps(audit, ensure_ascii=False, indent=2, default=dict), encoding="utf-8")
