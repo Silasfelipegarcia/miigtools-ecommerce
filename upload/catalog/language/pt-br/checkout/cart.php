@@ -42,7 +42,7 @@ $_['column_total']             = 'Total';
 
 // Error
 $_['error_stock']              = 'Os produtos marcados com *** não estão disponíveis na quantidade solicitada ou estão sem estoque.';
-$_['error_stock_quantity']     = 'Quantidade indisponível. Estoque atual: %s.';
+$_['error_stock_quantity']     = 'Quantidade indisponível. Você ainda pode adicionar: %s.';
 $_['error_minimum']            = 'A quantidade mínima para %s é %s.';
 $_['error_required']           = 'O campo %s é obrigatório.';
 $_['error_regex']              = '%s não é um valor válido.';

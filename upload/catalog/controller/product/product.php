@@ -281,8 +281,23 @@ class Product extends \Opencart\System\Engine\Controller {
 			$data['points'] = $product_info['points'];
 			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
 
+			// Available for this shopper = DB stock minus what is already in their cart
+			// (DB quantity is only reduced on completed order)
+			$stock_total = (int)$product_info['quantity'];
+			$cart_quantity = 0;
+
+			if (!empty($product_info['subtract'])) {
+				foreach ($this->cart->getProducts() as $cart_product) {
+					if ((int)$cart_product['product_id'] === (int)$product_id) {
+						$cart_quantity += (int)$cart_product['quantity'];
+					}
+				}
+			}
+
+			$available = !empty($product_info['subtract']) ? max(0, $stock_total - $cart_quantity) : $stock_total;
+
 			// Stock Status
-			if ($product_info['quantity'] <= 0) {
+			if ($available <= 0) {
 				$stock_status_id = $product_info['stock_status_id'];
 			} elseif (!$this->config->get('config_stock_display')) {
 				$stock_status_id = (int)$this->config->get('config_stock_status_id');
@@ -298,7 +313,7 @@ class Product extends \Opencart\System\Engine\Controller {
 			if ($stock_status_info) {
 				$data['stock'] = $stock_status_info['name'];
 			} else {
-				$data['stock'] = $product_info['quantity'];
+				$data['stock'] = $available;
 			}
 
 			$data['rating'] = (int)$product_info['rating'];
@@ -436,10 +451,10 @@ class Product extends \Opencart\System\Engine\Controller {
 				$data['minimum'] = 1;
 			}
 
-			// Limit quantity selector by available stock when stock is subtracted
+			// Limit quantity selector by remaining stock for this shopper
 			$data['enforce_stock'] = !empty($product_info['subtract']);
-			$data['maximum'] = $data['enforce_stock'] ? max(0, (int)$product_info['quantity']) : 0;
-			$data['stock_quantity'] = (int)$product_info['quantity'];
+			$data['maximum'] = $data['enforce_stock'] ? $available : 0;
+			$data['stock_quantity'] = $available;
 
 			$data['share'] = $this->url->link('product/product', 'language=' . $this->config->get('config_language') . '&product_id=' . (int)$this->request->get['product_id']);
 

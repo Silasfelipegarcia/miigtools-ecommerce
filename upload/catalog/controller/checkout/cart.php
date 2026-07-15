@@ -213,6 +213,7 @@ class Cart extends \Opencart\System\Engine\Controller {
 		$this->load->language('checkout/cart');
 
 		$json = [];
+		$available_for_user = null;
 
 		if (isset($this->request->post['product_id'])) {
 			$product_id = (int)$this->request->post['product_id'];
@@ -282,18 +283,23 @@ class Cart extends \Opencart\System\Engine\Controller {
 			}
 
 			// Cap quantity by available stock when subtract is enabled
+			// (DB stock only falls on paid/completed order; cart is a soft hold for this user)
 			if (!$json && !empty($product_info['subtract'])) {
 				$stock = (int)$product_info['quantity'];
-				$product_total = $quantity;
+				$already_in_cart = 0;
 
 				foreach ($this->cart->getProducts() as $cart_product) {
 					if ((int)$cart_product['product_id'] === (int)$product_id) {
-						$product_total += (int)$cart_product['quantity'];
+						$already_in_cart += (int)$cart_product['quantity'];
 					}
 				}
 
+				$product_total = $already_in_cart + $quantity;
+				$available_for_user = max(0, $stock - $already_in_cart);
+
 				if ($stock <= 0 || $product_total > $stock) {
-					$json['error']['quantity'] = sprintf($this->language->get('error_stock_quantity'), max(0, $stock));
+					$json['error']['quantity'] = sprintf($this->language->get('error_stock_quantity'), $available_for_user);
+					$json['available'] = $available_for_user;
 				}
 			}
 		} else {
@@ -304,6 +310,10 @@ class Cart extends \Opencart\System\Engine\Controller {
 			$this->cart->add($product_id, $quantity, $option, $subscription_plan_id);
 
 			$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'language=' . $this->config->get('config_language') . '&product_id=' . $product_id), $product_info['name'], $this->url->link('checkout/cart', 'language=' . $this->config->get('config_language')));
+
+			if ($available_for_user !== null) {
+				$json['available'] = max(0, $available_for_user - $quantity);
+			}
 
 			// Unset all shipping and payment methods
 			unset($this->session->data['shipping_method']);
@@ -360,7 +370,8 @@ class Cart extends \Opencart\System\Engine\Controller {
 			}
 
 			if ($stock <= 0 || $product_total > $stock) {
-				$json['error'] = sprintf($this->language->get('error_stock_quantity'), max(0, $stock));
+				$remaining = max(0, $stock - ($product_total - $quantity));
+				$json['error'] = sprintf($this->language->get('error_stock_quantity'), $remaining);
 			}
 
 			break;

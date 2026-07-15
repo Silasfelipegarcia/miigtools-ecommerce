@@ -38,7 +38,7 @@
             {% if reward %}
               <li>{{ text_reward }} {{ reward }}</li>
             {% endif %}
-            <li>{{ text_stock }} {{ stock }}</li>
+            <li id="product-stock">{{ text_stock }} <span id="product-stock-value">{{ stock }}</span></li>
           </ul>
           {% if review_status %}
             <div class="rating">
@@ -227,13 +227,14 @@
                 </div>
                 <input type="hidden" name="product_id" value="{{ product_id }}" id="input-product-id"/>
                 <div id="error-quantity" class="form-text invalid-feedback"></div>
-                {% if enforce_stock and maximum %}
-                  <div class="form-text">{{ text_stock }} {{ stock_quantity }}</div>
+                {% if enforce_stock %}
+                  <div class="form-text" id="product-stock-hint"{% if maximum == 0 %} style="display:none"{% endif %}>{{ text_stock }} <span id="product-stock-hint-value">{{ stock_quantity }}</span></div>
                 {% endif %}
               </div>
-              {% if enforce_stock and maximum == 0 %}
-                <div class="alert alert-warning"><i class="fa-solid fa-circle-info"></i> {{ text_stock }} {{ text_out_of_stock }}</div>
-              {% elseif minimum > 1 %}
+              {% if enforce_stock %}
+                <div id="product-stock-exhausted" class="alert alert-warning"{% if maximum > 0 %} style="display:none"{% endif %}><i class="fa-solid fa-circle-info"></i> {{ text_stock }} {{ text_out_of_stock }}</div>
+              {% endif %}
+              {% if minimum > 1 %}
                 <div class="alert alert-warning"><i class="fa-solid fa-circle-info"></i> {{ text_minimum }}</div>
               {% endif %}
             </form>
@@ -293,6 +294,53 @@
   </div>
 </div>
 <script type="text/javascript"><!--
+var productOutOfStockText = '{{ text_out_of_stock|escape('js') }}';
+var productEnforceStock = {{ enforce_stock ? 'true' : 'false' }};
+var pendingStockAvailable = null;
+
+function updateProductStockUi(available) {
+    if (!productEnforceStock || typeof available === 'undefined' || available === null) {
+        return;
+    }
+
+    available = parseInt(available, 10);
+
+    if (isNaN(available) || available < 0) {
+        available = 0;
+    }
+
+    var $qty = $('#input-quantity');
+    var $button = $('#button-cart');
+    var $hint = $('#product-stock-hint');
+    var $exhausted = $('#product-stock-exhausted');
+    var $stockValue = $('#product-stock-value');
+    var $hintValue = $('#product-stock-hint-value');
+
+    $qty.attr('max', available);
+
+    if (available <= 0) {
+        $qty.prop('disabled', true).val(0);
+        $button.prop('disabled', true);
+        $hint.hide();
+        $exhausted.show();
+        $stockValue.text(productOutOfStockText);
+    } else {
+        $qty.prop('disabled', false);
+        $button.prop('disabled', false);
+
+        if (parseInt($qty.val(), 10) > available) {
+            $qty.val(available);
+        } else if (!$qty.val() || parseInt($qty.val(), 10) < 1) {
+            $qty.val(1);
+        }
+
+        $hintValue.text(available);
+        $hint.show();
+        $exhausted.hide();
+        $stockValue.text(available);
+    }
+}
+
 $('#input-subscription').on('change', function(e) {
     var element = this;
 
@@ -303,6 +351,8 @@ $('#input-subscription').on('change', function(e) {
 
 $('#form-product').on('submit', function(e) {
     e.preventDefault();
+
+    pendingStockAvailable = null;
 
     $.ajax({
         url: 'index.php?route=checkout/cart.add&language={{ language }}',
@@ -317,6 +367,11 @@ $('#form-product').on('submit', function(e) {
         },
         complete: function() {
             $('#button-cart').button('reset');
+
+            if (pendingStockAvailable !== null) {
+                updateProductStockUi(pendingStockAvailable);
+                pendingStockAvailable = null;
+            }
         },
         success: function(json) {
             console.log(json);
@@ -329,12 +384,20 @@ $('#form-product').on('submit', function(e) {
                     $('#input-' + key.replaceAll('_', '-')).addClass('is-invalid').find('.form-control, .form-select, .form-check-input, .form-check-label').addClass('is-invalid');
                     $('#error-' + key.replaceAll('_', '-')).html(json['error'][key]).addClass('d-block');
                 }
+
+                if (typeof json['available'] !== 'undefined') {
+                    pendingStockAvailable = json['available'];
+                }
             }
 
             if (json['success']) {
                 $('#alert').prepend('<div class="alert alert-success alert-dismissible"><i class="fa-solid fa-circle-check"></i> ' + json['success'] + ' <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>');
 
                 $('#cart').load('index.php?route=common/cart.info&language={{ language }}');
+
+                if (typeof json['available'] !== 'undefined') {
+                    pendingStockAvailable = json['available'];
+                }
             }
         },
         error: function(xhr, ajaxOptions, thrownError) {
