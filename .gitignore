@@ -7,6 +7,8 @@ database/*.sql
 /upload/.htaccess
 /upload/config.php
 /upload/admin/config.php
+/upload/install.lock
+/upload/install/
 
 # Runtime storage (outside upload/)
 /storage/cache/*

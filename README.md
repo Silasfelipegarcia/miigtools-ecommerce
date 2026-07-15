@@ -12,10 +12,21 @@ E-commerce OpenCart 4 com extensões MiigTools (Mercado Pago, customizações de
 ## Desenvolvimento local
 
 ```bash
-docker-compose up -d
+# Colima precisa estar rodando (Docker)
+colima start
+
+docker compose up -d --build
 ```
 
-A loja fica em `http://localhost/` e o Adminer em `http://localhost:8080/`.
+| Serviço | URL |
+|---------|-----|
+| Loja | http://localhost:8888/ |
+| Admin | http://localhost:8888/admin/ (`admin` / `admin`) |
+| Adminer (DB) | http://localhost:8889/ (server `mysql`, user `root`, pass `opencart`) |
+
+Na primeira subida o OpenCart é instalado automaticamente (prefixo `ws_`). Para reinstalar do zero: apague `upload/install.lock` e o volume MySQL (`docker compose down -v`).
+
+Se tiver o dump de produção (`database/winner_steel.sql`), importe no Adminer para trazer produtos e configurações reais.
 
 ## Deploy no Railway
 

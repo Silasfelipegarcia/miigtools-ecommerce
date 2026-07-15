@@ -1,0 +1,2377 @@
+{
+  "applied": [
+    {
+      "product_id": 1,
+      "oc_name": "Bits Quadrado Winner Steel 50% - 1/4\" x 4\"",
+      "oc_sku": "bits-quadrado-50-1-4x4",
+      "source": {
+        "row": 80,
+        "sku": "WS008",
+        "title": "Bits 1/4 X 4 Winner Steel 50%",
+        "price": 19.9,
+        "quantity": 0,
+        "status": "Inativo",
+        "description": "Bits Quadrado HSS 1/4 x 4\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bits Quadrado\nMedida: 1/4 x 4\nQuantidade: 1 unidade\nDescrição: Fabricado com aço importado com Cobalto, proporcionando maior resistência a altas temperaturas e ao desgaste sem perder o corte;\nNorma: DIN4964;\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação",
+        "height": 19.0,
+        "width": 16.0,
+        "length": 3.0,
+        "weight": 0.28,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bits-quadrado",
+          "fractions": [
+            "1/4",
+            "4"
+          ],
+          "material": "50",
+          "brand": "winner-steel",
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same family, every inch dimension, material grade, and required brand",
+      "alternative_source_rows": [],
+      "changes": {
+        "quantity": {
+          "old": 245,
+          "new": 0
+        },
+        "status": {
+          "old": 1,
+          "new": 0
+        },
+        "pt_br_description": {
+          "old_length": 851,
+          "new_length": 845
+        }
+      },
+      "old": {
+        "price": 19.9,
+        "quantity": 245,
+        "status": 1,
+        "length": 3.0,
+        "width": 16.0,
+        "height": 19.0,
+        "weight": 0.28
+      }
+    },
+    {
+      "product_id": 3,
+      "oc_name": "Bits Quadrado Winner Steel 50% - 5/16\" x 4\"",
+      "oc_sku": "bits-quadrado-50-5-16x4",
+      "source": {
+        "row": 35,
+        "sku": "WS014",
+        "title": "Bits 5/16 X 4 Winner Steel 50%",
+        "price": 26.9,
+        "quantity": 41,
+        "status": "Ativo",
+        "description": "Bits Quadrado HSS 5/16 x 4\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bits Quadrado\nMedida: 5/16 x 4\nQuantidade: 1 unidade\nDescrição: Fabricado com aço importado com Cobalto, proporcionando maior resistência a altas temperaturas e ao desgaste sem perder o corte;\nNorma: DIN4964;\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação",
+        "height": 22.0,
+        "width": 17.0,
+        "length": 3.0,
+        "weight": 0.17,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bits-quadrado",
+          "fractions": [
+            "5/16",
+            "4"
+          ],
+          "material": "50",
+          "brand": "winner-steel",
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same family, every inch dimension, material grade, and required brand",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 853,
+          "new_length": 847
+        }
+      },
+      "old": {
+        "price": 26.9,
+        "quantity": 41,
+        "status": 1,
+        "length": 3.0,
+        "width": 17.0,
+        "height": 22.0,
+        "weight": 0.17
+      }
+    },
+    {
+      "product_id": 5,
+      "oc_name": "Bits Quadrado Winner Steel 50% - 3/8\" x 4\"",
+      "oc_sku": "bits-quadrado-50-3-8x4",
+      "source": {
+        "row": 34,
+        "sku": "WS020",
+        "title": "Bits 3/8 X 4 Winner Steel 50%",
+        "price": 29.9,
+        "quantity": 41,
+        "status": "Ativo",
+        "description": "Bits Quadrado HSS 3/8 x 4\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bits Quadrado\nMedida: 3/8 x 4\nQuantidade: 1 unidade\nDescrição: Fabricado com aço importado com Cobalto, proporcionando maior resistência a altas temperaturas e ao desgaste sem perder o corte;\nNorma: DIN4964;\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação",
+        "height": 22.0,
+        "width": 17.0,
+        "length": 3.0,
+        "weight": 0.14,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bits-quadrado",
+          "fractions": [
+            "3/8",
+            "4"
+          ],
+          "material": "50",
+          "brand": "winner-steel",
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same family, every inch dimension, material grade, and required brand",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 851,
+          "new_length": 845
+        }
+      },
+      "old": {
+        "price": 29.9,
+        "quantity": 41,
+        "status": 1,
+        "length": 3.0,
+        "width": 17.0,
+        "height": 22.0,
+        "weight": 0.14
+      }
+    },
+    {
+      "product_id": 7,
+      "oc_name": "Bits Quadrado Winner Steel 50% - 1/2\" x 4\"",
+      "oc_sku": "bits-quadrado-50-1-2x4",
+      "source": {
+        "row": 43,
+        "sku": "WS028",
+        "title": "Bits 1/2 X 4 Winner Steel 50%",
+        "price": 47.04,
+        "quantity": 47,
+        "status": "Ativo",
+        "description": "Bits Quadrado HSS 1/2 x 4\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bits Quadrado\nMedida: 1/2 x 4\nQuantidade: 1 unidade\nDescrição: Fabricado com aço importado com Cobalto, proporcionando maior resistência a altas temperaturas e ao desgaste sem perder o corte;\nNorma: DIN4964;\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação",
+        "height": 23.0,
+        "width": 17.0,
+        "length": 5.0,
+        "weight": 0.22,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bits-quadrado",
+          "fractions": [
+            "1/2",
+            "4"
+          ],
+          "material": "50",
+          "brand": "winner-steel",
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same family, every inch dimension, material grade, and required brand",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 851,
+          "new_length": 845
+        }
+      },
+      "old": {
+        "price": 47.04,
+        "quantity": 47,
+        "status": 1,
+        "length": 5.0,
+        "width": 17.0,
+        "height": 23.0,
+        "weight": 0.22
+      }
+    },
+    {
+      "product_id": 11,
+      "oc_name": "Bits Quadrado Winner Steel 10% Co - 1/4\" x 4\"",
+      "oc_sku": "bits-quadrado-10co-1-4x4",
+      "source": {
+        "row": 13,
+        "sku": "WS407",
+        "title": "Bits 1/4 X 4 Winner Steel 10% Cobalto",
+        "price": 35.9,
+        "quantity": 10,
+        "status": "Ativo",
+        "description": "Bits Quadrado 10% Cobalto 1/4 x 4 \n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bits Quadrado\nMedida: 1/4 x 4\nQuantidade: 1 unidade\nDescrição: Fabricado com aço importado com 10% Cobalto, proporcionando maior resistência a altas temperaturas e ao desgaste sem perder o corte;\nNorma: DIN4964;\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação",
+        "height": 18.0,
+        "width": 14.0,
+        "length": 3.0,
+        "weight": 0.12,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bits-quadrado",
+          "fractions": [
+            "1/4",
+            "4"
+          ],
+          "material": "10co",
+          "brand": "winner-steel",
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same family, every inch dimension, material grade, and required brand",
+      "alternative_source_rows": [
+        139
+      ],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 863,
+          "new_length": 857
+        }
+      },
+      "old": {
+        "price": 35.9,
+        "quantity": 10,
+        "status": 1,
+        "length": 3.0,
+        "width": 14.0,
+        "height": 18.0,
+        "weight": 0.12
+      }
+    },
+    {
+      "product_id": 13,
+      "oc_name": "Bits Quadrado Winner Steel 10% Co - 5/16\" x 4\"",
+      "oc_sku": "bits-quadrado-10co-5-16x4",
+      "source": {
+        "row": 21,
+        "sku": "WS413",
+        "title": "Bits 5/16 X 4 Winner Steel 10% Cobalto",
+        "price": 46.9,
+        "quantity": 10,
+        "status": "Ativo",
+        "description": "Bits Quadrado HSS 5/16 x 4 10%Co\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bits Quadrado\nMedida: 5/16 x 4\nQuantidade: 1 unidade\nDescrição: Fabricado com aço importado com 10% Cobalto, proporcionando maior resistência a altas temperaturas e ao desgaste sem perder o corte;\nNorma: DIN4964;\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação",
+        "height": 26.0,
+        "width": 20.0,
+        "length": 5.0,
+        "weight": 0.19,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bits-quadrado",
+          "fractions": [
+            "5/16",
+            "4"
+          ],
+          "material": "10co",
+          "brand": "winner-steel",
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same family, every inch dimension, material grade, and required brand",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 863,
+          "new_length": 857
+        }
+      },
+      "old": {
+        "price": 46.9,
+        "quantity": 10,
+        "status": 1,
+        "length": 5.0,
+        "width": 20.0,
+        "height": 26.0,
+        "weight": 0.19
+      }
+    },
+    {
+      "product_id": 15,
+      "oc_name": "Bits Quadrado Winner Steel 10% Co - 3/8\" x 4\"",
+      "oc_sku": "bits-quadrado-10co-3-8x4",
+      "source": {
+        "row": 15,
+        "sku": "WS419",
+        "title": "Bits 3/8 X 4 Winner Steel 10% Cobalto",
+        "price": 69.9,
+        "quantity": 19,
+        "status": "Ativo",
+        "description": "Bits Quadrado 10% Cobalto 3/8 x 4 \n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bits Quadrado\nMedida: 3/8 x 4\nQuantidade: 1 unidade\nDescrição: Fabricado com aço importado com 10% Cobalto, proporcionando maior resistência a altas temperaturas e ao desgaste sem perder o corte;\nNorma: DIN4964;\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação",
+        "height": null,
+        "width": null,
+        "length": null,
+        "weight": null,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bits-quadrado",
+          "fractions": [
+            "3/8",
+            "4"
+          ],
+          "material": "10co",
+          "brand": "winner-steel",
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same family, every inch dimension, material grade, and required brand",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 863,
+          "new_length": 857
+        }
+      },
+      "old": {
+        "price": 69.9,
+        "quantity": 19,
+        "status": 1,
+        "length": 4.0,
+        "width": 6.0,
+        "height": 12.0,
+        "weight": 0.18
+      }
+    },
+    {
+      "product_id": 17,
+      "oc_name": "Bits Quadrado Winner Steel 10% Co - 1/2\" x 4\"",
+      "oc_sku": "bits-quadrado-10co-1-2x4",
+      "source": {
+        "row": 65,
+        "sku": "WS427",
+        "title": "Bits 1/2 X 4 Winner Steel 10% Cobalto",
+        "price": 129.9,
+        "quantity": 50,
+        "status": "Ativo",
+        "description": "Bits Quadrado HSS 1/2 x 4 10%Co\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bits Quadrado\nMedida: 1/2 x 4\nQuantidade: 1 unidade\nDescrição: Fabricado com aço importado com 10% Cobalto, proporcionando maior resistência a altas temperaturas e ao desgaste sem perder o corte;\nNorma: DIN4964;\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação",
+        "height": 27.0,
+        "width": 13.0,
+        "length": 7.0,
+        "weight": 0.47,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bits-quadrado",
+          "fractions": [
+            "1/2",
+            "4"
+          ],
+          "material": "10co",
+          "brand": "winner-steel",
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same family, every inch dimension, material grade, and required brand",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 861,
+          "new_length": 855
+        }
+      },
+      "old": {
+        "price": 129.9,
+        "quantity": 50,
+        "status": 1,
+        "length": 7.0,
+        "width": 13.0,
+        "height": 27.0,
+        "weight": 0.47
+      }
+    },
+    {
+      "product_id": 21,
+      "oc_name": "Bedame Winner Steel 50% - 1/2\" x 1/8\" x 6\"",
+      "oc_sku": "bedame-hss-1-2x1-8x6",
+      "source": {
+        "row": 41,
+        "sku": "WS104",
+        "title": "Bedame 1/2 X 1/8 X 6 Winner Steel 50%",
+        "price": 33.63,
+        "quantity": 46,
+        "status": "Ativo",
+        "description": "Bedames HSS 1/2 x 1/8 x 6\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bedames HSS\nMedida: 1/2 x 1/8 x 6\nQuantidade: 1 unidade\nDescrição: Fabricado com aço importado com Cobalto, proporcionando maior resistência a altas temperaturas e ao desgaste sem perder o corte;\nNorma: DIN4964;\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação\n\nGarantia do vendedor: 2 meses",
+        "height": 26.0,
+        "width": 17.0,
+        "length": 4.0,
+        "weight": 0.38,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bedame",
+          "fractions": [
+            "1/2",
+            "1/8",
+            "6"
+          ],
+          "material": "50",
+          "brand": "winner-steel",
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same family, every inch dimension, material grade, and required brand",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 892,
+          "new_length": 886
+        }
+      },
+      "old": {
+        "price": 33.63,
+        "quantity": 46,
+        "status": 1,
+        "length": 4.0,
+        "width": 17.0,
+        "height": 26.0,
+        "weight": 0.38
+      }
+    },
+    {
+      "product_id": 22,
+      "oc_name": "Bedame Winner Steel 50% - 5/8\" x 1/8\" x 6\"",
+      "oc_sku": "bedame-hss-5-8x1-8x6",
+      "source": {
+        "row": 102,
+        "sku": "WS108",
+        "title": "Bedame 5/8 X 1/8 X 6 Winner Steel 50%",
+        "price": 53.99,
+        "quantity": 0,
+        "status": "Inativo",
+        "description": "Bedames HSS 5/8 x 1/8 x 6\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bedames HSS\nMedida: 5/8 x 1/8 x 6\nQuantidade: 1 unidade\nDescrição: Fabricado com aço importado com Cobalto, proporcionando maior resistência a altas temperaturas e ao desgaste sem perder o corte;\nNorma: DIN4964;\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação\n\nGarantia do vendedor: 2 meses",
+        "height": 23.0,
+        "width": 17.0,
+        "length": 3.0,
+        "weight": 0.28,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bedame",
+          "fractions": [
+            "5/8",
+            "1/8",
+            "6"
+          ],
+          "material": "50",
+          "brand": "winner-steel",
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same family, every inch dimension, material grade, and required brand",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 892,
+          "new_length": 886
+        }
+      },
+      "old": {
+        "price": 53.99,
+        "quantity": 0,
+        "status": 0,
+        "length": 3.0,
+        "width": 17.0,
+        "height": 23.0,
+        "weight": 0.28
+      }
+    },
+    {
+      "product_id": 23,
+      "oc_name": "Bedame Winner Steel 50% - 3/4\" x 1/8\" x 6\"",
+      "oc_sku": "bedame-hss-3-4x1-8x6",
+      "source": {
+        "row": 126,
+        "sku": "WS116",
+        "title": "Bedame 3/4 X 1/8 X 6 Winner Steel 50%",
+        "price": 59.4,
+        "quantity": 50,
+        "status": "Inativo",
+        "description": "Bedames HSS 3/4 x 1/8 x 6\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bedames HSS\nMedida: 3/4 x 1/8 x 6\nQuantidade: 1 unidade\nDescrição: Fabricado com aço importado com Cobalto, proporcionando maior resistência a altas temperaturas e ao desgaste sem perder o corte;\nNorma: DIN4964;\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação\n\nGarantia do vendedor: 2 meses",
+        "height": null,
+        "width": null,
+        "length": null,
+        "weight": null,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bedame",
+          "fractions": [
+            "3/4",
+            "1/8",
+            "6"
+          ],
+          "material": "50",
+          "brand": "winner-steel",
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same family, every inch dimension, material grade, and required brand",
+      "alternative_source_rows": [],
+      "changes": {
+        "status": {
+          "old": 1,
+          "new": 0
+        },
+        "pt_br_description": {
+          "old_length": 892,
+          "new_length": 886
+        }
+      },
+      "old": {
+        "price": 59.4,
+        "quantity": 50,
+        "status": 1,
+        "length": 5.0,
+        "width": 14.0,
+        "height": 27.0,
+        "weight": 0.48
+      }
+    },
+    {
+      "product_id": 24,
+      "oc_name": "Bedame Winner Steel 10% Co - 1/2\" x 1/8\" x 6\"",
+      "oc_sku": "bedame-10co-1-2x1-8x6",
+      "source": {
+        "row": 53,
+        "sku": "WS504",
+        "title": "Bedame 1/2 X 1/8 X 6 Winner Steel 10% Cobalto",
+        "price": 77.65,
+        "quantity": 49,
+        "status": "Ativo",
+        "description": "Bedames 1/2 x 1/8 x 6 c/ 10% Co\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bedame 10% Co\nMedida: 1/2 x 1/8 x 6\nQuantidade: 1 unidade\nDescrição: Fabricado com aço importado com 10% Cobalto, proporcionando maior resistência a altas temperaturas e ao desgaste sem perder o corte;\nNorma: DIN4964;\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação\n\nGarantia do vendedor: 2 meses",
+        "height": 17.0,
+        "width": 12.0,
+        "length": 7.0,
+        "weight": 0.36,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bedame",
+          "fractions": [
+            "1/2",
+            "1/8",
+            "6"
+          ],
+          "material": "10co",
+          "brand": "winner-steel",
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same family, every inch dimension, material grade, and required brand",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 904,
+          "new_length": 898
+        }
+      },
+      "old": {
+        "price": 77.65,
+        "quantity": 49,
+        "status": 1,
+        "length": 7.0,
+        "width": 12.0,
+        "height": 17.0,
+        "weight": 0.36
+      }
+    },
+    {
+      "product_id": 25,
+      "oc_name": "Bedame Winner Steel 10% Co - 5/8\" x 1/8\" x 6\"",
+      "oc_sku": "bedame-10co-5-8x1-8x6",
+      "source": {
+        "row": 61,
+        "sku": "WS508",
+        "title": "Bedame 5/8 X 1/8 X 6 Winner Steel 10% Cobalto",
+        "price": 94.9,
+        "quantity": 50,
+        "status": "Ativo",
+        "description": "Bedames 5/8 x 1/8 x 6 c/ 10% Co\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bedame 10% Co\nMedida: 5/8 x 1/8 x 6\nQuantidade: 1 unidade\nDescrição: Fabricado com aço importado com 10% Cobalto, proporcionando maior resistência a altas temperaturas e ao desgaste sem perder o corte;\nNorma: DIN4964;\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação\n\nGarantia do vendedor: 2 meses",
+        "height": 25.0,
+        "width": 14.0,
+        "length": 5.0,
+        "weight": 0.38,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bedame",
+          "fractions": [
+            "5/8",
+            "1/8",
+            "6"
+          ],
+          "material": "10co",
+          "brand": "winner-steel",
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same family, every inch dimension, material grade, and required brand",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 904,
+          "new_length": 898
+        }
+      },
+      "old": {
+        "price": 94.9,
+        "quantity": 50,
+        "status": 1,
+        "length": 5.0,
+        "width": 14.0,
+        "height": 25.0,
+        "weight": 0.38
+      }
+    },
+    {
+      "product_id": 26,
+      "oc_name": "Bedame Winner Steel 10% Co - 3/4\" x 1/8\" x 6\"",
+      "oc_sku": "bedame-10co-3-4x1-8x6",
+      "source": {
+        "row": 30,
+        "sku": "WS516",
+        "title": "Bedame 3/4 X 1/8 X 6 Winner Steel 10% Cobalto",
+        "price": 89.06,
+        "quantity": 40,
+        "status": "Ativo",
+        "description": "Bedames 3/4 x 1/8 x 6 c/ 10% Co\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bedame 10% Co\nMedida: 3/4 x 1/8 x 6\nQuantidade: 1 unidade\nDescrição: Fabricado com aço importado com 10% Cobalto, proporcionando maior resistência a altas temperaturas e ao desgaste sem perder o corte;\nNorma: DIN4964;\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação\n\nGarantia do vendedor: 2 meses",
+        "height": 19.0,
+        "width": 11.0,
+        "length": 3.0,
+        "weight": 0.53,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bedame",
+          "fractions": [
+            "3/4",
+            "1/8",
+            "6"
+          ],
+          "material": "10co",
+          "brand": "winner-steel",
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same family, every inch dimension, material grade, and required brand",
+      "alternative_source_rows": [
+        138
+      ],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 904,
+          "new_length": 898
+        }
+      },
+      "old": {
+        "price": 89.06,
+        "quantity": 40,
+        "status": 1,
+        "length": 3.0,
+        "width": 11.0,
+        "height": 19.0,
+        "weight": 0.53
+      }
+    },
+    {
+      "product_id": 32,
+      "oc_name": "Porta Bits Hispânia - 1/2\"",
+      "oc_sku": "porta-bits-1-2",
+      "source": {
+        "row": 88,
+        "sku": "PB-805",
+        "title": "Porta Bits Reto 1/2 Hispânia",
+        "price": 159.6,
+        "quantity": 0,
+        "status": "Inativo",
+        "description": "Porta Bits Reto 1/2\n\nCaracterísticas:\nMarca: Hispânia\nProduto: Porta Bits Reto\nMedida: 1/2\nQuantidade: 1 unidade\nDescrição: Fabricado com aço importado com Cobalto, proporcionando maior resistência a altas temperaturas e ao desgaste sem perder o corte;\nNorma: DIN4964;\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação",
+        "height": 18.0,
+        "width": 10.0,
+        "length": 5.0,
+        "weight": 0.36,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "porta-bits",
+          "fractions": [
+            "1/2"
+          ],
+          "material": null,
+          "brand": null,
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same porta-bits family and exact inch size",
+      "alternative_source_rows": [],
+      "changes": {
+        "quantity": {
+          "old": 12,
+          "new": 0
+        },
+        "status": {
+          "old": 1,
+          "new": 0
+        },
+        "pt_br_description": {
+          "old_length": 839,
+          "new_length": 833
+        }
+      },
+      "old": {
+        "price": 159.6,
+        "quantity": 12,
+        "status": 1,
+        "length": 5.0,
+        "width": 10.0,
+        "height": 18.0,
+        "weight": 0.36
+      }
+    },
+    {
+      "product_id": 181,
+      "oc_name": "Maleta com Jogo de Pinça ER-40 + Mandril + Chave de Garra - CM4",
+      "oc_sku": "maleta-er40-cm4",
+      "source": {
+        "row": 82,
+        "sku": "ML004",
+        "title": "Kit Jogo De Pinças Er40 18 Peças + Chave + Mandril Cone Cm4",
+        "price": 959.9,
+        "quantity": 0,
+        "status": "Inativo",
+        "description": "Jogo de Pinças ER40 18 Peças + Chave + Mandril Cone Morse 4 \n\nCaracterísticas do kit:\n\nMandril Cone Morse 4 \nQuantidade: 1 unidade\nTipo de Cone: Cone Morse cônico (CM4) com rabo reto.\nNorma Aplicável: DIN 228-1, que especifica cones Morse com rabo reto.\nDiâmetro maior: 31,267 mm. \nRosca traseira: Pode variar, mas um exemplo comum é M16x2. \nComprimento: Também pode variar, mas um exemplo comum é 71,7 mm. \nMaterial: Geralmente construído em aço ferramenta 8620, com cementação para maior resistência e durabilidade. \n\nChave de Garra\nQuantidade: 1 unidade\nTipo: Chave específica para pinças ER40.\nMaterial: Aço resistido para maior durabilidade e resistência ao desgaste.\n\nJogo de Pinça ER-40\nQuantidade: 18 Pinças no Jogo\nMaterial: Aço especial tratado termicamente, garantindo maior durabilidade e resistência ao desgaste.\nDiâmetro Nominal de Fixação: 4 mm a 20 mm, mais uma pinça adicional de 25 mm.\nFlexibilidade: Cada pinça ER40 pode acomodar diâmetros de até 1 mm abaixo do diâmetro nominal.\nDiâmetro externo: 40 mm.\nComprimento total: 46 mm.\nPrecisão: Concentricidade de 0,01 mm TIR (Total Indicator Reading), conforme DIN ISO 15488.\n\nIndicações:\n- Indicada para fresamento, mandrilamento, furação e rosqueamento em ambientes de produção que desbloqueiam alta precisão\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra de\n\nGarantia de fábrica: 2 meses",
+        "height": 37.0,
+        "width": 21.0,
+        "length": 11.0,
+        "weight": 1.96,
+        "units": 1,
+        "unit_evidence": "ER40 kit is the OpenCart product type, not a multi-unit offer",
+        "signature": {
+          "family": "maleta-er40",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": null,
+          "cm": "4",
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": "cm4"
+        }
+      },
+      "confidence": "high",
+      "rationale": "same ER40 kit and exact mandrel interface",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 1933,
+          "new_length": 1915
+        }
+      },
+      "old": {
+        "price": 959.9,
+        "quantity": 0,
+        "status": 0,
+        "length": 11.0,
+        "width": 21.0,
+        "height": 37.0,
+        "weight": 1.96
+      }
+    },
+    {
+      "product_id": 182,
+      "oc_name": "Maleta com Jogo de Pinça ER-40 + Mandril + Chave de Garra - CM5",
+      "oc_sku": "maleta-er40-cm5",
+      "source": {
+        "row": 58,
+        "sku": "ML005",
+        "title": "Kit Jogo De Pinças Er40 18 Peças + Chave + Mandril Cone Cm5",
+        "price": 930.05,
+        "quantity": 1,
+        "status": "Ativo",
+        "description": "Jogo de Pinças ER40 18 Peças + Chave + Mandril Cone Morse 5 \n\nCaracterísticas do kit:\n\nMandril Cone Morse 5 \nQuantidade: 1 unidade\nTipo de Cone: Cone Morse cônico (CM5) com rabo reto.\nNorma Aplicável: DIN 228-1, que especifica cones Morse com rabo reto.\nDiâmetro maior: 44,7 mm. \nDiâmetro Menor: 38,1 mm.\nRosca traseira: Pode variar, mas um exemplo comum é M20 x 2,5. \nComprimento: O comprimento do cone, medido a partir da face do encaixe até o final do corpo, pode variar ligeiramente dependendo do fabricante, mas um valor comum é 82 mm.\nMaterial: Geralmente construído em aço ferramenta 8620, com cementação para maior resistência e durabilidade. \n\nChave de Garra\nQuantidade: 1 unidade\nTipo: Chave específica para pinças ER40.\nMaterial: Aço resistido para maior durabilidade e resistência ao desgaste.\n\nJogo de Pinça ER-40\nQuantidade: 18 Pinças no Jogo\nMaterial: Aço especial tratado termicamente, garantindo maior durabilidade e resistência ao desgaste.\nDiâmetro Nominal de Fixação: 4 mm a 20 mm, mais uma pinça adicional de 25 mm.\nFlexibilidade: Cada pinça ER40 pode acomodar diâmetros de até 1 mm abaixo do diâmetro nominal.\nDiâmetro externo: 40 mm.\nComprimento total: 46 mm.\nPrecisão: Concentricidade de 0,01 mm TIR (Total Indicator Reading), conforme DIN ISO 15488.\n\nIndicações:\n- Indicada para fresamento, mandrilamento, furação e rosqueamento em ambientes de produção que desbloqueiam alta precisão\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra de\n\nGarantia de fábrica: 2 meses",
+        "height": 40.0,
+        "width": 29.0,
+        "length": 13.0,
+        "weight": 1.96,
+        "units": 1,
+        "unit_evidence": "ER40 kit is the OpenCart product type, not a multi-unit offer",
+        "signature": {
+          "family": "maleta-er40",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": null,
+          "cm": "5",
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": "cm5"
+        }
+      },
+      "confidence": "high",
+      "rationale": "same ER40 kit and exact mandrel interface",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 2070,
+          "new_length": 2051
+        }
+      },
+      "old": {
+        "price": 930.05,
+        "quantity": 1,
+        "status": 1,
+        "length": 13.0,
+        "width": 29.0,
+        "height": 40.0,
+        "weight": 1.96
+      }
+    },
+    {
+      "product_id": 183,
+      "oc_name": "Maleta com Jogo de Pinça ER-40 + Mandril + Chave de Garra - ISO30",
+      "oc_sku": "maleta-er40-iso30",
+      "source": {
+        "row": 78,
+        "sku": "ML030",
+        "title": "Kit Jogo De Pinças Er40 18 Peças + Chave + Mandril Iso 30",
+        "price": 1035.9,
+        "quantity": 0,
+        "status": "Inativo",
+        "description": "Jogo de Pinças ER40 18 Peças + Chave + Mandril ISO 30 \n\nCaracterísticas do kit:\n\nMandril ISO 30\nQuantidade: 1 unidade\nTipo de Cone: Cone ISO 30, com encaixe cônico padrão para máquinas CNC e centros de usinagem.\nNorma Aplicável: Conforme a norma ISO 7388-1, que define os requisitos para cones de fixação tipo ISO.\nDiâmetro Maior: Aproximadamente 31,75 mm (na base do cone).\nDiâmetro Menor: Cerca de 17,78 mm (na extremidade do cone).\nRosca Traseira: Normalmente M12 x 1,75, utilizada para fixação por tração em máquinas CNC.\nComprimento Total: O comprimento padrão do cone ISO 30 é de aproximadamente 68 mm, podendo variar ligeiramente conforme o fabricante.\nMaterial: Fabricado geralmente em aço-liga de alta resistência, com tratamento térmico (como têmpera e revenimento) para garantir durabilidade, rigidez e resistência ao desgaste.\n\nChave de Garra\nQuantidade: 1 unidade\nTipo: Chave específica para pinças ER40.\nMaterial: Aço resistido para maior durabilidade e resistência ao desgaste.\n\nJogo de Pinça ER-40\nQuantidade: 18 Pinças no Jogo\nMaterial: Aço especial tratado termicamente, garantindo maior durabilidade e resistência ao desgaste.\nDiâmetro Nominal de Fixação: 4 mm a 20 mm, mais uma pinça adicional de 25 mm.\nFlexibilidade: Cada pinça ER40 pode acomodar diâmetros de até 1 mm abaixo do diâmetro nominal.\nDiâmetro externo: 40 mm.\nComprimento total: 46 mm.\nPrecisão: Concentricidade de 0,01 mm TIR (Total Indicator Reading), conforme DIN ISO 15488.\n\nIndicações:\n- Indicada para fresamento, mandrilamento, furação e rosqueamento em ambientes de produção que desbloqueiam alta precisão\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra de\n\nGarantia de fábrica: 2 meses",
+        "height": 39.0,
+        "width": 30.0,
+        "length": 14.0,
+        "weight": 4.93,
+        "units": 1,
+        "unit_evidence": "ER40 kit is the OpenCart product type, not a multi-unit offer",
+        "signature": {
+          "family": "maleta-er40",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": "iso30"
+        }
+      },
+      "confidence": "high",
+      "rationale": "same ER40 kit and exact mandrel interface",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 2258,
+          "new_length": 2239
+        }
+      },
+      "old": {
+        "price": 1035.9,
+        "quantity": 0,
+        "status": 0,
+        "length": 14.0,
+        "width": 30.0,
+        "height": 39.0,
+        "weight": 4.93
+      }
+    },
+    {
+      "product_id": 184,
+      "oc_name": "Maleta com Jogo de Pinça ER-40 + Mandril + Chave de Garra - ISO40",
+      "oc_sku": "maleta-er40-iso40",
+      "source": {
+        "row": 66,
+        "sku": "ML040",
+        "title": "Kit Jogo De Pinças Er40 18 Peças + Chave + Mandril Iso 40",
+        "price": 1021.82,
+        "quantity": 2,
+        "status": "Ativo",
+        "description": "Jogo de Pinças ER40 18 Peças + Chave + Mandril ISO 40 \n\nCaracterísticas do kit:\n\nMandril ISO 40\nQuantidade: 1 unidade\nTipo de Cone: Cone ISO 40, amplamente utilizado em centros de usinagem e máquinas CNC de médio porte.\nNorma Aplicável: Atende à norma ISO 7388-1, que padroniza os cones de fixação tipo ISO para ferramentas de corte.\nDiâmetro Maior: Aproximadamente 44,45 mm na base do cone.\nDiâmetro Menor: Cerca de 19,05 mm na extremidade do cone.\nRosca Traseira: Comumente M16 x 2, utilizada para sistemas de fixação por tração.\nComprimento Total: O comprimento padrão do cone ISO 40 é de aproximadamente 100 mm, podendo variar levemente conforme o fabricante.\nMaterial: Produzido geralmente em aço-liga de alta resistência, com tratamentos térmicos como cementação ou têmpera para garantir maior durabilidade, rigidez e resistência ao desgaste.\n\nChave de Garra\nQuantidade: 1 unidade\nTipo: Chave específica para pinças ER40.\nMaterial: Aço resistido para maior durabilidade e resistência ao desgaste.\n\nJogo de Pinça ER-40\nQuantidade: 18 Pinças no Jogo\nMaterial: Aço especial tratado termicamente, garantindo maior durabilidade e resistência ao desgaste.\nDiâmetro Nominal de Fixação: 4 mm a 20 mm, mais uma pinça adicional de 25 mm.\nFlexibilidade: Cada pinça ER40 pode acomodar diâmetros de até 1 mm abaixo do diâmetro nominal.\nDiâmetro externo: 40 mm.\nComprimento total: 46 mm.\nPrecisão: Concentricidade de 0,01 mm TIR (Total Indicator Reading), conforme DIN ISO 15488.\n\nIndicações:\n- Indicada para fresamento, mandrilamento, furação e rosqueamento em ambientes de produção que desbloqueiam alta precisão\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra de\n\nGarantia de fábrica: 2 meses",
+        "height": 39.0,
+        "width": 26.0,
+        "length": 10.0,
+        "weight": 3.48,
+        "units": 1,
+        "unit_evidence": "ER40 kit is the OpenCart product type, not a multi-unit offer",
+        "signature": {
+          "family": "maleta-er40",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": "iso40"
+        }
+      },
+      "confidence": "high",
+      "rationale": "same ER40 kit and exact mandrel interface",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 2268,
+          "new_length": 2249
+        }
+      },
+      "old": {
+        "price": 1021.82,
+        "quantity": 2,
+        "status": 1,
+        "length": 10.0,
+        "width": 26.0,
+        "height": 39.0,
+        "weight": 3.48
+      }
+    },
+    {
+      "product_id": 185,
+      "oc_name": "Maleta com Jogo de Pinça ER-40 + Mandril + Chave de Garra - ISO50",
+      "oc_sku": "maleta-er40-iso50",
+      "source": {
+        "row": 83,
+        "sku": "ML050",
+        "title": "Kit Jogo De Pinças Er40 18 Peças + Chave + Mandril Iso 50",
+        "price": 1017.45,
+        "quantity": 0,
+        "status": "Inativo",
+        "description": "Jogo de Pinças ER40 18 Peças + Chave + Mandril ISO 50\n\nCaracterísticas do kit:\n\nMandril ISO 50\nQuantidade: 1 unidade\nipo de Cone: Cone ISO 50, utilizado em máquinas CNC de grande porte e aplicações industriais pesadas.\nNorma Aplicável: Conforme a norma ISO 7388-1, que padroniza os cones de fixação tipo ISO para ferramentas de corte.\nDiâmetro Maior: Aproximadamente 69,85 mm na base do cone.\nDiâmetro Menor: Cerca de 31,75 mm na extremidade do cone.\nRosca Traseira: Normalmente M24 x 3, adequada para sistemas de fixação por tração robustos.\nComprimento Total: O comprimento padrão do cone ISO 50 é de aproximadamente 135 mm, podendo variar conforme o fabricante.\nMaterial: Fabricado geralmente em aço-liga de alta resistência, com tratamentos térmicos como cementação ou têmpera para garantir excelente durabilidade, rigidez e resistência ao desgaste, mesmo sob cargas elevadas.\n\nChave de Garra\nQuantidade: 1 unidade\nTipo: Chave específica para pinças ER40.\nMaterial: Aço resistido para maior durabilidade e resistência ao desgaste.\n\nJogo de Pinça ER-40\nQuantidade: 18 Pinças no Jogo\nMaterial: Aço especial tratado termicamente, garantindo maior durabilidade e resistência ao desgaste.\nDiâmetro Nominal de Fixação: 4 mm a 20 mm, mais uma pinça adicional de 25 mm.\nFlexibilidade: Cada pinça ER40 pode acomodar diâmetros de até 1 mm abaixo do diâmetro nominal.\nDiâmetro externo: 40 mm.\nComprimento total: 46 mm.\nPrecisão: Concentricidade de 0,01 mm TIR (Total Indicator Reading), conforme DIN ISO 15488.\n\nIndicações:\n- Indicada para fresamento, mandrilamento, furação e rosqueamento em ambientes de produção que desbloqueiam alta precisão\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra de\n\nGarantia de fábrica: 2 meses",
+        "height": 41.0,
+        "width": 32.0,
+        "length": 21.0,
+        "weight": 8.05,
+        "units": 1,
+        "unit_evidence": "ER40 kit is the OpenCart product type, not a multi-unit offer",
+        "signature": {
+          "family": "maleta-er40",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": "iso50"
+        }
+      },
+      "confidence": "high",
+      "rationale": "same ER40 kit and exact mandrel interface",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 2301,
+          "new_length": 2282
+        }
+      },
+      "old": {
+        "price": 1017.45,
+        "quantity": 0,
+        "status": 0,
+        "length": 21.0,
+        "width": 32.0,
+        "height": 41.0,
+        "weight": 8.05
+      }
+    },
+    {
+      "product_id": 186,
+      "oc_name": "Maleta com Jogo de Pinça ER-40 + Mandril + Chave de Garra - BT40",
+      "oc_sku": "maleta-er40-bt40",
+      "source": {
+        "row": 51,
+        "sku": "ML080",
+        "title": "Kit Jogo De Pinças Er40 18 Peças + Chave + Mandril Bt 40",
+        "price": 990.0,
+        "quantity": 1,
+        "status": "Ativo",
+        "description": "Jogo de Pinças ER40 18 Peças + Chave + Mandril BT40\n\nCaracterísticas do kit:\n\nMandril BT40\nQuantidade: 1 unidade\nTipo de Cone: Cone BT 40, com dupla face de contato (flange e cone), ideal para centros de usinagem CNC que exigem alta rigidez e precisão.\nNorma Aplicável: Atende à norma MAS 403-BT, que padroniza os cones tipo BT utilizados em máquinas CNC.\nDiâmetro Maior: Aproximadamente 44,45 mm na base do cone.\nDiâmetro Menor: Cerca de 19,05 mm na extremidade do cone.\nRosca Traseira: Comumente M16 x 2, utilizada para sistemas de fixação por tração com puxadores padrão BT.\nComprimento Total: O comprimento padrão do cone BT 40 é de aproximadamente 100 mm, podendo variar levemente conforme o fabricante.\nMaterial: Fabricado geralmente em aço-liga de alta resistência, com tratamentos térmicos como têmpera e revenimento para garantir excelente durabilidade, rigidez e resistência ao desgaste, mesmo em operações de alta velocidade.\n\nChave de Garra\nQuantidade: 1 unidade\nTipo: Chave específica para pinças ER40.\nMaterial: Aço resistido para maior durabilidade e resistência ao desgaste.\n\nJogo de Pinça ER-40\nQuantidade: 18 Pinças no Jogo\nMaterial: Aço especial tratado termicamente, garantindo maior durabilidade e resistência ao desgaste.\nDiâmetro Nominal de Fixação: 4 mm a 20 mm, mais uma pinça adicional de 25 mm.\nFlexibilidade: Cada pinça ER40 pode acomodar diâmetros de até 1 mm abaixo do diâmetro nominal.\nDiâmetro externo: 40 mm.\nComprimento total: 46 mm.\nPrecisão: Concentricidade de 0,01 mm TIR (Total Indicator Reading), conforme DIN ISO 15488.\n\nIndicações:\n- Indicada para fresamento, mandrilamento, furação e rosqueamento em ambientes de produção que desbloqueiam alta precisão\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra de\n\nGarantia de fábrica: 2 meses",
+        "height": null,
+        "width": null,
+        "length": null,
+        "weight": null,
+        "units": 1,
+        "unit_evidence": "ER40 kit is the OpenCart product type, not a multi-unit offer",
+        "signature": {
+          "family": "maleta-er40",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": null,
+          "cm": null,
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": "bt40"
+        }
+      },
+      "confidence": "high",
+      "rationale": "same ER40 kit and exact mandrel interface",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 2357,
+          "new_length": 2338
+        }
+      },
+      "old": {
+        "price": 990.0,
+        "quantity": 1,
+        "status": 1,
+        "length": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "weight": 0.0
+      }
+    },
+    {
+      "product_id": 195,
+      "oc_name": "Ponta Rotativa Standard - CM2",
+      "oc_sku": "ponta-standard-cm2",
+      "source": {
+        "row": 134,
+        "sku": "",
+        "title": "Ponta Rotativa Cm2 Standard - Contra Ponto Para Torno - Ws",
+        "price": 166.9,
+        "quantity": 1,
+        "status": "Inativo",
+        "description": "Ponta Rotativa Standard CM2\n\nCaracterísticas:\nMarca: Gold\nQuantidade: 1 unidade\n\nIndicações:\n- Indicadas para serviços gerais de tornearia - utilização em tornos e CNC\n- Usinagens de cargas radiais, leves e médias, de média precisão.\n- Usinagens com cargas axiais leves.\n\nComposição:\n- Mancal composto por 2 rolamentos radiais de esferas.\n- Possui 1 rolamento de esferas blindado para proteger a ponta contra a entrada de cavacos e outras impurezas.\n- Diâmetro do corpo externo reduzido, facilitando as usinagens de peças de pequeno tamanho.\n- Eixo giratório temperado, revenido (60+/- 2HCR) e retificado\n- Ponta rotativa de baixo custo\n\nCaracterísticas:\n- Cone Morse: CM2\n- Tamanho da Ponta: 28,6mm\n- Diâmetro da ponta: 25mm\n- Diâmetro do corpo: 45mm\n- Comprimento: 129,60mm\n- Peso Máximo da Peça: 0,475 Kg\n- Tipo: Carga Leve e Média\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação\n\nGarantia do vendedor: 3 meses",
+        "height": null,
+        "width": null,
+        "length": null,
+        "weight": null,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "ponta",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": null,
+          "cm": "2",
+          "point_type": "standard",
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same point type, Morse cone, and tubular dimensions when applicable",
+      "alternative_source_rows": [],
+      "changes": {
+        "status": {
+          "old": 1,
+          "new": 0
+        },
+        "pt_br_description": {
+          "old_length": 1504,
+          "new_length": 1487
+        }
+      },
+      "old": {
+        "price": 166.9,
+        "quantity": 1,
+        "status": 1,
+        "length": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "weight": 0.0
+      }
+    },
+    {
+      "product_id": 196,
+      "oc_name": "Ponta Rotativa Standard - CM3",
+      "oc_sku": "ponta-standard-cm3",
+      "source": {
+        "row": 25,
+        "sku": "WS030",
+        "title": "Ponta Rotativa Cm3 Standard - Contra Ponto Para Torno - Ws",
+        "price": 291.06,
+        "quantity": 7,
+        "status": "Ativo",
+        "description": "Ponta Rotativa Standard CM3\n\nCaracterísticas:\nMarca: Winner Steel\nQuantidade: 1 unidade\n\nIndicações:\n- Indicadas para serviços gerais de tornearia - utilização em tornos e CNC\n- Usinagens de cargas radiais, leves e médias, de média precisão.\n- Usinagens com cargas axiais leves.\n\nComposição:\n- Mancal composto por 2 rolamentos radiais de esferas.\n- Possui 1 rolamento de esferas blindado para proteger a ponta contra a entrada de cavacos e outras impurezas.\n- Diâmetro do corpo externo reduzido, facilitando as usinagens de peças de pequeno tamanho.\n- Eixo giratório temperado, revenido (60+/- 2HCR) e retificado\n- Ponta rotativa de baixo custo\n\nCaracterísticas:\n- Cone Morse: CM3\n- Tamanho da Ponta: 32mm\n- Diâmetro da ponta: 28mm\n- Diâmetro do corpo: 58mm\n- Comprimento: 160.2mm\n- Peso Máximo da Peça: 0,812 Kg\n- Tipo: Carga Leve e Média\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação\n\nGarantia do vendedor: 3 meses",
+        "height": 22.0,
+        "width": 14.0,
+        "length": 7.0,
+        "weight": 0.98,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "ponta",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": null,
+          "cm": "3",
+          "point_type": "standard",
+          "tubular": null,
+          "recart_type": null,
+          "mandril": "cm3"
+        }
+      },
+      "confidence": "high",
+      "rationale": "same point type, Morse cone, and tubular dimensions when applicable",
+      "alternative_source_rows": [
+        75
+      ],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 1509,
+          "new_length": 1492
+        }
+      },
+      "old": {
+        "price": 291.06,
+        "quantity": 7,
+        "status": 1,
+        "length": 7.0,
+        "width": 14.0,
+        "height": 22.0,
+        "weight": 0.98
+      }
+    },
+    {
+      "product_id": 197,
+      "oc_name": "Ponta Rotativa Standard - CM4",
+      "oc_sku": "ponta-standard-cm4",
+      "source": {
+        "row": 69,
+        "sku": "",
+        "title": "Ponta Rotativa Cm4 Standard - Contra Ponto Para Torno - Ws",
+        "price": 189.0,
+        "quantity": 0,
+        "status": "Inativo",
+        "description": "Ponta Rotativa Standard CM4\n\nCaracterísticas:\nMarca: Winner Steel\nQuantidade: 1 unidade\n\nIndicações:\n- Indicadas para serviços gerais de tornearia - utilização em tornos e CNC\n- Usinagens de cargas radiais, leves e médias, de média precisão.\n- Usinagens com cargas axiais leves.\n\nComposição:\n- Mancal composto por 2 rolamentos radiais de esferas.\n- Possui 1 rolamento de esferas blindado para proteger a ponta contra a entrada de cavacos e outras impurezas.\n- Diâmetro do corpo externo reduzido, facilitando as usinagens de peças de pequeno tamanho.\n- Eixo giratório temperado, revenido (60+/- 2HCR) e retificado\n- Ponta rotativa de baixo custo\n\nCaracterísticas:\n- Cone Morse: CM4\n- Tamanho da Ponta: 34.5mm\n- Diâmetro da ponta: 32mm\n- Diâmetro do corpo: 60mm\n- Comprimento: 191.7mm\n- Peso Máximo da Peça: 1,300 Kg\n- Tipo: Carga Leve e Média\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação\n\nGarantia do vendedor: 3 meses",
+        "height": 25.0,
+        "width": 17.0,
+        "length": 11.0,
+        "weight": 1.53,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "ponta",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": null,
+          "cm": "4",
+          "point_type": "standard",
+          "tubular": null,
+          "recart_type": null,
+          "mandril": "cm4"
+        }
+      },
+      "confidence": "high",
+      "rationale": "same point type, Morse cone, and tubular dimensions when applicable",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 1511,
+          "new_length": 1494
+        }
+      },
+      "old": {
+        "price": 189.0,
+        "quantity": 0,
+        "status": 0,
+        "length": 11.0,
+        "width": 17.0,
+        "height": 25.0,
+        "weight": 1.53
+      }
+    },
+    {
+      "product_id": 198,
+      "oc_name": "Ponta Rotativa Super - CM3",
+      "oc_sku": "ponta-super-cm3",
+      "source": {
+        "row": 28,
+        "sku": "CS253",
+        "title": "Ponta Rotativa Cm3 Super - Contra Ponto Para Torno - Ws",
+        "price": 289.9,
+        "quantity": 4,
+        "status": "Ativo",
+        "description": "Ponta Rotativa Super CM3\n\nCaracterísticas:\nMarca: Winner Steel\nQuantidade: 1 unidade\n\nIndicações:\n- Indicadas para serviços gerais de tornearia - utilização em tornos e CNC\n- Usinagens de cargas radiais, leves e médias, de média precisão.\n- Usinagens onde exige-se alta rotação.\n\nComposição:\n- Montagem espaçada dos rolamentos no eixo giratório permite ótima rigidez e perfeita concentricidade de rotação da ponta; \n- Corpo externo usinado, temperado e revenido (40 + 2HCR) e retificado); \n- Eixo giratório temperado, revenido (60 + 2HCR) e retificado.\n\n\nCaracterísticas:\n- Cone Morse: CM3\n- Tamanho da Ponta: 38mm\n- Diâmetro da ponta: 28mm\n- Diâmetro do corpo: 59mm\n- Comprimento: 170mm\n- Peso Máximo da Peça: 0,966 Kg\n- Tipo: Carga Média\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação\n\nGarantia do vendedor: 3 meses",
+        "height": 19.0,
+        "width": 14.0,
+        "length": 9.0,
+        "weight": 1.08,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "ponta",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": null,
+          "cm": "3",
+          "point_type": "super",
+          "tubular": null,
+          "recart_type": null,
+          "mandril": "cm3"
+        }
+      },
+      "confidence": "high",
+      "rationale": "same point type, Morse cone, and tubular dimensions when applicable",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 1400,
+          "new_length": 1385
+        }
+      },
+      "old": {
+        "price": 289.9,
+        "quantity": 4,
+        "status": 1,
+        "length": 9.0,
+        "width": 14.0,
+        "height": 19.0,
+        "weight": 1.08
+      }
+    },
+    {
+      "product_id": 199,
+      "oc_name": "Ponta Rotativa Super - CM4",
+      "oc_sku": "ponta-super-cm4",
+      "source": {
+        "row": 14,
+        "sku": "SUP001",
+        "title": "Ponta Rotativa Cm4 Super - Contra Ponto Para Torno",
+        "price": 285.9,
+        "quantity": 4,
+        "status": "Ativo",
+        "description": "Ponta Rotativa Super CM4\n\nCaracterísticas:\nQuantidade: 1 unidade\n\nIndicações:\n- Indicadas para serviços gerais de tornearia - utilização em tornos e CNC\n- Usinagens de cargas radiais, leves e médias, de média precisão.\n- Usinagens onde exige-se alta rotação.\n\nComposição:\n- Montagem espaçada dos rolamentos no eixo giratório permite ótima rigidez e perfeita concentricidade de rotação da ponta; \n- Corpo externo usinado, temperado e revenido (40 + 2HCR) e retificado); \n- Eixo giratório temperado, revenido (60 + 2HCR) e retificado.\n\n\nCaracterísticas:\n- Cone Morse: CM4\n- Tamanho da Ponta: 45mm\n- Diâmetro da ponta: 31mm\n- Diâmetro do corpo: 64mm\n- Comprimento: 198mm\n- Peso Máximo da Peça: 1,600 Kg\n- Tipo: Carga Média\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação\n\nGarantia do vendedor: 3 meses",
+        "height": 24.0,
+        "width": 17.0,
+        "length": 11.0,
+        "weight": 1.71,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "ponta",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": null,
+          "cm": "4",
+          "point_type": "super",
+          "tubular": null,
+          "recart_type": null,
+          "mandril": "cm4"
+        }
+      },
+      "confidence": "high",
+      "rationale": "same point type, Morse cone, and tubular dimensions when applicable",
+      "alternative_source_rows": [
+        114
+      ],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 1376,
+          "new_length": 1362
+        }
+      },
+      "old": {
+        "price": 285.9,
+        "quantity": 4,
+        "status": 1,
+        "length": 11.0,
+        "width": 17.0,
+        "height": 24.0,
+        "weight": 1.71
+      }
+    },
+    {
+      "product_id": 200,
+      "oc_name": "Ponta Rotativa Super - CM5",
+      "oc_sku": "ponta-super-cm5",
+      "source": {
+        "row": 40,
+        "sku": "",
+        "title": "Ponta Rotativa Cm5 Super - Contra Ponto Para Torno - Ws",
+        "price": 735.5,
+        "quantity": 1,
+        "status": "Ativo",
+        "description": "Ponta Rotativa Super CM5\n\nCaracterísticas:\nMarca: Winner Steel\nQuantidade: 1 unidade\n\nIndicações:\n- Indicadas para serviços gerais de tornearia - utilização em tornos e CNC\n- Usinagens de cargas radiais, leves e médias, de média precisão.\n- Usinagens onde exige-se alta rotação.\n\nComposição:\n- Montagem espaçada dos rolamentos no eixo giratório permite ótima rigidez e perfeita concentricidade de rotação da ponta; \n- Corpo externo usinado, temperado e revenido (40 + 2HCR) e retificado); \n- Eixo giratório temperado, revenido (60 + 2HCR) e retificado.\n\n\nCaracterísticas:\n- Cone Morse: CM5\n- Tamanho da Ponta: 52mm\n- Diâmetro da ponta: 44mm\n- Diâmetro do corpo: 78mm\n- Comprimento: 245mm\n- Peso Máximo da Peça: 3,415 Kg\n- Tipo: Carga Média\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação\n\nGarantia do vendedor: 3 meses",
+        "height": 31.0,
+        "width": 16.0,
+        "length": 14.0,
+        "weight": 3.08,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "ponta",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": null,
+          "cm": "5",
+          "point_type": "super",
+          "tubular": null,
+          "recart_type": null,
+          "mandril": "cm5"
+        }
+      },
+      "confidence": "high",
+      "rationale": "same point type, Morse cone, and tubular dimensions when applicable",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 1400,
+          "new_length": 1385
+        }
+      },
+      "old": {
+        "price": 735.5,
+        "quantity": 1,
+        "status": 1,
+        "length": 14.0,
+        "width": 16.0,
+        "height": 31.0,
+        "weight": 3.08
+      }
+    },
+    {
+      "product_id": 201,
+      "oc_name": "Ponta Rotativa Copiadora - CM3",
+      "oc_sku": "ponta-copiadora-cm3",
+      "source": {
+        "row": 20,
+        "sku": "PC313",
+        "title": "Ponta Rotativa Cm3 Copiadora - Contra Ponto Para Torno - Ws",
+        "price": 311.85,
+        "quantity": 1,
+        "status": "Ativo",
+        "description": "Ponta Rotativa Copiadora CM3\n\nCaracterísticas:\nMarca: Winner Steel\nQuantidade: 1 unidade\n\nIndicações:\n- Para usinagens de média precisão;\n- Trabalhos de cargas radiais e axiais médias e pesadas;\n- Ideal para usinagem onde exige-se alta rotação.\n\nComposição:\n- Mancal composto por 2 rolamentos radiais de esferas.\n- Possui 1 rolamento de esferas blindado para proteger a ponta contra a entrada de cavacos e outras impurezas.\n- Eixo giratório temperado, revenido (60+/- 2HCR) e retificado\n- Ponta rotativa de baixo custo\n\nCaracterísticas:\n- Cone Morse: CM3\n- Tamanho da Ponta: 43mm\n- Diâmetro da ponta: 21mm\n- Diâmetro do corpo: 51 mm\n- Peso Máximo da Peça: 0,865 Kg\n- Tipo: Carga Leve e Média\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação\"",
+        "height": null,
+        "width": null,
+        "length": null,
+        "weight": null,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "ponta",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": null,
+          "cm": "3",
+          "point_type": "copiadora",
+          "tubular": null,
+          "recart_type": null,
+          "mandril": "cm3"
+        }
+      },
+      "confidence": "high",
+      "rationale": "same point type, Morse cone, and tubular dimensions when applicable",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 1322,
+          "new_length": 1307
+        }
+      },
+      "old": {
+        "price": 311.85,
+        "quantity": 1,
+        "status": 1,
+        "length": 0.0,
+        "width": 0.0,
+        "height": 0.0,
+        "weight": 0.0
+      }
+    },
+    {
+      "product_id": 202,
+      "oc_name": "Ponta Rotativa Copiadora - CM4",
+      "oc_sku": "ponta-copiadora-cm4",
+      "source": {
+        "row": 8,
+        "sku": "PC314",
+        "title": "Ponta Rotativa Cm4 Copiadora - Contra Ponto Para Torno - Ws",
+        "price": 335.0,
+        "quantity": 4,
+        "status": "Ativo",
+        "description": "Ponta Rotativa Copiadora CM4\n\nCaracterísticas:\nMarca: Winner Steel\nQuantidade: 1 unidade\n\nIndicações:\n- Para usinagens de média precisão;\n- Trabalhos de cargas radiais e axiais médias e pesadas;\n- Ideal para usinagem onde exige-se alta rotação.\n\nComposição:\n- Mancal composto por 2 rolamentos radiais de esferas.\n- Possui 1 rolamento de esferas blindado para proteger a ponta contra a entrada de cavacos e outras impurezas.\n- Eixo giratório temperado, revenido (60+/- 2HCR) e retificado\n- Ponta rotativa de baixo custo\n\nCaracterísticas:\n- Cone Morse: CM4\n- Tamanho da Ponta: 45mm\n- Diâmetro da ponta: 30mm\n- Diâmetro do corpo: 67mm\n- Peso Máximo da Peça: 1,319 Kg\n- Tipo: Carga Leve e Média\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação",
+        "height": 22.0,
+        "width": 15.0,
+        "length": 8.0,
+        "weight": 1.45,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "ponta",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": null,
+          "cm": "4",
+          "point_type": "copiadora",
+          "tubular": null,
+          "recart_type": null,
+          "mandril": "cm4"
+        }
+      },
+      "confidence": "high",
+      "rationale": "same point type, Morse cone, and tubular dimensions when applicable",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 1315,
+          "new_length": 1300
+        }
+      },
+      "old": {
+        "price": 335.0,
+        "quantity": 4,
+        "status": 1,
+        "length": 8.0,
+        "width": 15.0,
+        "height": 22.0,
+        "weight": 1.45
+      }
+    },
+    {
+      "product_id": 211,
+      "oc_name": "Bucha de Redução 2x1 - 90x18.6x12.06",
+      "oc_sku": "bucha-2x1-90x18.6x12.06",
+      "source": {
+        "row": 19,
+        "sku": "BRWS431",
+        "title": "Bucha De Redução Cone Morse 2 X 1 P/ Torno",
+        "price": 36.9,
+        "quantity": 9,
+        "status": "Ativo",
+        "description": "1 Bucha de Redução Cone Morse 2 x 1 P/ Torno\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bucha de Redução\nMedida: 2 x 1\nQuantidade: 1 unidade\nDescrição: Inteiramente retificada.\nAcessório utilizado na adaptação de ferramentas com fixação em cone-morse menor que o existente na árvore da máquina.\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação",
+        "height": 17.0,
+        "width": 11.0,
+        "length": 4.0,
+        "weight": 0.12,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bucha",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": [
+            "2",
+            "1"
+          ],
+          "cm": "2",
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same bucha family and exact Morse taper pair",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 869,
+          "new_length": 863
+        }
+      },
+      "old": {
+        "price": 36.9,
+        "quantity": 9,
+        "status": 1,
+        "length": 4.0,
+        "width": 11.0,
+        "height": 17.0,
+        "weight": 0.12
+      }
+    },
+    {
+      "product_id": 212,
+      "oc_name": "Bucha de Redução 3x2 - 108x24.7x17.78",
+      "oc_sku": "bucha-3x2-108x24.7x17.78",
+      "source": {
+        "row": 12,
+        "sku": "BRWS432",
+        "title": "Bucha De Redução Cone Morse 3 X 2 P/ Torno",
+        "price": 54.99,
+        "quantity": 1,
+        "status": "Ativo",
+        "description": "1 Bucha de Redução Cone Morse 3 x 2 P/ Torno\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bucha de Redução\nMedida: 3 x 2\nQuantidade: 1 unidade\nDescrição: Inteiramente retificada.\nAcessório utilizado na adaptação de ferramentas com fixação em cone-morse menor que o existente na árvore da máquina.\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação",
+        "height": 17.0,
+        "width": 12.0,
+        "length": 7.0,
+        "weight": 0.21,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bucha",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": [
+            "3",
+            "2"
+          ],
+          "cm": "3",
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same bucha family and exact Morse taper pair",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 869,
+          "new_length": 863
+        }
+      },
+      "old": {
+        "price": 54.99,
+        "quantity": 1,
+        "status": 1,
+        "length": 7.0,
+        "width": 12.0,
+        "height": 17.0,
+        "weight": 0.21
+      }
+    },
+    {
+      "product_id": 213,
+      "oc_name": "Bucha de Redução 4x3 - 132x32.4x23.82",
+      "oc_sku": "bucha-4x3-132x32.4x23.82",
+      "source": {
+        "row": 9,
+        "sku": "BRWS434",
+        "title": "Bucha De Redução Cone Morse 4 X 3 P/ Torno",
+        "price": 72.99,
+        "quantity": 2,
+        "status": "Ativo",
+        "description": "1 Bucha de Redução Cone Morse 4 x 3 P/ Torno\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bucha de Redução\nMedida: 4 x 3\nQuantidade: 1 unidade\nDescrição: Inteiramente retificada.\nAcessório utilizado na adaptação de ferramentas com fixação em cone-morse menor que o existente na árvore da máquina.\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação",
+        "height": 18.0,
+        "width": 10.0,
+        "length": 4.0,
+        "weight": 0.46,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bucha",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": [
+            "4",
+            "3"
+          ],
+          "cm": "4",
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same bucha family and exact Morse taper pair",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 869,
+          "new_length": 863
+        }
+      },
+      "old": {
+        "price": 72.99,
+        "quantity": 2,
+        "status": 1,
+        "length": 4.0,
+        "width": 10.0,
+        "height": 18.0,
+        "weight": 0.46
+      }
+    },
+    {
+      "product_id": 214,
+      "oc_name": "Bucha de Redução 5x4 - 164x45.5x31.27",
+      "oc_sku": "bucha-5x4-164x45.5x31.27",
+      "source": {
+        "row": 7,
+        "sku": "BRWS437",
+        "title": "Bucha De Redução Cone Morse 5 X 4 P/ Torno",
+        "price": 119.99,
+        "quantity": 8,
+        "status": "Ativo",
+        "description": "1 Bucha de Redução Cone Morse 5 x 4 P/ Torno\n\nCaracterísticas:\nMarca: Winner Steel\nProduto: Bucha de Redução\nMedida: 5 x 4\nQuantidade: 1 unidade\nDescrição: Inteiramente retificada.\nAcessório utilizado na adaptação de ferramentas com fixação em cone-morse menor que o existente na árvore da máquina.\n\n-------------------------------------------\n\n- Fotos reais dos produtos\n\n- Atendimento Com Qualidade - Vários Canais de Atendimento\n\n- Devolução Gratuita - Isso mesmo, Sem custos!\n\n- Frete Seguro Para Todo Brasil\n\n- Frete Grátis para mais de uma peça adquirida\n\n- Produtos Com Garantia - Proteção para você e sua compra\n\n- Produtos a pronta entrega\n\n- Garantimos a devolução por arrependimento em até 7 dias após o recebimento e garantia de 90 dias contra defeitos de fabricação",
+        "height": 22.0,
+        "width": 15.0,
+        "length": 8.0,
+        "weight": 1.01,
+        "units": 1,
+        "unit_evidence": "no multi-unit indicator",
+        "signature": {
+          "family": "bucha",
+          "fractions": null,
+          "material": null,
+          "brand": null,
+          "bucha": [
+            "5",
+            "4"
+          ],
+          "cm": "5",
+          "point_type": null,
+          "tubular": null,
+          "recart_type": null,
+          "mandril": null
+        }
+      },
+      "confidence": "high",
+      "rationale": "same bucha family and exact Morse taper pair",
+      "alternative_source_rows": [],
+      "changes": {
+        "pt_br_description": {
+          "old_length": 869,
+          "new_length": 863
+        }
+      },
+      "old": {
+        "price": 119.99,
+        "quantity": 8,
+        "status": 1,
+        "length": 8.0,
+        "width": 15.0,
+        "height": 22.0,
+        "weight": 1.01
+      }
+    }
+  ],
+  "skipped_or_ambiguous": [
+    {
+      "row": 139,
+      "sku": "WS407",
+      "title": "Bits 1/4 X 4 Winner Steel 10% Cobalto",
+      "reason": "duplicate exact match for product 11; selected row 13 because active/in-stock precedence",
+      "rationale": "same family, every inch dimension, material grade, and required brand"
+    },
+    {
+      "row": 138,
+      "sku": "WS516",
+      "title": "Bedame 3/4 X 1/8 X 6 Winner Steel 10% Cobalto",
+      "reason": "duplicate exact match for product 26; selected row 30 because active/in-stock precedence",
+      "rationale": "same family, every inch dimension, material grade, and required brand"
+    },
+    {
+      "row": 75,
+      "sku": "",
+      "title": "Ponta Rotativa Cm3 Standard - Contra Ponto Para Torno",
+      "reason": "duplicate exact match for product 196; selected row 25 because active/in-stock precedence",
+      "rationale": "same point type, Morse cone, and tubular dimensions when applicable"
+    },
+    {
+      "row": 114,
+      "sku": "CS254",
+      "title": "Ponta Rotativa Cm4 Super - Contra Ponto Para Torno - Ws",
+      "reason": "duplicate exact match for product 199; selected row 14 because active/in-stock precedence",
+      "rationale": "same point type, Morse cone, and tubular dimensions when applicable"
+    },
+    {
+      "row": 10,
+      "sku": "PR-906",
+      "title": "Porta Recartilha Duplo - Ferramenta Para Torno",
+      "reason": "ambiguous: family has multiple OpenCart variants but spreadsheet omits a required discriminator"
+    },
+    {
+      "row": 16,
+      "sku": "",
+      "title": "Bits Quadrado 3/8 X 4 Hardsteel 50% (1 Unidade)",
+      "reason": "ambiguous: family has multiple OpenCart variants but spreadsheet omits a required discriminator"
+    },
+    {
+      "row": 17,
+      "sku": "PR-902",
+      "title": "Porta Recartilha Simples - Ferramenta Para Torno",
+      "reason": "ambiguous: family has multiple OpenCart variants but spreadsheet omits a required discriminator"
+    },
+    {
+      "row": 23,
+      "sku": "CT323-C",
+      "title": "Ponta Rotativa Para Tubo Cm3 30x125 Mm",
+      "reason": "ambiguous: family has multiple OpenCart variants but spreadsheet omits a required discriminator"
+    },
+    {
+      "row": 24,
+      "sku": "WS427",
+      "title": "Bits 1/2 X 4 Winner Steel 10% Cobalto (2 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 26,
+      "sku": "",
+      "title": "Bits Quadrado 3/8 X 4 Hardms 50% (1 Unidade)",
+      "reason": "ambiguous: family has multiple OpenCart variants but spreadsheet omits a required discriminator"
+    },
+    {
+      "row": 27,
+      "sku": "WS419",
+      "title": "Bits 3/8 X 4 Winner Steel 10% Cobalto (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 29,
+      "sku": "WS014",
+      "title": "Bits 5/16 X 4 Winner Steel 50% (5 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 31,
+      "sku": "CT323-D",
+      "title": "Ponta Rotativa Para Tubo Cm3 30x120 Mm",
+      "reason": "ambiguous: family has multiple OpenCart variants but spreadsheet omits a required discriminator"
+    },
+    {
+      "row": 33,
+      "sku": "pt003",
+      "title": "Ponta Rotativa Para Tubo Cm4 30 X 125",
+      "reason": "ambiguous: family has multiple OpenCart variants but spreadsheet omits a required discriminator"
+    },
+    {
+      "row": 36,
+      "sku": "WS413",
+      "title": "Bits 5/16 X 4 Winner Steel 10% Cobalto (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 37,
+      "sku": "CT-323A",
+      "title": "Ponta Rotativa Para Tubo Cm3 25x80 Mm",
+      "reason": "ambiguous: family has multiple OpenCart variants but spreadsheet omits a required discriminator"
+    },
+    {
+      "row": 38,
+      "sku": "PR-904",
+      "title": "Porta Recartilha Interno - Ferramenta Para Torno",
+      "reason": "ambiguous: family has multiple OpenCart variants but spreadsheet omits a required discriminator"
+    },
+    {
+      "row": 39,
+      "sku": "CT323-B",
+      "title": "Ponta Rotativa Para Tubo Cm3 30x100 Mm",
+      "reason": "ambiguous: family has multiple OpenCart variants but spreadsheet omits a required discriminator"
+    },
+    {
+      "row": 42,
+      "sku": "WS014",
+      "title": "Bits 5/16 X 4 Winner Steel 50% (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 45,
+      "sku": "WS020",
+      "title": "Bits 3/8 X 4 Winner Steel 50% (10 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 46,
+      "sku": "WS419",
+      "title": "Bits 3/8 X 4 Winner Steel 10% Cobalto (2 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 47,
+      "sku": "WS050",
+      "title": "Ponta Rotativa Cm5 Standard - Contra Ponto Para Torno - Ws",
+      "reason": "ambiguous: family has multiple OpenCart variants but spreadsheet omits a required discriminator"
+    },
+    {
+      "row": 49,
+      "sku": "WS020",
+      "title": "Bits 3/8 X 4 Winner Steel 50% (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 50,
+      "sku": "PB-805",
+      "title": "2 Porta Bits Reto 1/2 Hispânia",
+      "reason": "multi-unit/composite listing (explicit leading unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 52,
+      "sku": "WS508",
+      "title": "Bedame 5/8 X 1/8 X 6 Winner Steel 10% Cobalto (2 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 55,
+      "sku": "WS413",
+      "title": "Bits 5/16 X 4 Winner Steel 10% Cobalto (2 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 56,
+      "sku": "WS008",
+      "title": "Bits 1/4 X 4 Winner Steel 50% (5 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 57,
+      "sku": "WS427",
+      "title": "Bits 1/2 X 4 Winner Steel 10% Cobalto (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 59,
+      "sku": "WS508",
+      "title": "Bedame 5/8 X 1/8 X 6 Winner Steel 10% Cobalto (5 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 60,
+      "sku": "WS504",
+      "title": "Bedame 1/2 X 1/8 X 6 Winner Steel 10% Cobalto (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 62,
+      "sku": "WS508",
+      "title": "Bedame 5/8 X 1/8 X 6 Winner Steel 10% Cobalto (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 63,
+      "sku": "WS516",
+      "title": "Bedame 3/4 X 1/8 X 6 Winner Steel 10% Cobalto (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 64,
+      "sku": "PB-801",
+      "title": "2 Porta Bits Reto 1/4 Hispânia",
+      "reason": "multi-unit/composite listing (explicit leading unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 67,
+      "sku": "PT002",
+      "title": "Ponta Rotativa Para Tubo Cm4 30 X 100",
+      "reason": "ambiguous: family has multiple OpenCart variants but spreadsheet omits a required discriminator"
+    },
+    {
+      "row": 68,
+      "sku": "PR-912",
+      "title": "Porta Recartilha Triplo - Ferramenta Para Torno",
+      "reason": "ambiguous: family has multiple OpenCart variants but spreadsheet omits a required discriminator"
+    },
+    {
+      "row": 72,
+      "sku": "WS1004-4",
+      "title": "Porta Bits + 5 Bits Quadrado Hss 1/4 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 73,
+      "sku": "",
+      "title": "Kit 4 Un Ponta Rotativa Cm4 Copiadora + 4un Cm3 Copiadora",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 74,
+      "sku": "WS1003-3",
+      "title": "Porta Bits + 3 Bits Quadrado Hss 5/16 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 76,
+      "sku": "WS1001-1",
+      "title": "Porta Bits + 1 Bits Quadrado Hss 3/8 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 77,
+      "sku": "WS1003-2",
+      "title": "Porta Bits + 2 Bits Quadrado Hss 5/16 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 79,
+      "sku": "WS020",
+      "title": "Bits 3/8 X 4 Winner Steel 50% (5 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 81,
+      "sku": "WS116",
+      "title": "Bedame 3/4 X 1/8 X 6 Winner Steel 50% (2 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 84,
+      "sku": "WS014",
+      "title": "Bits 5/16 X 4 Winner Steel 50% (10 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 85,
+      "sku": "WS504",
+      "title": "Bedame 1/2 X 1/8 X 6 Winner Steel 10% Cobalto (5 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 86,
+      "sku": "WS1001-4",
+      "title": "Porta Bits + 5 Bits Quadrado Hss 3/8 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 87,
+      "sku": "WS1003-5",
+      "title": "Porta Bits + 10 Bits Quadrado Hss 5/16 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 91,
+      "sku": "WS419",
+      "title": "Bits 3/8 X 4 Winner Steel 10% Cobalto (10 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 92,
+      "sku": "WS008",
+      "title": "Bits 1/4 X 4 Winner Steel 50% (10 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 93,
+      "sku": "WS108",
+      "title": "Bedame 5/8 X 1/8 X 6 Winner Steel 50% (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 94,
+      "sku": "pb-504",
+      "title": "Porta Recartilha Duplo - Passo 1.5 Reto",
+      "reason": "ambiguous: family has multiple OpenCart variants but spreadsheet omits a required discriminator"
+    },
+    {
+      "row": 95,
+      "sku": "WS413",
+      "title": "Bits 5/16 X 4 Winner Steel 10% Cobalto (5 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 96,
+      "sku": "WS413",
+      "title": "Bits 5/16 X 4 Winner Steel 10% Cobalto (10 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 97,
+      "sku": "WS028",
+      "title": "Bits 1/2 X 4 Winner Steel 50% (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 98,
+      "sku": "WS028",
+      "title": "Bits 1/2 X 4 Winner Steel 50% (5 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 99,
+      "sku": "WS516",
+      "title": "Bedame 3/4 X 1/8 X 6 Winner Steel 10% Cobalto (5 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 100,
+      "sku": "WS104",
+      "title": "Bedame 1/2 X 1/8 X 6 Winner Steel 50% (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 101,
+      "sku": "WS516",
+      "title": "Bedame 3/4 X 1/8 X 6 Winner Steel 10% Cobalto (2 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 103,
+      "sku": "WS116",
+      "title": "Bedame 3/4 X 1/8 X 6 Winner Steel 50% (5 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 104,
+      "sku": "WS022",
+      "title": "Bits 3/8 X 6 Winner Steel 50% (2 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 105,
+      "sku": "WS1001-3",
+      "title": "Porta Bits + 3 Bits Quadrado Hss 3/8 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 106,
+      "sku": "WS1002-3",
+      "title": "Porta Bits + 3 Bits Quadrado Hss 1/2 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 107,
+      "sku": "WS1001-5",
+      "title": "Porta Bits + 10 Bits Quadrado Hss 3/8 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 108,
+      "sku": "WS1002-2",
+      "title": "Porta Bits + 2 Bits Quadrado Hss 1/2 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 109,
+      "sku": "WS1004-2",
+      "title": "Porta Bits + 2 Bits Quadrado Hss 1/4 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 110,
+      "sku": "WS1004-3",
+      "title": "Porta Bits + 3 Bits Quadrado Hss 1/4 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 111,
+      "sku": "WS1001-2",
+      "title": "Porta Bits + 2 Bits Quadrado Hss 3/8 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 112,
+      "sku": "WS1004-5",
+      "title": "Porta Bits + 10 Bits Quadrado Hss 1/4 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 115,
+      "sku": "WS419",
+      "title": "Bits 3/8 X 4 Winner Steel 10% Cobalto (5 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 116,
+      "sku": "WS028",
+      "title": "Bits 1/2 X 4 Winner Steel 50% (10 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 117,
+      "sku": "WS427",
+      "title": "Bits 1/2 X 4 Winner Steel 10% Cobalto (5 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 118,
+      "sku": "WS427",
+      "title": "Bits 1/2 X 4 Winner Steel 10% Cobalto (10 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 119,
+      "sku": "WS008",
+      "title": "Bits 1/4 X 4 Winner Steel 50% (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 120,
+      "sku": "WS407",
+      "title": "Bits 1/4 X 4 Winner Steel 10% Cobalto (5 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 121,
+      "sku": "WS104",
+      "title": "Bedame 1/2 X 1/8 X 6 Winner Steel 50% (5 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 122,
+      "sku": "WS407",
+      "title": "Bits 1/4 X 4 Winner Steel 10% Cobalto (10 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 123,
+      "sku": "WS407",
+      "title": "Bits 1/4 X 4 Winner Steel 10% Cobalto (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 124,
+      "sku": "WS407",
+      "title": "Bits 1/4 X 4 Winner Steel 10% Cobalto (2 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 125,
+      "sku": "WS504",
+      "title": "Bedame 1/2 X 1/8 X 6 Winner Steel 10% Cobalto (2 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 127,
+      "sku": "WS116",
+      "title": "Bedame 3/4 X 1/8 X 6 Winner Steel 50% (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 128,
+      "sku": "WS010",
+      "title": "Bits 1/4 X 6 Winner Steel 50% (2 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 129,
+      "sku": "WS108",
+      "title": "Bedame 5/8 X 1/8 X 6 Winner Steel 50% (5 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 130,
+      "sku": "WS030",
+      "title": "Bits 1/2 X 6 Winner Steel 50% (2 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 131,
+      "sku": "WS1002-4",
+      "title": "Porta Bits + 5 Bits Quadrado Hss 1/2 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 132,
+      "sku": "WS1002-5",
+      "title": "Porta Bits + 10 Bits Quadrado Hss 1/2 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 133,
+      "sku": "WS1003-4",
+      "title": "Porta Bits + 5 Bits Quadrado Hss 5/16 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 135,
+      "sku": "PB-802",
+      "title": "2 Porta Bits Reto 5/16 Hispânia",
+      "reason": "multi-unit/composite listing (explicit leading unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 136,
+      "sku": "PB-803",
+      "title": "2 Porta Bits Reto 3/8 Hispânia",
+      "reason": "multi-unit/composite listing (explicit leading unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 137,
+      "sku": "WS1002-1",
+      "title": "Porta Bits + 1 Bits Quadrado Hss 1/2 X 4 Winner Steel 50%",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    }
+  ],
+  "unmatched": [
+    {
+      "row": 6,
+      "sku": "WS020",
+      "title": "Bits Quadrado 3/8 X 4 Hardms 50% (4 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 11,
+      "sku": "",
+      "title": "Bits Quadrado 5/16 X 4 Hardms 50% (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 18,
+      "sku": "",
+      "title": "Bits Quadrado 1/4 X 4 Hardms 50% (5 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 22,
+      "sku": "HMS-0004",
+      "title": "5 Bits Redondo Hardms - 10 X 100 - Hss 50%",
+      "reason": "multi-unit/composite listing (explicit leading unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 32,
+      "sku": "HMS-003",
+      "title": "5 Bits Redondo Hardms - 8 X 100 - Hss 50%",
+      "reason": "multi-unit/composite listing (explicit leading unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 44,
+      "sku": "HMS-002",
+      "title": "5 Bits Redondo Hardms - 4 X 100 - Hss 50%",
+      "reason": "multi-unit/composite listing (explicit leading unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 48,
+      "sku": "HMS-0005",
+      "title": "3 Bits Redondo Hardms - 12 X 100 - Hss 50%",
+      "reason": "multi-unit/composite listing (explicit leading unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 54,
+      "sku": "HMS-0001",
+      "title": "5 Bits Redondo Hardms - 6 X 100 - Hss 50%",
+      "reason": "multi-unit/composite listing (explicit leading unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 70,
+      "sku": "",
+      "title": "Kit 3 Bits Quadrado 3/8 X 4 Hardsteel Para Furadeira Parafusadeira",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    },
+    {
+      "row": 71,
+      "sku": "",
+      "title": "Bits Quadrado 1/2 X 4 Hardms 50% (2 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 89,
+      "sku": "",
+      "title": "Bits Quadrado 3/8 X 4 Hardsteel 50% (3 Unidades)",
+      "reason": "multi-unit/composite listing (explicit parenthesized unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 90,
+      "sku": "",
+      "title": "5 Porta Recartilha Simples Especial - Recartilhas Paralelas",
+      "reason": "multi-unit/composite listing (explicit leading unit count); no unit-price derivation permitted"
+    },
+    {
+      "row": 113,
+      "sku": "",
+      "title": "4 Bits Quadrado 3/8 X 4 Hardsteel + 1 Bedame 3/4 X 3/16 X 5",
+      "reason": "multi-unit/composite listing (composite kit/bundle); no unit-price derivation permitted"
+    }
+  ],
+  "summary": {
+    "listings_audited": 134,
+    "products_audited": 363,
+    "high_confidence_updates": 33,
+    "skipped_or_ambiguous": 88,
+    "unmatched": 13,
+    "families_updated": {
+      "bits-quadrado": 8,
+      "bedame": 6,
+      "porta-bits": 1,
+      "maleta-er40": 6,
+      "ponta": 8,
+      "bucha": 4
+    }
+  }
+}
