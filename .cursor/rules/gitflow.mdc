@@ -1,0 +1,42 @@
+---
+description: GitFlow, SemVer tags e GitHub Releases para este repositório
+alwaysApply: true
+---
+
+# GitFlow + releases
+
+## Branches
+
+| Branch | Uso |
+|--------|-----|
+| `main` | Produção. Só recebe merge de `release/*` ou `hotfix/*`. Deploy Railway a partir daqui. |
+| `develop` | Integração contínua. Branch padrão de trabalho diário. |
+| `feature/<nome>` | Nova funcionalidade. Sai de `develop`, volta para `develop`. |
+| `release/vX.Y.Z` | Preparação de release. Sai de `develop`, merge em `main` e depois em `develop`. |
+| `hotfix/vX.Y.Z` | Correção urgente em produção. Sai de `main`, merge em `main` e `develop`. |
+
+## Versionamento (SemVer)
+
+- Tags anotadas: `vMAJOR.MINOR.PATCH` (ex.: `v1.0.0`)
+- **MAJOR**: breaking / mudança incompatível
+- **MINOR**: feature compatível
+- **PATCH**: correção / ajuste pequeno
+
+## Quando criar release
+
+Sempre que ajustes relevantes entrarem em produção via merge em `main`:
+
+1. Merge `release/*` ou `hotfix/*` → `main`
+2. Tag anotada no commit de `main`: `git tag -a vX.Y.Z -m "..."`
+3. Push da tag: `git push origin vX.Y.Z`
+4. GitHub Release: `gh release create vX.Y.Z --title "vX.Y.Z" --notes "..."`
+5. Merge de volta em `develop` (e apagar branch de release/hotfix se aplicável)
+
+## Fluxo do agente
+
+- Trabalho diário: checkout `develop` (criar se necessário a partir de `main`).
+- Nunca commit direto em `main` salvo hotfix explícito pedido pelo usuário.
+- Ao concluir feature: PR/merge para `develop`, não tag ainda.
+- Só criar tag + GitHub Release quando o usuário pedir release ou após merge em `main` para produção.
+- Mensagens de commit: Conventional Commits (`feat:`, `fix:`, `chore:`, `docs:`…).
+- Não criar tags leves (`git tag` sem `-a`); usar tags anotadas.
