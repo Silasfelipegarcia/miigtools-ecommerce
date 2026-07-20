@@ -1237,7 +1237,7 @@
   background: linear-gradient(165deg, rgba(24, 24, 32, 0.35) 0%, transparent 60%);
 }
 
-/* Imagens / thumbs — sem moldura branca “quadrada” */
+/* Imagens / thumbs — área sempre quadrada (mesmo tamanho no grid) */
 .theme-miigtools .img-thumbnail {
   background: var(--miig-elevated);
   border: 1px solid var(--miig-edge);
@@ -1245,17 +1245,73 @@
   padding: 0.2rem;
 }
 
+.theme-miigtools .product-thumb {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .theme-miigtools .product-thumb .image {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  background: #14141a;
   border-radius: var(--miig-radius-lg) var(--miig-radius-lg) 0 0;
   overflow: hidden;
 }
 
+.theme-miigtools .product-thumb .image a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
 .theme-miigtools .product-thumb .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .theme-miigtools .product-thumb:hover .image img {
   transform: scale(1.04);
+}
+
+.theme-miigtools .product-thumb .content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Página do produto — foto principal e adicionais no mesmo padrão */
+.theme-miigtools #product-info .image.magnific-popup > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  background: #14141a;
+  border-radius: var(--miig-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--miig-edge);
+}
+
+.theme-miigtools #product-info .image.magnific-popup > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  margin-bottom: 0 !important;
+}
+
+.theme-miigtools #product-info .image .img-thumbnail {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  object-position: center;
+  background: #14141a;
 }
 
 /* Utilitários Bootstrap que ainda puxam azul */
@@ -1593,11 +1649,21 @@
   font-size: 0.95rem;
 }
 
-.theme-miigtools .miig-section--products .col {
+.theme-miigtools .miig-section--products .col,
+.theme-miigtools #product-list .col,
+.theme-miigtools #product-category .col,
+.theme-miigtools #product-search .col,
+.theme-miigtools #product-special .col,
+.theme-miigtools #product-manufacturer .col {
   display: flex;
 }
 
-.theme-miigtools .miig-section--products .product-thumb {
+.theme-miigtools .miig-section--products .product-thumb,
+.theme-miigtools #product-list .product-thumb,
+.theme-miigtools #product-category .product-thumb,
+.theme-miigtools #product-search .product-thumb,
+.theme-miigtools #product-special .product-thumb,
+.theme-miigtools #product-manufacturer .product-thumb {
   width: 100%;
 }
 
