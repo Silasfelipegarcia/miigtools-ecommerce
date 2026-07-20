@@ -1,0 +1,319 @@
+﻿id,produto,modelo,sku,valor,estoque,status
+168,"Alargador Manual DIN 206B HSS-M2 H7 - Ø10,0mm",alargador-man,"alargador-man-10,0mm",0.0000,999,ativo
+169,"Alargador Manual DIN 206B HSS-M2 H7 - Ø10,5mm",alargador-man,"alargador-man-10,5mm",0.0000,999,ativo
+170,"Alargador Manual DIN 206B HSS-M2 H7 - Ø11,0mm",alargador-man,"alargador-man-11,0mm",0.0000,999,ativo
+171,"Alargador Manual DIN 206B HSS-M2 H7 - Ø12,0mm",alargador-man,"alargador-man-12,0mm",0.0000,999,ativo
+172,"Alargador Manual DIN 206B HSS-M2 H7 - Ø13,0mm",alargador-man,"alargador-man-13,0mm",0.0000,999,ativo
+173,"Alargador Manual DIN 206B HSS-M2 H7 - Ø14,0mm",alargador-man,"alargador-man-14,0mm",0.0000,999,ativo
+174,"Alargador Manual DIN 206B HSS-M2 H7 - Ø15,0mm",alargador-man,"alargador-man-15,0mm",0.0000,999,ativo
+175,"Alargador Manual DIN 206B HSS-M2 H7 - Ø16,0mm",alargador-man,"alargador-man-16,0mm",0.0000,999,ativo
+176,"Alargador Manual DIN 206B HSS-M2 H7 - Ø17,0mm",alargador-man,"alargador-man-17,0mm",0.0000,999,ativo
+177,"Alargador Manual DIN 206B HSS-M2 H7 - Ø18,0mm",alargador-man,"alargador-man-18,0mm",0.0000,999,ativo
+178,"Alargador Manual DIN 206B HSS-M2 H7 - Ø19,0mm",alargador-man,"alargador-man-19,0mm",0.0000,999,ativo
+152,"Alargador Manual DIN 206B HSS-M2 H7 - Ø2,0mm",alargador-man,"alargador-man-2,0mm",0.0000,999,ativo
+153,"Alargador Manual DIN 206B HSS-M2 H7 - Ø2,5mm",alargador-man,"alargador-man-2,5mm",0.0000,999,ativo
+179,"Alargador Manual DIN 206B HSS-M2 H7 - Ø20,0mm",alargador-man,"alargador-man-20,0mm",0.0000,999,ativo
+154,"Alargador Manual DIN 206B HSS-M2 H7 - Ø3,0mm",alargador-man,"alargador-man-3,0mm",0.0000,999,ativo
+155,"Alargador Manual DIN 206B HSS-M2 H7 - Ø3,5mm",alargador-man,"alargador-man-3,5mm",0.0000,999,ativo
+156,"Alargador Manual DIN 206B HSS-M2 H7 - Ø4,0mm",alargador-man,"alargador-man-4,0mm",0.0000,999,ativo
+157,"Alargador Manual DIN 206B HSS-M2 H7 - Ø4,5mm",alargador-man,"alargador-man-4,5mm",0.0000,999,ativo
+158,"Alargador Manual DIN 206B HSS-M2 H7 - Ø5,0mm",alargador-man,"alargador-man-5,0mm",0.0000,999,ativo
+159,"Alargador Manual DIN 206B HSS-M2 H7 - Ø5,5mm",alargador-man,"alargador-man-5,5mm",0.0000,999,ativo
+160,"Alargador Manual DIN 206B HSS-M2 H7 - Ø6,0mm",alargador-man,"alargador-man-6,0mm",0.0000,999,ativo
+161,"Alargador Manual DIN 206B HSS-M2 H7 - Ø6,5mm",alargador-man,"alargador-man-6,5mm",0.0000,999,ativo
+162,"Alargador Manual DIN 206B HSS-M2 H7 - Ø7,0mm",alargador-man,"alargador-man-7,0mm",0.0000,999,ativo
+163,"Alargador Manual DIN 206B HSS-M2 H7 - Ø7,5mm",alargador-man,"alargador-man-7,5mm",0.0000,999,ativo
+164,"Alargador Manual DIN 206B HSS-M2 H7 - Ø8,0mm",alargador-man,"alargador-man-8,0mm",0.0000,999,ativo
+165,"Alargador Manual DIN 206B HSS-M2 H7 - Ø8,5mm",alargador-man,"alargador-man-8,5mm",0.0000,999,ativo
+166,"Alargador Manual DIN 206B HSS-M2 H7 - Ø9,0mm",alargador-man,"alargador-man-9,0mm",0.0000,999,ativo
+167,"Alargador Manual DIN 206B HSS-M2 H7 - Ø9,5mm",alargador-man,"alargador-man-9,5mm",0.0000,999,ativo
+140,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø10,0mm",alargador-maq,"alargador-maq-10,0mm",0.0000,999,ativo
+141,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø10,5mm",alargador-maq,"alargador-maq-10,5mm",0.0000,999,ativo
+142,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø11,0mm",alargador-maq,"alargador-maq-11,0mm",0.0000,999,ativo
+143,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø12,0mm",alargador-maq,"alargador-maq-12,0mm",0.0000,999,ativo
+144,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø13,0mm",alargador-maq,"alargador-maq-13,0mm",0.0000,999,ativo
+145,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø14,0mm",alargador-maq,"alargador-maq-14,0mm",0.0000,999,ativo
+146,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø15,0mm",alargador-maq,"alargador-maq-15,0mm",0.0000,999,ativo
+147,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø16,0mm",alargador-maq,"alargador-maq-16,0mm",0.0000,999,ativo
+148,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø17,0mm",alargador-maq,"alargador-maq-17,0mm",0.0000,999,ativo
+149,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø18,0mm",alargador-maq,"alargador-maq-18,0mm",0.0000,999,ativo
+150,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø19,0mm",alargador-maq,"alargador-maq-19,0mm",0.0000,999,ativo
+124,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø2,0mm",alargador-maq,"alargador-maq-2,0mm",0.0000,999,ativo
+125,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø2,5mm",alargador-maq,"alargador-maq-2,5mm",0.0000,999,ativo
+151,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø20,0mm",alargador-maq,"alargador-maq-20,0mm",0.0000,999,ativo
+126,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø3,0mm",alargador-maq,"alargador-maq-3,0mm",0.0000,999,ativo
+127,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø3,5mm",alargador-maq,"alargador-maq-3,5mm",0.0000,999,ativo
+128,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø4,0mm",alargador-maq,"alargador-maq-4,0mm",0.0000,999,ativo
+129,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø4,5mm",alargador-maq,"alargador-maq-4,5mm",0.0000,999,ativo
+130,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø5,0mm",alargador-maq,"alargador-maq-5,0mm",0.0000,999,ativo
+131,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø5,5mm",alargador-maq,"alargador-maq-5,5mm",0.0000,999,ativo
+132,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø6,0mm",alargador-maq,"alargador-maq-6,0mm",0.0000,999,ativo
+133,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø6,5mm",alargador-maq,"alargador-maq-6,5mm",0.0000,999,ativo
+134,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø7,0mm",alargador-maq,"alargador-maq-7,0mm",0.0000,999,ativo
+135,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø7,5mm",alargador-maq,"alargador-maq-7,5mm",0.0000,999,ativo
+136,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø8,0mm",alargador-maq,"alargador-maq-8,0mm",0.0000,999,ativo
+137,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø8,5mm",alargador-maq,"alargador-maq-8,5mm",0.0000,999,ativo
+138,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø9,0mm",alargador-maq,"alargador-maq-9,0mm",0.0000,999,ativo
+139,"Alargador Máquina DIN 212D HSS-M2 H7 - Ø9,5mm",alargador-maq,"alargador-maq-9,5mm",0.0000,999,ativo
+18,"Bits Quadrado Winner Steel 10% Co - 1/2"" x 6""",bits-quadrado-10co,bits-quadrado-10co-1-2x6,0.0000,999,ativo
+12,"Bits Quadrado Winner Steel 10% Co - 1/4"" x 6""",bits-quadrado-10co,bits-quadrado-10co-1-4x6,0.0000,999,ativo
+20,"Bits Quadrado Winner Steel 10% Co - 3/4"" x 6""",bits-quadrado-10co,bits-quadrado-10co-3-4x6,0.0000,999,ativo
+16,"Bits Quadrado Winner Steel 10% Co - 3/8"" x 6""",bits-quadrado-10co,bits-quadrado-10co-3-8x6,0.0000,999,ativo
+14,"Bits Quadrado Winner Steel 10% Co - 5/16"" x 6""",bits-quadrado-10co,bits-quadrado-10co-5-16x6,0.0000,999,ativo
+19,"Bits Quadrado Winner Steel 10% Co - 5/8"" x 6""",bits-quadrado-10co,bits-quadrado-10co-5-8x6,0.0000,999,ativo
+10,"Bits Quadrado Winner Steel 50% - 3/4"" x 6""",bits-quadrado-50,bits-quadrado-50-3-4x6,0.0000,999,ativo
+4,"Bits Quadrado Winner Steel 50% - 5/16"" x 6""",bits-quadrado-50,bits-quadrado-50-5-16x6,0.0000,999,ativo
+9,"Bits Quadrado Winner Steel 50% - 5/8"" x 6""",bits-quadrado-50,bits-quadrado-50-5-8x6,0.0000,999,ativo
+333,"Broca de Centro HSS-M2 DIN 333-A - Ø1,00x3,15",broca-centro-din333,broca-centro-100-315,0.0000,999,ativo
+334,"Broca de Centro HSS-M2 DIN 333-A - Ø1,25x3,15",broca-centro-din333,broca-centro-125-315,0.0000,999,ativo
+335,"Broca de Centro HSS-M2 DIN 333-A - Ø1,60x4,00",broca-centro-din333,broca-centro-160-400,0.0000,999,ativo
+336,"Broca de Centro HSS-M2 DIN 333-A - Ø2,00x5,00",broca-centro-din333,broca-centro-200-500,0.0000,999,ativo
+337,"Broca de Centro HSS-M2 DIN 333-A - Ø2,50x6,30",broca-centro-din333,broca-centro-250-630,0.0000,999,ativo
+338,"Broca de Centro HSS-M2 DIN 333-A - Ø3,15x8,00",broca-centro-din333,broca-centro-315-800,0.0000,999,ativo
+339,"Broca de Centro HSS-M2 DIN 333-A - Ø4,00x10,0",broca-centro-din333,broca-centro-400-100,0.0000,999,ativo
+340,"Broca de Centro HSS-M2 DIN 333-A - Ø5,00x12,5",broca-centro-din333,broca-centro-500-125,0.0000,999,ativo
+341,"Broca de Centro HSS-M2 DIN 333-A - Ø6,30x16,0",broca-centro-din333,broca-centro-630-160,0.0000,999,ativo
+285,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø1,0",broca-hss-din338,broca-hss-10,0.0000,999,ativo
+286,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø1,5",broca-hss-din338,broca-hss-15,0.0000,999,ativo
+332,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø1""",broca-hss-din338,broca-hss-1,0.0000,999,ativo
+327,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø1/2""",broca-hss-din338,broca-hss-1-2,0.0000,999,ativo
+323,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø1/4""",broca-hss-din338,broca-hss-1-4,0.0000,999,ativo
+320,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø1/8""",broca-hss-din338,broca-hss-1-8,0.0000,999,ativo
+303,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø10,0",broca-hss-din338,broca-hss-100,0.0000,999,ativo
+304,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø10,5",broca-hss-din338,broca-hss-105,0.0000,999,ativo
+305,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø11,0",broca-hss-din338,broca-hss-110,0.0000,999,ativo
+306,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø12,0",broca-hss-din338,broca-hss-120,0.0000,999,ativo
+307,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø13,0",broca-hss-din338,broca-hss-130,0.0000,999,ativo
+308,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø14,0",broca-hss-din338,broca-hss-140,0.0000,999,ativo
+309,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø15,0",broca-hss-din338,broca-hss-150,0.0000,999,ativo
+310,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø16,0",broca-hss-din338,broca-hss-160,0.0000,999,ativo
+311,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø17,0",broca-hss-din338,broca-hss-170,0.0000,999,ativo
+312,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø18,0",broca-hss-din338,broca-hss-180,0.0000,999,ativo
+313,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø19,0",broca-hss-din338,broca-hss-190,0.0000,999,ativo
+287,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø2,0",broca-hss-din338,broca-hss-20,0.0000,999,ativo
+288,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø2,5",broca-hss-din338,broca-hss-25,0.0000,999,ativo
+314,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø20,0",broca-hss-din338,broca-hss-200,0.0000,999,ativo
+315,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø21,0",broca-hss-din338,broca-hss-210,0.0000,999,ativo
+316,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø22,0",broca-hss-din338,broca-hss-220,0.0000,999,ativo
+317,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø23,0",broca-hss-din338,broca-hss-230,0.0000,999,ativo
+318,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø24,0",broca-hss-din338,broca-hss-240,0.0000,999,ativo
+319,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø25,0",broca-hss-din338,broca-hss-250,0.0000,999,ativo
+289,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø3,0",broca-hss-din338,broca-hss-30,0.0000,999,ativo
+290,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø3,5",broca-hss-din338,broca-hss-35,0.0000,999,ativo
+322,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø3/16""",broca-hss-din338,broca-hss-3-16,0.0000,999,ativo
+330,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø3/4""",broca-hss-din338,broca-hss-3-4,0.0000,999,ativo
+325,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø3/8""",broca-hss-din338,broca-hss-3-8,0.0000,999,ativo
+291,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø4,0",broca-hss-din338,broca-hss-40,0.0000,999,ativo
+292,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø4,5",broca-hss-din338,broca-hss-45,0.0000,999,ativo
+293,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø5,0",broca-hss-din338,broca-hss-50,0.0000,999,ativo
+294,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø5,5",broca-hss-din338,broca-hss-55,0.0000,999,ativo
+324,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø5/16""",broca-hss-din338,broca-hss-5-16,0.0000,999,ativo
+321,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø5/32""",broca-hss-din338,broca-hss-5-32,0.0000,999,ativo
+329,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø5/8""",broca-hss-din338,broca-hss-5-8,0.0000,999,ativo
+295,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø6,0",broca-hss-din338,broca-hss-60,0.0000,999,ativo
+296,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø6,5",broca-hss-din338,broca-hss-65,0.0000,999,ativo
+297,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø7,0",broca-hss-din338,broca-hss-70,0.0000,999,ativo
+298,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø7,5",broca-hss-din338,broca-hss-75,0.0000,999,ativo
+326,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø7/16""",broca-hss-din338,broca-hss-7-16,0.0000,999,ativo
+331,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø7/8""",broca-hss-din338,broca-hss-7-8,0.0000,999,ativo
+299,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø8,0",broca-hss-din338,broca-hss-80,0.0000,999,ativo
+300,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø8,5",broca-hss-din338,broca-hss-85,0.0000,999,ativo
+301,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø9,0",broca-hss-din338,broca-hss-90,0.0000,999,ativo
+302,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø9,5",broca-hss-din338,broca-hss-95,0.0000,999,ativo
+328,"Broca HSS M2 DIN 338 Auto-Centrante 135° - Ø9/16""",broca-hss-din338,broca-hss-9-16,0.0000,999,ativo
+218,DW-100 Produto Multiuso Ecolub - 300ml,dw100,dw100-300ml,0.0000,999,ativo
+216,Fluido de Corte para Todos os Metais - 500ml,fluido-corte,fluido-corte-500ml,0.0000,999,ativo
+217,Fluido de Corte para Todos os Metais - 5L,fluido-corte,fluido-corte-5l,0.0000,999,ativo
+279,"Fresa Topo Esférica MD 2 Cortes 45HRC TiAlN - 1,0-2,0x4x4x50",fresa-topo-esferica-2c,4530204,0.0000,999,ativo
+280,"Fresa Topo Esférica MD 2 Cortes 45HRC TiAlN - 2-4,0x8x4x50",fresa-topo-esferica-2c,4530400,0.0000,999,ativo
+281,"Fresa Topo Esférica MD 2 Cortes 45HRC TiAlN - 3-6,0x12x6x50",fresa-topo-esferica-2c,4530600,0.0000,999,ativo
+282,"Fresa Topo Esférica MD 2 Cortes 45HRC TiAlN - 4-8,0x16x8x60",fresa-topo-esferica-2c,4530800,0.0000,999,ativo
+283,"Fresa Topo Esférica MD 2 Cortes 45HRC TiAlN - 5-10,0x20x10x75",fresa-topo-esferica-2c,4531000,0.0000,999,ativo
+284,"Fresa Topo Esférica MD 2 Cortes 45HRC TiAlN - 6-12,0x24x12x75",fresa-topo-esferica-2c,4531200,0.0000,999,ativo
+267,Fresa Topo Reto MD 2 Cortes 45HRC TiAlN - 1x3x3x50,fresa-topo-reto-2c,4520100,0.0000,999,ativo
+268,Fresa Topo Reto MD 2 Cortes 45HRC TiAlN - 2x6x3x50,fresa-topo-reto-2c,4520200,0.0000,999,ativo
+269,Fresa Topo Reto MD 2 Cortes 45HRC TiAlN - 3x8x3x50,fresa-topo-reto-2c,4520300,0.0000,999,ativo
+270,Fresa Topo Reto MD 2 Cortes 45HRC TiAlN - 4x11x4x50,fresa-topo-reto-2c,4520400,0.0000,999,ativo
+275,Fresa Topo Reto MD 2 Cortes 45HRC TiAlN Standart - 10x25x10x75,fresa-topo-reto-2c-45hrc,4521000,0.0000,999,ativo
+276,Fresa Topo Reto MD 2 Cortes 45HRC TiAlN Standart - 12x30x12x75,fresa-topo-reto-2c-45hrc,4521200,0.0000,999,ativo
+277,Fresa Topo Reto MD 2 Cortes 45HRC TiAlN Standart - 16x45x16x100,fresa-topo-reto-2c-45hrc,4521602,0.0000,999,ativo
+278,Fresa Topo Reto MD 2 Cortes 45HRC TiAlN Standart - 20x50x20x100,fresa-topo-reto-2c-45hrc,4522002,0.0000,999,ativo
+271,Fresa Topo Reto MD 2 Cortes 45HRC TiAlN Standart - 4x11x6x50,fresa-topo-reto-2c-45hrc,4520407,0.0000,999,ativo
+272,Fresa Topo Reto MD 2 Cortes 45HRC TiAlN Standart - 5x13x5x50,fresa-topo-reto-2c-45hrc,4520500,0.0000,999,ativo
+273,Fresa Topo Reto MD 2 Cortes 45HRC TiAlN Standart - 6x15x6x50,fresa-topo-reto-2c-45hrc,4520600,0.0000,999,ativo
+274,Fresa Topo Reto MD 2 Cortes 45HRC TiAlN Standart - 8x20x8x60,fresa-topo-reto-2c-45hrc,4520800,0.0000,999,ativo
+222,"Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 1,5x3x3x50",fresa-topo-reto-4c,4540150,0.0000,999,ativo
+223,"Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 1,5x3x4x50",fresa-topo-reto-4c,4540154,0.0000,999,ativo
+224,"Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 1,5x3x6x50",fresa-topo-reto-4c,4540157,0.0000,999,ativo
+242,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 10x25x10x50,fresa-topo-reto-4c,4541000,0.0000,999,ativo
+243,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 11x25x12x50,fresa-topo-reto-4c,4541104,0.0000,999,ativo
+244,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 12x30x12x50,fresa-topo-reto-4c,4541200,0.0000,999,ativo
+245,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 13x30x14x50,fresa-topo-reto-4c,4541304,0.0000,999,ativo
+246,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 14x30x14x50,fresa-topo-reto-4c,4541400,0.0000,999,ativo
+247,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 14x40x14x50,fresa-topo-reto-4c,4541402,0.0000,999,ativo
+248,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 15x40x15x50,fresa-topo-reto-4c,4541502,0.0000,999,ativo
+249,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 16x40x16x50,fresa-topo-reto-4c,4541602,0.0000,999,ativo
+250,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 18x40x18x50,fresa-topo-reto-4c,4541802,0.0000,999,ativo
+251,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 19x40x20x50,fresa-topo-reto-4c,4541902,0.0000,999,ativo
+219,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 1x3x3x50,fresa-topo-reto-4c,4540100,0.0000,999,ativo
+220,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 1x3x4x50,fresa-topo-reto-4c,4540104,0.0000,999,ativo
+221,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 1x3x6x50,fresa-topo-reto-4c,4540107,0.0000,999,ativo
+228,"Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 2,5x6x4x50",fresa-topo-reto-4c,4540254,0.0000,999,ativo
+229,"Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 2,5x6x6x50",fresa-topo-reto-4c,4540257,0.0000,999,ativo
+252,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 20x40x20x50,fresa-topo-reto-4c,4542002,0.0000,999,ativo
+253,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 22x45x22x50,fresa-topo-reto-4c,4542202,0.0000,999,ativo
+254,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 25x45x25x50,fresa-topo-reto-4c,4542502,0.0000,999,ativo
+225,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 2x6x3x50,fresa-topo-reto-4c,4540200,0.0000,999,ativo
+226,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 2x6x4x50,fresa-topo-reto-4c,4540204,0.0000,999,ativo
+227,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 2x6x6x50,fresa-topo-reto-4c,4540207,0.0000,999,ativo
+233,"Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 3,5x8x4x50",fresa-topo-reto-4c,4540354,0.0000,999,ativo
+230,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 3x8x3x50,fresa-topo-reto-4c,4540300,0.0000,999,ativo
+231,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 3x8x4x50,fresa-topo-reto-4c,4540304,0.0000,999,ativo
+232,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 3x8x6x50,fresa-topo-reto-4c,4540307,0.0000,999,ativo
+236,"Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 4,5x11x5x50",fresa-topo-reto-4c,4540454,0.0000,999,ativo
+234,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 4x11x4x50,fresa-topo-reto-4c,4540400,0.0000,999,ativo
+235,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 4x11x6x50,fresa-topo-reto-4c,4540407,0.0000,999,ativo
+237,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 5x13x5x50,fresa-topo-reto-4c,4540500,0.0000,999,ativo
+238,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 5x13x6x50,fresa-topo-reto-4c,4540504,0.0000,999,ativo
+239,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 6x15x6x50,fresa-topo-reto-4c,4540600,0.0000,999,ativo
+240,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 7x20x8x50,fresa-topo-reto-4c,4540704,0.0000,999,ativo
+241,Fresa Topo Reto MD 4 Cortes 45HRC TiAlN - 8x20x8x50,fresa-topo-reto-4c,4540800,0.0000,999,ativo
+256,"Fresa Topo Reto MD 4 Cortes Longa 45HRC TiAlN - 1,5x5x4x75",fresa-topo-reto-4c-longa,4540155,0.0000,999,ativo
+263,Fresa Topo Reto MD 4 Cortes Longa 45HRC TiAlN - 10x40x10x100,fresa-topo-reto-4c-longa,4541002,0.0000,999,ativo
+264,Fresa Topo Reto MD 4 Cortes Longa 45HRC TiAlN - 12x45x12x100,fresa-topo-reto-4c-longa,4541202,0.0000,999,ativo
+265,Fresa Topo Reto MD 4 Cortes Longa 45HRC TiAlN - 16x70x16x150,fresa-topo-reto-4c-longa,4541603,0.0000,999,ativo
+255,Fresa Topo Reto MD 4 Cortes Longa 45HRC TiAlN - 1x5x4x75,fresa-topo-reto-4c-longa,4540105,0.0000,999,ativo
+266,Fresa Topo Reto MD 4 Cortes Longa 45HRC TiAlN - 20x58x20x150,fresa-topo-reto-4c-longa,4542003,0.0000,999,ativo
+257,Fresa Topo Reto MD 4 Cortes Longa 45HRC TiAlN - 2x10x4x75,fresa-topo-reto-4c-longa,4540205,0.0000,999,ativo
+258,Fresa Topo Reto MD 4 Cortes Longa 45HRC TiAlN - 3x8x3x75,fresa-topo-reto-4c-longa,4540301,0.0000,999,ativo
+259,Fresa Topo Reto MD 4 Cortes Longa 45HRC TiAlN - 4x20x4x75,fresa-topo-reto-4c-longa,4540401,0.0000,999,ativo
+260,Fresa Topo Reto MD 4 Cortes Longa 45HRC TiAlN - 5x20x5x75,fresa-topo-reto-4c-longa,4540501,0.0000,999,ativo
+261,Fresa Topo Reto MD 4 Cortes Longa 45HRC TiAlN - 6x20x6x75,fresa-topo-reto-4c-longa,4540601,0.0000,999,ativo
+262,Fresa Topo Reto MD 4 Cortes Longa 45HRC TiAlN - 8x25x8x75,fresa-topo-reto-4c-longa,4540801,0.0000,999,ativo
+123,"Macho Laminador DIN 371 HSS-E 6H Tipo B - TIN - M10x1,50",macho-lam-371,"macho-lam-371-m10x1,50",0.0000,999,ativo
+118,"Macho Laminador DIN 371 HSS-E 6H Tipo B - TIN - M3x0,5",macho-lam-371,"macho-lam-371-m3x0,5",0.0000,999,ativo
+119,"Macho Laminador DIN 371 HSS-E 6H Tipo B - TIN - M4x0,7",macho-lam-371,"macho-lam-371-m4x0,7",0.0000,999,ativo
+120,"Macho Laminador DIN 371 HSS-E 6H Tipo B - TIN - M5x0,8",macho-lam-371,"macho-lam-371-m5x0,8",0.0000,999,ativo
+121,"Macho Laminador DIN 371 HSS-E 6H Tipo B - TIN - M6x1,0",macho-lam-371,"macho-lam-371-m6x1,0",0.0000,999,ativo
+122,"Macho Laminador DIN 371 HSS-E 6H Tipo B - TIN - M8x1,25",macho-lam-371,"macho-lam-371-m8x1,25",0.0000,999,ativo
+51,"Macho Máquina M DIN 371 HSS-E 6H - Canal Helicoidal SFT 40/2 - M10x1,50",macho-371-sft,"macho-371-sft-m10x1,50",0.0000,999,ativo
+46,"Macho Máquina M DIN 371 HSS-E 6H - Canal Helicoidal SFT 40/2 - M3x0,5",macho-371-sft,"macho-371-sft-m3x0,5",0.0000,999,ativo
+47,"Macho Máquina M DIN 371 HSS-E 6H - Canal Helicoidal SFT 40/2 - M4x0,7",macho-371-sft,"macho-371-sft-m4x0,7",0.0000,999,ativo
+48,"Macho Máquina M DIN 371 HSS-E 6H - Canal Helicoidal SFT 40/2 - M5x0,8",macho-371-sft,"macho-371-sft-m5x0,8",0.0000,999,ativo
+49,"Macho Máquina M DIN 371 HSS-E 6H - Canal Helicoidal SFT 40/2 - M6x1,0",macho-371-sft,"macho-371-sft-m6x1,0",0.0000,999,ativo
+50,"Macho Máquina M DIN 371 HSS-E 6H - Canal Helicoidal SFT 40/2 - M8x1,25",macho-371-sft,"macho-371-sft-m8x1,25",0.0000,999,ativo
+57,"Macho Máquina M DIN 371 HSS-E 6H - Canal Reto MT 40/3 - M10x1,50",macho-371-reto,"macho-371-reto-m10x1,50",0.0000,999,ativo
+52,"Macho Máquina M DIN 371 HSS-E 6H - Canal Reto MT 40/3 - M3x0,5",macho-371-reto,"macho-371-reto-m3x0,5",0.0000,999,ativo
+53,"Macho Máquina M DIN 371 HSS-E 6H - Canal Reto MT 40/3 - M4x0,7",macho-371-reto,"macho-371-reto-m4x0,7",0.0000,999,ativo
+54,"Macho Máquina M DIN 371 HSS-E 6H - Canal Reto MT 40/3 - M5x0,8",macho-371-reto,"macho-371-reto-m5x0,8",0.0000,999,ativo
+55,"Macho Máquina M DIN 371 HSS-E 6H - Canal Reto MT 40/3 - M6x1,0",macho-371-reto,"macho-371-reto-m6x1,0",0.0000,999,ativo
+56,"Macho Máquina M DIN 371 HSS-E 6H - Canal Reto MT 40/3 - M8x1,25",macho-371-reto,"macho-371-reto-m8x1,25",0.0000,999,ativo
+45,"Macho Máquina M DIN 371 HSS-E 6H - Ponta Helicoidal - M10x1,50",macho-371-hel,"macho-371-hel-m10x1,50",0.0000,999,ativo
+40,"Macho Máquina M DIN 371 HSS-E 6H - Ponta Helicoidal - M3x0,5",macho-371-hel,"macho-371-hel-m3x0,5",0.0000,999,ativo
+41,"Macho Máquina M DIN 371 HSS-E 6H - Ponta Helicoidal - M4x0,7",macho-371-hel,"macho-371-hel-m4x0,7",0.0000,999,ativo
+42,"Macho Máquina M DIN 371 HSS-E 6H - Ponta Helicoidal - M5x0,8",macho-371-hel,"macho-371-hel-m5x0,8",0.0000,999,ativo
+43,"Macho Máquina M DIN 371 HSS-E 6H - Ponta Helicoidal - M6x1,0",macho-371-hel,"macho-371-hel-m6x1,0",0.0000,999,ativo
+44,"Macho Máquina M DIN 371 HSS-E 6H - Ponta Helicoidal - M8x1,25",macho-371-hel,"macho-371-hel-m8x1,25",0.0000,999,ativo
+76,"Macho Máquina M DIN 376 HSS-E 6H - Canal Helicoidal SFT 41/2 - M10x1,50",macho-376-sft,"macho-376-sft-m10x1,50",0.0000,999,ativo
+77,"Macho Máquina M DIN 376 HSS-E 6H - Canal Helicoidal SFT 41/2 - M12x1,75",macho-376-sft,"macho-376-sft-m12x1,75",0.0000,999,ativo
+78,"Macho Máquina M DIN 376 HSS-E 6H - Canal Helicoidal SFT 41/2 - M14x2,00",macho-376-sft,"macho-376-sft-m14x2,00",0.0000,999,ativo
+79,"Macho Máquina M DIN 376 HSS-E 6H - Canal Helicoidal SFT 41/2 - M16x2,00",macho-376-sft,"macho-376-sft-m16x2,00",0.0000,999,ativo
+80,"Macho Máquina M DIN 376 HSS-E 6H - Canal Helicoidal SFT 41/2 - M18x2,50",macho-376-sft,"macho-376-sft-m18x2,50",0.0000,999,ativo
+81,"Macho Máquina M DIN 376 HSS-E 6H - Canal Helicoidal SFT 41/2 - M20x2,50",macho-376-sft,"macho-376-sft-m20x2,50",0.0000,999,ativo
+82,"Macho Máquina M DIN 376 HSS-E 6H - Canal Helicoidal SFT 41/2 - M22x2,50",macho-376-sft,"macho-376-sft-m22x2,50",0.0000,999,ativo
+83,"Macho Máquina M DIN 376 HSS-E 6H - Canal Helicoidal SFT 41/2 - M24x3,00",macho-376-sft,"macho-376-sft-m24x3,00",0.0000,999,ativo
+71,"Macho Máquina M DIN 376 HSS-E 6H - Canal Helicoidal SFT 41/2 - M3x0,5",macho-376-sft,"macho-376-sft-m3x0,5",0.0000,999,ativo
+72,"Macho Máquina M DIN 376 HSS-E 6H - Canal Helicoidal SFT 41/2 - M4x0,7",macho-376-sft,"macho-376-sft-m4x0,7",0.0000,999,ativo
+73,"Macho Máquina M DIN 376 HSS-E 6H - Canal Helicoidal SFT 41/2 - M5x0,8",macho-376-sft,"macho-376-sft-m5x0,8",0.0000,999,ativo
+74,"Macho Máquina M DIN 376 HSS-E 6H - Canal Helicoidal SFT 41/2 - M6x1,0",macho-376-sft,"macho-376-sft-m6x1,0",0.0000,999,ativo
+75,"Macho Máquina M DIN 376 HSS-E 6H - Canal Helicoidal SFT 41/2 - M8x1,25",macho-376-sft,"macho-376-sft-m8x1,25",0.0000,999,ativo
+84,"Macho Máquina M DIN 376 HSS-E 6H - Canal Reto MT 41/3 - M12x1,75",macho-376-reto,"macho-376-reto-m12x1,75",0.0000,999,ativo
+85,"Macho Máquina M DIN 376 HSS-E 6H - Canal Reto MT 41/3 - M14x2,00",macho-376-reto,"macho-376-reto-m14x2,00",0.0000,999,ativo
+86,"Macho Máquina M DIN 376 HSS-E 6H - Canal Reto MT 41/3 - M16x2,00",macho-376-reto,"macho-376-reto-m16x2,00",0.0000,999,ativo
+87,"Macho Máquina M DIN 376 HSS-E 6H - Canal Reto MT 41/3 - M18x2,50",macho-376-reto,"macho-376-reto-m18x2,50",0.0000,999,ativo
+88,"Macho Máquina M DIN 376 HSS-E 6H - Canal Reto MT 41/3 - M20x2,50",macho-376-reto,"macho-376-reto-m20x2,50",0.0000,999,ativo
+89,"Macho Máquina M DIN 376 HSS-E 6H - Canal Reto MT 41/3 - M22x2,50",macho-376-reto,"macho-376-reto-m22x2,50",0.0000,999,ativo
+90,"Macho Máquina M DIN 376 HSS-E 6H - Canal Reto MT 41/3 - M24x3,00",macho-376-reto,"macho-376-reto-m24x3,00",0.0000,999,ativo
+63,"Macho Máquina M DIN 376 HSS-E 6H - Ponta Helicoidal POT 41/1 - M10x1,50",macho-376-hel,"macho-376-hel-m10x1,50",0.0000,999,ativo
+64,"Macho Máquina M DIN 376 HSS-E 6H - Ponta Helicoidal POT 41/1 - M12x1,75",macho-376-hel,"macho-376-hel-m12x1,75",0.0000,999,ativo
+65,"Macho Máquina M DIN 376 HSS-E 6H - Ponta Helicoidal POT 41/1 - M14x2,00",macho-376-hel,"macho-376-hel-m14x2,00",0.0000,999,ativo
+66,"Macho Máquina M DIN 376 HSS-E 6H - Ponta Helicoidal POT 41/1 - M16x2,00",macho-376-hel,"macho-376-hel-m16x2,00",0.0000,999,ativo
+67,"Macho Máquina M DIN 376 HSS-E 6H - Ponta Helicoidal POT 41/1 - M18x2,50",macho-376-hel,"macho-376-hel-m18x2,50",0.0000,999,ativo
+68,"Macho Máquina M DIN 376 HSS-E 6H - Ponta Helicoidal POT 41/1 - M20x2,50",macho-376-hel,"macho-376-hel-m20x2,50",0.0000,999,ativo
+69,"Macho Máquina M DIN 376 HSS-E 6H - Ponta Helicoidal POT 41/1 - M22x2,50",macho-376-hel,"macho-376-hel-m22x2,50",0.0000,999,ativo
+70,"Macho Máquina M DIN 376 HSS-E 6H - Ponta Helicoidal POT 41/1 - M24x3,00",macho-376-hel,"macho-376-hel-m24x3,00",0.0000,999,ativo
+58,"Macho Máquina M DIN 376 HSS-E 6H - Ponta Helicoidal POT 41/1 - M3x0,5",macho-376-hel,"macho-376-hel-m3x0,5",0.0000,999,ativo
+59,"Macho Máquina M DIN 376 HSS-E 6H - Ponta Helicoidal POT 41/1 - M4x0,7",macho-376-hel,"macho-376-hel-m4x0,7",0.0000,999,ativo
+60,"Macho Máquina M DIN 376 HSS-E 6H - Ponta Helicoidal POT 41/1 - M5x0,8",macho-376-hel,"macho-376-hel-m5x0,8",0.0000,999,ativo
+61,"Macho Máquina M DIN 376 HSS-E 6H - Ponta Helicoidal POT 41/1 - M6x1,0",macho-376-hel,"macho-376-hel-m6x1,0",0.0000,999,ativo
+62,"Macho Máquina M DIN 376 HSS-E 6H - Ponta Helicoidal POT 41/1 - M8x1,25",macho-376-hel,"macho-376-hel-m8x1,25",0.0000,999,ativo
+101,Macho Máquina MF DIN 374 HSS-E 6H - Canal Helicoidal SFT 42/2 - M10x1,macho-374-sft,macho-374-sft-m10x1,0.0000,999,ativo
+102,"Macho Máquina MF DIN 374 HSS-E 6H - Canal Helicoidal SFT 42/2 - M12x1,5",macho-374-sft,"macho-374-sft-m12x1,5",0.0000,999,ativo
+103,"Macho Máquina MF DIN 374 HSS-E 6H - Canal Helicoidal SFT 42/2 - M14x1,5",macho-374-sft,"macho-374-sft-m14x1,5",0.0000,999,ativo
+104,"Macho Máquina MF DIN 374 HSS-E 6H - Canal Helicoidal SFT 42/2 - M16x1,5",macho-374-sft,"macho-374-sft-m16x1,5",0.0000,999,ativo
+105,"Macho Máquina MF DIN 374 HSS-E 6H - Canal Helicoidal SFT 42/2 - M18x1,5",macho-374-sft,"macho-374-sft-m18x1,5",0.0000,999,ativo
+106,"Macho Máquina MF DIN 374 HSS-E 6H - Canal Helicoidal SFT 42/2 - M20x1,5",macho-374-sft,"macho-374-sft-m20x1,5",0.0000,999,ativo
+107,"Macho Máquina MF DIN 374 HSS-E 6H - Canal Helicoidal SFT 42/2 - M22x1,5",macho-374-sft,"macho-374-sft-m22x1,5",0.0000,999,ativo
+108,"Macho Máquina MF DIN 374 HSS-E 6H - Canal Helicoidal SFT 42/2 - M24x1,5",macho-374-sft,"macho-374-sft-m24x1,5",0.0000,999,ativo
+100,Macho Máquina MF DIN 374 HSS-E 6H - Canal Helicoidal SFT 42/2 - M8x1,macho-374-sft,macho-374-sft-m8x1,0.0000,999,ativo
+110,Macho Máquina MF DIN 374 HSS-E 6H - Canal Reto MT 42/3 - M10x1,macho-374-reto,macho-374-reto-m10x1,0.0000,999,ativo
+111,"Macho Máquina MF DIN 374 HSS-E 6H - Canal Reto MT 42/3 - M12x1,5",macho-374-reto,"macho-374-reto-m12x1,5",0.0000,999,ativo
+112,"Macho Máquina MF DIN 374 HSS-E 6H - Canal Reto MT 42/3 - M14x1,5",macho-374-reto,"macho-374-reto-m14x1,5",0.0000,999,ativo
+113,"Macho Máquina MF DIN 374 HSS-E 6H - Canal Reto MT 42/3 - M16x1,5",macho-374-reto,"macho-374-reto-m16x1,5",0.0000,999,ativo
+114,"Macho Máquina MF DIN 374 HSS-E 6H - Canal Reto MT 42/3 - M18x1,5",macho-374-reto,"macho-374-reto-m18x1,5",0.0000,999,ativo
+115,"Macho Máquina MF DIN 374 HSS-E 6H - Canal Reto MT 42/3 - M20x1,5",macho-374-reto,"macho-374-reto-m20x1,5",0.0000,999,ativo
+116,"Macho Máquina MF DIN 374 HSS-E 6H - Canal Reto MT 42/3 - M22x1,5",macho-374-reto,"macho-374-reto-m22x1,5",0.0000,999,ativo
+117,"Macho Máquina MF DIN 374 HSS-E 6H - Canal Reto MT 42/3 - M24x1,5",macho-374-reto,"macho-374-reto-m24x1,5",0.0000,999,ativo
+109,Macho Máquina MF DIN 374 HSS-E 6H - Canal Reto MT 42/3 - M8x1,macho-374-reto,macho-374-reto-m8x1,0.0000,999,ativo
+92,Macho Máquina MF DIN 374 HSS-E 6H - Ponta Helicoidal POT 42/1 - M10x1,macho-374-hel,macho-374-hel-m10x1,0.0000,999,ativo
+93,"Macho Máquina MF DIN 374 HSS-E 6H - Ponta Helicoidal POT 42/1 - M12x1,50",macho-374-hel,"macho-374-hel-m12x1,50",0.0000,999,ativo
+94,"Macho Máquina MF DIN 374 HSS-E 6H - Ponta Helicoidal POT 42/1 - M14x1,50",macho-374-hel,"macho-374-hel-m14x1,50",0.0000,999,ativo
+95,"Macho Máquina MF DIN 374 HSS-E 6H - Ponta Helicoidal POT 42/1 - M16x1,50",macho-374-hel,"macho-374-hel-m16x1,50",0.0000,999,ativo
+96,"Macho Máquina MF DIN 374 HSS-E 6H - Ponta Helicoidal POT 42/1 - M18x1,50",macho-374-hel,"macho-374-hel-m18x1,50",0.0000,999,ativo
+97,"Macho Máquina MF DIN 374 HSS-E 6H - Ponta Helicoidal POT 42/1 - M20x1,50",macho-374-hel,"macho-374-hel-m20x1,50",0.0000,999,ativo
+98,"Macho Máquina MF DIN 374 HSS-E 6H - Ponta Helicoidal POT 42/1 - M22x1,50",macho-374-hel,"macho-374-hel-m22x1,50",0.0000,999,ativo
+99,"Macho Máquina MF DIN 374 HSS-E 6H - Ponta Helicoidal POT 42/1 - M24x1,50",macho-374-hel,"macho-374-hel-m24x1,50",0.0000,999,ativo
+91,Macho Máquina MF DIN 374 HSS-E 6H - Ponta Helicoidal POT 42/1 - M8x1,macho-374-hel,macho-374-hel-m8x1,0.0000,999,ativo
+180,Maleta com Jogo de Pinça ER-40 + Mandril + Chave de Garra - CM3,maleta-er40,maleta-er40-cm3,0.0000,999,ativo
+215,Óleo de Corte Integral para Rosqueamento de Metais - 300ml,oleo-corte,oleo-corte-300ml,0.0000,999,ativo
+348,Pinça Avulsa ER40 - 10-9mm,pinca-er40,pinca-er40-10-9,0.0000,999,ativo
+349,Pinça Avulsa ER40 - 11-10mm,pinca-er40,pinca-er40-11-10,0.0000,999,ativo
+350,Pinça Avulsa ER40 - 12-11mm,pinca-er40,pinca-er40-12-11,0.0000,999,ativo
+351,Pinça Avulsa ER40 - 13-12mm,pinca-er40,pinca-er40-13-12,0.0000,999,ativo
+352,Pinça Avulsa ER40 - 14-13mm,pinca-er40,pinca-er40-14-13,0.0000,999,ativo
+353,Pinça Avulsa ER40 - 15-14mm,pinca-er40,pinca-er40-15-14,0.0000,999,ativo
+354,Pinça Avulsa ER40 - 16-15mm,pinca-er40,pinca-er40-16-15,0.0000,999,ativo
+355,Pinça Avulsa ER40 - 17-16mm,pinca-er40,pinca-er40-17-16,0.0000,999,ativo
+356,Pinça Avulsa ER40 - 18-17mm,pinca-er40,pinca-er40-18-17,0.0000,999,ativo
+357,Pinça Avulsa ER40 - 19-18mm,pinca-er40,pinca-er40-19-18,0.0000,999,ativo
+358,Pinça Avulsa ER40 - 20-19mm,pinca-er40,pinca-er40-20-19,0.0000,999,ativo
+359,Pinça Avulsa ER40 - 21-20mm,pinca-er40,pinca-er40-21-20,0.0000,999,ativo
+360,Pinça Avulsa ER40 - 22-21mm,pinca-er40,pinca-er40-22-21,0.0000,999,ativo
+361,Pinça Avulsa ER40 - 23-22mm,pinca-er40,pinca-er40-23-22,0.0000,999,ativo
+362,Pinça Avulsa ER40 - 24-23mm,pinca-er40,pinca-er40-24-23,0.0000,999,ativo
+363,Pinça Avulsa ER40 - 25-24mm,pinca-er40,pinca-er40-25-24,0.0000,999,ativo
+342,Pinça Avulsa ER40 - 4-3mm,pinca-er40,pinca-er40-4-3,0.0000,999,ativo
+343,Pinça Avulsa ER40 - 5-4mm,pinca-er40,pinca-er40-5-4,0.0000,999,ativo
+344,Pinça Avulsa ER40 - 6-5mm,pinca-er40,pinca-er40-6-5,0.0000,999,ativo
+345,Pinça Avulsa ER40 - 7-6mm,pinca-er40,pinca-er40-7-6,0.0000,999,ativo
+346,Pinça Avulsa ER40 - 8-7mm,pinca-er40,pinca-er40-8-7,0.0000,999,ativo
+347,Pinça Avulsa ER40 - 9-8mm,pinca-er40,pinca-er40-9-8,0.0000,999,ativo
+207,Ponta Rotativa Tubular - CM4 25x80,ponta-tubular,ponta-tubular-cm425x80,0.0000,999,ativo
+210,Ponta Rotativa Tubular - CM4 30x120,ponta-tubular,ponta-tubular-cm430x120,0.0000,999,ativo
+37,"Porta Bedame Hispânia - 1/2"" x 1/8"" x 6""",porta-bedame,porta-bedame-1-2x1-8x6,0.0000,999,ativo
+39,"Porta Bedame Hispânia - 3/4"" x 1/8"" x 6""",porta-bedame,porta-bedame-3-4x1-8x6,0.0000,999,ativo
+38,"Porta Bedame Hispânia - 5/8"" x 1/8"" x 6""",porta-bedame,porta-bedame-5-8x1-8x6,0.0000,999,ativo
+36,"Porta Bits Hispânia - 1""",porta-bits,porta-bits-1,0.0000,999,ativo
+27,"Porta Bits Hispânia - 3/16""",porta-bits,porta-bits-3-16,0.0000,999,ativo
+34,"Porta Bits Hispânia - 3/4""",porta-bits,porta-bits-3-4,0.0000,999,ativo
+33,"Porta Bits Hispânia - 5/8""",porta-bits,porta-bits-5-8,0.0000,999,ativo
+31,"Porta Bits Hispânia - 7/16""",porta-bits,porta-bits-7-16,0.0000,999,ativo
+35,"Porta Bits Hispânia - 7/8""",porta-bits,porta-bits-7-8,0.0000,999,ativo
+192,"Porta Recartilha Duplo - 3/4""",recart-duplo,recart-duplo-3-4,0.0000,999,ativo
+191,"Porta Recartilha Duplo - 5/8""",recart-duplo,recart-duplo-5-8,0.0000,999,ativo
+188,"Porta Recartilha Interno - 3/4""",recart-interno,recart-interno-3-4,0.0000,999,ativo
+187,"Porta Recartilha Interno - 5/8""",recart-interno,recart-interno-5-8,0.0000,999,ativo
+190,"Porta Recartilha Simples - 3/4""",recart-simples,recart-simples-3-4,0.0000,999,ativo
+189,"Porta Recartilha Simples - 5/8""",recart-simples,recart-simples-5-8,0.0000,999,ativo
+194,"Porta Recartilha Triplo - 3/4""",recart-triplo,recart-triplo-3-4,0.0000,999,ativo
+193,"Porta Recartilha Triplo - 5/8""",recart-triplo,recart-triplo-5-8,0.0000,999,ativo
