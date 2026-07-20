@@ -1830,3 +1830,53 @@
   border-color: #f87171 !important;
   color: var(--miig-text) !important;
 }
+
+/* Páginas legais (privacidade, termos) */
+.theme-miigtools .miig-legal {
+  max-width: 52rem;
+  line-height: 1.7;
+  color: var(--miig-text);
+}
+
+.theme-miigtools .miig-legal h3 {
+  font-family: var(--miig-font-head);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  color: var(--miig-gold-bright);
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.theme-miigtools .miig-legal p,
+.theme-miigtools .miig-legal li {
+  color: var(--miig-text);
+}
+
+.theme-miigtools .miig-legal a {
+  color: var(--miig-gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.theme-miigtools .miig-legal a:hover {
+  color: var(--miig-gold-bright);
+}
+
+.theme-miigtools .miig-legal .table {
+  color: var(--miig-text);
+  border-color: var(--miig-edge);
+  font-size: 0.92rem;
+}
+
+.theme-miigtools .miig-legal .table th {
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--miig-gold-bright);
+  border-color: var(--miig-edge);
+  font-weight: 600;
+}
+
+.theme-miigtools .miig-legal .table td {
+  border-color: var(--miig-edge);
+  vertical-align: top;
+}
