@@ -9,6 +9,12 @@ echo "[local] MIIGTOOLS OpenCart — bootstrap"
 mkdir -p "${DIR_STORAGE}"{cache,session,logs,download,upload,backup,marketplace}
 mkdir -p "${DIR_OPENCART}image/cache"
 
+# SEO rewrite rules (OpenCart ships .htaccess.txt; real .htaccess is gitignored)
+if [ ! -f "${DIR_OPENCART}.htaccess" ] && [ -f "${DIR_OPENCART}.htaccess.txt" ]; then
+	cp "${DIR_OPENCART}.htaccess.txt" "${DIR_OPENCART}.htaccess"
+	echo "[local] .htaccess gerado a partir de .htaccess.txt"
+fi
+
 touch "${DIR_OPENCART}config.php" "${DIR_OPENCART}admin/config.php"
 chmod 666 "${DIR_OPENCART}config.php" "${DIR_OPENCART}admin/config.php" || true
 chown -R www-data:www-data "${DIR_STORAGE}" "${DIR_OPENCART}image/cache" 2>/dev/null || true

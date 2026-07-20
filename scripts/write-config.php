@@ -7,15 +7,113 @@ function env(string $key, string $default = ''): string {
 }
 
 function bootstrap_setting(\mysqli $mysqli, string $table, string $code, string $key, string $value, int $serialized = 0): void {
-	$stmt = $mysqli->prepare(
-		"INSERT INTO `{$table}` (`store_id`, `code`, `key`, `value`, `serialized`) VALUES (0, ?, ?, ?, ?)
-		ON DUPLICATE KEY UPDATE `value` = VALUES(`value`), `serialized` = VALUES(`serialized`)"
+	$update = $mysqli->prepare(
+		"UPDATE `{$table}` SET `value` = ?, `serialized` = ?, `code` = ? WHERE `key` = ? AND `store_id` = 0"
 	);
 
-	if ($stmt) {
-		$stmt->bind_param('sssi', $code, $key, $value, $serialized);
-		$stmt->execute();
-		$stmt->close();
+	if ($update) {
+		$update->bind_param('siss', $value, $serialized, $code, $key);
+		$update->execute();
+		$affected = $update->affected_rows;
+		$update->close();
+
+		if ($affected > 0) {
+			// Collapse accidental duplicates left by previous inserts without unique key.
+			$mysqli->query(
+				"DELETE FROM `{$table}` WHERE `key` = '" . $mysqli->real_escape_string($key) . "' AND `store_id` = 0 AND `setting_id` NOT IN (
+					SELECT `setting_id` FROM (
+						SELECT MIN(`setting_id`) AS `setting_id` FROM `{$table}` WHERE `key` = '" . $mysqli->real_escape_string($key) . "' AND `store_id` = 0
+					) AS `keep`
+				)"
+			);
+
+			return;
+		}
+	}
+
+	$insert = $mysqli->prepare(
+		"INSERT INTO `{$table}` (`store_id`, `code`, `key`, `value`, `serialized`) VALUES (0, ?, ?, ?, ?)"
+	);
+
+	if ($insert) {
+		$insert->bind_param('sssi', $code, $key, $value, $serialized);
+		$insert->execute();
+		$insert->close();
+	}
+}
+
+function miig_seo_slug(string $text): string {
+	$map = [
+		'á' => 'a', 'à' => 'a', 'ã' => 'a', 'â' => 'a', 'ä' => 'a',
+		'é' => 'e', 'è' => 'e', 'ê' => 'e', 'ë' => 'e',
+		'í' => 'i', 'ì' => 'i', 'î' => 'i', 'ï' => 'i',
+		'ó' => 'o', 'ò' => 'o', 'õ' => 'o', 'ô' => 'o', 'ö' => 'o',
+		'ú' => 'u', 'ù' => 'u', 'û' => 'u', 'ü' => 'u',
+		'ç' => 'c', 'ñ' => 'n',
+		'Á' => 'a', 'À' => 'a', 'Ã' => 'a', 'Â' => 'a', 'Ä' => 'a',
+		'É' => 'e', 'È' => 'e', 'Ê' => 'e', 'Ë' => 'e',
+		'Í' => 'i', 'Ì' => 'i', 'Î' => 'i', 'Ï' => 'i',
+		'Ó' => 'o', 'Ò' => 'o', 'Õ' => 'o', 'Ô' => 'o', 'Ö' => 'o',
+		'Ú' => 'u', 'Ù' => 'u', 'Û' => 'u', 'Ü' => 'u',
+		'Ç' => 'c', 'Ñ' => 'n',
+	];
+
+	$text = strtr($text, $map);
+	$text = strtolower($text);
+	$text = preg_replace('/[^a-z0-9]+/', '-', $text) ?? '';
+	$text = trim($text, '-');
+
+	return $text !== '' ? $text : 'item';
+}
+
+function bootstrap_seo_url(\mysqli $mysqli, string $prefix, int $store_id, int $language_id, string $key, string $value, string $keyword, int $sort_order = 0): void {
+	$table = $prefix . 'seo_url';
+	$keyword = trim($keyword, '/');
+
+	if ($keyword === '') {
+		return;
+	}
+
+	$exists = $mysqli->prepare(
+		"SELECT `seo_url_id` FROM `{$table}` WHERE `store_id` = ? AND `language_id` = ? AND `key` = ? AND `value` = ? LIMIT 1"
+	);
+
+	if (!$exists) {
+		return;
+	}
+
+	$exists->bind_param('iiss', $store_id, $language_id, $key, $value);
+	$exists->execute();
+	$exists->store_result();
+
+	if ($exists->num_rows > 0) {
+		$exists->bind_result($seo_url_id);
+		$exists->fetch();
+		$exists->close();
+
+		$update = $mysqli->prepare(
+			"UPDATE `{$table}` SET `keyword` = ?, `sort_order` = ? WHERE `seo_url_id` = ?"
+		);
+
+		if ($update) {
+			$update->bind_param('sii', $keyword, $sort_order, $seo_url_id);
+			$update->execute();
+			$update->close();
+		}
+
+		return;
+	}
+
+	$exists->close();
+
+	$insert = $mysqli->prepare(
+		"INSERT INTO `{$table}` (`store_id`, `language_id`, `key`, `value`, `keyword`, `sort_order`) VALUES (?, ?, ?, ?, ?, ?)"
+	);
+
+	if ($insert) {
+		$insert->bind_param('iisssi', $store_id, $language_id, $key, $value, $keyword, $sort_order);
+		$insert->execute();
+		$insert->close();
 	}
 }
 
@@ -275,6 +373,7 @@ if ($db_host === '') {
 			[2, 'Termos e Condições', '<p>Termos e condições de uso da loja MIIGTOOLS. Ao comprar, você concorda com as regras de pagamento, entrega e trocas descritas nesta página.</p>', 'Termos e Condições | MIIGTOOLS'],
 			[3, 'Política de Privacidade', '<p>A MIIGTOOLS respeita sua privacidade. Utilizamos seus dados (nome, e-mail, CPF/CNPJ, telefone e endereço) apenas para processar pedidos, emitir notas e melhorar nosso atendimento, conforme a LGPD.</p>', 'Política de Privacidade | MIIGTOOLS'],
 			[4, 'Informações de Entrega', '<p>Enviamos para todo o Brasil. O prazo e o valor do frete são calculados no checkout conforme o CEP e o peso dos produtos.</p>', 'Entrega | MIIGTOOLS'],
+			[6, 'Trocas e Devoluções', '<p>Todos os nossos produtos possuem garantia fornecida diretamente pelos fabricantes, com prazos e condições que podem variar de acordo com cada item e estarão informados na página do produto. Em caso de devolução, o produto deverá ser enviado em sua embalagem original, acompanhado de todos os acessórios e sem sinais de mau uso. Caso seja constatada utilização inadequada, os custos envolvidos poderão ficar sob responsabilidade do comprador. Para mais informações sobre garantias, trocas ou devoluções, entre em contato conosco por um de nossos canais de atendimento.</p>', 'Trocas e Devoluções | MIIGTOOLS'],
 		];
 
 		$info_insert = $mysqli->prepare(
@@ -290,8 +389,141 @@ if ($db_host === '') {
 			}
 
 			$info_insert->close();
-			echo "bootstrap-db: páginas institucionais pt-br (2-4)\n";
+			echo "bootstrap-db: páginas institucionais pt-br (2-4, 6)\n";
 		}
+
+		$mysqli->query(
+			"INSERT IGNORE INTO `{$db_prefix}information` (`information_id`, `sort_order`, `status`) VALUES (6, 5, 1)"
+		);
+		$mysqli->query(
+			"INSERT IGNORE INTO `{$db_prefix}information_to_store` (`information_id`, `store_id`) VALUES (6, 0)"
+		);
+		$mysqli->query(
+			"INSERT INTO `{$info_table}` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`)
+			VALUES (6, 1, 'Returns &amp; Exchanges', '<p>All products carry manufacturer warranties. Returns must be in original packaging with all accessories and without signs of misuse. Contact us for warranty, exchange or return questions.</p>', 'Returns &amp; Exchanges | MIIGTOOLS', '', '')
+			ON DUPLICATE KEY UPDATE `title` = VALUES(`title`), `description` = VALUES(`description`), `meta_title` = VALUES(`meta_title`)"
+		);
+		echo "bootstrap-db: página Trocas e Devoluções (id 6)\n";
+
+		bootstrap_setting($mysqli, $table, 'config', 'config_seo_url', '1', 0);
+		echo "bootstrap-db: config_seo_url → 1\n";
+
+		$seo_routes_pt = [
+			['route', 'information/information', 'information', -1],
+			['route', 'information/contact', 'contato', -1],
+			['route', 'product/category', 'catalogo', -1],
+			['route', 'product/manufacturer', 'marcas', -1],
+			['route', 'product/product', 'produto', -1],
+			['information_id', '1', 'sobre', 0],
+			['information_id', '2', 'termos', 0],
+			['information_id', '3', 'privacidade', 0],
+			['information_id', '4', 'entrega', 0],
+			['information_id', '5', 'sobre-miigtools', 0],
+			['information_id', '6', 'devolucao', 0],
+		];
+
+		foreach ($seo_routes_pt as [$key, $value, $keyword, $sort_order]) {
+			bootstrap_seo_url($mysqli, $db_prefix, 0, 2, $key, $value, $keyword, $sort_order);
+		}
+
+		bootstrap_seo_url($mysqli, $db_prefix, 0, 1, 'route', 'information/contact', 'contact', -1);
+		bootstrap_seo_url($mysqli, $db_prefix, 0, 1, 'information_id', '6', 'returns', 0);
+
+		$used_keywords = [];
+		$kw_res = $mysqli->query("SELECT `keyword` FROM `{$db_prefix}seo_url` WHERE `store_id` = 0");
+
+		if ($kw_res) {
+			while ($row = $kw_res->fetch_assoc()) {
+				$used_keywords[$row['keyword']] = true;
+			}
+		}
+
+		$prod_res = $mysqli->query(
+			"SELECT pd.`product_id`, pd.`name`
+			FROM `{$db_prefix}product_description` pd
+			INNER JOIN `{$db_prefix}product` p ON p.`product_id` = pd.`product_id`
+			WHERE pd.`language_id` = 2 AND p.`status` = 1"
+		);
+
+		$product_seo_count = 0;
+
+		if ($prod_res) {
+			while ($row = $prod_res->fetch_assoc()) {
+				$product_id = (int) $row['product_id'];
+				$check = $mysqli->query(
+					"SELECT `seo_url_id` FROM `{$db_prefix}seo_url`
+					WHERE `store_id` = 0 AND `language_id` = 2 AND `key` = 'product_id' AND `value` = '{$product_id}' LIMIT 1"
+				);
+
+				if ($check && $check->num_rows > 0) {
+					continue;
+				}
+
+				$base = miig_seo_slug((string) $row['name']);
+				$keyword = $base;
+				$n = 2;
+
+				while (isset($used_keywords[$keyword])) {
+					$keyword = $base . '-' . $product_id;
+
+					if (!isset($used_keywords[$keyword])) {
+						break;
+					}
+
+					$keyword = $base . '-' . $n;
+					$n++;
+				}
+
+				$used_keywords[$keyword] = true;
+				bootstrap_seo_url($mysqli, $db_prefix, 0, 2, 'product_id', (string) $product_id, $keyword, 0);
+				$product_seo_count++;
+			}
+		}
+
+		$cat_res = $mysqli->query(
+			"SELECT cd.`category_id`, cd.`name`
+			FROM `{$db_prefix}category_description` cd
+			INNER JOIN `{$db_prefix}category` c ON c.`category_id` = cd.`category_id`
+			WHERE cd.`language_id` = 2 AND c.`status` = 1"
+		);
+
+		$category_seo_count = 0;
+
+		if ($cat_res) {
+			while ($row = $cat_res->fetch_assoc()) {
+				$category_id = (int) $row['category_id'];
+				$path_value = (string) $category_id;
+				$check = $mysqli->query(
+					"SELECT `seo_url_id` FROM `{$db_prefix}seo_url`
+					WHERE `store_id` = 0 AND `language_id` = 2 AND `key` = 'path' AND `value` = '{$path_value}' LIMIT 1"
+				);
+
+				if ($check && $check->num_rows > 0) {
+					continue;
+				}
+
+				$base = miig_seo_slug((string) $row['name']);
+				$keyword = $base;
+				$n = 2;
+
+				while (isset($used_keywords[$keyword])) {
+					$keyword = $base . '-' . $category_id;
+
+					if (!isset($used_keywords[$keyword])) {
+						break;
+					}
+
+					$keyword = $base . '-' . $n;
+					$n++;
+				}
+
+				$used_keywords[$keyword] = true;
+				bootstrap_seo_url($mysqli, $db_prefix, 0, 2, 'path', $path_value, $keyword, 0);
+				$category_seo_count++;
+			}
+		}
+
+		echo "bootstrap-db: SEO keywords pt-br (produtos novos: {$product_seo_count}, categorias novas: {$category_seo_count})\n";
 
 		$mysqli->query(
 			"INSERT IGNORE INTO `{$db_prefix}extension` (`extension`, `type`, `code`) VALUES ('opencart', 'payment', 'bank_transfer')"
