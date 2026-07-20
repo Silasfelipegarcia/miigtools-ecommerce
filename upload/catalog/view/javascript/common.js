@@ -133,6 +133,10 @@ $(document).on('submit', 'form', function (e) {
                 $(element).find('.is-invalid').removeClass('is-invalid');
                 $(element).find('.invalid-feedback').removeClass('d-block');
 
+                if (window.miigGa) {
+                    window.miigGa.fromAjax(json);
+                }
+
                 if (json['redirect']) {
                     location = json['redirect'];
                 }

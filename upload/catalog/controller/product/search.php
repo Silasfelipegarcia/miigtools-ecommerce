@@ -442,6 +442,23 @@ class Search extends \Opencart\System\Engine\Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
+		$data['currency'] = $this->session->data['currency'];
+
+		$this->load->model('tool/ga4');
+
+		if (!empty($data['search'])) {
+			$data['ga4'] = [
+				'event'  => 'search',
+				'params' => [
+					'search_term' => (string)$data['search']
+				]
+			];
+		} else {
+			$data['ga4'] = null;
+		}
+
+		$data['ga4_event'] = $this->model_tool_ga4->snippet($data['ga4']);
+
 		$this->response->setOutput($this->load->view('product/search', $data));
 	}
 }

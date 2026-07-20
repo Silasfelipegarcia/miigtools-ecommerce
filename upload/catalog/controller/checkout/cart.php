@@ -34,6 +34,15 @@ class Cart extends \Opencart\System\Engine\Controller {
 
 		$data['language'] = $this->config->get('config_language');
 
+		$this->load->model('tool/ga4');
+
+		$snapshot = $this->model_tool_ga4->cartSnapshot();
+
+		$data['ga4'] = $snapshot['items'] ? $this->model_tool_ga4->event('view_cart', $snapshot['items'], [
+			'value' => $snapshot['value']
+		]) : null;
+		$data['ga4_event'] = $this->model_tool_ga4->snippet($data['ga4']);
+
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');
@@ -315,6 +324,12 @@ class Cart extends \Opencart\System\Engine\Controller {
 				$json['available'] = max(0, $available_for_user - $quantity);
 			}
 
+			$this->load->model('tool/ga4');
+
+			$json['ga4'] = $this->model_tool_ga4->event('add_to_cart', [
+				$this->model_tool_ga4->itemFromProduct($product_info, $quantity)
+			]);
+
 			// Unset all shipping and payment methods
 			unset($this->session->data['shipping_method']);
 			unset($this->session->data['shipping_methods']);
@@ -414,8 +429,25 @@ class Cart extends \Opencart\System\Engine\Controller {
 			$key = 0;
 		}
 
+		$removed = null;
+
+		foreach ($this->cart->getProducts() as $cart_product) {
+			if ((int)$cart_product['cart_id'] === $key) {
+				$removed = $cart_product;
+				break;
+			}
+		}
+
 		// Remove
 		$this->cart->remove($key);
+
+		if ($removed) {
+			$this->load->model('tool/ga4');
+
+			$json['ga4'] = $this->model_tool_ga4->event('remove_from_cart', [
+				$this->model_tool_ga4->itemFromCart($removed)
+			]);
+		}
 
 		if ($this->cart->hasProducts()) {
 			$json['success'] = $this->language->get('text_remove');

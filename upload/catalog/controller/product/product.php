@@ -481,6 +481,19 @@ class Product extends \Opencart\System\Engine\Controller {
 
 			$data['language'] = $this->config->get('config_language');
 
+			$this->load->model('tool/ga4');
+
+			$ga_product = $product_info;
+
+			if (!empty($data['manufacturer'])) {
+				$ga_product['manufacturer'] = $data['manufacturer'];
+			}
+
+			$data['ga4'] = $this->model_tool_ga4->event('view_item', [
+				$this->model_tool_ga4->itemFromProduct($ga_product)
+			]);
+			$data['ga4_event'] = $this->model_tool_ga4->snippet($data['ga4']);
+
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
 			$data['content_top'] = $this->load->controller('common/content_top');

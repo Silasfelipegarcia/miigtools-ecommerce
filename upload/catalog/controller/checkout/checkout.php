@@ -65,6 +65,15 @@ class Checkout extends \Opencart\System\Engine\Controller {
 		$data['payment_method'] = $this->load->controller('checkout/payment_method');
 		$data['confirm'] = $this->load->controller('checkout/confirm');
 
+		$this->load->model('tool/ga4');
+
+		$snapshot = $this->model_tool_ga4->cartSnapshot();
+
+		$data['ga4'] = $snapshot['items'] ? $this->model_tool_ga4->event('begin_checkout', $snapshot['items'], [
+			'value' => $snapshot['value']
+		]) : null;
+		$data['ga4_event'] = $this->model_tool_ga4->snippet($data['ga4']);
+
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');

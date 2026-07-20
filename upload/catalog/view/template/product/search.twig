@@ -81,7 +81,7 @@
             </div>
           </div>
         </div>
-        <div id="product-list" class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
+        <div id="product-list" class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4" data-miig-ga4-list="{{ heading_title }}" data-miig-ga4-currency="{{ currency }}">
           {% for product in products %}
             <div class="col mb-3">{{ product }}</div>
           {% endfor %}
@@ -141,4 +141,5 @@ $('#input-category').on('change', function() {
 
 $('#input-category').trigger('change');
 //--></script>
+{{ ga4_event }}
 {{ footer }}

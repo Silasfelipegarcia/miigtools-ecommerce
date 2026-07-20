@@ -14,7 +14,20 @@ class Success extends \Opencart\System\Engine\Controller {
 	public function index(): void {
 		$this->load->language('checkout/success');
 
+		$data['ga4'] = null;
+
 		if (isset($this->session->data['order_id'])) {
+			$order_id = (int)$this->session->data['order_id'];
+
+			$this->load->model('checkout/order');
+			$this->load->model('tool/ga4');
+
+			$order_info = $this->model_checkout_order->getOrder($order_id);
+
+			if ($order_info) {
+				$data['ga4'] = $this->model_tool_ga4->eventPurchase($order_info);
+			}
+
 			$this->cart->clear();
 
 			unset($this->session->data['order_id']);
@@ -59,6 +72,10 @@ class Success extends \Opencart\System\Engine\Controller {
 		}
 
 		$data['continue'] = $this->url->link('common/home', 'language=' . $this->config->get('config_language'));
+
+		$this->load->model('tool/ga4');
+
+		$data['ga4_event'] = $this->model_tool_ga4->snippet($data['ga4']);
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');

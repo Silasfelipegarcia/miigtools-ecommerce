@@ -351,6 +351,8 @@ class Manufacturer extends \Opencart\System\Engine\Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 
+			$data['currency'] = $this->session->data['currency'];
+
 			$this->response->setOutput($this->load->view('product/manufacturer_info', $data));
 		} else {
 			return new \Opencart\System\Engine\Action('error/not_found');

@@ -50,6 +50,7 @@ class Header extends \Opencart\System\Engine\Controller {
 		$data['jquery'] = 'catalog/view/javascript/jquery/jquery-3.7.1.min.js';
 
 		$this->document->addScript('catalog/view/javascript/miigtools-brazil.js');
+		$this->document->addScript('catalog/view/javascript/miigtools-analytics.js');
 
 		$data['links'] = $this->document->getLinks();
 		$data['styles'] = $this->document->getStyles();

@@ -41,6 +41,10 @@ $('#shopping-cart').on('submit', '#output-cart form', function(e) {
         success: function(json) {
             console.log(json);
 
+            if (window.miigGa) {
+                window.miigGa.fromAjax(json);
+            }
+
             if (json['redirect']) {
                 location = json['redirect'];
             }
@@ -80,6 +84,10 @@ $('#shopping-cart').on('click', '.btn-danger', function(e) {
         success: function(json) {
             console.log(json);
 
+            if (window.miigGa) {
+                window.miigGa.fromAjax(json);
+            }
+
             if (json['redirect']) {
                 location = json['redirect'];
             }
@@ -110,4 +118,5 @@ $('#cart').on('submit', 'form', function(e) {
     }, 3000);
 });
 //--></script>
+{{ ga4_event }}
 {{ footer }}

@@ -38,6 +38,19 @@ class Thumb extends \Opencart\System\Engine\Controller {
 
 		$data['review_status'] = (int)$this->config->get('config_review_status');
 
+		$data['ga_item'] = '';
+
+		if (!empty($data['product_id'])) {
+			$this->load->model('catalog/product');
+			$this->load->model('tool/ga4');
+
+			$product_info = $this->model_catalog_product->getProduct((int)$data['product_id']);
+
+			if ($product_info) {
+				$data['ga_item'] = htmlspecialchars(json_encode($this->model_tool_ga4->itemFromProduct($product_info, max(1, (int)($data['minimum'] ?? 1))), JSON_UNESCAPED_UNICODE), ENT_QUOTES, 'UTF-8');
+			}
+		}
+
 		return $this->load->view('product/thumb', $data);
 	}
 }
