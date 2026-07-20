@@ -35,6 +35,11 @@ class Footer extends \Opencart\System\Engine\Controller {
 		$results = $this->model_catalog_information->getInformations();
 
 		foreach ($results as $result) {
+			// Trocas e Devoluções fica só em “Serviços ao cliente” (link do form).
+			if ((int)$result['information_id'] === 6) {
+				continue;
+			}
+
 			$data['informations'][] = ['href' => $this->url->link('information/information', 'language=' . $this->config->get('config_language') . '&information_id=' . $result['information_id'])] + $result;
 		}
 
