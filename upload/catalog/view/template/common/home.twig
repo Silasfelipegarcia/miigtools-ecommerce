@@ -23,7 +23,9 @@
   <div class="container py-4 py-lg-5">
     <header class="text-center mb-4 mb-lg-5">
       <h2 id="miig-strip-title" class="miig-strip-title">{{ strip_title }}</h2>
-      <p class="miig-strip-sub mb-0">{{ strip_sub }}</p>
+      {% if strip_sub %}
+        <p class="miig-strip-sub mb-0">{{ strip_sub }}</p>
+      {% endif %}
     </header>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 g-md-4">
       {% for vp in value_props %}

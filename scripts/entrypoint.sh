@@ -58,6 +58,12 @@ mkdir -p "${DIR_STORAGE}"{cache,session,logs,download,upload,backup,marketplace}
 chown -R www-data:www-data "${DIR_STORAGE}" || true
 chmod -R 775 "${DIR_STORAGE}" || true
 
+# SEO rewrite rules (OpenCart ships .htaccess.txt; real .htaccess is gitignored)
+if [ ! -f "${DIR_OPENCART}.htaccess" ] && [ -f "${DIR_OPENCART}.htaccess.txt" ]; then
+	cp "${DIR_OPENCART}.htaccess.txt" "${DIR_OPENCART}.htaccess"
+	echo "[entrypoint] .htaccess gerado a partir de .htaccess.txt"
+fi
+
 ensure_single_mpm
 configure_apache
 

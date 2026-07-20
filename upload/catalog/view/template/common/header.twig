@@ -40,7 +40,11 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-GL4ZSWVJGS');
+    gtag('config', 'G-GL4ZSWVJGS', {
+      page_title: {{ title|json_encode|raw }},
+      page_location: window.location.href,
+      page_path: location.pathname + location.search
+    });
   </script>
 </head>
 <body class="theme-miigtools">
