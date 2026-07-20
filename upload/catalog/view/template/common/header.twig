@@ -82,16 +82,23 @@
   <header class="miig-main-header">
     <div class="container">
       <div class="row align-items-center g-3">
-        <div class="col-md-3 col-lg-4">
+        <div class="col-md-4 col-lg-5">
           <div id="logo">
             {% if logo %}
-              <a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="miig-logo-img"/></a>
+              <a href="{{ home }}" class="miig-brand" title="{{ name }}">
+                <img src="{{ logo }}" alt="{{ name }}" class="miig-logo-img"/>
+                <span class="miig-brand-text">
+                  <span class="miig-brand-name">MIIGTOOLS</span>
+                  <span class="miig-brand-rule" aria-hidden="true"></span>
+                  <span class="miig-brand-tagline">Ferramentas para usinagem</span>
+                </span>
+              </a>
             {% else %}
               <h1 class="h4 mb-0"><a href="{{ home }}">{{ name }}</a></h1>
             {% endif %}
           </div>
         </div>
-        <div class="col-md-5">{{ search }}</div>
+        <div class="col-md-4 col-lg-4">{{ search }}</div>
         <div id="cart" class="col-md-4 col-lg-3 mb-0">{{ cart }}</div>
       </div>
     </div>

@@ -327,7 +327,7 @@
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--miig-edge);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  padding: 1.1rem 0 1.35rem;
+  padding: 0.85rem 0 1rem;
   position: sticky;
   top: 0;
   z-index: 1020;
@@ -340,7 +340,20 @@
   line-height: 0;
 }
 
-.theme-miigtools #logo a {
+.theme-miigtools #logo a.miig-brand,
+.theme-miigtools .miig-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  text-decoration: none;
+  max-width: 100%;
+}
+
+.theme-miigtools #logo a:not(.miig-brand) {
   display: inline-flex;
   align-items: center;
   background: transparent;
@@ -351,8 +364,9 @@
 
 .theme-miigtools #logo img,
 .theme-miigtools .miig-logo-img {
-  max-width: min(200px, 100%);
-  max-height: 64px;
+  flex: 0 0 auto;
+  max-width: min(108px, 28vw);
+  max-height: 96px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -361,8 +375,83 @@
   border-radius: 0;
   box-shadow: none;
   padding: 0;
-  filter: drop-shadow(0 2px 16px rgba(212, 175, 55, 0.22));
+  filter: drop-shadow(0 4px 22px rgba(212, 175, 55, 0.38));
   mix-blend-mode: normal;
+}
+
+.theme-miigtools .miig-brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+  gap: 0.28rem;
+  line-height: 1;
+}
+
+.theme-miigtools .miig-brand-name {
+  font-family: var(--miig-font-head);
+  font-weight: 800;
+  font-size: clamp(1.15rem, 2.4vw, 1.85rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--miig-gold-bright);
+  background: linear-gradient(180deg, #f7e8b8 0%, var(--miig-gold) 48%, var(--miig-gold-dark) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 8px rgba(212, 175, 55, 0.25));
+}
+
+.theme-miigtools .miig-brand-rule {
+  display: block;
+  width: 100%;
+  max-width: 14.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--miig-gold) 0%, rgba(212, 175, 55, 0.25) 100%);
+  opacity: 0.9;
+}
+
+.theme-miigtools .miig-brand-tagline {
+  font-family: var(--miig-font-body);
+  font-weight: 500;
+  font-size: clamp(0.62rem, 1.15vw, 0.78rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--miig-muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 575.98px) {
+  .theme-miigtools .miig-brand {
+    gap: 0.65rem;
+  }
+
+  .theme-miigtools .miig-brand-tagline {
+    white-space: normal;
+    max-width: 11rem;
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (min-width: 768px) {
+  .theme-miigtools #logo img,
+  .theme-miigtools .miig-logo-img {
+    max-width: 118px;
+    max-height: 108px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .theme-miigtools #logo img,
+  .theme-miigtools .miig-logo-img {
+    max-width: 132px;
+    max-height: 120px;
+  }
+
+  .theme-miigtools .miig-brand {
+    gap: 1rem;
+  }
 }
 
 .theme-miigtools #logo h1 a {
