@@ -1,11 +1,12 @@
 <?php
 // Heading
-$_['heading_title']      = 'Devoluções';
+$_['heading_title']      = 'Trocas e Devoluções';
 
 // Text
 $_['text_account']       = 'Minha conta';
 $_['text_return']        = 'Informações da devolução';
-$_['text_description']   = 'Preencha o formulário abaixo para solicitar um número de RMA.';
+$_['text_policy']        = '<p>Todos os nossos produtos possuem garantia fornecida diretamente pelos fabricantes, com prazos e condições que podem variar de acordo com cada item e estarão informados na página do produto. Em caso de devolução, o produto deverá ser enviado em sua embalagem original, acompanhado de todos os acessórios e sem sinais de mau uso. Caso seja constatada utilização inadequada, os custos envolvidos poderão ficar sob responsabilidade do comprador. Para mais informações sobre garantias, trocas ou devoluções, entre em contato conosco por um de nossos canais de atendimento.</p>';
+$_['text_description']   = 'Preencha o formulário abaixo para solicitar a devolução.';
 $_['text_order']         = 'Informações do pedido';
 $_['text_customer']      = 'Suas informações';
 $_['text_product']       = 'Informações do produto';

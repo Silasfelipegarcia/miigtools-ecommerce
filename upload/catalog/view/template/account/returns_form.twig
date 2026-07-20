@@ -8,6 +8,9 @@
   <div class="row">{{ column_left }}
     <div id="content" class="col">{{ content_top }}
       <h1>{{ heading_title }}</h1>
+      {% if text_policy %}
+        <div class="miig-return-policy mb-4">{{ text_policy|raw }}</div>
+      {% endif %}
       <p>{{ text_description }}</p>
       <form id="form-return" action="{{ save }}" method="post" data-oc-toggle="ajax">
         <fieldset>

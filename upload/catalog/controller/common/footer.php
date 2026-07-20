@@ -39,7 +39,7 @@ class Footer extends \Opencart\System\Engine\Controller {
 		}
 
 		$data['contact'] = $this->url->link('information/contact', 'language=' . $this->config->get('config_language'));
-		$data['return'] = $this->url->link('information/information', 'language=' . $this->config->get('config_language') . '&information_id=6');
+		$data['return'] = $this->url->link('account/returns.add', 'language=' . $this->config->get('config_language'));
 
 		if ($this->config->get('config_gdpr_id')) {
 			$data['gdpr'] = $this->url->link('information/gdpr', 'language=' . $this->config->get('config_language'));

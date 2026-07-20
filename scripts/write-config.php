@@ -480,6 +480,9 @@ if ($db_host === '') {
 
 		bootstrap_privacy_policy($mysqli, $db_prefix);
 
+		bootstrap_setting($mysqli, $table, 'config', 'config_return_id', '6', 0);
+		echo "bootstrap-db: config_return_id → 6 (Trocas e Devoluções)\n";
+
 		$mysqli->query(
 			"INSERT IGNORE INTO `{$db_prefix}information` (`information_id`, `sort_order`, `status`) VALUES (6, 5, 1)"
 		);
