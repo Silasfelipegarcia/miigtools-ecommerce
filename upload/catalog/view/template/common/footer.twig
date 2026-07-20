@@ -3,10 +3,10 @@
   <div class="footer-miig-trust">
     <div class="container">
       <div class="row row-cols-2 row-cols-md-4 text-center g-0">
+        <div class="col"><i class="fa-solid fa-screwdriver-wrench"></i> Ferramentas profissionais</div>
         <div class="col"><i class="fa-solid fa-truck-fast"></i> Envio para todo o Brasil</div>
         <div class="col"><i class="fa-solid fa-shield-halved"></i> Compra segura</div>
         <div class="col"><i class="fa-solid fa-headset"></i> Suporte ao cliente</div>
-        <div class="col"><i class="fa-solid fa-screwdriver-wrench"></i> Ferramentas profissionais</div>
       </div>
     </div>
   </div>
@@ -29,6 +29,9 @@
         <h5>{{ text_service }}</h5>
         <ul class="list-unstyled">
           <li><a href="{{ contact }}">{{ text_contact }}</a></li>
+          {% if whatsapp_url %}
+            <li><a href="{{ whatsapp_url }}" target="_blank" rel="noopener noreferrer">{{ whatsapp_label }}</a></li>
+          {% endif %}
           <li><a href="{{ return }}">{{ text_return }}</a></li>
           {% if gdpr %}
             <li><a href="{{ gdpr }}">{{ text_gdpr }}</a></li>
@@ -60,6 +63,12 @@
     <p class="footer-miig-copy">{{ powered }}</p>
   </div>
 </footer>
+{% if whatsapp_url %}
+  <a href="{{ whatsapp_url }}" class="miig-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="{{ whatsapp_label }}" title="{{ whatsapp_label }}">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    <span class="miig-whatsapp-label">{{ whatsapp_label }}</span>
+  </a>
+{% endif %}
 </div>
 {{ cookie }}
 <script src="{{ bootstrap }}" type="text/javascript"></script>

@@ -39,7 +39,7 @@ class Footer extends \Opencart\System\Engine\Controller {
 		}
 
 		$data['contact'] = $this->url->link('information/contact', 'language=' . $this->config->get('config_language'));
-		$data['return'] = $this->url->link('account/returns.add', 'language=' . $this->config->get('config_language'));
+		$data['return'] = $this->url->link('information/information', 'language=' . $this->config->get('config_language') . '&information_id=6');
 
 		if ($this->config->get('config_gdpr_id')) {
 			$data['gdpr'] = $this->url->link('information/gdpr', 'language=' . $this->config->get('config_language'));
@@ -86,6 +86,10 @@ class Footer extends \Opencart\System\Engine\Controller {
 		$data['bootstrap'] = 'catalog/view/javascript/bootstrap/js/bootstrap.bundle.min.js';
 		$data['scripts'] = $this->document->getScripts('footer');
 		$data['cookie'] = $this->load->controller('common/cookie');
+
+		// Floating WhatsApp contact
+		$data['whatsapp_url'] = 'https://wa.me/551122360122?text=' . rawurlencode('Olá! Vim pelo site da MIIGTOOLS e gostaria de mais informações.');
+		$data['whatsapp_label'] = $this->language->get('text_whatsapp');
 
 		return $this->load->view('common/footer', $data);
 	}
