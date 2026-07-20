@@ -525,6 +525,73 @@ if ($db_host === '') {
 
 		echo "bootstrap-db: SEO keywords pt-br (produtos novos: {$product_seo_count}, categorias novas: {$category_seo_count})\n";
 
+		// Home: destaques com preço no content_top; remove slideshow de foto solta.
+		$home_layout_id = 0;
+		$layout_res = $mysqli->query(
+			"SELECT `layout_id` FROM `{$db_prefix}layout_route` WHERE `route` = 'common/home' AND `store_id` = 0 LIMIT 1"
+		);
+
+		if ($layout_res && ($layout_row = $layout_res->fetch_assoc())) {
+			$home_layout_id = (int) $layout_row['layout_id'];
+		}
+
+		if ($home_layout_id > 0) {
+			$mysqli->query(
+				"DELETE FROM `{$db_prefix}layout_module`
+				WHERE `layout_id` = {$home_layout_id}
+				AND `code` LIKE 'opencart.banner.%'"
+			);
+
+			$mysqli->query(
+				"DELETE FROM `{$db_prefix}layout_module`
+				WHERE `layout_id` = {$home_layout_id}
+				AND `position` = 'content_top'
+				AND `code` <> 'opencart.featured.2'"
+			);
+
+			$featured_exists = $mysqli->query(
+				"SELECT `layout_module_id` FROM `{$db_prefix}layout_module`
+				WHERE `layout_id` = {$home_layout_id} AND `code` = 'opencart.featured.2' LIMIT 1"
+			);
+
+			if ($featured_exists && $featured_exists->num_rows > 0) {
+				$mysqli->query(
+					"UPDATE `{$db_prefix}layout_module`
+					SET `position` = 'content_top', `sort_order` = 0
+					WHERE `layout_id` = {$home_layout_id} AND `code` = 'opencart.featured.2'"
+				);
+			} else {
+				$mysqli->query(
+					"INSERT INTO `{$db_prefix}layout_module` (`layout_id`, `code`, `position`, `sort_order`)
+					VALUES ({$home_layout_id}, 'opencart.featured.2', 'content_top', 0)"
+				);
+			}
+
+			echo "bootstrap-db: home layout → featured no content_top (sem banner)\n";
+		}
+
+		$featured_setting = json_encode([
+			'name'         => 'Destaques',
+			'product_name' => '',
+			'product'      => ['2', '3', '5', '7', '28', '198', '201', '186'],
+			'axis'         => 'horizontal',
+			'limit'        => '8',
+			'width'        => '400',
+			'height'       => '400',
+			'status'       => '1',
+		], JSON_UNESCAPED_UNICODE);
+
+		$featured_stmt = $mysqli->prepare(
+			"UPDATE `{$db_prefix}module` SET `setting` = ? WHERE `module_id` = 2 AND `code` = 'opencart.featured'"
+		);
+
+		if ($featured_stmt) {
+			$featured_stmt->bind_param('s', $featured_setting);
+			$featured_stmt->execute();
+			$featured_stmt->close();
+			echo "bootstrap-db: módulo Featured atualizado (produtos com preço)\n";
+		}
+
 		$mysqli->query(
 			"INSERT IGNORE INTO `{$db_prefix}extension` (`extension`, `type`, `code`) VALUES ('opencart', 'payment', 'bank_transfer')"
 		);
