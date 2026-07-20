@@ -310,7 +310,7 @@ if ($db_host === '') {
 <p>To deliver efficient solutions and products that exceed our customers\' expectations, with the convenience of online shopping and close support.</p>
 <p>Our goal is to make communication easy! Contact us on WhatsApp for news and special offers.</p>'],
 			[5, 2, '<p><strong>MIIGTOOLS</strong> é uma loja online especializada em ferramentas de corte para usinagem e manutenção industrial. Atendemos oficinas mecânicas, ferramentarias e indústrias que precisam de produtos confiáveis no dia a dia.</p>
-<p>Trabalhamos com ferramentas fabricadas conforme normas internacionais, em aço rápido com cobalto, oferecendo maior resistência a altas temperaturas e ao desgaste.</p>
+<p>Trabalhamos com ferramentas fabricadas conforme normas internacionais, em aço rápido e em aço com cobalto, oferecendo maior resistência a altas temperaturas e ao desgaste.</p>
 <h3>Nossa missão</h3>
 <p>Oferecer soluções eficientes e produtos que superam as expectativas dos nossos clientes, com praticidade de compra online e atendimento próximo.</p>
 <p>Nosso objetivo é facilitar a comunicação com você! Entre em contato pelo WhatsApp e fique por dentro das novidades e condições especiais.</p>'],

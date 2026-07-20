@@ -22,7 +22,7 @@ $_['text_vp_4_text']  = 'Porta Recartilhas interno, simples, duplo e triplo idea
 
 $_['text_about_title']      = 'Sobre a MIIGTOOLS';
 $_['text_about_lead']       = 'Especialistas em ferramentas de corte para usinagem e manutenção industrial.';
-$_['text_about_body']       = 'A MIIGTOOLS atende oficinas mecânicas, ferramentarias e indústrias que precisam de ferramentas confiáveis no dia a dia. Trabalhamos com produtos fabricados conforme normas internacionais, em aço rápido com cobalto, oferecendo maior resistência a altas temperaturas e ao desgaste.';
+$_['text_about_body']       = 'A MIIGTOOLS atende oficinas mecânicas, ferramentarias e indústrias que precisam de ferramentas confiáveis no dia a dia. Trabalhamos com produtos fabricados conforme normas internacionais, em aço rápido e em aço com cobalto, oferecendo maior resistência a altas temperaturas e ao desgaste.';
 $_['text_about_highlight']  = 'Nosso objetivo é facilitar a comunicação com você! Entre em contato pelo WhatsApp e fique por dentro das novidades e condições especiais.';
 $_['text_about_bullet_1']   = 'Fabricação conforme normas DIN';
 $_['text_about_bullet_2']   = 'Aço rápido com cobalto para alto desempenho';
