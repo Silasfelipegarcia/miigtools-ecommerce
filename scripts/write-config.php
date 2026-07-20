@@ -117,6 +117,93 @@ function bootstrap_seo_url(\mysqli $mysqli, string $prefix, int $store_id, int $
 	}
 }
 
+function miig_privacy_html_path(string $basename): string {
+	$dir_opencart = rtrim(env('DIR_OPENCART', '/var/www/html/'), '/') . '/';
+
+	$candidates = [
+		$dir_opencart . 'system/miigtools/' . $basename,
+		'/usr/local/share/miigtools/' . $basename,
+		dirname(__DIR__) . '/scripts/' . $basename,
+		__DIR__ . '/' . $basename,
+	];
+
+	foreach ($candidates as $path) {
+		if (is_file($path)) {
+			return $path;
+		}
+	}
+
+	return '';
+}
+
+function bootstrap_privacy_policy(\mysqli $mysqli, string $db_prefix): void {
+	$pt_path = miig_privacy_html_path('privacy-policy-pt-br.html');
+	$en_path = miig_privacy_html_path('privacy-policy-en-gb.html');
+
+	if ($pt_path === '' || $en_path === '') {
+		echo "bootstrap-db: política de privacidade HTML não encontrada (mantém stub)\n";
+
+		return;
+	}
+
+	$pt_html = trim((string) file_get_contents($pt_path));
+	$en_html = trim((string) file_get_contents($en_path));
+
+	if ($pt_html === '' || $en_html === '') {
+		echo "bootstrap-db: política de privacidade HTML vazia\n";
+
+		return;
+	}
+
+	$info_table = $db_prefix . 'information_description';
+	$mysqli->query(
+		"INSERT IGNORE INTO `{$db_prefix}information` (`information_id`, `sort_order`, `status`) VALUES (3, 4, 1)"
+	);
+	$mysqli->query(
+		"INSERT IGNORE INTO `{$db_prefix}information_to_store` (`information_id`, `store_id`) VALUES (3, 0)"
+	);
+
+	$meta_pt = 'Política de Privacidade da MIIGTOOLS conforme a LGPD (Lei 13.709/2018): dados coletados, finalidades, bases legais, cookies, compartilhamento e direitos do titular.';
+	$meta_en = 'MIIGTOOLS Privacy Policy under Brazil LGPD: data collected, purposes, legal bases, cookies, sharing and data subject rights.';
+	$kw_pt = 'privacidade, LGPD, proteção de dados, cookies, MIIGTOOLS';
+	$kw_en = 'privacy, LGPD, data protection, cookies, MIIGTOOLS';
+
+	$stmt = $mysqli->prepare(
+		"INSERT INTO `{$info_table}` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`)
+		VALUES (3, ?, ?, ?, ?, ?, ?)
+		ON DUPLICATE KEY UPDATE
+			`title` = VALUES(`title`),
+			`description` = VALUES(`description`),
+			`meta_title` = VALUES(`meta_title`),
+			`meta_description` = VALUES(`meta_description`),
+			`meta_keyword` = VALUES(`meta_keyword`)"
+	);
+
+	if (!$stmt) {
+		echo "bootstrap-db: falha ao preparar política de privacidade\n";
+
+		return;
+	}
+
+	$lang_id = 2;
+	$title = 'Política de Privacidade';
+	$meta_title = 'Política de Privacidade | MIIGTOOLS';
+	$stmt->bind_param('isssss', $lang_id, $title, $pt_html, $meta_title, $meta_pt, $kw_pt);
+	$stmt->execute();
+
+	$lang_id = 1;
+	$title = 'Privacy Policy';
+	$meta_title = 'Privacy Policy | MIIGTOOLS';
+	$stmt->bind_param('isssss', $lang_id, $title, $en_html, $meta_title, $meta_en, $kw_en);
+	$stmt->execute();
+	$stmt->close();
+
+	bootstrap_setting($mysqli, $db_prefix . 'setting', 'config', 'config_cookie_id', '3', 0);
+	bootstrap_setting($mysqli, $db_prefix . 'setting', 'config', 'config_gdpr_id', '0', 0);
+
+	echo "bootstrap-db: Política de Privacidade LGPD completa (id 3, " . strlen($pt_html) . " bytes pt-br)\n";
+}
+
 function write_php_config(string $path, array $defines): void {
 	$lines = ['<?php'];
 
@@ -371,7 +458,6 @@ if ($db_host === '') {
 
 		$info_pages = [
 			[2, 'Termos e Condições', '<p>Termos e condições de uso da loja MIIGTOOLS. Ao comprar, você concorda com as regras de pagamento, entrega e trocas descritas nesta página.</p>', 'Termos e Condições | MIIGTOOLS'],
-			[3, 'Política de Privacidade', '<p>A MIIGTOOLS respeita sua privacidade. Utilizamos seus dados (nome, e-mail, CPF/CNPJ, telefone e endereço) apenas para processar pedidos, emitir notas e melhorar nosso atendimento, conforme a LGPD.</p>', 'Política de Privacidade | MIIGTOOLS'],
 			[4, 'Informações de Entrega', '<p>Enviamos para todo o Brasil. O prazo e o valor do frete são calculados no checkout conforme o CEP e o peso dos produtos.</p>', 'Entrega | MIIGTOOLS'],
 			[6, 'Trocas e Devoluções', '<p>Todos os nossos produtos possuem garantia fornecida diretamente pelos fabricantes, com prazos e condições que podem variar de acordo com cada item e estarão informados na página do produto. Em caso de devolução, o produto deverá ser enviado em sua embalagem original, acompanhado de todos os acessórios e sem sinais de mau uso. Caso seja constatada utilização inadequada, os custos envolvidos poderão ficar sob responsabilidade do comprador. Para mais informações sobre garantias, trocas ou devoluções, entre em contato conosco por um de nossos canais de atendimento.</p>', 'Trocas e Devoluções | MIIGTOOLS'],
 		];
@@ -389,8 +475,10 @@ if ($db_host === '') {
 			}
 
 			$info_insert->close();
-			echo "bootstrap-db: páginas institucionais pt-br (2-4, 6)\n";
+			echo "bootstrap-db: páginas institucionais pt-br (2, 4, 6)\n";
 		}
+
+		bootstrap_privacy_policy($mysqli, $db_prefix);
 
 		$mysqli->query(
 			"INSERT IGNORE INTO `{$db_prefix}information` (`information_id`, `sort_order`, `status`) VALUES (6, 5, 1)"
