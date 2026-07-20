@@ -13,7 +13,8 @@
   </div>
 </section>
 
-<div id="common-home" class="miig-home-modules">
+{# Destaques com preço logo após o hero (sem carousel de foto solta). #}
+<div id="common-home" class="miig-home-modules miig-home-modules--featured">
   <div class="container">
     {{ content_top }}
   </div>
@@ -41,11 +42,13 @@
   </div>
 </section>
 
+{% if content_bottom %}
 <div class="miig-home-modules miig-home-modules--bottom">
   <div class="container">
     {{ content_bottom }}
   </div>
 </div>
+{% endif %}
 
 <section class="miig-about" aria-labelledby="miig-about-title">
   <div class="container">

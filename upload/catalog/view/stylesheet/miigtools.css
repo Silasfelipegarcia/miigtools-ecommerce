@@ -1354,10 +1354,15 @@
   border-right-color: var(--miig-elevated-2) !important;
 }
 
-/* Home — módulos (banner, featured) */
+/* Home — módulos (featured com preço após o hero) */
 .theme-miigtools .miig-home-modules {
   background: transparent;
   padding: 1.5rem 0 0.5rem;
+}
+
+.theme-miigtools .miig-home-modules--featured {
+  padding-top: 0.75rem;
+  padding-bottom: 1.25rem;
 }
 
 .theme-miigtools .miig-home-modules--bottom {
@@ -1368,6 +1373,11 @@
 .theme-miigtools #common-home .container,
 .theme-miigtools .miig-home-modules .container {
   background: transparent;
+}
+
+/* Banner / carousel — escondido na home (destaques com preço no lugar) */
+.theme-miigtools .miig-home-modules--featured .miig-section--banner {
+  display: none;
 }
 
 /* Banner / carousel */
