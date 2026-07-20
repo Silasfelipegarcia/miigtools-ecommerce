@@ -61,24 +61,25 @@ ON DUPLICATE KEY UPDATE
 
 INSERT IGNORE INTO ws_information_to_store (information_id, store_id) VALUES ({INFORMATION_ID}, 0);
 
-UPDATE ws_setting SET value = '{INFORMATION_ID}', serialized = 0
+UPDATE ws_setting SET value = '0', serialized = 0
 WHERE `key` = 'config_gdpr_id' AND store_id = 0;
 
 UPDATE ws_setting SET value = '{INFORMATION_ID}', serialized = 0
 WHERE `key` = 'config_cookie_id' AND store_id = 0;
 
 INSERT INTO ws_setting (store_id, code, `key`, value, serialized)
-SELECT 0, 'config', 'config_gdpr_id', '{INFORMATION_ID}', 0
-FROM DUAL
-WHERE NOT EXISTS (
-  SELECT 1 FROM ws_setting WHERE `key` = 'config_gdpr_id' AND store_id = 0
-);
-
-INSERT INTO ws_setting (store_id, code, `key`, value, serialized)
 SELECT 0, 'config', 'config_cookie_id', '{INFORMATION_ID}', 0
 FROM DUAL
 WHERE NOT EXISTS (
   SELECT 1 FROM ws_setting WHERE `key` = 'config_cookie_id' AND store_id = 0
+);
+
+-- Mantém GDPR/LGPD request form DESLIGADO (só a página de política)
+INSERT INTO ws_setting (store_id, code, `key`, value, serialized)
+SELECT 0, 'config', 'config_gdpr_id', '0', 0
+FROM DUAL
+WHERE NOT EXISTS (
+  SELECT 1 FROM ws_setting WHERE `key` = 'config_gdpr_id' AND store_id = 0
 );
 
 SELECT information_id, language_id, title, CHAR_LENGTH(description) AS chars
