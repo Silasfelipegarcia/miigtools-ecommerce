@@ -32,6 +32,8 @@ COPY upload/php.ini ${PHP_INI_DIR}/conf.d/opencart.ini
 COPY scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
 COPY scripts/write-config.php /usr/local/bin/write-config.php
 COPY scripts/update-store-url.sh /usr/local/bin/update-store-url.sh
+COPY scripts/privacy-policy-pt-br.html /usr/local/share/miigtools/privacy-policy-pt-br.html
+COPY scripts/privacy-policy-en-gb.html /usr/local/share/miigtools/privacy-policy-en-gb.html
 RUN chmod +x /usr/local/bin/entrypoint.sh /usr/local/bin/write-config.php /usr/local/bin/update-store-url.sh
 
 RUN chown -R www-data:www-data ${DIR_OPENCART} ${DIR_STORAGE} \

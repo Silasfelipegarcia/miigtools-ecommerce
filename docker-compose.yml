@@ -7,6 +7,8 @@ services:
       - ./upload:/var/www/html
       - ./storage:/storage
       - ./scripts/write-config.php:/usr/local/bin/write-config.php:ro
+      - ./scripts/privacy-policy-pt-br.html:/usr/local/share/miigtools/privacy-policy-pt-br.html:ro
+      - ./scripts/privacy-policy-en-gb.html:/usr/local/share/miigtools/privacy-policy-en-gb.html:ro
       - ./scripts/local-entrypoint.sh:/usr/local/bin/local-entrypoint.sh:ro
     environment:
       DIR_OPENCART: /var/www/html/
