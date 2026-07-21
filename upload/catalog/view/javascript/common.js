@@ -71,14 +71,17 @@ $(document).ready(function() {
                 var element = this;
 
                 if (state == 'loading') {
-                    this.html = $(element).html();
-                    this.state = $(element).prop('disabled');
+                    $(element).data('oc-btn-html', $(element).html());
+                    $(element).data('oc-btn-disabled', $(element).prop('disabled'));
 
-                    $(element).prop('disabled', true).width($(element).width()).html('<i class="fa-solid fa-circle-notch fa-spin text-light"></i>');
+                    $(element).prop('disabled', true).width($(element).width()).html('<i class="fa-solid fa-circle-notch fa-spin"></i>');
                 }
 
                 if (state == 'reset') {
-                    $(element).prop('disabled', this.state).width('').html(this.html);
+                    var html = $(element).data('oc-btn-html');
+                    var disabled = $(element).data('oc-btn-disabled');
+
+                    $(element).prop('disabled', disabled === true).width('').html(html !== undefined ? html : $(element).html());
                 }
             });
         };
@@ -467,29 +470,49 @@ $(document).ready(function() {
         });
     });
 
-    // Cookie Policy
-    $('#cookie button').on('click', function() {
+    // Cookie Policy (delegation + amp-safe URL; always dismiss on mobile even if AJAX fails)
+    $(document).on('click', '#cookie button', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
         var element = this;
+        var url = String($(element).val() || '').replaceAll('&amp;', '&');
+        var agree = url.indexOf('agree=1') !== -1 ? '1' : '0';
+
+        var dismiss = function() {
+            var maxAge = 60 * 60 * 24 * 365;
+            var secure = (location.protocol === 'https:') ? '; Secure' : '';
+            document.cookie = 'policy=' + agree + '; path=/; max-age=' + maxAge + '; SameSite=Lax' + secure;
+
+            $('#cookie').stop(true, true).fadeOut(300, function() {
+                $(this).remove();
+            });
+        };
+
+        if (!url) {
+            dismiss();
+            return;
+        }
 
         $.ajax({
-            url: $(this).val(),
+            url: url,
             type: 'get',
             dataType: 'json',
+            timeout: 8000,
+            cache: false,
             beforeSend: function() {
                 $(element).button('loading');
             },
             complete: function() {
                 $(element).button('reset');
             },
-            success: function(json) {
-                if (json['success']) {
-                    $('#cookie').fadeOut(400, function() {
-                        $('#cookie').remove();
-                    });
-                }
+            success: function() {
+                dismiss();
             },
             error: function(xhr, ajaxOptions, thrownError) {
                 console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                // Mobile Safari / rede instável: não deixa o usuário preso no banner
+                dismiss();
             }
         });
     });
