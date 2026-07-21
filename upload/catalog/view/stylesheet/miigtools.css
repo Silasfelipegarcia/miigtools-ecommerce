@@ -1377,26 +1377,35 @@
 }
 
 .theme-miigtools .product-thumb .image {
+  position: relative;
   aspect-ratio: 1 / 1;
   width: 100%;
-  background: #14141a;
+  flex: 0 0 auto;
+  background: #0a0a0c;
   border-radius: var(--miig-radius-lg) var(--miig-radius-lg) 0 0;
   overflow: hidden;
 }
 
 .theme-miigtools .product-thumb .image a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
+  background: #0a0a0c;
 }
 
 .theme-miigtools .product-thumb .image img {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
   object-fit: contain;
   object-position: center;
+  background: #0a0a0c;
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -2178,10 +2187,6 @@
 }
 
 /* Stock badge on product cards */
-.theme-miigtools .product-thumb .image {
-  position: relative;
-}
-
 .theme-miigtools .miig-stock-badge {
   position: absolute;
   top: 0.55rem;
