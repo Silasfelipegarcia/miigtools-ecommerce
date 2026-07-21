@@ -50,10 +50,10 @@ $(document).ready(function() {
         $(this.target).load(this.href);
     });
 
-    // Alert Fade
+    // Alert Fade — sucesso some sozinho; erros de validação ficam até o usuário fechar
     $('#alert').observe(function() {
         window.setTimeout(function() {
-            $('#alert .alert-dismissible').fadeTo(3000, 0, function() {
+            $('#alert .alert-dismissible').not('.alert-danger').fadeTo(3000, 0, function() {
                 $(this).remove();
             });
         }, 3000);
@@ -192,13 +192,71 @@ $(document).on('submit', 'form', function(e) {
                 }
 
                 if (typeof json['error'] == 'object') {
-                    if (json['error']['warning']) {
-                        $('#alert').prepend('<div class="alert alert-danger alert-dismissible"><i class="fa-solid fa-circle-exclamation"></i> ' + json['error']['warning'] + ' <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>');
-                    }
+                    var errorMessages = [];
+                    var firstErrorEl = null;
 
                     for (key in json['error']) {
-                        $('#input-' + key.replaceAll('_', '-')).addClass('is-invalid').find('.form-control, .form-select, .form-check-input, .form-check-label').addClass('is-invalid');
-                        $('#error-' + key.replaceAll('_', '-')).html(json['error'][key]).addClass('d-block');
+                        if (key === 'warning') {
+                            continue;
+                        }
+
+                        var inputId = '#input-' + key.replaceAll('_', '-');
+                        var errorId = '#error-' + key.replaceAll('_', '-');
+                        var $input = $(inputId);
+                        var $error = $(errorId);
+
+                        $input.addClass('is-invalid').find('.form-control, .form-select, .form-check-input, .form-check-label').addClass('is-invalid');
+                        $error.html(json['error'][key]).addClass('d-block');
+
+                        if (json['error'][key]) {
+                            errorMessages.push(json['error'][key]);
+                        }
+
+                        if (!firstErrorEl) {
+                            firstErrorEl = $error.length ? $error.get(0) : ($input.length ? $input.get(0) : null);
+                        }
+                    }
+
+                    var summaryTitle = json['error']['warning'] || 'Não foi possível salvar. Corrija os campos abaixo:';
+                    var summary = '<div class="alert alert-danger alert-dismissible"><i class="fa-solid fa-circle-exclamation"></i> <strong>' + summaryTitle + '</strong>';
+
+                    if (errorMessages.length) {
+                        summary += '<ul class="mb-0 mt-2">';
+                        errorMessages.forEach(function(msg) {
+                            summary += '<li>' + msg + '</li>';
+                        });
+                        summary += '</ul>';
+                    }
+
+                    summary += '<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>';
+                    $('#alert').prepend(summary);
+
+                    if (firstErrorEl) {
+                        var $pane = $(firstErrorEl).closest('.tab-pane');
+                        if ($pane.length && !$pane.hasClass('active')) {
+                            var paneId = $pane.attr('id');
+                            if (paneId) {
+                                $('a[href="#' + paneId + '"][data-bs-toggle="tab"]').tab('show');
+                            }
+                        }
+
+                        var $collapse = $(firstErrorEl).closest('.accordion-collapse');
+                        if ($collapse.length && !$collapse.hasClass('show')) {
+                            var collapseEl = $collapse.get(0);
+                            if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+                                bootstrap.Collapse.getOrCreateInstance(collapseEl, { toggle: false }).show();
+                            } else {
+                                $collapse.addClass('show');
+                            }
+                        }
+
+                        setTimeout(function() {
+                            firstErrorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            var $focus = $(firstErrorEl).closest('.row, .mb-3').find('input, select, textarea').filter(':visible').first();
+                            if ($focus.length) {
+                                $focus.trigger('focus');
+                            }
+                        }, 250);
                     }
                 }
 

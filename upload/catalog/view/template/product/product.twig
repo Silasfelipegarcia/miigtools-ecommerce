@@ -77,6 +77,7 @@
               {% endif %}
             </ul>
           {% endif %}
+          <p class="miig-pay-trust mb-3"><i class="fa-brands fa-pix" aria-hidden="true"></i> {{ text_pay_trust }}</p>
           {% if specs_flat %}
             <div class="miig-specs-card mb-3">
               <h3 class="h6 mb-2">{{ text_specs_title }}</h3>
@@ -323,24 +324,43 @@
                   <th>Produto</th>
                   <th class="text-end">Preço</th>
                   <th class="text-center">Estoque</th>
+                  <th class="text-center">{{ text_family_qty }}</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
                 {% for item in family_products %}
-                  <tr>
+                  <tr data-product-id="{{ item.product_id }}">
                     <td><strong>{{ item.medida }}</strong></td>
                     <td>{{ item.model }}</td>
                     <td><a href="{{ item.href }}">{{ item.name }}</a></td>
                     <td class="text-end">{{ item.price }}</td>
                     <td class="text-center">{% if item.quantity > 0 %}{{ item.quantity }}{% else %}—{% endif %}</td>
-                    <td class="text-end"><a href="{{ item.href }}" class="btn btn-sm btn-outline-primary">Ver</a></td>
+                    <td class="text-center" style="max-width:5rem">
+                      {% if item.can_cart %}
+                        <input type="number" class="form-control form-control-sm miig-family-qty" value="1" min="1" max="{{ item.quantity }}" aria-label="{{ text_family_qty }}"/>
+                      {% else %}
+                        —
+                      {% endif %}
+                    </td>
+                    <td class="text-end text-nowrap">
+                      {% if item.can_cart %}
+                        <button type="button" class="btn btn-sm btn-primary miig-family-add" data-product-id="{{ item.product_id }}">{{ button_family_cart }}</button>
+                      {% elseif item.whatsapp %}
+                        <a href="{{ item.whatsapp }}" class="btn btn-sm btn-outline-success" target="_blank" rel="noopener">{{ text_family_wa }}</a>
+                      {% else %}
+                        <a href="{{ item.href }}" class="btn btn-sm btn-outline-primary">Ver</a>
+                      {% endif %}
+                    </td>
                   </tr>
                 {% endfor %}
               </tbody>
             </table>
           </div>
         </div>
+      {% endif %}
+      {% if faq_href %}
+        <p class="mt-3 mb-4"><a href="{{ faq_href }}" class="miig-faq-link"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> {{ text_faq_link }}</a></p>
       {% endif %}
       {{ content_bottom }}
     </div>
@@ -524,6 +544,36 @@ $(document).ready(function() {
             },
             error: function() {
                 $out.html('<div class="alert alert-danger mb-0">Não foi possível calcular o frete agora.</div>');
+            }
+        });
+    });
+
+    $(document).on('click', '.miig-family-add', function() {
+        var $btn = $(this);
+        var productId = $btn.data('product-id');
+        var $row = $btn.closest('tr');
+        var qty = parseInt($row.find('.miig-family-qty').val(), 10) || 1;
+
+        $btn.prop('disabled', true);
+
+        $.ajax({
+            url: '{{ cart_add }}',
+            type: 'post',
+            data: { product_id: productId, quantity: qty },
+            dataType: 'json',
+            success: function(json) {
+                if (json['error']) {
+                    var msg = typeof json['error'] === 'string' ? json['error'] : Object.values(json['error']).join(' ');
+                    $('#alert').prepend('<div class="alert alert-danger alert-dismissible"><i class="fa-solid fa-circle-exclamation"></i> ' + msg + ' <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>');
+                }
+
+                if (json['success']) {
+                    $('#alert').prepend('<div class="alert alert-success alert-dismissible"><i class="fa-solid fa-circle-check"></i> ' + json['success'] + ' <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>');
+                    $('#cart').load('index.php?route=common/cart.info&language={{ language }}');
+                }
+            },
+            complete: function() {
+                $btn.prop('disabled', false);
             }
         });
     });

@@ -40,3 +40,12 @@ $_['text_about_stat_4_value'] = 'BR';
 $_['text_about_stat_4_label'] = 'Todo o Brasil';
 $_['text_about_cta']        = 'Fale conosco';
 $_['text_about_cta_info']   = 'Saiba mais';
+
+$_['text_social_title'] = 'Oficinas e ferramentarias';
+$_['text_social_lead']  = 'Quem compra ferramenta de usinagem precisa de medida certa, estoque e resposta rápida.';
+$_['text_social_q1']    = 'Achei o macho pela medida e norma no filtro — sem ficar caçando no catálogo PDF.';
+$_['text_social_a1']    = 'Ferramentaria · Grande SP';
+$_['text_social_q2']    = 'CEP no produto já mostrou o frete. Fechei no site e tirei a dúvida residual no WhatsApp.';
+$_['text_social_a2']    = 'Oficina mecânica · Interior SP';
+$_['text_social_q3']    = 'Recompra dos bits pela conta é o que a gente precisa no dia a dia da produção.';
+$_['text_social_a3']    = 'Manutenção industrial · BR';

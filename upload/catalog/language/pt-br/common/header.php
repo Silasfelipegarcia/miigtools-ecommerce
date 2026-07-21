@@ -12,5 +12,5 @@ $_['text_transaction']   = 'Transações';
 $_['text_download']      = 'Arquivos para download';
 $_['text_logout']        = 'Sair';
 $_['text_checkout']      = 'Finalizar pedido';
-$_['text_search']        = 'Busca';
+$_['text_search']        = 'Buscar por código, medida ou produto…';
 $_['text_all']           = 'Exibir';

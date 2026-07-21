@@ -143,9 +143,11 @@
           </tbody>
         </table>
       </div>
-      <div class="mb-3">
-        <button type="button" id="button-reorder-all" class="btn btn-primary">{{ button_reorder_all }}</button>
+      <div class="mb-3 miig-order-actions">
+        <button type="button" id="button-reorder-all" class="btn btn-primary"><i class="fa-solid fa-rotate-right"></i> {{ button_reorder_all }}</button>
+        <a href="{{ continue }}" class="btn btn-light">{{ button_continue }}</a>
       </div>
+      <p class="form-text">Itens sem estoque ou indisponíveis entram na contagem de falhas do resumo após a recompra.</p>
       {% if comment %}
         <div class="form-control mb-3" style="min-height: 64px;">
           <strong class="lead">{{ text_comment }}</strong>

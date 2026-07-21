@@ -1,7 +1,7 @@
 {{ header }}
 
 <section class="miig-hero" aria-labelledby="miig-hero-title">
-  <div class="miig-hero-bg" aria-hidden="true"></div>
+  <div class="miig-hero-bg{% if hero_images %} miig-hero-bg--photos{% endif %}" aria-hidden="true"{% if hero_images %} style="--miig-hero-img: url('{{ hero_images[0] }}');{% if hero_images[1] %} --miig-hero-img-2: url('{{ hero_images[1] }}');{% endif %}"{% endif %}></div>
   <div class="container miig-hero-inner text-center">
     <p class="miig-hero-kicker">{{ hero_kicker }}</p>
     <h1 id="miig-hero-title" class="miig-hero-title">{{ hero_title }}</h1>
@@ -49,6 +49,25 @@
   </div>
 </div>
 {% endif %}
+
+<section class="miig-social" aria-labelledby="miig-social-title">
+  <div class="container py-4 py-lg-5">
+    <header class="text-center mb-4">
+      <h2 id="miig-social-title" class="miig-social-title">{{ social_title }}</h2>
+      <p class="miig-social-lead mb-0">{{ social_lead }}</p>
+    </header>
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+      {% for q in social_quotes %}
+        <div class="col">
+          <blockquote class="miig-social-card h-100">
+            <p class="miig-social-quote">{{ q.text }}</p>
+            <footer class="miig-social-author">{{ q.author }}</footer>
+          </blockquote>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
 <section class="miig-about" aria-labelledby="miig-about-title">
   <div class="container">

@@ -514,16 +514,35 @@ class Product extends \Opencart\System\Engine\Controller {
 				);
 
 				foreach ($family->rows as $row) {
+					$pid = (int)$row['product_id'];
+					$qty = (int)$row['quantity'];
+					$raw_price = (float)$row['price'];
+					$can_cart = $qty > 0 && $raw_price > 0;
+					$wa = 'https://wa.me/551122360122?text=' . rawurlencode(
+						'Olá! Vim pelo site da MIIGTOOLS e quero saber mais sobre: ' . $row['name'] . ' (modelo ' . $row['model'] . ').'
+					);
+
 					$data['family_products'][] = [
-						'name'     => $row['name'],
-						'model'    => $row['model'],
-						'medida'   => $row['medida'] ?: '-',
-						'quantity' => (int)$row['quantity'],
-						'price'    => $this->currency->format($this->tax->calculate((float)$row['price'], $row['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']),
-						'href'     => $this->url->link('product/product', 'language=' . $this->config->get('config_language') . '&product_id=' . (int)$row['product_id'])
+						'product_id' => $pid,
+						'name'       => $row['name'],
+						'model'      => $row['model'],
+						'medida'     => $row['medida'] ?: '-',
+						'quantity'   => $qty,
+						'can_cart'   => $can_cart,
+						'whatsapp'   => $can_cart ? '' : $wa,
+						'price'      => $this->currency->format($this->tax->calculate($raw_price, $row['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']),
+						'href'       => $this->url->link('product/product', 'language=' . $this->config->get('config_language') . '&product_id=' . $pid)
 					];
 				}
 			}
+
+			$data['text_pay_trust'] = $this->language->get('text_pay_trust');
+			$data['button_family_cart'] = $this->language->get('button_family_cart');
+			$data['text_family_qty'] = $this->language->get('text_family_qty');
+			$data['text_family_wa'] = $this->language->get('text_family_wa');
+			$data['text_faq_link'] = $this->language->get('text_faq_link');
+			$data['faq_href'] = $this->url->link('information/information', 'language=' . $this->config->get('config_language') . '&information_id=16');
+			$data['cart_add'] = $this->url->link('checkout/cart.add', 'language=' . $this->config->get('config_language'));
 
 			$data['related'] = $this->load->controller('product/related');
 

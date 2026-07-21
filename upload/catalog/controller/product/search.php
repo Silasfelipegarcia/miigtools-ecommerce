@@ -484,4 +484,88 @@ class Search extends \Opencart\System\Engine\Controller {
 
 		$this->response->setOutput($this->load->view('product/search', $data));
 	}
+
+	/**
+	 * Autocomplete for header search (SKU / medida / nome).
+	 */
+	public function autocomplete(): void {
+		$this->load->helper('miig_search');
+		$this->load->model('catalog/product');
+
+		$json = [];
+		$search = trim((string)($this->request->get['search'] ?? ''));
+
+		if (oc_strlen($search) >= 2) {
+			$expanded = miig_expand_search_query($search);
+
+			$filter_data = [
+				'filter_search' => $expanded !== '' ? $expanded : $search,
+				'filter_tag'    => $expanded !== '' ? $expanded : $search,
+				'sort'          => 'pd.name',
+				'order'         => 'ASC',
+				'start'         => 0,
+				'limit'         => 8
+			];
+
+			$results = $this->model_catalog_product->getProducts($filter_data);
+
+			if (!$results && $expanded !== '' && $expanded !== $search) {
+				$filter_data['filter_search'] = $search;
+				$filter_data['filter_tag'] = $search;
+				$results = $this->model_catalog_product->getProducts($filter_data);
+			}
+
+			$lang_id = (int)$this->config->get('config_language_id');
+
+			foreach ($results as $result) {
+				if ((float)$result['price'] <= 0) {
+					continue;
+				}
+
+				$medida = '';
+				$attr = $this->db->query(
+					"SELECT pa.`text` FROM `" . DB_PREFIX . "product_attribute` pa
+					 JOIN `" . DB_PREFIX . "attribute_description` ad ON ad.`attribute_id` = pa.`attribute_id` AND ad.`language_id` = '" . $lang_id . "'
+					 WHERE pa.`product_id` = '" . (int)$result['product_id'] . "' AND pa.`language_id` = '" . $lang_id . "'
+					   AND ad.`name` IN ('Medida','Size','Equivalente','Cross-ref')
+					 ORDER BY FIELD(ad.`name`,'Medida','Size','Equivalente','Cross-ref')
+					 LIMIT 1"
+				);
+
+				if ($attr->num_rows) {
+					$medida = $attr->row['text'];
+				}
+
+				$price = $this->currency->format(
+					$this->tax->calculate((float)$result['price'], $result['tax_class_id'], $this->config->get('config_tax')),
+					$this->session->data['currency']
+				);
+
+				$parts = [$result['name']];
+
+				if ($result['model']) {
+					$parts[] = $result['model'];
+				}
+
+				if ($medida) {
+					$parts[] = $medida;
+				}
+
+				$parts[] = $price;
+
+				if ((int)$result['quantity'] > 0) {
+					$parts[] = (int)$result['quantity'] . ' un.';
+				}
+
+				$json[] = [
+					'label' => implode(' · ', $parts),
+					'href'  => $this->url->link('product/product', 'language=' . $this->config->get('config_language') . '&product_id=' . (int)$result['product_id']),
+					'name'  => $result['name']
+				];
+			}
+		}
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
 }
