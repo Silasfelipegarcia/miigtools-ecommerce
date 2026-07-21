@@ -140,11 +140,15 @@
           return;
         }
 
-        var html = '<ul class="list-unstyled mb-0">';
+        var html = '';
+        if (json.city || json.zone_code) {
+          html += '<p class="form-text mb-2">Entrega para ' + (json.city || '') + (json.zone_code ? ' / ' + json.zone_code : '') + '</p>';
+        }
+        html += '<ul class="list-unstyled mb-0">';
         (json.quotes || []).forEach(function(q) {
-          html += '<li><strong>' + q.title + '</strong>: ' + q.text;
+          html += '<li class="mb-1"><strong>' + (q.title || 'Frete') + '</strong>: ' + q.text;
           if (q.eta) {
-            html += ' · ' + q.eta;
+            html += '<br/><span class="form-text">' + q.eta + '</span>';
           }
           html += '</li>';
         });
