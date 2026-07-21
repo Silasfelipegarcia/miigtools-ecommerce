@@ -24,6 +24,13 @@ $_['text_week']                  = 'week';
 $_['text_semi_month']            = 'half-month';
 $_['text_month']                 = 'month';
 $_['text_year']                  = 'year';
+$_['text_whatsapp_product']      = 'Ask on WhatsApp';
+$_['text_specs_title']           = 'Technical specs';
+$_['text_ship_title']            = 'Estimate shipping';
+$_['entry_postcode']             = 'Postcode';
+$_['button_ship_quote']          = 'Calculate';
+$_['text_ship_hint']             = 'Enter your postcode to see estimated shipping and lead time.';
+$_['text_related_family']        = 'Other sizes in this line';
 
 // Entry
 $_['entry_qty']                  = 'Qty';

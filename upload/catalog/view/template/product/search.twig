@@ -91,7 +91,19 @@
           <div class="col-sm-6 text-end">{{ results }}</div>
         </div>
       {% else %}
-        <p>{{ text_no_results }}</p>
+        <div class="miig-search-zero">
+          <p>{{ text_no_results }}</p>
+          {% if search %}
+            <p>{{ text_zero_help }}</p>
+            <p class="mb-2">{{ text_zero_categories }}</p>
+            <ul class="list-inline mb-3">
+              {% for cat in zero_category_links %}
+                <li class="list-inline-item"><a href="{{ cat.href }}" class="btn btn-sm btn-outline-secondary">{{ cat.name }}</a></li>
+              {% endfor %}
+            </ul>
+            <a href="{{ whatsapp_zero_url }}" class="btn btn-success" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> {{ text_zero_whatsapp }}</a>
+          {% endif %}
+        </div>
       {% endif %}
       {{ content_bottom }}
     </div>

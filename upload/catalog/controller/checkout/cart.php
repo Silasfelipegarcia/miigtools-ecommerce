@@ -210,6 +210,13 @@ class Cart extends \Opencart\System\Engine\Controller {
 			$data['continue'] = $this->url->link('common/home', 'language=' . $this->config->get('config_language'));
 		}
 
+		$data['text_ship_title'] = $this->language->get('text_ship_title');
+		$data['entry_postcode'] = $this->language->get('entry_postcode');
+		$data['button_ship_quote'] = $this->language->get('button_ship_quote');
+		$data['text_ship_hint'] = $this->language->get('text_ship_hint');
+		$data['shipping_quote'] = $this->url->link('extension/miigtools/module/shipping_quote', 'language=' . $this->config->get('config_language'));
+		$data['language'] = $this->config->get('config_language');
+
 		return $this->load->view('checkout/cart_list', $data);
 	}
 

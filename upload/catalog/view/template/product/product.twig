@@ -77,6 +77,29 @@
               {% endif %}
             </ul>
           {% endif %}
+          {% if specs_flat %}
+            <div class="miig-specs-card mb-3">
+              <h3 class="h6 mb-2">{{ text_specs_title }}</h3>
+              <dl class="miig-specs-list mb-0">
+                {% for spec in specs_flat %}
+                  <div class="miig-specs-row"><dt>{{ spec.name }}</dt><dd>{{ spec.text }}</dd></div>
+                {% endfor %}
+              </dl>
+            </div>
+          {% endif %}
+          <div class="miig-ship-quote mb-3" data-quote-url="{{ shipping_quote }}">
+            <h3 class="h6 mb-2">{{ text_ship_title }}</h3>
+            <p class="form-text mb-2">{{ text_ship_hint }}</p>
+            <div class="input-group mb-2">
+              <span class="input-group-text">{{ entry_postcode }}</span>
+              <input type="text" inputmode="numeric" maxlength="9" class="form-control" id="input-product-cep" placeholder="00000-000" autocomplete="postal-code"/>
+              <button type="button" class="btn btn-outline-primary" id="button-product-cep">{{ button_ship_quote }}</button>
+            </div>
+            <div id="product-cep-result" class="miig-ship-result" hidden></div>
+          </div>
+          <div class="mb-3">
+            <a href="{{ whatsapp_product_url }}" class="btn btn-success w-100" target="_blank" rel="noopener" id="miig-wa-product"><i class="fa-brands fa-whatsapp"></i> {{ text_whatsapp_product }}</a>
+          </div>
           <form method="post" data-oc-toggle="ajax">
             <div class="btn-group">
               <button type="submit" formaction="{{ wishlist_add }}" data-bs-toggle="tooltip" class="btn btn-light btn-lg" title="{{ button_wishlist }}"><i class="fa-solid fa-heart"></i></button>
@@ -288,6 +311,37 @@
         {% endif %}
       </div>
       {{ related }}
+      {% if family_products %}
+        <div class="miig-family-matrix mt-4 mb-4">
+          <h3 class="h5">{{ text_related_family }}</h3>
+          <div class="table-responsive">
+            <table class="table table-sm table-striped align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>Medida</th>
+                  <th>Modelo</th>
+                  <th>Produto</th>
+                  <th class="text-end">Preço</th>
+                  <th class="text-center">Estoque</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in family_products %}
+                  <tr>
+                    <td><strong>{{ item.medida }}</strong></td>
+                    <td>{{ item.model }}</td>
+                    <td><a href="{{ item.href }}">{{ item.name }}</a></td>
+                    <td class="text-end">{{ item.price }}</td>
+                    <td class="text-center">{% if item.quantity > 0 %}{{ item.quantity }}{% else %}—{% endif %}</td>
+                    <td class="text-end"><a href="{{ item.href }}" class="btn btn-sm btn-outline-primary">Ver</a></td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      {% endif %}
       {{ content_bottom }}
     </div>
     {{ column_right }}
@@ -413,6 +467,61 @@ $(document).ready(function() {
         gallery: {
             enabled: true
         }
+    });
+
+    function formatCep(value) {
+        var digits = String(value || '').replace(/\D/g, '').slice(0, 8);
+        if (digits.length > 5) {
+            return digits.slice(0, 5) + '-' + digits.slice(5);
+        }
+        return digits;
+    }
+
+    $('#input-product-cep').on('input', function() {
+        this.value = formatCep(this.value);
+    });
+
+    $('#button-product-cep').on('click', function() {
+        var $box = $('.miig-ship-quote');
+        var $out = $('#product-cep-result');
+        var cep = $('#input-product-cep').val().replace(/\D/g, '');
+
+        if (cep.length !== 8) {
+            $out.prop('hidden', false).html('<div class="alert alert-warning mb-0">Informe um CEP válido com 8 dígitos.</div>');
+            return;
+        }
+
+        $out.prop('hidden', false).html('<div class="text-muted">Calculando...</div>');
+
+        $.ajax({
+            url: $box.data('quote-url'),
+            type: 'post',
+            data: { postcode: cep },
+            dataType: 'json',
+            success: function(json) {
+                if (json.error) {
+                    $out.html('<div class="alert alert-warning mb-0">' + json.error + '</div>');
+                    return;
+                }
+
+                var html = '<ul class="list-unstyled mb-0">';
+                (json.quotes || []).forEach(function(q) {
+                    html += '<li><strong>' + q.title + '</strong>: ' + q.text;
+                    if (q.eta) {
+                        html += ' · ' + q.eta;
+                    }
+                    html += '</li>';
+                });
+                html += '</ul>';
+                if (json.hint) {
+                    html += '<p class="form-text mb-0 mt-2">' + json.hint + '</p>';
+                }
+                $out.html(html);
+            },
+            error: function() {
+                $out.html('<div class="alert alert-danger mb-0">Não foi possível calcular o frete agora.</div>');
+            }
+        });
     });
 });
 //--></script>

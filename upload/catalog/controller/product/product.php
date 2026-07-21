@@ -460,6 +460,71 @@ class Product extends \Opencart\System\Engine\Controller {
 
 			$data['attribute_groups'] = $this->model_catalog_product->getAttributes($product_id);
 
+			$data['specs_flat'] = [];
+
+			foreach ($data['attribute_groups'] as $group) {
+				foreach ($group['attribute'] as $attribute) {
+					$data['specs_flat'][] = [
+						'name' => $attribute['name'],
+						'text' => $attribute['text']
+					];
+				}
+			}
+
+			$wa_text = 'Olá! Vim pelo site da MIIGTOOLS e quero saber mais sobre: ' . $product_info['name'] . ' (modelo ' . $product_info['model'] . ').';
+			$data['whatsapp_product_url'] = 'https://wa.me/551122360122?text=' . rawurlencode($wa_text);
+			$data['text_whatsapp_product'] = $this->language->get('text_whatsapp_product');
+			$data['text_specs_title'] = $this->language->get('text_specs_title');
+			$data['text_ship_title'] = $this->language->get('text_ship_title');
+			$data['entry_postcode'] = $this->language->get('entry_postcode');
+			$data['button_ship_quote'] = $this->language->get('button_ship_quote');
+			$data['text_ship_hint'] = $this->language->get('text_ship_hint');
+			$data['shipping_quote'] = $this->url->link('extension/miigtools/module/shipping_quote', 'language=' . $this->config->get('config_language'));
+
+			$data['family_products'] = [];
+			$data['text_related_family'] = $this->language->get('text_related_family');
+			$tipo_text = '';
+
+			foreach ($data['specs_flat'] as $spec) {
+				if (in_array($spec['name'], ['Tipo', 'Type'], true)) {
+					$tipo_text = $spec['text'];
+					break;
+				}
+			}
+
+			if ($tipo_text !== '') {
+				$lang_id = (int)$this->config->get('config_language_id');
+				$family = $this->db->query(
+					"SELECT p.`product_id`, pd.`name`, p.`model`, p.`price`, p.`quantity`, p.`tax_class_id`,
+						(SELECT pa2.`text` FROM `" . DB_PREFIX . "product_attribute` pa2
+						 JOIN `" . DB_PREFIX . "attribute_description` ad2 ON ad2.`attribute_id` = pa2.`attribute_id` AND ad2.`language_id` = '" . $lang_id . "'
+						 WHERE pa2.`product_id` = p.`product_id` AND pa2.`language_id` = '" . $lang_id . "' AND ad2.`name` IN ('Medida','Size')
+						 LIMIT 1) AS `medida`
+					 FROM `" . DB_PREFIX . "product_attribute` pa
+					 JOIN `" . DB_PREFIX . "attribute_description` ad ON ad.`attribute_id` = pa.`attribute_id` AND ad.`language_id` = '" . $lang_id . "'
+					 JOIN `" . DB_PREFIX . "product` p ON p.`product_id` = pa.`product_id` AND p.`status` = '1'
+					 JOIN `" . DB_PREFIX . "product_to_store` p2s ON p2s.`product_id` = p.`product_id` AND p2s.`store_id` = '" . (int)$this->config->get('config_store_id') . "'
+					 JOIN `" . DB_PREFIX . "product_description` pd ON pd.`product_id` = p.`product_id` AND pd.`language_id` = '" . $lang_id . "'
+					 WHERE pa.`language_id` = '" . $lang_id . "'
+					   AND ad.`name` IN ('Tipo','Type')
+					   AND pa.`text` = '" . $this->db->escape($tipo_text) . "'
+					   AND p.`product_id` <> '" . (int)$product_id . "'
+					 ORDER BY `medida` ASC, pd.`name` ASC
+					 LIMIT 24"
+				);
+
+				foreach ($family->rows as $row) {
+					$data['family_products'][] = [
+						'name'     => $row['name'],
+						'model'    => $row['model'],
+						'medida'   => $row['medida'] ?: '-',
+						'quantity' => (int)$row['quantity'],
+						'price'    => $this->currency->format($this->tax->calculate((float)$row['price'], $row['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']),
+						'href'     => $this->url->link('product/product', 'language=' . $this->config->get('config_language') . '&product_id=' . (int)$row['product_id'])
+					];
+				}
+			}
+
 			$data['related'] = $this->load->controller('product/related');
 
 			$data['tags'] = [];

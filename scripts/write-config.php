@@ -616,6 +616,13 @@ if ($db_host === '') {
 
 		echo "bootstrap-db: SEO keywords pt-br (produtos novos: {$product_seo_count}, categorias novas: {$category_seo_count})\n";
 
+		$specs_file = $dir_opencart . 'system/miigtools/bootstrap_specs.php';
+
+		if (is_file($specs_file)) {
+			require_once $specs_file;
+			bootstrap_catalog_specs($mysqli, $db_prefix);
+		}
+
 		// Home: destaques com preço no content_top; remove slideshow de foto solta.
 		$home_layout_id = 0;
 		$layout_res = $mysqli->query(

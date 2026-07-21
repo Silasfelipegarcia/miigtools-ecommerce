@@ -28,6 +28,9 @@ $_['text_rating_desc']  = 'Avaliação (maior)';
 $_['text_model_asc']    = 'Modelo (A - Z)';
 $_['text_model_desc']   = 'Modelo (Z - A)';
 $_['text_limit']        = 'Exibir:';
+$_['text_zero_help']    = 'Não encontramos esse item. Tente o modelo/SKU, a medida (ex.: M8, CM3) ou um sinônimo (macho, ponta rotativa, bits).';
+$_['text_zero_whatsapp'] = 'Pedir ajuda no WhatsApp';
+$_['text_zero_categories'] = 'Ou navegue pelas categorias:';
 
 // Entry
 $_['entry_search']      = 'Critérios da pesquisa:';
