@@ -495,7 +495,7 @@ class Product extends \Opencart\System\Engine\Controller {
 			if ($tipo_text !== '') {
 				$lang_id = (int)$this->config->get('config_language_id');
 				$family = $this->db->query(
-					"SELECT p.`product_id`, pd.`name`, p.`model`, p.`price`, p.`quantity`, p.`tax_class_id`,
+					"SELECT p.`product_id`, pd.`name`, p.`model`, p.`image`, p.`price`, p.`quantity`, p.`tax_class_id`,
 						(SELECT pa2.`text` FROM `" . DB_PREFIX . "product_attribute` pa2
 						 JOIN `" . DB_PREFIX . "attribute_description` ad2 ON ad2.`attribute_id` = pa2.`attribute_id` AND ad2.`language_id` = '" . $lang_id . "'
 						 WHERE pa2.`product_id` = p.`product_id` AND pa2.`language_id` = '" . $lang_id . "' AND ad2.`name` IN ('Medida','Size')
@@ -522,8 +522,13 @@ class Product extends \Opencart\System\Engine\Controller {
 						'Olá! Vim pelo site da MIIGTOOLS e quero saber mais sobre: ' . $row['name'] . ' (modelo ' . $row['model'] . ').'
 					);
 
+					$image_path = !empty($row['image']) && is_file(DIR_IMAGE . html_entity_decode($row['image'], ENT_QUOTES, 'UTF-8'))
+						? $row['image']
+						: 'placeholder.png';
+
 					$data['family_products'][] = [
 						'product_id' => $pid,
+						'thumb'      => $this->model_tool_image->resize($image_path, 72, 72),
 						'name'       => $row['name'],
 						'model'      => $row['model'],
 						'medida'     => $row['medida'] ?: '-',

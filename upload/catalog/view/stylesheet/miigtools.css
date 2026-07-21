@@ -947,6 +947,41 @@
   margin: 0 auto;
 }
 
+.miig-family-matrix .miig-family-col-img {
+  width: 4.5rem;
+  padding-right: 0.35rem !important;
+}
+
+.miig-family-matrix .miig-family-thumb {
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: #0a0a0c;
+  border: 1px solid var(--miig-edge);
+  border-radius: 0.35rem;
+  overflow: hidden;
+}
+
+.miig-family-matrix .miig-family-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #0a0a0c;
+}
+
+@media (max-width: 575.98px) {
+  .miig-family-matrix .miig-family-col-img {
+    width: 3.25rem;
+  }
+
+  .miig-family-matrix .miig-family-thumb {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
 .theme-miigtools .miig-hero-bg--photos {
   background:
     linear-gradient(165deg, rgba(24, 24, 31, 0.88) 0%, rgba(30, 30, 40, 0.78) 45%, rgba(24, 24, 31, 0.92) 100%),
