@@ -698,12 +698,12 @@ if ($db_host === '') {
 		$bank_en = "Account holder: MIIGTOOLS\nBank: [update in admin]\nBranch: [update]\nAccount: [update]\nPIX: [update]";
 
 		$payment_bootstrap = [
-			['payment_cod', 'payment_cod_status', '1'],
+			['payment_cod', 'payment_cod_status', '0'],
 			['payment_cod', 'payment_cod_sort_order', '1'],
 			['payment_cod', 'payment_cod_order_status_id', '1'],
 			['payment_cod', 'payment_cod_geo_zone_id', '0'],
 			['payment_bank_transfer', 'payment_bank_transfer_status', '1'],
-			['payment_bank_transfer', 'payment_bank_transfer_sort_order', '2'],
+			['payment_bank_transfer', 'payment_bank_transfer_sort_order', '1'],
 			['payment_bank_transfer', 'payment_bank_transfer_order_status_id', '1'],
 			['payment_bank_transfer', 'payment_bank_transfer_geo_zone_id', '0'],
 			['payment_bank_transfer', 'payment_bank_transfer_bank_2', $bank_pt],
@@ -714,7 +714,7 @@ if ($db_host === '') {
 			bootstrap_setting($mysqli, $table, $code, $key, $value, 0);
 		}
 
-		echo "bootstrap-db: pagamentos checkout (COD + transferência bancária)\n";
+		echo "bootstrap-db: pagamentos checkout (transferência bancária; COD desativado)\n";
 
 		// Frete: desativa flat R$5 e ativa PAC/SEDEX (origem Imirim/SP)
 		$mysqli->query(

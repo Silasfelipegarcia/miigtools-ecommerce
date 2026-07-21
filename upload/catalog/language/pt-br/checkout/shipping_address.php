@@ -3,8 +3,9 @@
 $_['heading_title'] = 'Endereço de entrega';
 
 // Text
-$_['text_address_new']      = 'Quero usar um novo endereço';
-$_['text_address_existing'] = 'Quero usar um endereço já cadastrado';
+$_['text_address_new']      = 'Usar outro endereço';
+$_['text_address_existing'] = 'Usar endereço cadastrado';
+$_['text_address_change']   = 'Trocar endereço';
 $_['text_success']          = 'Sucesso: endereço de entrega alterado!';
 
 // Entry
