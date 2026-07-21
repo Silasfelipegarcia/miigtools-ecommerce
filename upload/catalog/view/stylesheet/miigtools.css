@@ -977,24 +977,26 @@
 
 .miig-social-card {
   margin: 0;
-  padding: 1.25rem 1.35rem;
-  background: var(--miig-elevated);
-  border: 1px solid var(--miig-edge);
-  border-radius: var(--miig-radius-md);
+  padding: 0 0 0 1.15rem;
+  background: transparent;
+  border: none;
+  border-left: 2px solid var(--miig-gold-mid);
+  border-radius: 0;
 }
 
 .miig-social-quote {
   color: var(--miig-text);
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 0.85rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  margin-bottom: 0.75rem;
 }
 
 .miig-social-author {
+  margin: 0;
   color: var(--miig-gold-mid);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
