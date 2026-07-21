@@ -28,9 +28,16 @@ class PaymentAddress extends \Opencart\System\Engine\Controller {
 
 		if (isset($this->session->data['payment_address']['address_id'])) {
 			$data['address_id'] = $this->session->data['payment_address']['address_id'];
+		} elseif ($data['addresses']) {
+			$default_id = (int)$this->customer->getAddressId();
+			$data['address_id'] = $default_id ?: (int)array_key_first($data['addresses']);
 		} else {
 			$data['address_id'] = 0;
 		}
+
+		$data['text_address_new'] = $this->language->get('text_address_new');
+		$data['text_address_existing'] = $this->language->get('text_address_existing');
+		$data['entry_address'] = $this->language->get('entry_address');
 
 		// Country
 		$data['country_id'] = (int)$this->config->get('config_country_id');
