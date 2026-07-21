@@ -10,6 +10,18 @@
       </div>
     </div>
   </div>
+  <div class="footer-miig-pay">
+    <div class="container">
+      <p class="footer-miig-pay-title">{{ text_pay_title }}</p>
+      <ul class="footer-miig-pay-list list-unstyled mb-0">
+        <li><i class="fa-brands fa-pix" aria-hidden="true"></i> {{ text_pay_pix }}</li>
+        <li><i class="fa-solid fa-wallet" aria-hidden="true"></i> {{ text_pay_mp }}</li>
+        <li><i class="fa-regular fa-credit-card" aria-hidden="true"></i> {{ text_pay_card }}</li>
+        <li><i class="fa-solid fa-building-columns" aria-hidden="true"></i> {{ text_pay_transfer }}</li>
+        <li><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> {{ text_ship_br }}</li>
+      </ul>
+    </div>
+  </div>
   <div class="container">
     <div class="row">
       {% if informations or blog %}
@@ -47,8 +59,21 @@
             <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
           {% endif %}
           <li><a href="{{ special }}">{{ text_special }}</a></li>
+          {% if faq_href %}
+            <li><a href="{{ faq_href }}">{{ text_faq }}</a></li>
+          {% endif %}
         </ul>
       </div>
+      {% if applications %}
+        <div class="col-sm-3">
+          <h5>{{ text_applications }}</h5>
+          <ul class="list-unstyled">
+            {% for app in applications %}
+              <li><a href="{{ app.href }}">{{ app.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
       <div class="col-sm-3">
         <h5>{{ text_account }}</h5>
         <ul class="list-unstyled">

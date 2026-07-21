@@ -119,6 +119,53 @@ class Home extends \Opencart\System\Engine\Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
+		// Hero: imagens reais do catálogo (produto-led)
+		$data['hero_images'] = [];
+		$this->load->model('catalog/product');
+		$this->load->model('tool/image');
+
+		$hero_products = $this->model_catalog_product->getProducts([
+			'sort'  => 'p.viewed',
+			'order' => 'DESC',
+			'start' => 0,
+			'limit' => 6
+		]);
+
+		foreach ($hero_products as $hp) {
+			if (count($data['hero_images']) >= 2) {
+				break;
+			}
+
+			if (empty($hp['image']) || (float)$hp['price'] <= 0) {
+				continue;
+			}
+
+			$path = html_entity_decode($hp['image'], ENT_QUOTES, 'UTF-8');
+
+			if (!is_file(DIR_IMAGE . $path)) {
+				continue;
+			}
+
+			$data['hero_images'][] = $this->model_tool_image->resize($path, 1200, 800);
+		}
+
+		$data['social_title'] = $this->language->get('text_social_title');
+		$data['social_lead'] = $this->language->get('text_social_lead');
+		$data['social_quotes'] = [
+			[
+				'text'   => $this->language->get('text_social_q1'),
+				'author' => $this->language->get('text_social_a1'),
+			],
+			[
+				'text'   => $this->language->get('text_social_q2'),
+				'author' => $this->language->get('text_social_a2'),
+			],
+			[
+				'text'   => $this->language->get('text_social_q3'),
+				'author' => $this->language->get('text_social_a3'),
+			],
+		];
+
 		$this->response->setOutput($this->load->view('common/home', $data));
 	}
 }

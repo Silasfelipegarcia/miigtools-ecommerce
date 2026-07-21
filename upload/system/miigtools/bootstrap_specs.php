@@ -129,6 +129,7 @@ function bootstrap_catalog_specs(\mysqli $mysqli, string $db_prefix): void {
 		'material' => ['Material', 'Material', 3],
 		'tipo'     => ['Tipo', 'Type', 4],
 		'cm'       => ['Cone Morse', 'Morse Taper', 5],
+		'xref'     => ['Equivalente', 'Cross-ref', 6],
 	];
 
 	$attr_ids = [];
@@ -223,6 +224,77 @@ function bootstrap_catalog_specs(\mysqli $mysqli, string $db_prefix): void {
 				$count++;
 			}
 		}
+	}
+
+	// Cross-ref: mesma medida+tipo → modelos irmãos (ex. 50% ↔ 10% Co)
+	if (!empty($attr_ids['xref']) && !empty($attr_ids['tipo']) && !empty($attr_ids['medida'])) {
+		$xref_id = (int) $attr_ids['xref'];
+		$tipo_id = (int) $attr_ids['tipo'];
+		$medida_id = (int) $attr_ids['medida'];
+		$families = [];
+
+		$fq = $mysqli->query(
+			"SELECT p.product_id, p.model,
+				(SELECT pa.`text` FROM `{$p}product_attribute` pa
+				 WHERE pa.product_id = p.product_id AND pa.attribute_id = {$tipo_id} AND pa.language_id = 2 LIMIT 1) AS tipo,
+				(SELECT pa.`text` FROM `{$p}product_attribute` pa
+				 WHERE pa.product_id = p.product_id AND pa.attribute_id = {$medida_id} AND pa.language_id = 2 LIMIT 1) AS medida
+			 FROM `{$p}product` p
+			 WHERE p.status = 1 AND p.price > 0 AND p.model <> ''"
+		);
+
+		if ($fq) {
+			while ($fr = $fq->fetch_assoc()) {
+				$tipo = trim((string) $fr['tipo']);
+				$medida = trim((string) $fr['medida']);
+
+				if ($tipo === '' || $medida === '') {
+					continue;
+				}
+
+				$key = $tipo . '|' . $medida;
+				$families[$key][] = [
+					'product_id' => (int) $fr['product_id'],
+					'model'      => (string) $fr['model'],
+				];
+			}
+		}
+
+		$xref_n = 0;
+
+		foreach ($families as $members) {
+			if (count($members) < 2) {
+				continue;
+			}
+
+			foreach ($members as $self) {
+				$others = [];
+
+				foreach ($members as $m) {
+					if ($m['product_id'] !== $self['product_id']) {
+						$others[] = $m['model'];
+					}
+				}
+
+				$text = implode(', ', array_slice($others, 0, 4));
+				$esc = $mysqli->real_escape_string($text);
+				$pid = $self['product_id'];
+
+				$mysqli->query(
+					"INSERT INTO `{$p}product_attribute` (product_id, attribute_id, language_id, text)
+					 VALUES ({$pid}, {$xref_id}, 2, '{$esc}')
+					 ON DUPLICATE KEY UPDATE text = VALUES(text)"
+				);
+				$mysqli->query(
+					"INSERT INTO `{$p}product_attribute` (product_id, attribute_id, language_id, text)
+					 VALUES ({$pid}, {$xref_id}, 1, '{$esc}')
+					 ON DUPLICATE KEY UPDATE text = VALUES(text)"
+				);
+				$xref_n++;
+			}
+		}
+
+		echo "bootstrap-specs: cross-ref em {$xref_n} produtos\n";
 	}
 
 	// Expose filters only on categories that actually contain matching products

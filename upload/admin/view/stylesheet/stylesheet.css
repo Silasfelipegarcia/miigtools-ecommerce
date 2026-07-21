@@ -899,6 +899,25 @@ td {
     --miig-gold-bright: #f3e7c8;
     --miig-text: #ebe6dc;
     --miig-muted: #aeb6c4;
+
+    /* Bootstrap tokens → identidade MIIG (evita painéis brancos) */
+    --bs-body-bg: var(--miig-bg);
+    --bs-body-bg-rgb: 24, 24, 31;
+    --bs-body-color: var(--miig-text);
+    --bs-body-color-rgb: 235, 230, 220;
+    --bs-secondary-color: var(--miig-muted);
+    --bs-secondary-bg: var(--miig-elevated);
+    --bs-tertiary-bg: var(--miig-elevated-2);
+    --bs-border-color: var(--miig-edge);
+    --bs-border-color-translucent: var(--miig-edge);
+    --bs-heading-color: var(--miig-gold-bright);
+    --bs-link-color: var(--miig-gold-bright);
+    --bs-link-hover-color: #ffffff;
+    --bs-emphasis-color: var(--miig-text);
+    --bs-form-control-bg: var(--miig-elevated-2);
+    --bs-form-valid-border-color: #5cb85c;
+    --bs-form-invalid-color: #ff6b6b;
+    --bs-form-invalid-border-color: #e45847;
 }
 
 body {
@@ -921,6 +940,11 @@ a:hover {
 #header {
     border-bottom: 1px solid var(--miig-border);
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+    background: linear-gradient(170deg, var(--miig-surface) 0%, var(--miig-bg) 100%) !important;
+}
+
+#header.navbar-light,
+#header.bg-light {
     background: linear-gradient(170deg, var(--miig-surface) 0%, var(--miig-bg) 100%) !important;
 }
 
@@ -1314,7 +1338,53 @@ small.text-muted {
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.38);
 }
 
-/* Modal de segurança */
+/* Modal de segurança + acordeões globais do admin */
+.accordion {
+    --bs-accordion-bg: var(--miig-elevated);
+    --bs-accordion-color: var(--miig-text);
+    --bs-accordion-border-color: var(--miig-edge);
+    --bs-accordion-btn-bg: var(--miig-elevated-2);
+    --bs-accordion-btn-color: var(--miig-text);
+    --bs-accordion-active-bg: rgba(212, 175, 55, 0.1);
+    --bs-accordion-active-color: var(--miig-gold-bright);
+    --bs-accordion-btn-focus-border-color: var(--miig-gold-mid);
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.2);
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23d4af37'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23f3e7c8'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-item {
+    background: var(--miig-elevated) !important;
+    border-color: var(--miig-edge) !important;
+    color: var(--miig-text);
+}
+
+.accordion-button {
+    background: var(--miig-elevated-2) !important;
+    color: var(--miig-text) !important;
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background: rgba(212, 175, 55, 0.1) !important;
+    color: var(--miig-gold-bright) !important;
+    border-bottom-color: var(--miig-edge) !important;
+}
+
+.accordion-button:focus {
+    border-color: var(--miig-gold-mid);
+    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.2) !important;
+}
+
+.accordion-button::after {
+    filter: none;
+}
+
+.accordion-body {
+    background: var(--miig-elevated) !important;
+    color: var(--miig-text) !important;
+}
+
 #modal-security .modal-content {
     border: 1px solid rgba(212, 175, 55, 0.25);
 }
@@ -1323,29 +1393,33 @@ small.text-muted {
     color: #f5b7b1 !important;
 }
 
-#modal-security .accordion-button {
-    background: var(--miig-elevated-2);
-    color: var(--miig-text);
-}
-
-#modal-security .accordion-button:not(.collapsed) {
-    color: var(--miig-gold-bright);
-    background: rgba(212, 175, 55, 0.08);
-}
-
-#modal-security .accordion-body {
-    background: var(--miig-elevated);
-    color: var(--miig-text);
-}
-
 #modal-security .form-label {
     color: var(--miig-text) !important;
 }
 
-/* Gráficos / mapa no dashboard */
-#content .card .card-header {
-    color: var(--miig-gold-bright);
-    font-weight: 700;
+/* Feedback de validação — bem visível no admin */
+.invalid-feedback.d-block {
+    display: block !important;
+    color: #ff8a8a !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+    padding: 0.45rem 0.65rem;
+    background: rgba(220, 53, 69, 0.16);
+    border: 1px solid rgba(228, 88, 71, 0.55);
+    border-radius: 0.35rem;
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid,
+div.form-control.is-invalid {
+    border-color: #e45847 !important;
+    box-shadow: 0 0 0 0.2rem rgba(228, 88, 71, 0.25) !important;
+    background-color: var(--miig-elevated-2) !important;
+}
+
+#alert .alert-danger ul {
+    padding-left: 1.2rem;
 }
 
 #vmap,
@@ -1354,3 +1428,221 @@ small.text-muted {
     color: var(--miig-text) !important;
     border: 1px solid var(--miig-edge) !important;
 }
+
+/* ---- Identidade global: matar restos do tema claro OpenCart ---- */
+#content {
+    background: transparent;
+    color: var(--miig-text);
+}
+
+#footer {
+    color: var(--miig-muted);
+}
+
+.page-header {
+    border-bottom-color: var(--miig-edge) !important;
+}
+
+.page-header h1 {
+    color: var(--miig-gold-bright) !important;
+    text-shadow: none !important;
+}
+
+.breadcrumb {
+    --bs-breadcrumb-divider-color: var(--miig-muted);
+}
+
+.breadcrumb-item,
+.breadcrumb-item a,
+.breadcrumb-item.active {
+    color: var(--miig-muted) !important;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--miig-gold-bright) !important;
+}
+
+legend {
+    color: var(--miig-gold-bright);
+    border-bottom-color: var(--miig-edge) !important;
+}
+
+.row.mb-3 + .row.mb-3:before {
+    border-bottom-color: var(--miig-edge) !important;
+}
+
+/* Tabs */
+.nav-tabs {
+    border-bottom-color: var(--miig-edge) !important;
+    --bs-nav-tabs-border-color: var(--miig-edge);
+    --bs-nav-tabs-link-hover-border-color: var(--miig-edge) var(--miig-edge) transparent;
+    --bs-nav-tabs-link-active-color: var(--miig-gold-bright);
+    --bs-nav-tabs-link-active-bg: var(--miig-elevated);
+    --bs-nav-tabs-link-active-border-color: var(--miig-edge) var(--miig-edge) var(--miig-elevated);
+}
+
+.nav-tabs .nav-link {
+    color: var(--miig-muted) !important;
+    background: transparent;
+    border-color: transparent;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus {
+    color: var(--miig-gold-bright) !important;
+    border-color: var(--miig-edge) var(--miig-edge) transparent !important;
+    isolation: isolate;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    color: var(--miig-gold-bright) !important;
+    background: var(--miig-elevated) !important;
+    border-color: var(--miig-edge) var(--miig-edge) var(--miig-elevated) !important;
+}
+
+.card {
+    --bs-card-bg: var(--miig-elevated);
+    --bs-card-color: var(--miig-text);
+    --bs-card-border-color: var(--miig-edge);
+    --bs-card-cap-bg: rgba(255, 255, 255, 0.03);
+}
+
+.card-body,
+.card-footer {
+    background: transparent;
+    color: var(--miig-text);
+}
+
+.modal-content {
+    --bs-modal-bg: var(--miig-elevated);
+    --bs-modal-color: var(--miig-text);
+    --bs-modal-border-color: var(--miig-edge);
+    --bs-modal-header-border-color: var(--miig-edge);
+    --bs-modal-footer-border-color: var(--miig-edge);
+}
+
+.modal-header,
+.modal-footer {
+    background: rgba(0, 0, 0, 0.14);
+    color: var(--miig-text);
+    border-color: var(--miig-edge) !important;
+}
+
+.modal-title {
+    color: var(--miig-gold-bright);
+}
+
+.modal-body {
+    background: var(--miig-elevated);
+    color: var(--miig-text);
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: 0.7;
+}
+
+/* Utilities Bootstrap claras usadas em templates OC */
+.bg-light,
+.bg-white,
+.card.bg-light,
+.table-light,
+.text-bg-light,
+.text-bg-white {
+    background-color: var(--miig-elevated-2) !important;
+    color: var(--miig-text) !important;
+}
+
+.border,
+.border-top,
+.border-bottom,
+.border-start,
+.border-end {
+    border-color: var(--miig-edge) !important;
+}
+
+.img-thumbnail {
+    background-color: var(--miig-elevated-2) !important;
+    border-color: var(--miig-edge) !important;
+}
+
+.form-check-label,
+.form-check-input {
+    color: var(--miig-text);
+}
+
+.form-check-input {
+    background-color: var(--miig-elevated-2);
+    border-color: rgba(255, 255, 255, 0.28);
+}
+
+.form-check-input:checked {
+    background-color: var(--miig-gold);
+    border-color: var(--miig-gold-dark);
+}
+
+.form-check-input:focus {
+    border-color: var(--miig-gold-mid);
+    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.2);
+}
+
+/* Multi-select de situações (div.form-control com checkboxes) */
+div.form-control {
+    background: var(--miig-elevated-2) !important;
+    border-color: rgba(255, 255, 255, 0.14) !important;
+    color: var(--miig-text) !important;
+}
+
+fieldset {
+    color: var(--miig-text);
+}
+
+hr {
+    border-color: var(--miig-edge);
+    opacity: 1;
+}
+
+.alert {
+    border-width: 1px;
+}
+
+.table-secondary,
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    --bs-table-bg-type: rgba(255, 255, 255, 0.03);
+}
+
+.offcanvas {
+    --bs-offcanvas-bg: var(--miig-elevated);
+    --bs-offcanvas-color: var(--miig-text);
+    --bs-offcanvas-border-color: var(--miig-edge);
+}
+
+.popover {
+    --bs-popover-bg: var(--miig-elevated);
+    --bs-popover-body-color: var(--miig-text);
+    --bs-popover-header-bg: var(--miig-elevated-2);
+    --bs-popover-header-color: var(--miig-gold-bright);
+    --bs-popover-border-color: var(--miig-edge);
+}
+
+.tooltip {
+    --bs-tooltip-bg: var(--miig-elevated-2);
+    --bs-tooltip-color: var(--miig-text);
+}
+
+/* CodeMirror / HTML editors no admin (quando presentes) */
+.CodeMirror,
+.note-editor.note-frame,
+.note-editor .note-toolbar,
+.note-editor .note-statusbar {
+    background: var(--miig-elevated-2) !important;
+    border-color: var(--miig-edge) !important;
+    color: var(--miig-text) !important;
+}
+
+.note-editor .note-editing-area .note-editable {
+    background: var(--miig-elevated) !important;
+    color: var(--miig-text) !important;
+}
+

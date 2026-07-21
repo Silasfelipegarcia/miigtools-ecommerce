@@ -1,3 +1,4 @@
 <?php
 // Text
-$_['text_all'] = 'Todos em';
+$_['text_category'] = 'Categorias';
+$_['text_all']      = 'Todos em';

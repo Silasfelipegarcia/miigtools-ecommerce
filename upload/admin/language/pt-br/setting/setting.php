@@ -184,7 +184,7 @@ $_['help_encryption']              = 'Chave secreta utilizada para encriptação
 $_['help_compression']             = 'Nível de compressão GZIP das páginas. O nível de compressão deve está entre 0 e 9. Só utilize se souber como funciona o GZIP.';
 
 // Error
-$_['error_warning']                = 'Atenção: Verifique se você preencheu todos os campos corretamente!';
+$_['error_warning']                = 'Não foi possível salvar — veja a lista abaixo e os campos destacados em vermelho.';
 $_['error_permission']             = 'Atenção: Você não tem permissão para modificar as lojas!';
 $_['error_meta_title']             = 'Meta título deve ter entre 3 e 32 caracteres!';
 $_['error_name']                   = 'Nome da loja deve ter entre 3 e 32 caracteres!';

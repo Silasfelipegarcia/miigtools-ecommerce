@@ -496,6 +496,59 @@ if ($db_host === '') {
 		);
 		echo "bootstrap-db: página Trocas e Devoluções (id 6)\n";
 
+		// Landings por aplicação + FAQ técnico
+		$app_pages = [
+			[10, 'Machos para aço', 'machos-para-aco', '59_63', 'Machos máquina e laminadores para usinagem em aço. Filtre por medida e norma DIN na categoria.', 'Machos para aço | MIIGTOOLS'],
+			[11, 'Bits para torno', 'bits-para-torno', '59_60', 'Bits quadrado HSS e cobalto para torno. Compare medidas na matriz do produto.', 'Bits para torno | MIIGTOOLS'],
+			[12, 'Pontas rotativas CM', 'pontas-rotativas-cm', '59_68', 'Pontas rotativas standard, tubular e copiadora — cone Morse CM2 a CM5.', 'Pontas rotativas CM | MIIGTOOLS'],
+			[13, 'Ferramentas DIN', 'ferramentas-din', '59', 'Catálogo com normas DIN nas fichas e filtros. Ideal para quem compra por especificação.', 'Ferramentas DIN | MIIGTOOLS'],
+			[14, 'Alargadores H7', 'alargadores-h7', '59_65', 'Alargadores manuais e de máquina conforme DIN, tolerância H7.', 'Alargadores H7 | MIIGTOOLS'],
+			[15, 'Porta-ferramentas', 'porta-ferramentas', '59_62', 'Porta bits, porta bedame e acessórios para fixação no torno.', 'Porta-ferramentas | MIIGTOOLS'],
+		];
+
+		foreach ($app_pages as [$iid, $title, $slug, $path, $lead, $meta]) {
+			$mysqli->query(
+				"INSERT IGNORE INTO `{$db_prefix}information` (`information_id`, `sort_order`, `status`) VALUES ({$iid}, " . (10 + $iid) . ", 1)"
+			);
+			$mysqli->query(
+				"INSERT IGNORE INTO `{$db_prefix}information_to_store` (`information_id`, `store_id`) VALUES ({$iid}, 0)"
+			);
+
+			$html = '<p>' . htmlspecialchars($lead, ENT_QUOTES, 'UTF-8') . '</p>'
+				. '<p><a href="index.php?route=product/category&amp;language=pt-br&amp;path=' . htmlspecialchars($path, ENT_QUOTES, 'UTF-8') . '">Ver produtos desta aplicação</a></p>'
+				. '<p>Prefere ajuda humana? <a href="https://wa.me/551122360122" target="_blank" rel="noopener">Fale no WhatsApp</a>.</p>';
+
+			$stmt = $mysqli->prepare(
+				"INSERT INTO `{$info_table}` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`)
+				 VALUES (?, 2, ?, ?, ?, ?, '')
+				 ON DUPLICATE KEY UPDATE `title` = VALUES(`title`), `description` = VALUES(`description`), `meta_title` = VALUES(`meta_title`), `meta_description` = VALUES(`meta_description`)"
+			);
+
+			if ($stmt) {
+				$stmt->bind_param('issss', $iid, $title, $html, $meta, $lead);
+				$stmt->execute();
+				$stmt->close();
+			}
+
+			bootstrap_seo_url($mysqli, $db_prefix, 0, 2, 'information_id', (string) $iid, $slug, 0);
+		}
+
+		$faq_html = '<h2>Normas DIN</h2><p>Quando a ficha indica DIN, a ferramenta segue a geometria e tolerâncias da norma citada (ex.: DIN 376 para machos).</p>'
+			. '<h2>HSS vs HSS com cobalto</h2><p>HSS (aço rápido) cobre a maioria das operações. Linhas com 10% Co resistem melhor a calor e materiais mais duros.</p>'
+			. '<h2>Cone Morse (CM)</h2><p>CM2–CM5 identificam o cone da ponta rotativa ou bucha. Confira o fuso da máquina antes de comprar.</p>'
+			. '<h2>Como medir</h2><p>Use a medida da ficha (polegada ou métrica) e a matriz “outras medidas desta linha” no produto para achar o irmão certo.</p>'
+			. '<h2>Frete e prazo</h2><p>Informe o CEP na página do produto para ver PAC/SEDEX a partir de Imirim/SP. Pedidos com estoque confirmados até 14h (SP) seguem no mesmo dia útil.</p>';
+
+		$mysqli->query("INSERT IGNORE INTO `{$db_prefix}information` (`information_id`, `sort_order`, `status`) VALUES (16, 20, 1)");
+		$mysqli->query("INSERT IGNORE INTO `{$db_prefix}information_to_store` (`information_id`, `store_id`) VALUES (16, 0)");
+		$mysqli->query(
+			"INSERT INTO `{$info_table}` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`)
+			 VALUES (16, 2, 'Dúvidas técnicas (FAQ)', '" . $mysqli->real_escape_string($faq_html) . "', 'FAQ técnico | MIIGTOOLS', 'DIN, HSS, cone Morse, frete e como escolher a medida.', '')
+			 ON DUPLICATE KEY UPDATE `title` = VALUES(`title`), `description` = VALUES(`description`), `meta_title` = VALUES(`meta_title`)"
+		);
+		bootstrap_seo_url($mysqli, $db_prefix, 0, 2, 'information_id', '16', 'faq-tecnico', 0);
+		echo "bootstrap-db: landings por aplicação (10–15) + FAQ técnico (16)\n";
+
 		bootstrap_setting($mysqli, $table, 'config', 'config_seo_url', '1', 0);
 		echo "bootstrap-db: config_seo_url → 1\n";
 
@@ -726,6 +779,70 @@ if ($db_host === '') {
 		bootstrap_setting($mysqli, $table, 'shipping_correios', 'shipping_correios_tax_class_id', '0', 0);
 		bootstrap_setting($mysqli, $table, 'config', 'config_postcode', '02465-000', 0);
 		echo "bootstrap-db: frete Correios PAC/SEDEX (origem Imirim/SP); flat desativado\n";
+
+		// Telefone da loja = mesmo número do WhatsApp comercial
+		bootstrap_setting($mysqli, $table, 'config', 'config_telephone', '(11) 2236-0122', 0);
+		echo "bootstrap-db: config_telephone = (11) 2236-0122\n";
+
+		// SKUs sem preço saem da vitrine (não inventar valor)
+		$zero_res = $mysqli->query(
+			"UPDATE `{$db_prefix}product` SET `status` = 0 WHERE `price` <= 0 AND `status` = 1"
+		);
+		$zero_n = $mysqli->affected_rows;
+		echo "bootstrap-db: produtos preço zero desativados ({$zero_n})\n";
+
+		// Situações de pedido (evita falha ao salvar Configurações)
+		$processing_ids = [];
+		$complete_ids = [];
+		// OpenCart 4: nome fica em order_status (por language_id), sem tabela description
+		$status_q = $mysqli->query(
+			"SELECT order_status_id, name FROM `{$db_prefix}order_status`"
+		);
+
+		if ($status_q) {
+			while ($s = $status_q->fetch_assoc()) {
+				$name = mb_strtolower((string) $s['name']);
+				$id = (int) $s['order_status_id'];
+
+				if (str_contains($name, 'process') || str_contains($name, 'pago') || str_contains($name, 'enviado') || str_contains($name, 'shipped')) {
+					$processing_ids[] = (string) $id;
+				}
+
+				if (str_contains($name, 'completo') || str_contains($name, 'complete') || str_contains($name, 'entregue') || str_contains($name, 'finaliz')) {
+					$complete_ids[] = (string) $id;
+				}
+			}
+		}
+
+		if (!$processing_ids) {
+			$processing_ids = ['2'];
+		}
+
+		if (!$complete_ids) {
+			$complete_ids = ['5'];
+		}
+
+		$proc_json = json_encode(array_values(array_unique($processing_ids)));
+		$comp_json = json_encode(array_values(array_unique($complete_ids)));
+
+		// Só preenche se estiver vazio (não sobrescreve escolha do admin)
+		$proc_check = $mysqli->query("SELECT value FROM `{$table}` WHERE `key` = 'config_processing_status' AND store_id = 0 LIMIT 1");
+		$proc_row = $proc_check ? $proc_check->fetch_assoc() : null;
+		$proc_val = $proc_row['value'] ?? '';
+
+		if ($proc_val === '' || $proc_val === '[]' || $proc_val === 'null') {
+			bootstrap_setting($mysqli, $table, 'config', 'config_processing_status', $proc_json, 1);
+		}
+
+		$comp_check = $mysqli->query("SELECT value FROM `{$table}` WHERE `key` = 'config_complete_status' AND store_id = 0 LIMIT 1");
+		$comp_row = $comp_check ? $comp_check->fetch_assoc() : null;
+		$comp_val = $comp_row['value'] ?? '';
+
+		if ($comp_val === '' || $comp_val === '[]' || $comp_val === 'null') {
+			bootstrap_setting($mysqli, $table, 'config', 'config_complete_status', $comp_json, 1);
+		}
+
+		echo "bootstrap-db: situações de pedido processando/finalizado garantidas\n";
 
 		$mp_token = '';
 		$mp_test = '';

@@ -1,4 +1,37 @@
-<form action="{{ action }}" method="post" class="input-group mb-3">
-	<input type="text" name="search" value="{{ search }}" placeholder="{{ text_search }}" class="form-control form-control-lg"/>
+<form action="{{ action }}" method="post" class="input-group mb-3 miig-search-form position-relative">
+	<input type="text" name="search" value="{{ search }}" placeholder="{{ text_search }}" id="miig-search-input" data-oc-target="miig-search-autocomplete" class="form-control form-control-lg" autocomplete="off"/>
 	<button type="submit" class="btn btn-light btn-lg"><i class="fa-solid fa-magnifying-glass"></i></button>
+	<ul id="miig-search-autocomplete" class="dropdown-menu w-100"></ul>
 </form>
+<script type="text/javascript"><!--
+$('#miig-search-input').autocomplete({
+	'source': function(request, response) {
+		if (!request || String(request).trim().length < 2) {
+			response([]);
+			return;
+		}
+
+		$.ajax({
+			url: 'index.php?route=product/search.autocomplete&language={{ language }}&search=' + encodeURIComponent(request),
+			dataType: 'json',
+			success: function(json) {
+				response($.map(json, function(item) {
+					return {
+						label: item.label,
+						value: item.href,
+						href: item.href
+					};
+				}));
+			},
+			error: function() {
+				response([]);
+			}
+		});
+	},
+	'select': function(item) {
+		if (item.href) {
+			location = item.href;
+		}
+	}
+});
+//--></script>
