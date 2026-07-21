@@ -20,7 +20,7 @@ $_['text_specs_title']         = 'Ficha técnica';
 $_['text_ship_title']          = 'Calcular frete e prazo';
 $_['entry_postcode']           = 'CEP';
 $_['button_ship_quote']        = 'Calcular';
-$_['text_ship_hint']           = 'Informe seu CEP para ver frete estimado e prazo.';
+$_['text_ship_hint']           = 'PAC e SEDEX a partir de Imirim, São Paulo (valores aproximados Correios).';
 $_['text_related_family']      = 'Outras medidas desta linha';
 $_['text_login']               = 'Você deve <a href="%s">acessar</a> ou <a href="%s">cadastrar-se</a> para comentar.';
 $_['text_no_reviews']          = 'Não há comentários para este produto.';

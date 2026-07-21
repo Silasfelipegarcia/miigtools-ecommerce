@@ -1650,21 +1650,57 @@
 }
 
 .theme-miigtools .miig-section--products .col,
-.theme-miigtools #product-list .col,
-.theme-miigtools #product-category .col,
-.theme-miigtools #product-search .col,
-.theme-miigtools #product-special .col,
-.theme-miigtools #product-manufacturer .col {
+.theme-miigtools #product-list > .col,
+.theme-miigtools #product-search #product-list > .col,
+.theme-miigtools #product-special #product-list > .col,
+.theme-miigtools #product-manufacturer #product-list > .col {
   display: flex;
 }
 
 .theme-miigtools .miig-section--products .product-thumb,
 .theme-miigtools #product-list .product-thumb,
-.theme-miigtools #product-category .product-thumb,
 .theme-miigtools #product-search .product-thumb,
 .theme-miigtools #product-special .product-thumb,
 .theme-miigtools #product-manufacturer .product-thumb {
   width: 100%;
+}
+
+/* Toolbar PLP: compare + sort — não herda flex das cols do grid */
+.theme-miigtools .miig-plp-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.theme-miigtools .miig-plp-toolbar__compare {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.theme-miigtools .miig-plp-toolbar__compare #compare-total {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+  width: auto;
+  max-width: 100%;
+}
+
+.theme-miigtools .miig-plp-toolbar__views {
+  flex: 0 0 auto;
+}
+
+.theme-miigtools .miig-plp-toolbar__sort,
+.theme-miigtools .miig-plp-toolbar__limit {
+  flex: 1 1 12rem;
+  min-width: 10rem;
+  margin-bottom: 0 !important;
+}
+
+.theme-miigtools .miig-plp-toolbar .input-group {
+  margin-bottom: 0 !important;
 }
 
 /* Parallax suave + entrada das seções */
@@ -2084,4 +2120,9 @@
 
 .theme-miigtools .miig-search-zero .btn {
   margin-bottom: 0.35rem;
+}
+
+/* No PDP o CTA contextual substitui o botão flutuante */
+.theme-miigtools:has(#miig-wa-product) .miig-whatsapp {
+  display: none !important;
 }

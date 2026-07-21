@@ -97,9 +97,6 @@
             </div>
             <div id="product-cep-result" class="miig-ship-result" hidden></div>
           </div>
-          <div class="mb-3">
-            <a href="{{ whatsapp_product_url }}" class="btn btn-success w-100" target="_blank" rel="noopener" id="miig-wa-product"><i class="fa-brands fa-whatsapp"></i> {{ text_whatsapp_product }}</a>
-          </div>
           <form method="post" data-oc-toggle="ajax">
             <div class="btn-group">
               <button type="submit" formaction="{{ wishlist_add }}" data-bs-toggle="tooltip" class="btn btn-light btn-lg" title="{{ button_wishlist }}"><i class="fa-solid fa-heart"></i></button>
@@ -253,6 +250,9 @@
                 {% if enforce_stock %}
                   <div class="form-text" id="product-stock-hint"{% if maximum == 0 %} style="display:none"{% endif %}>{{ text_stock }} <span id="product-stock-hint-value">{{ stock_quantity }}</span></div>
                 {% endif %}
+              </div>
+              <div class="mb-3">
+                <a href="{{ whatsapp_product_url }}" class="btn btn-outline-success w-100" target="_blank" rel="noopener" id="miig-wa-product"><i class="fa-brands fa-whatsapp"></i> {{ text_whatsapp_product }}</a>
               </div>
               {% if enforce_stock %}
                 <div id="product-stock-exhausted" class="alert alert-warning"{% if maximum > 0 %} style="display:none"{% endif %}><i class="fa-solid fa-circle-info"></i> {{ text_stock }} {{ text_out_of_stock }}</div>
@@ -504,11 +504,15 @@ $(document).ready(function() {
                     return;
                 }
 
-                var html = '<ul class="list-unstyled mb-0">';
+                var html = '';
+                if (json.city || json.zone_code) {
+                    html += '<p class="form-text mb-2">Entrega para ' + (json.city || '') + (json.zone_code ? ' / ' + json.zone_code : '') + '</p>';
+                }
+                html += '<ul class="list-unstyled mb-0">';
                 (json.quotes || []).forEach(function(q) {
-                    html += '<li><strong>' + q.title + '</strong>: ' + q.text;
+                    html += '<li class="mb-1"><strong>' + (q.title || 'Frete') + '</strong>: ' + q.text;
                     if (q.eta) {
-                        html += ' · ' + q.eta;
+                        html += '<br/><span class="form-text">' + q.eta + '</span>';
                     }
                     html += '</li>';
                 });

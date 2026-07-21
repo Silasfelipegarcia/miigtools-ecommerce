@@ -716,6 +716,17 @@ if ($db_host === '') {
 
 		echo "bootstrap-db: pagamentos checkout (COD + transferência bancária)\n";
 
+		// Frete: desativa flat R$5 e ativa PAC/SEDEX (origem Imirim/SP)
+		$mysqli->query(
+			"INSERT IGNORE INTO `{$db_prefix}extension` (`extension`, `type`, `code`) VALUES ('miigtools', 'shipping', 'correios')"
+		);
+		bootstrap_setting($mysqli, $table, 'shipping_flat', 'shipping_flat_status', '0', 0);
+		bootstrap_setting($mysqli, $table, 'shipping_correios', 'shipping_correios_status', '1', 0);
+		bootstrap_setting($mysqli, $table, 'shipping_correios', 'shipping_correios_sort_order', '1', 0);
+		bootstrap_setting($mysqli, $table, 'shipping_correios', 'shipping_correios_tax_class_id', '0', 0);
+		bootstrap_setting($mysqli, $table, 'config', 'config_postcode', '02465-000', 0);
+		echo "bootstrap-db: frete Correios PAC/SEDEX (origem Imirim/SP); flat desativado\n";
+
 		$mp_token = '';
 		$mp_test = '';
 
