@@ -319,6 +319,7 @@
             <table class="table table-sm table-striped align-middle mb-0">
               <thead>
                 <tr>
+                  <th class="miig-family-col-img"></th>
                   <th>Medida</th>
                   <th>Modelo</th>
                   <th>Produto</th>
@@ -331,6 +332,11 @@
               <tbody>
                 {% for item in family_products %}
                   <tr data-product-id="{{ item.product_id }}">
+                    <td class="miig-family-col-img">
+                      <a href="{{ item.href }}" class="miig-family-thumb" title="{{ item.name }}">
+                        <img src="{{ item.thumb }}" alt="{{ item.name }}" width="72" height="72" loading="lazy"/>
+                      </a>
+                    </td>
                     <td><strong>{{ item.medida }}</strong></td>
                     <td>{{ item.model }}</td>
                     <td><a href="{{ item.href }}">{{ item.name }}</a></td>
