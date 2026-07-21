@@ -19,7 +19,7 @@ $_['text_recipient_other'] = 'Entregar para outra pessoa';
 // Entry
 $_['entry_firstname']    = 'Nome';
 $_['entry_lastname']     = 'Sobrenome';
-$_['entry_company']      = 'Complemento';
+$_['entry_company']      = 'Razão social / Empresa';
 $_['entry_address_1']    = 'Endereço';
 $_['entry_address_2']    = 'Bairro';
 $_['entry_number']       = 'Número';

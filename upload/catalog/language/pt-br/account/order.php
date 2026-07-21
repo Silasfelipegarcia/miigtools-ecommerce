@@ -40,3 +40,4 @@ $_['column_comment']        = 'Comentário';
 
 // Error
 $_['error_reorder']         = '%s não está disponível em nosso estoque.';
+$_['button_reorder_all']    = 'Comprar todos novamente';

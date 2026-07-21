@@ -143,6 +143,9 @@
           </tbody>
         </table>
       </div>
+      <div class="mb-3">
+        <button type="button" id="button-reorder-all" class="btn btn-primary">{{ button_reorder_all }}</button>
+      </div>
       {% if comment %}
         <div class="form-control mb-3" style="min-height: 64px;">
           <strong class="lead">{{ text_comment }}</strong>
@@ -216,6 +219,51 @@ $('form').on('submit', function(e) {
             console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
         }
     });
+});
+
+$('#button-reorder-all').on('click', function() {
+    var $btn = $(this);
+    var forms = $('form[id^="form-product-"]').toArray();
+    var index = 0;
+    var ok = 0;
+    var fail = 0;
+
+    $btn.prop('disabled', true).button('loading');
+
+    function next() {
+        if (index >= forms.length) {
+            $btn.prop('disabled', false).button('reset');
+            $('#cart').load('index.php?route=common/cart.info&language={{ language }}');
+            $('#alert').prepend('<div class="alert alert-info alert-dismissible"><i class="fa-solid fa-circle-info"></i> Recompra: ' + ok + ' item(ns) adicionados' + (fail ? ', ' + fail + ' indisponível(is)' : '') + '. <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>');
+            return;
+        }
+
+        var form = forms[index++];
+
+        $.ajax({
+            url: 'index.php?route=checkout/cart.add&language={{ language }}',
+            type: 'post',
+            data: $(form).serialize(),
+            dataType: 'json',
+            cache: false,
+            processData: false,
+            complete: function() {
+                next();
+            },
+            success: function(json) {
+                if (json['success']) {
+                    ok++;
+                } else {
+                    fail++;
+                }
+            },
+            error: function() {
+                fail++;
+            }
+        });
+    }
+
+    next();
 });
 
 $('#history').on('click', '.pagination a', function(e) {

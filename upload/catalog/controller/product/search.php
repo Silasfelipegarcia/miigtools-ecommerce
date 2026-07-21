@@ -163,11 +163,15 @@ class Search extends \Opencart\System\Engine\Controller {
 
 		$data['products'] = [];
 
+		$search_original = $filter_search;
+		$this->load->helper('miig_search');
+		$filter_search_expanded = miig_expand_search_query($filter_search);
+
 		if ($filter_search || $filter_tag) {
 			$filter_data = [
-				'filter_search'       => $filter_search,
+				'filter_search'       => $filter_search_expanded !== '' ? $filter_search_expanded : $filter_search,
 				'filter_description'  => $filter_description,
-				'filter_tag'          => $filter_tag ? $filter_tag : $filter_search,
+				'filter_tag'          => $filter_tag ? $filter_tag : ($filter_search_expanded !== '' ? $filter_search_expanded : $filter_search),
 				'filter_category_id'  => $filter_category_id,
 				'filter_sub_category' => $filter_sub_category,
 				'sort'                => $sort,
@@ -183,6 +187,13 @@ class Search extends \Opencart\System\Engine\Controller {
 			$this->load->model('tool/image');
 
 			$results = $this->model_catalog_product->getProducts($filter_data);
+
+			// If synonym expansion found nothing, retry with the original query
+			if (!$results && $filter_search_expanded !== '' && $filter_search_expanded !== $search_original) {
+				$filter_data['filter_search'] = $search_original;
+				$filter_data['filter_tag'] = $filter_tag ? $filter_tag : $search_original;
+				$results = $this->model_catalog_product->getProducts($filter_data);
+			}
 
 			foreach ($results as $result) {
 				$description = trim(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')));
@@ -434,6 +445,18 @@ class Search extends \Opencart\System\Engine\Controller {
 		$data['limit'] = $limit;
 
 		$data['language'] = $this->config->get('config_language');
+
+		$data['text_zero_help'] = $this->language->get('text_zero_help');
+		$data['text_zero_whatsapp'] = $this->language->get('text_zero_whatsapp');
+		$data['text_zero_categories'] = $this->language->get('text_zero_categories');
+		$wa_zero = 'Olá! Busquei no site da MIIGTOOLS por "' . $filter_search . '" e não encontrei. Podem me ajudar a achar a ferramenta certa?';
+		$data['whatsapp_zero_url'] = 'https://wa.me/551122360122?text=' . rawurlencode($wa_zero);
+		$data['zero_category_links'] = [
+			['name' => 'Bits', 'href' => $this->url->link('product/category', 'language=' . $this->config->get('config_language') . '&path=59_60')],
+			['name' => 'Machos', 'href' => $this->url->link('product/category', 'language=' . $this->config->get('config_language') . '&path=59_63')],
+			['name' => 'Pontas Rotativas', 'href' => $this->url->link('product/category', 'language=' . $this->config->get('config_language') . '&path=59_68')],
+			['name' => 'Porta Recartilhas', 'href' => $this->url->link('product/category', 'language=' . $this->config->get('config_language') . '&path=59_67')],
+		];
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');

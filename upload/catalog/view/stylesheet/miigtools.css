@@ -2015,3 +2015,73 @@
     bottom: 0.85rem;
   }
 }
+
+/* Stock badge on product cards */
+.theme-miigtools .product-thumb .image {
+  position: relative;
+}
+
+.theme-miigtools .miig-stock-badge {
+  position: absolute;
+  top: 0.55rem;
+  left: 0.55rem;
+  z-index: 2;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.5rem;
+  border-radius: 0.25rem;
+  line-height: 1.2;
+  max-width: calc(100% - 1.1rem);
+}
+
+.theme-miigtools .miig-stock-badge--in {
+  background: rgba(22, 101, 52, 0.92);
+  color: #f4fff6;
+}
+
+.theme-miigtools .miig-stock-badge--out {
+  background: rgba(100, 80, 40, 0.92);
+  color: #fff8e8;
+}
+
+/* Specs card + shipping quote on PDP/cart */
+.theme-miigtools .miig-specs-card,
+.theme-miigtools .miig-ship-quote,
+.theme-miigtools .miig-family-matrix {
+  border: 1px solid var(--miig-border, rgba(255,255,255,0.12));
+  background: var(--miig-elevated-2, rgba(0,0,0,0.18));
+  border-radius: 0.4rem;
+  padding: 0.9rem 1rem;
+}
+
+.theme-miigtools .miig-specs-list {
+  display: grid;
+  gap: 0.35rem 0.75rem;
+}
+
+.theme-miigtools .miig-specs-row {
+  display: grid;
+  grid-template-columns: minmax(7rem, 34%) 1fr;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+}
+
+.theme-miigtools .miig-specs-row dt {
+  margin: 0;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.theme-miigtools .miig-specs-row dd {
+  margin: 0;
+}
+
+.theme-miigtools .miig-ship-result {
+  font-size: 0.92rem;
+}
+
+.theme-miigtools .miig-search-zero .btn {
+  margin-bottom: 0.35rem;
+}
