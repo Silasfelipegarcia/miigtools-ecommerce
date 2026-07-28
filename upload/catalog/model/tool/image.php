@@ -29,14 +29,34 @@ class Image extends \Opencart\System\Engine\Model {
 
 		$extension = pathinfo($filename, PATHINFO_EXTENSION);
 
+		if ($extension === '') {
+			return $this->config->get('config_url') . 'image/' . str_replace(' ', '%20', $filename);
+		}
+
 		$image_old = $filename;
-		$image_new = 'cache/' . oc_substr($filename, 0, oc_strrpos($filename, '.')) . '-' . (int)$width . 'x' . (int)$height . '.' . $extension;
+		$dot = oc_strrpos($filename, '.');
+
+		if ($dot === false) {
+			return $this->config->get('config_url') . 'image/' . str_replace(' ', '%20', $filename);
+		}
+
+		$image_new = 'cache/' . oc_substr($filename, 0, $dot) . '-' . (int)$width . 'x' . (int)$height . '.' . $extension;
 
 		if (!is_file(DIR_IMAGE . $image_new) || (filemtime(DIR_IMAGE . $image_old) > filemtime(DIR_IMAGE . $image_new))) {
-			[$width_orig, $height_orig, $image_type] = getimagesize(DIR_IMAGE . $image_old);
+			$previous = error_reporting(0);
+			$info = getimagesize(DIR_IMAGE . $image_old);
+			error_reporting($previous);
 
-			if (!in_array($image_type, [IMAGETYPE_PNG, IMAGETYPE_JPEG, IMAGETYPE_GIF, IMAGETYPE_WEBP])) {
-				return $this->config->get('config_url') . 'image/' . $image_old;
+			if ($info === false) {
+				return $this->config->get('config_url') . 'image/' . str_replace(' ', '%20', $image_old);
+			}
+
+			$width_orig = (int)($info[0] ?? 0);
+			$height_orig = (int)($info[1] ?? 0);
+			$image_type = (int)($info[2] ?? 0);
+
+			if (!$width_orig || !$height_orig || !in_array($image_type, [IMAGETYPE_PNG, IMAGETYPE_JPEG, IMAGETYPE_GIF, IMAGETYPE_WEBP], true)) {
+				return $this->config->get('config_url') . 'image/' . str_replace(' ', '%20', $image_old);
 			}
 
 			$path = '';
@@ -55,12 +75,16 @@ class Image extends \Opencart\System\Engine\Model {
 				}
 			}
 
-			if ($width_orig != $width || $height_orig != $height) {
-				$image = new \Opencart\System\Library\Image(DIR_IMAGE . $image_old);
-				$image->resize($width, $height, $default);
-				$image->save(DIR_IMAGE . $image_new);
-			} else {
-				copy(DIR_IMAGE . $image_old, DIR_IMAGE . $image_new);
+			try {
+				if ($width_orig != $width || $height_orig != $height) {
+					$image = new \Opencart\System\Library\Image(DIR_IMAGE . $image_old);
+					$image->resize($width, $height, $default);
+					$image->save(DIR_IMAGE . $image_new);
+				} else {
+					copy(DIR_IMAGE . $image_old, DIR_IMAGE . $image_new);
+				}
+			} catch (\Throwable $e) {
+				return $this->config->get('config_url') . 'image/' . str_replace(' ', '%20', $image_old);
 			}
 		}
 

@@ -51,23 +51,39 @@ class Image {
 		if (is_file($file)) {
 			$this->file = $file;
 
+			$previous = error_reporting(0);
 			$info = getimagesize($file);
+			error_reporting($previous);
 
-			$this->width = $info[0];
-			$this->height = $info[1];
-			$this->bits = $info['bits'] ?? '';
-			$this->mime = $info['mime'] ?? '';
+			if ($info === false || empty($info[0]) || empty($info[1])) {
+				throw new \Exception('Error: Could not load image ' . $file . '!');
+			}
+
+			$this->width = (int)$info[0];
+			$this->height = (int)$info[1];
+			$this->bits = isset($info['bits']) ? (string)$info['bits'] : '';
+			$this->mime = isset($info['mime']) ? (string)$info['mime'] : '';
+
+			$previous = error_reporting(0);
 
 			if ($this->mime == 'image/gif') {
 				$this->image = imagecreatefromgif($file);
 			} elseif ($this->mime == 'image/png') {
 				$this->image = imagecreatefrompng($file);
 
-				imageinterlace($this->image, false);
+				if ($this->image) {
+					imageinterlace($this->image, false);
+				}
 			} elseif ($this->mime == 'image/jpeg') {
 				$this->image = imagecreatefromjpeg($file);
 			} elseif ($this->mime == 'image/webp') {
 				$this->image = imagecreatefromwebp($file);
+			}
+
+			error_reporting($previous);
+
+			if (!$this->image) {
+				throw new \Exception('Error: Could not load image ' . $file . '!');
 			}
 		} else {
 			throw new \Exception('Error: Could not load image ' . $file . '!');
