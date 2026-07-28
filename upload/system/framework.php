@@ -34,6 +34,11 @@ $registry->set('log', $log);
 
 // Error Handler
 set_error_handler(function(int $code, string $message, string $file, int $line) use ($log, $config) {
+	// Respect @-suppressed errors (PHP sets error_reporting to 0 inside the handler)
+	if (!(error_reporting() & $code)) {
+		return true;
+	}
+
 	switch ($code) {
 		case E_NOTICE:
 		case E_USER_NOTICE:
@@ -54,6 +59,15 @@ set_error_handler(function(int $code, string $message, string $file, int $line) 
 
 	if ($config->get('error_log')) {
 		$log->write('PHP ' . $error . ':  ' . $message . ' in ' . $file . ' on line ' . $line);
+	}
+
+	// Notices/warnings should not blank the whole admin/storefront in production
+	if (in_array($code, [E_NOTICE, E_USER_NOTICE, E_WARNING, E_USER_WARNING, E_DEPRECATED, E_USER_DEPRECATED], true)) {
+		if ($config->get('error_display')) {
+			echo '<b>' . $error . '</b>: ' . $message . ' in <b>' . $file . '</b> on line <b>' . $line . '</b>';
+		}
+
+		return true;
 	}
 
 	if ($config->get('error_display')) {
