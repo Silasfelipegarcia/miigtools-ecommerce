@@ -54,9 +54,10 @@ class Login extends \Opencart\System\Engine\Controller {
 		}
 
 		$logo_path = $this->config->get('config_logo');
+		$catalog_base = (string)($this->config->get('config_url') ?: HTTP_CATALOG);
 
 		if ($logo_path && is_file(DIR_IMAGE . $logo_path)) {
-			$data['logo'] = HTTP_CATALOG . 'image/' . $logo_path;
+			$data['logo'] = $catalog_base . 'image/' . $logo_path;
 		} else {
 			$data['logo'] = '';
 		}
