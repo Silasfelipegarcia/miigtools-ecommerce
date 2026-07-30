@@ -1333,7 +1333,7 @@ class Order extends \Opencart\System\Engine\Controller {
 
 		$data['title'] = $this->language->get('text_invoice');
 
-		$data['base'] = HTTP_SERVER;
+		$data['base'] = (string)($this->config->get('site_url') ?: HTTP_SERVER);
 		$data['direction'] = $this->language->get('direction');
 		$data['lang'] = $this->language->get('code');
 
@@ -1579,7 +1579,7 @@ class Order extends \Opencart\System\Engine\Controller {
 
 		$data['title'] = $this->language->get('text_shipping');
 
-		$data['base'] = HTTP_SERVER;
+		$data['base'] = (string)($this->config->get('site_url') ?: HTTP_SERVER);
 		$data['direction'] = $this->language->get('direction');
 		$data['lang'] = $this->language->get('code');
 
