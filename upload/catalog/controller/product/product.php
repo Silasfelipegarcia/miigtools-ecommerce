@@ -273,6 +273,10 @@ class Product extends \Opencart\System\Engine\Controller {
 
 			foreach ($results as $result) {
 				if ($result['status']) {
+					if ($result['code'] === 'EQUIV') {
+						$result['code'] = 'Equivalente';
+					}
+
 					$data['product_codes'][] = $result;
 				}
 			}
@@ -547,6 +551,9 @@ class Product extends \Opencart\System\Engine\Controller {
 			$data['text_family_wa'] = $this->language->get('text_family_wa');
 			$data['text_faq_link'] = $this->language->get('text_faq_link');
 			$data['faq_href'] = $this->url->link('information/information', 'language=' . $this->config->get('config_language') . '&information_id=16');
+			$data['text_faq_heading'] = $this->language->get('text_faq_heading');
+			$this->load->helper('miig_seo');
+			$data['product_faqs'] = miig_seo_default_product_faqs();
 			$data['cart_add'] = $this->url->link('checkout/cart.add', 'language=' . $this->config->get('config_language'));
 
 			$data['related'] = $this->load->controller('product/related');
@@ -582,6 +589,27 @@ class Product extends \Opencart\System\Engine\Controller {
 				$this->model_tool_ga4->itemFromProduct($ga_product)
 			]);
 			$data['ga4_event'] = $this->model_tool_ga4->snippet($data['ga4']);
+
+			$product_url = $this->url->link('product/product', 'language=' . $this->config->get('config_language') . '&product_id=' . $product_id);
+			$schema_product = $product_info + ['manufacturer' => $data['manufacturer']];
+
+			foreach (miig_seo_product_schemas($this->registry, $schema_product, $product_url, $data['breadcrumbs'], $available) as $schema) {
+				miig_seo_add_json_ld($this->document, $schema);
+			}
+
+			$faq_schema = miig_seo_faq_schema($data['product_faqs']);
+
+			if ($faq_schema) {
+				miig_seo_add_json_ld($this->document, $faq_schema);
+			}
+
+			miig_seo_set_open_graph($this->document, [
+				'title'       => $product_info['meta_title'] ?: $product_info['name'],
+				'description' => $product_info['meta_description'] ?: mb_substr(strip_tags($data['description']), 0, 160),
+				'url'         => html_entity_decode($product_url, ENT_QUOTES, 'UTF-8'),
+				'image'       => miig_seo_image_url($this->registry, (string)$product_info['image']),
+				'type'        => 'product',
+			]);
 
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');

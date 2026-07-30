@@ -41,6 +41,14 @@ class Document {
 	 * @var array<string, string>
 	 */
 	private array $meta = [];
+	/**
+	 * @var array<string, string>
+	 */
+	private array $open_graph = [];
+	/**
+	 * @var list<array<string, mixed>>
+	 */
+	private array $json_ld = [];
 
 	/**
 	 * Set Title
@@ -195,5 +203,43 @@ class Document {
 	 */
 	public function getMeta() {
 		return $this->meta;
+	}
+
+	/**
+	 * Set Open Graph / Twitter card fields.
+	 *
+	 * @param array<string, string> $og
+	 *
+	 * @return void
+	 */
+	public function setOpenGraph(array $og): void {
+		$this->open_graph = array_merge($this->open_graph, $og);
+	}
+
+	/**
+	 * @return array<string, string>
+	 */
+	public function getOpenGraph(): array {
+		return $this->open_graph;
+	}
+
+	/**
+	 * Add a JSON-LD schema object.
+	 *
+	 * @param array<string, mixed> $schema
+	 *
+	 * @return void
+	 */
+	public function addJsonLd(array $schema): void {
+		if ($schema) {
+			$this->json_ld[] = $schema;
+		}
+	}
+
+	/**
+	 * @return list<array<string, mixed>>
+	 */
+	public function getJsonLd(): array {
+		return $this->json_ld;
 	}
 }
