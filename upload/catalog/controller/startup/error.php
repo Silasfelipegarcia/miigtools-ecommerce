@@ -29,6 +29,11 @@ class Error extends \Opencart\System\Engine\Controller {
 	 * @return bool
 	 */
 	public function error(int $code, string $message, string $file, int $line): bool {
+		// Respect @-suppressed errors (PHP sets error_reporting to 0 inside the handler)
+		if (!(error_reporting() & $code)) {
+			return true;
+		}
+
 		switch ($code) {
 			case E_NOTICE:
 			case E_USER_NOTICE:
@@ -37,6 +42,10 @@ class Error extends \Opencart\System\Engine\Controller {
 			case E_WARNING:
 			case E_USER_WARNING:
 				$error = 'Warning';
+				break;
+			case E_DEPRECATED:
+			case E_USER_DEPRECATED:
+				$error = 'Deprecated';
 				break;
 			case E_ERROR:
 			case E_USER_ERROR:
@@ -49,6 +58,15 @@ class Error extends \Opencart\System\Engine\Controller {
 
 		if ($this->config->get('config_error_log')) {
 			$this->log->write('PHP ' . $error . ':  ' . $message . ' in ' . $file . ' on line ' . $line);
+		}
+
+		// Notices/warnings must not blank the whole storefront (redirect to error.html)
+		if (in_array($code, [E_NOTICE, E_USER_NOTICE, E_WARNING, E_USER_WARNING, E_DEPRECATED, E_USER_DEPRECATED], true)) {
+			if ($this->config->get('config_error_display')) {
+				echo '<b>' . $error . '</b>: ' . $message . ' in <b>' . $file . '</b> on line <b>' . $line . '</b>';
+			}
+
+			return true;
 		}
 
 		if ($this->config->get('config_error_display')) {
