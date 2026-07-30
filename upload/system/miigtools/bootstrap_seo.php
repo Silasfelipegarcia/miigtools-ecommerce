@@ -155,7 +155,7 @@ function bootstrap_seo_growth(mysqli $mysqli, string $db_prefix): void {
 			INNER JOIN `{$db_prefix}product_description` `pd` ON (`p`.`product_id` = `pd`.`product_id` AND `pd`.`language_id` = {$lang_pt})
 			INNER JOIN `{$db_prefix}product_to_store` `p2s` ON (`p`.`product_id` = `p2s`.`product_id` AND `p2s`.`store_id` = 0)
 			WHERE `p`.`status` = 1 AND `p`.`price` > 0
-			ORDER BY `p`.`viewed` DESC, `p`.`product_id` ASC
+			ORDER BY `p`.`sort_order` ASC, `p`.`quantity` DESC, `p`.`product_id` ASC
 			LIMIT 8";
 		$prod_res = $mysqli->query($prod_sql);
 
@@ -304,7 +304,7 @@ function bootstrap_seo_growth(mysqli $mysqli, string $db_prefix): void {
 		 FROM `{$db_prefix}product` `p`
 		 INNER JOIN `{$db_prefix}product_description` `pd` ON (`p`.`product_id` = `pd`.`product_id` AND `pd`.`language_id` = {$lang_pt})
 		 WHERE `p`.`status` = 1 AND `p`.`price` > 0 AND `p`.`model` <> ''
-		 ORDER BY `p`.`viewed` DESC, `p`.`product_id` ASC
+		 ORDER BY `p`.`sort_order` ASC, `p`.`quantity` DESC, `p`.`product_id` ASC
 		 LIMIT 50"
 	);
 
@@ -346,7 +346,7 @@ function bootstrap_seo_growth(mysqli $mysqli, string $db_prefix): void {
 					"SELECT `model` FROM `{$db_prefix}product`
 					 WHERE `status` = 1 AND `price` > 0 AND `product_id` <> {$pid}
 					 AND `model` LIKE '" . $mysqli->real_escape_string($stem) . "%'
-					 ORDER BY `viewed` DESC LIMIT 3"
+					 ORDER BY `sort_order` ASC, `quantity` DESC LIMIT 3"
 				);
 
 				if ($sib) {

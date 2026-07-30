@@ -138,8 +138,8 @@ class Home extends \Opencart\System\Engine\Controller {
 		$this->load->model('tool/image');
 
 		$hero_products = $this->model_catalog_product->getProducts([
-			'sort'  => 'p.viewed',
-			'order' => 'DESC',
+			'sort'  => 'p.sort_order',
+			'order' => 'ASC',
 			'start' => 0,
 			'limit' => 6
 		]);
