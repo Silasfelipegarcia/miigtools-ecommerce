@@ -12,7 +12,17 @@ class Setting extends \Opencart\System\Engine\Controller {
 	 * @return void
 	 */
 	public function index(): void {
-		$hostname = ($this->request->server['HTTPS'] ? 'https://' : 'http://') . str_replace('www.', '', $this->request->server['HTTP_HOST']) . rtrim(dirname($this->request->server['PHP_SELF']), '/.\\') . '/';
+		$forwarded_proto = '';
+
+		if (!empty($this->request->server['HTTP_X_FORWARDED_PROTO'])) {
+			$forwarded_proto = strtolower((string)$this->request->server['HTTP_X_FORWARDED_PROTO']);
+		}
+
+		$https = (!empty($this->request->server['HTTPS']) && $this->request->server['HTTPS'] !== 'off')
+			|| $forwarded_proto === 'https';
+
+		$host = (string)($this->request->server['HTTP_HOST'] ?? 'localhost');
+		$hostname = ($https ? 'https://' : 'http://') . $host . '/';
 
 		// Store
 		$this->load->model('setting/store');
@@ -49,9 +59,12 @@ class Setting extends \Opencart\System\Engine\Controller {
 			}
 		}
 
-		if (!empty($this->request->server['HTTP_HOST'])
-			&& preg_match('/^(localhost|127\.0\.0\.1)(:\d+)?$/', $this->request->server['HTTP_HOST'])) {
+		// Always serve assets from the host the visitor is actually using.
+		// Prevents broken CSS/JS when config_url points to a domain that is not live yet
+		// (e.g. www.miigtools.com.br) while the site is still on Railway.
+		if ($host !== '') {
 			$this->config->set('config_url', $hostname);
+			$this->config->set('config_secure', $hostname);
 		}
 
 		// Url

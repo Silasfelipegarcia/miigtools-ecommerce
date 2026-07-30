@@ -6,6 +6,62 @@ function env(string $key, string $default = ''): string {
 	return $value !== false ? $value : $default;
 }
 
+/**
+ * Resolve the public storefront URL used in config.php and ws_setting.
+ *
+ * Priority:
+ * 1. OPENCART_STORE_URL (full URL override)
+ * 2. RAILWAY_PUBLIC_DOMAIN (Railway default — always works)
+ * 3. OPENCART_HTTP_HOST
+ *
+ * miigtools.com.br is blocked until OPENCART_ALLOW_CUSTOM_DOMAIN=1 because
+ * the custom domain is not live yet and breaks CSS/JS when set as config_url.
+ */
+function resolve_public_url(): array {
+	$scheme = env('OPENCART_HTTP_SCHEME', 'https');
+	$explicit = rtrim(env('OPENCART_STORE_URL', ''), '/');
+
+	if ($explicit !== '') {
+		$parts = parse_url($explicit);
+
+		if (!empty($parts['scheme']) && !empty($parts['host'])) {
+			$scheme = $parts['scheme'];
+			$host = $parts['host'] . (isset($parts['port']) ? ':' . $parts['port'] : '');
+		} else {
+			$host = preg_replace('#^https?://#', '', $explicit) ?? $explicit;
+		}
+	} else {
+		$railway = env('RAILWAY_PUBLIC_DOMAIN', '');
+		$custom = env('OPENCART_HTTP_HOST', '');
+		$allow_custom = env('OPENCART_ALLOW_CUSTOM_DOMAIN', '') === '1';
+
+		$host = $railway !== '' ? $railway : ($custom !== '' ? $custom : 'localhost');
+
+		// Prefer Railway while the custom domain is not ready.
+		if (!$allow_custom && $custom !== '' && preg_match('/(^|\.)miigtools\.com\.br$/i', preg_replace('/:\d+$/', '', $custom) ?? '')) {
+			if ($railway !== '') {
+				echo "resolve-public-url: ignorando OPENCART_HTTP_HOST={$custom} (domínio custom ainda não liberado); usando RAILWAY_PUBLIC_DOMAIN={$railway}\n";
+				$host = $railway;
+			} else {
+				$host = 'miigtools-ecommerce-production.up.railway.app';
+				echo "resolve-public-url: miigtools.com.br bloqueado sem RAILWAY_PUBLIC_DOMAIN; fallback={$host}\n";
+			}
+		}
+
+		if (!$allow_custom && preg_match('/(^|\.)miigtools\.com\.br$/i', preg_replace('/:\d+$/', '', $host) ?? '')) {
+			$host = $railway !== '' ? $railway : 'miigtools-ecommerce-production.up.railway.app';
+			echo "resolve-public-url: host custom bloqueado; usando {$host}\n";
+		}
+	}
+
+	$host = preg_replace('#^https?://#', '', $host) ?? $host;
+	$host = rtrim($host, '/');
+	$server = $scheme . '://' . $host . '/';
+
+	return [$scheme, $host, $server];
+}
+
+
 function bootstrap_setting(\mysqli $mysqli, string $table, string $code, string $key, string $value, int $serialized = 0): void {
 	$update = $mysqli->prepare(
 		"UPDATE `{$table}` SET `value` = ?, `serialized` = ?, `code` = ? WHERE `key` = ? AND `store_id` = 0"
@@ -217,10 +273,10 @@ function write_php_config(string $path, array $defines): void {
 $dir_opencart = rtrim(env('DIR_OPENCART', '/var/www/html/'), '/') . '/';
 $dir_storage = rtrim(env('DIR_STORAGE', '/storage/'), '/') . '/';
 
-$http_host = env('RAILWAY_PUBLIC_DOMAIN', env('OPENCART_HTTP_HOST', 'localhost'));
-$http_scheme = env('OPENCART_HTTP_SCHEME', 'https');
-$http_server = $http_scheme . '://' . $http_host . '/';
+[$http_scheme, $http_host, $http_server] = resolve_public_url();
 $http_admin = $http_scheme . '://' . $http_host . '/admin/';
+
+echo "resolve-public-url: store={$http_server}\n";
 
 $db = [
 	'DB_DRIVER'   => 'mysqli',

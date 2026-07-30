@@ -67,9 +67,16 @@ Significa que o MySQL do Railway está **vazio** — o deploy subiu, mas o dump 
 
 ### 5. Domínio e URLs da loja
 
-1. No serviço web, gere um domínio em **Settings** → **Networking** → **Generate Domain**.
-2. A cada deploy, o `write-config.php` atualiza automaticamente `config_url`, grupo de clientes (cadastro) e textos institucionais no banco.
-3. **Admin:** use `https://SEU-DOMINIO.up.railway.app/admin/` (com barra final). O Apache atrás do proxy do Railway foi ajustado para não redirecionar para a porta interna `:8080`.
+1. No serviço web, gere um domínio em **Settings** → **Networking** → **Generate Domain** (ex.: `miigtools-ecommerce-production.up.railway.app`).
+2. A cada deploy, o `write-config.php` / `update-store-url.sh` atualiza `config_url` no banco para o domínio **Railway**.
+3. A loja também usa o **host da requisição** em runtime — se você abrir o Railway, CSS/JS vêm do Railway mesmo que alguém tenha salvo `miigtools.com.br` no admin.
+4. **Não** configure `OPENCART_HTTP_HOST=www.miigtools.com.br` até o domínio custom estar no ar (DNS + Railway).
+5. Quando `miigtools.com.br` estiver live:
+   ```
+   OPENCART_ALLOW_CUSTOM_DOMAIN=1
+   OPENCART_STORE_URL=https://www.miigtools.com.br/
+   ```
+6. **Admin:** use `https://SEU-DOMINIO.up.railway.app/admin/` (com barra final).
 
 ### 6. Mercado Pago em produção
 
@@ -88,6 +95,8 @@ No admin → **Extensões** → **Pagamentos** → **Mercado Pago**:
 | `RAILWAY_PUBLIC_DOMAIN` | Railway (automático) |
 | `PORT` | Railway (automático) |
 | `OPENCART_HTTP_SCHEME` | `https` (recomendado) |
+| `OPENCART_ALLOW_CUSTOM_DOMAIN` | só `1` quando `miigtools.com.br` estiver no ar |
+| `OPENCART_STORE_URL` | URL canônica opcional (ex. `https://www.miigtools.com.br/`) |
 
 ## Observações importantes
 

@@ -18,7 +18,9 @@ class Header extends \Opencart\System\Engine\Controller {
 		$data['direction'] = $this->language->get('direction');
 
 		$data['title'] = $this->document->getTitle();
-		$data['base'] = HTTP_SERVER;
+		$admin_base = (string)($this->config->get('site_url') ?: HTTP_SERVER);
+		$catalog_base = (string)($this->config->get('config_url') ?: HTTP_CATALOG);
+		$data['base'] = $admin_base;
 		$data['description'] = $this->document->getDescription();
 		$data['keywords'] = $this->document->getKeywords();
 
@@ -39,17 +41,17 @@ class Header extends \Opencart\System\Engine\Controller {
 		$logo_path = $this->config->get('config_logo');
 
 		if (is_file(DIR_IMAGE . $icon_path)) {
-			$data['icon'] = HTTP_CATALOG . 'image/' . $icon_path;
+			$data['icon'] = $catalog_base . 'image/' . $icon_path;
 		} else {
 			$data['icon'] = '';
 		}
 
 		$data['icon_apple'] = is_file(DIR_IMAGE . $apple_path)
-			? HTTP_CATALOG . 'image/' . $apple_path
+			? $catalog_base . 'image/' . $apple_path
 			: $data['icon'];
 
 		if ($logo_path && is_file(DIR_IMAGE . $logo_path)) {
-			$data['logo'] = HTTP_CATALOG . 'image/' . $logo_path;
+			$data['logo'] = $catalog_base . 'image/' . $logo_path;
 		} else {
 			$data['logo'] = '';
 		}
