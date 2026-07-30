@@ -557,7 +557,12 @@ if ($db_host === '') {
 
 		if (is_file($seo_file)) {
 			require_once $seo_file;
-			bootstrap_seo_growth($mysqli, $db_prefix);
+
+			try {
+				bootstrap_seo_growth($mysqli, $db_prefix);
+			} catch (Throwable $e) {
+				echo 'bootstrap-seo: ERRO (continuando boot): ' . $e->getMessage() . "\n";
+			}
 		}
 
 		bootstrap_setting($mysqli, $table, 'config', 'config_seo_url', '1', 0);
