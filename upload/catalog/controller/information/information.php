@@ -36,9 +36,11 @@ class Information extends \Opencart\System\Engine\Controller {
 				'href' => $this->url->link('common/home', 'language=' . $this->config->get('config_language'))
 			];
 
+			$info_url = $this->url->link('information/information', 'language=' . $this->config->get('config_language') . '&information_id=' . $information_id);
+
 			$data['breadcrumbs'][] = [
 				'text' => $information_info['title'],
-				'href' => $this->url->link('information/information', 'language=' . $this->config->get('config_language') . '&information_id=' . $information_id)
+				'href' => $info_url
 			];
 
 			$data['heading_title'] = $information_info['title'];
@@ -46,6 +48,33 @@ class Information extends \Opencart\System\Engine\Controller {
 			$data['description'] = html_entity_decode($information_info['description'], ENT_QUOTES, 'UTF-8');
 
 			$data['continue'] = $this->url->link('common/home', 'language=' . $this->config->get('config_language'));
+
+			$this->load->helper('miig_seo');
+			miig_seo_add_json_ld($this->document, miig_seo_breadcrumb_schema($data['breadcrumbs']));
+			miig_seo_set_open_graph($this->document, [
+				'title'       => $information_info['meta_title'] ?: $information_info['title'],
+				'description' => $information_info['meta_description'] ?: mb_substr(strip_tags($data['description']), 0, 160),
+				'url'         => html_entity_decode($info_url, ENT_QUOTES, 'UTF-8'),
+				'type'        => 'article',
+			]);
+
+			// FAQ técnico (id 16): FAQPage schema from stable Q&As
+			if ($information_id === 16) {
+				$faq_schema = miig_seo_faq_schema(array_merge(miig_seo_default_product_faqs(), [
+					[
+						'question' => 'O que é cone Morse (CM)?',
+						'answer'   => 'CM2–CM5 identificam o cone da ponta rotativa ou bucha. Confira o fuso da máquina antes de comprar.',
+					],
+					[
+						'question' => 'Como consultar frete e prazo?',
+						'answer'   => 'Informe o CEP na página do produto para ver PAC/SEDEX. Pedidos com estoque confirmados até 14h (SP) seguem no mesmo dia útil.',
+					],
+				]));
+
+				if ($faq_schema) {
+					miig_seo_add_json_ld($this->document, $faq_schema);
+				}
+			}
 
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');

@@ -8,6 +8,9 @@
   <div class="row">{{ column_left }}
     <div id="content" class="col">{{ content_top }}
       <h1>{{ heading_title }}</h1>
+      {% if application_href %}
+        <p class="mb-3"><a href="{{ application_href }}" class="miig-faq-link"><i class="fa-solid fa-book-open" aria-hidden="true"></i> {{ text_application_guide }}</a></p>
+      {% endif %}
       {% if image or description %}
         <div class="row">
           {% if image %}

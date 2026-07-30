@@ -103,6 +103,7 @@ No admin → **Extensões** → **Pagamentos** → **Mercado Pago**:
 - **Storage** (`/storage/`): cache e sessões são efêmeros a cada redeploy. Para uploads persistentes, adicione um **Volume** no Railway montado em `/storage`.
 - **Não commite** `upload/config.php` — já está no `.gitignore`; o container gera na runtime.
 - O healthcheck usa `/health.php` (não depende do MySQL).
+- **SEO:** após deploy, confira `/sitemap.xml` e o checklist em [docs/SEO.md](SEO.md) (Search Console, rich results, rituais GA4).
 
 ## Comandos úteis
 

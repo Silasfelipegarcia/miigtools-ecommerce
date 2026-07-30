@@ -112,6 +112,19 @@ class Home extends \Opencart\System\Engine\Controller {
 			$data['about_href_info'] = '';
 		}
 
+		$this->load->helper('miig_seo');
+
+		foreach (miig_seo_organization_schemas($this->registry) as $schema) {
+			miig_seo_add_json_ld($this->document, $schema);
+		}
+
+		miig_seo_set_open_graph($this->document, [
+			'title'       => $this->document->getTitle(),
+			'description' => $this->document->getDescription(),
+			'url'         => html_entity_decode($this->url->link('common/home', 'language=' . $lang), ENT_QUOTES, 'UTF-8'),
+			'type'        => 'website',
+		]);
+
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');

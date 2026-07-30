@@ -365,7 +365,26 @@
           </div>
         </div>
       {% endif %}
-      {% if faq_href %}
+      {% if product_faqs %}
+        <div class="miig-pdp-faq mb-4" id="duvidas-tecnicas">
+          <h3 class="h5">{{ text_faq_heading }}</h3>
+          <div class="accordion" id="miigProductFaq">
+            {% for faq in product_faqs %}
+              <div class="accordion-item">
+                <h4 class="accordion-header" id="faq-h-{{ loop.index }}">
+                  <button class="accordion-button{% if not loop.first %} collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#faq-c-{{ loop.index }}" aria-expanded="{{ loop.first ? 'true' : 'false' }}" aria-controls="faq-c-{{ loop.index }}">{{ faq.question }}</button>
+                </h4>
+                <div id="faq-c-{{ loop.index }}" class="accordion-collapse collapse{% if loop.first %} show{% endif %}" aria-labelledby="faq-h-{{ loop.index }}" data-bs-parent="#miigProductFaq">
+                  <div class="accordion-body">{{ faq.answer }}</div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          {% if faq_href %}
+            <p class="mt-3 mb-0"><a href="{{ faq_href }}" class="miig-faq-link"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> {{ text_faq_link }}</a></p>
+          {% endif %}
+        </div>
+      {% elseif faq_href %}
         <p class="mt-3 mb-4"><a href="{{ faq_href }}" class="miig-faq-link"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> {{ text_faq_link }}</a></p>
       {% endif %}
       {{ content_bottom }}
