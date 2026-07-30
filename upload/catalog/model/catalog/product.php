@@ -191,7 +191,7 @@ class Product extends \Opencart\System\Engine\Model {
 				$sql .= " OR LCASE(`p`.`model`) LIKE '" . $this->db->escape('%' . oc_strtolower($data['filter_search']) . '%') . "'";
 				$sql .= " OR LCASE(`p`.`sku`) LIKE '" . $this->db->escape('%' . oc_strtolower($data['filter_search']) . '%') . "'";
 				$sql .= " OR LCASE(`p`.`mpn`) LIKE '" . $this->db->escape('%' . oc_strtolower($data['filter_search']) . '%') . "'";
-				$sql .= " OR pc.`value` LIKE '" . $this->db->escape((string)$data['filter_search'] . '%') . "'";
+				$sql .= " OR pc.`value` LIKE '" . $this->db->escape('%' . (string)$data['filter_search'] . '%') . "'";
 			}
 
 			$sql .= ")";

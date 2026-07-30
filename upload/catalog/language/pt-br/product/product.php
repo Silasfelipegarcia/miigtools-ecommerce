@@ -26,7 +26,8 @@ $_['text_pay_trust']           = 'Pague com PIX, Mercado Pago ou cartão · Fret
 $_['button_family_cart']       = 'Adicionar';
 $_['text_family_qty']          = 'Qtd';
 $_['text_family_wa']           = 'Consultar';
-$_['text_faq_link']            = 'Dúvidas técnicas frequentes';
+$_['text_faq_link']            = 'Ver FAQ técnico completo';
+$_['text_faq_heading']         = 'Dúvidas técnicas';
 $_['text_login']               = 'Você deve <a href="%s">acessar</a> ou <a href="%s">cadastrar-se</a> para comentar.';
 $_['text_no_reviews']          = 'Não há comentários para este produto.';
 $_['text_note']                = '<span class="text-danger">Nota:</span> HTML não suportado.';

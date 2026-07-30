@@ -50,6 +50,7 @@ RewriteEngine On
 RewriteBase /
 ## Rewrite Rules
 RewriteRule ^system/storage/(.*) index.php?route=error/not_found [L]
+RewriteRule ^sitemap\.xml$ index.php?route=information/sitemap_xml [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !.*\.(ico|gif|jpg|jpeg|png|webp|js|css|svg)

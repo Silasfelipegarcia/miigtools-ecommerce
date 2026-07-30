@@ -12,6 +12,32 @@
   {% if keywords %}
     <meta name="keywords" content="{{ keywords }}"/>
   {% endif %}
+  {% if og %}
+    <meta property="og:site_name" content="{{ og.site_name|default(name) }}"/>
+    <meta property="og:type" content="{{ og.type|default('website') }}"/>
+    <meta property="og:title" content="{{ og.title|default(title) }}"/>
+    {% if og.description|default(description) %}
+      <meta property="og:description" content="{{ og.description|default(description) }}"/>
+    {% endif %}
+    <meta property="og:url" content="{{ og.url|default(base) }}"/>
+    {% if og.image %}
+      <meta property="og:image" content="{{ og.image }}"/>
+    {% endif %}
+    <meta name="twitter:card" content="{{ og.twitter_card|default('summary_large_image') }}"/>
+    <meta name="twitter:title" content="{{ og.title|default(title) }}"/>
+    {% if og.description|default(description) %}
+      <meta name="twitter:description" content="{{ og.description|default(description) }}"/>
+    {% endif %}
+    {% if og.image %}
+      <meta name="twitter:image" content="{{ og.image }}"/>
+    {% endif %}
+  {% endif %}
+  {% for meta in metas %}
+    {{ meta|raw }}
+  {% endfor %}
+  {% for schema in json_ld %}
+    <script type="application/ld+json">{{ schema|json_encode|raw }}</script>
+  {% endfor %}
   <script src="{{ jquery }}" type="text/javascript"></script>
   <link href="{{ bootstrap }}" type="text/css" rel="stylesheet" media="screen"/>
   <link href="{{ icons }}" rel="stylesheet" type="text/css"/>

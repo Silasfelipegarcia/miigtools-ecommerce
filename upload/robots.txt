@@ -15,3 +15,6 @@ Disallow: /*?filter_description=
 Disallow: /*&filter_description=
 Disallow: /*?filter_group=
 Disallow: /*&filter_group=
+
+Sitemap: https://www.miigtools.com.br/sitemap.xml
+Sitemap: https://miigtools-ecommerce-production.up.railway.app/sitemap.xml

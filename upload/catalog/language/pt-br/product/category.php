@@ -4,6 +4,7 @@ $_['text_refine']       = 'Subdepartamento:';
 $_['text_product']      = 'Produtos';
 $_['text_error']        = 'Departamento não encontrado.';
 $_['text_empty']        = 'Não há produtos neste departamento';
+$_['text_application_guide'] = 'Guia por aplicação (normas, materiais e FAQ)';
 $_['text_quantity']     = 'Qtd:';
 $_['text_manufacturer'] = 'Marca:';
 $_['text_model']        = 'Modelo:';

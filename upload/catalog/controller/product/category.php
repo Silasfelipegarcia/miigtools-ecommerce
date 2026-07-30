@@ -432,6 +432,36 @@ class Category extends \Opencart\System\Engine\Controller {
 
 			$data['continue'] = $this->url->link('common/home', 'language=' . $this->config->get('config_language'));
 
+			$this->load->helper('miig_seo');
+
+			$category_url = $this->url->link('product/category', 'language=' . $this->config->get('config_language') . '&path=' . $this->request->get['path']);
+
+			miig_seo_add_json_ld($this->document, miig_seo_breadcrumb_schema($data['breadcrumbs']));
+			miig_seo_set_open_graph($this->document, [
+				'title'       => $category_info['meta_title'] ?: $category_info['name'],
+				'description' => $category_info['meta_description'] ?: mb_substr(strip_tags(html_entity_decode($category_info['description'] ?? '', ENT_QUOTES, 'UTF-8')), 0, 160),
+				'url'         => html_entity_decode($category_url, ENT_QUOTES, 'UTF-8'),
+				'image'       => !empty($category_info['image']) ? miig_seo_image_url($this->registry, (string)$category_info['image']) : '',
+				'type'        => 'website',
+			]);
+
+			// Internlinking: guia por aplicação quando a categoria mapeia para landing
+			$app_map = [
+				63 => 10,
+				60 => 11,
+				68 => 12,
+				59 => 13,
+				65 => 14,
+				62 => 15,
+			];
+			$data['application_href'] = '';
+			$data['text_application_guide'] = '';
+
+			if (isset($app_map[$category_id])) {
+				$data['application_href'] = $this->url->link('information/information', 'language=' . $this->config->get('config_language') . '&information_id=' . $app_map[$category_id]);
+				$data['text_application_guide'] = $this->language->get('text_application_guide');
+			}
+
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
 			$data['content_top'] = $this->load->controller('common/content_top');

@@ -55,6 +55,7 @@ class Header extends \Opencart\System\Engine\Controller {
 		$data['links'] = $this->document->getLinks();
 		$data['styles'] = $this->document->getStyles();
 		$data['scripts'] = $this->document->getScripts('header');
+		$data['metas'] = $this->document->getMeta();
 
 		$data['name'] = $this->config->get('config_name');
 
@@ -81,6 +82,35 @@ class Header extends \Opencart\System\Engine\Controller {
 		} else {
 			$data['logo'] = '';
 		}
+
+		$og = $this->document->getOpenGraph();
+
+		if (empty($og['title']) && $data['title']) {
+			$og['title'] = $data['title'];
+		}
+
+		if (empty($og['description']) && $data['description']) {
+			$og['description'] = $data['description'];
+		}
+
+		if (empty($og['url'])) {
+			$og['url'] = $data['base'];
+		}
+
+		if (empty($og['type'])) {
+			$og['type'] = 'website';
+		}
+
+		if (empty($og['image']) && $data['logo']) {
+			$og['image'] = $data['logo'];
+		}
+
+		if (empty($og['site_name'])) {
+			$og['site_name'] = $data['name'];
+		}
+
+		$data['og'] = $og;
+		$data['json_ld'] = $this->document->getJsonLd();
 
 		$this->load->language('common/header');
 
